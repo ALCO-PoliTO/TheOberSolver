@@ -5,8 +5,8 @@
 	<classpathentry kind="lib" path="/Users/gabrieledragotto/Dropbox/PoliTO/Code/Libs/gs-algo-1.3.jar"/>
 	<classpathentry kind="lib" path="/Users/gabrieledragotto/Dropbox/PoliTO/Code/Libs/gs-core-1.3.jar"/>
 	<classpathentry kind="lib" path="/Users/gabrieledragotto/Dropbox/PoliTO/Code/Libs/gs-ui-1.3.jar"/>
-	<classpathentry kind="lib" path="/Applications/CPLEX_Studio128/cplex/lib/cplex.jar"/>
-	<classpathentry kind="lib" path="/Applications/CPLEX_Studio128/cpoptimizer/lib/ILOG.CP.jar"/>
+	<classpathentry kind="lib" path="/Users/gabrieledragotto/Applications/IBM/ILOG/CPLEX_Studio127/cplex/lib/cplex.jar"/>
+	<classpathentry kind="lib" path="/Users/gabrieledragotto/Applications/IBM/ILOG/CPLEX_Studio127/cpoptimizer/lib/ILOG.CP.jar"/>
 	<classpathentry kind="lib" path="/Users/gabrieledragotto/Documents/Tesi/commons-csv-1.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
