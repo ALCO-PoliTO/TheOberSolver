@@ -957,6 +957,7 @@ public class TwoRotational {
 		if (!Verbose)
 			cpx.setParameter(IloCP.IntParam.LogVerbosity, IloCP.ParameterValues.Quiet);
 		int Tl = 5*(1+V/150);
+		
 		cpx.setParameter(IloCP.DoubleParam.TimeLimit, Tl);
 		cpx.propagate();
 		if (cpx.solve()) {
