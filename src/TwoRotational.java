@@ -956,7 +956,7 @@ public class TwoRotational {
 		}
 		if (!Verbose)
 			cpx.setParameter(IloCP.IntParam.LogVerbosity, IloCP.ParameterValues.Quiet);
-		int Tl = V ;
+		int Tl = 5*(1+V/150);
 		cpx.setParameter(IloCP.DoubleParam.TimeLimit, Tl);
 		cpx.propagate();
 		if (cpx.solve()) {
@@ -976,6 +976,7 @@ public class TwoRotational {
 			return true;
 		} else {
 			Solution.setColorTries(Solution.getColorTries() + 1);
+			Solution.setStatus("TimeLimit");
 			if (exportModels) {
 				cpx.exportModel(
 						FilePath + "infeasibles/" + "Labelling_YR" + Solution.getName() + "_" + param_getOP_name() + ".cpo");
