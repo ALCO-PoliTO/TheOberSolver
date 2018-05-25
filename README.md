@@ -5,7 +5,7 @@ This repository is mantained by ALCO@Politecnico di Torino.
 
 MIT License
 
-Copyright (c) 2018 Gabriele Dragotto
+Copyright (c) 2018 ALCO@PoliTO
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
