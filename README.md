@@ -1,5 +1,5 @@
 # TheOberSolver
-This repository is mantained by ALCO@Politecnico di Torino.
+This repository is maintained by ALCO@Politecnico di Torino.
 
 ## License
 
