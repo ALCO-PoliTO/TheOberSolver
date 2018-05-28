@@ -206,9 +206,35 @@ public class TwoRotational_Solution {
 				ret += "(";
 				for (int i = 0; i < tables.get(t); i++) {
 					if (i == 0 && t == 0)
-						ret += "\\infty,";
+						ret += "\\infty, ";
 
 					ret += "(" + labels[i + scroll] + "," + colors.get(i + scroll) + ")";
+					if (i != tables.get(t) - 1)
+						ret += ", ";
+				}
+				ret += ") ";
+				if (t != tables.size() - 1)
+					scroll += tables.get(t);
+			}
+			return ret;
+		} else {
+			return "";
+		}
+	}
+	
+
+	public String getColorsString() {
+		if (colors.size() == (V - 1)) {
+
+			String ret = "";
+			int scroll = 0;
+			for (int t = 0; t < tables.size(); t++) {
+				ret += "(";
+				for (int i = 0; i < tables.get(t); i++) {
+					if (i == 0 && t == 0)
+						ret += "\\infty, ";
+
+					ret += "(" + colors.get(i + scroll) + ")";
 					if (i != tables.get(t) - 1)
 						ret += ", ";
 				}

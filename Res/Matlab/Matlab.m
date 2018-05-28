@@ -3,7 +3,7 @@ clc();
 desktop = com.mathworks.mde.desk.MLDesktop.getInstance;
 myGroup = desktop.addGroup('YR');
 desktop.setGroupDocked('YR', 0);
-path = '/Users/gabrieledragotto/Documents/Eclipse_wspace/OP_2Rot/Matlab/';
+path = '/Users/gabrieledragotto/Documents/Eclipse_wspace/OberSolver/Res/Matlab/';
 matfiles = dir(fullfile(strcat(path,'colors/'),'YR_*.txt'));
 nfiles = length(matfiles);
 myDim   = java.awt.Dimension(4, 3);
@@ -23,7 +23,7 @@ for i = 1 : nfiles
     figH(iFig) = figure('rend','painters','pos',[10 10 900 600]);
 	pause(0.02);  % Magic, reduces rendering errors
 	set(get(handle(figH(iFig)), 'javaframe'), 'GroupName', 'YR');
-    Labels = importdata(strcat(strcat(path,'labels/'),strrep(matfiles(i).name,'YR','Labels')),"\t",0);
+    % Labels = importdata(strcat(strcat(path,'labels/'),strrep(matfiles(i).name,'YR','Labels')),"\t",0);
     YR = importdata(strcat(strcat(path,'colors/'),matfiles(i).name),"\t",0);
     add = ones(size(YR),'like',YR);
     YR=YR+add;
@@ -34,7 +34,7 @@ for i = 1 : nfiles
     highlight(h, YR(2,:),'NodeColor','r');
     highlight(h,YR(1,:) );
     highlight(h,YR(2,:) );
-    labelnode(h,2:n,Labels);
+    % labelnode(h,2:n,Labels);
     labelnode(h,1,'Inf');
     title(strrep((strrep(strrep(matfiles(i).name,'YR_',''),'_','-')),'.txt',''));
     saveas(gcf,[path '/out/' strrep(strrep(matfiles(i).name,'YR',''),'.txt','') '.png']);

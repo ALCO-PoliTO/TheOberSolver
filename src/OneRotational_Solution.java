@@ -134,7 +134,7 @@ public class OneRotational_Solution {
 			ret += "(";
 			for (int i = 0; i < tables.get(t); i++) {
 				if (i == 0 && t == 0)
-					ret += "\\infty,";
+					ret += "\\infty, ";
 
 				ret += "" + labels[i + scroll];
 				if (i != tables.get(t) - 1)

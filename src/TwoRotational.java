@@ -14,10 +14,10 @@ import ilog.concert.IloNumVar;
 public class TwoRotational {
 	private static long Clock;
 	private static Boolean Verbose = true;
-	private static Boolean AllColors = false;
 	private static String OP_name = "";
 	private static Boolean Check = false;
 	private static Boolean exportModels = false;
+	private static Boolean TimeLimit = false;
 	private static String FilePath = "";
 	private static int V = 0;
 	private static int SolLimit = 0;
@@ -36,13 +36,10 @@ public class TwoRotational {
 
 			for (int i = 0; i < YR_Pool.size(); i++) {
 				if (YR_Pool.get(i).equals(currentYR)) {
-					System.out.println("found1");
-					for (int j = 0; j < YR_Pool.get(i).size(); j++)
-						System.out.println(YR_Pool.get(i).get(j) + " vs " + currentYR.get(j));
+
 					return true;
 				}
 				if (YR_Pool.get(i).equals(currentYR_s)) {
-					System.out.println("found2");
 					return true;
 				}
 			}
@@ -195,14 +192,14 @@ public class TwoRotational {
 			tables_map.add(new Integer[] { tables.get(t), tables.get(t) });
 			tables_colors.add(new ArrayList<Integer>());
 			while (tables_map.get(t)[0] >= 7) {
-				tables_map.set(t, new Integer[] { tables_map.get(t)[0] - 4, tables_map.get(t)[1] });
+				tables_map.set(t, new Integer[] { tables_map.get(t)[0] - 4, tables_map.get(t)[1], 1 });
 				tables_colors.get(t).add(2);
 				tables_colors.get(t).add(2);
 				tables_colors.get(t).add(1);
 				tables_colors.get(t).add(1);
 			}
 			if (tables_map.get(t)[0] == 4) {
-				tables_map.set(t, new Integer[] { 0, tables_map.get(t)[1] });
+				tables_map.set(t, new Integer[] { 0, tables_map.get(t)[1], 1 });
 				tables_colors.get(t).add(2);
 				tables_colors.get(t).add(2);
 				tables_colors.get(t).add(1);
@@ -215,6 +212,125 @@ public class TwoRotational {
 
 		while (flag) {
 			flag = false;
+
+			// Set 3-5
+			search.clear();
+			search.add(5);
+			search.add(3);
+			Boolean Plus4 = false;
+			if (ArrayList_search(tables_map, search)) {
+				//System.out.println("Found 3-5");
+
+					for (int z = 0; z < tables_map.size(); z++) {
+						if (tables_map.get(z).length > 2) {
+							for (int i = 0; i < tables_colors.get(z).size(); i++) {
+								if (tables_colors.get(z).get(i) == 2
+										&& tables_colors.get(z).get((i + 1) % tables_colors.get(z).size()) == 2
+										&& tables_colors.get(z).get((i + 2) % tables_colors.get(z).size()) == 1
+										&& tables_colors.get(z).get((i + 3) % tables_colors.get(z).size()) == 1) {
+									tables_colors.get(z).set((i + 2) % tables_colors.get(z).size(), 2);
+									i = tables_colors.get(z).size();
+									Plus4 = true;
+								}
+							}
+							z = tables_map.size();
+						}
+					}
+				
+				if (Plus4) {
+					int count = 0;
+					int count2 = 0;
+					flag = true;
+					for (int z = 0; z < tables_map.size() && (count + count2 < 2); z++) {
+						if (tables_map.get(z)[0] == 3 && count < 1) {
+							// System.out.println("\tRemoving 3");
+							tables_map.set(z, new Integer[] { 0, tables_map.get(z)[1] });
+							count++;
+							if (tables_colors.get(z).size() > 0
+									&& tables_colors.get(z).get(tables_colors.get(z).size() - 1) == 1) {
+								tables_colors.get(z).add(2);
+								tables_colors.get(z).add(2);
+								tables_colors.get(z).add(1);
+							} else {
+								tables_colors.get(z).add(1);
+								tables_colors.get(z).add(2);
+								tables_colors.get(z).add(2);
+							}
+						}
+						if (tables_map.get(z)[0] == 5 && count2 < 1) {
+							// System.out.println("\tRemoving 5");
+							tables_map.set(z, new Integer[] { 0, tables_map.get(z)[1] });
+
+							if (tables_colors.get(z).size() > 0
+									&& tables_colors.get(z).get(tables_colors.get(z).size() - 1) == 1) {
+								tables_colors.get(z).add(2);
+								tables_colors.get(z).add(1);
+								tables_colors.get(z).add(1);
+								tables_colors.get(z).add(1);
+								tables_colors.get(z).add(1);
+							} else {
+								tables_colors.get(z).add(1);
+								tables_colors.get(z).add(1);
+								tables_colors.get(z).add(1);
+								tables_colors.get(z).add(2);
+								tables_colors.get(z).add(1);
+							}
+							count2++;
+						}
+					}
+				} else {
+					int count = 0;
+					int count2 = 0;
+					flag = true;
+					for (int z = 0; z < tables_map.size() && (count + count2 < 2); z++) {
+						if (tables_map.get(z)[0] == 3 && count < 1) {
+							/*
+							 * int idx = 0; for (int h = 0; h < z; h++) { idx += tables_map.get(h)[1]; }
+							 * System.out.println("Table (3): " + z + " at " + idx);
+							 */
+							// System.out.println("\tRemoving 3");
+							tables_map.set(z, new Integer[] { 0, tables_map.get(z)[1] });
+							count++;
+							if (tables_colors.get(z).size() > 0
+									&& tables_colors.get(z).get(tables_colors.get(z).size() - 1) == 1) {
+								tables_colors.get(z).add(2);
+								tables_colors.get(z).add(1);
+								tables_colors.get(z).add(1);
+							} else {
+								tables_colors.get(z).add(1);
+								tables_colors.get(z).add(1);
+								tables_colors.get(z).add(2);
+							}
+						}
+						if (tables_map.get(z)[0] == 5 && count2 < 1) {
+							// System.out.println("\tRemoving 5");
+							/*
+							 * int idx = 0; for (int h = 0; h < z; h++) { idx += tables_map.get(h)[1]; }
+							 * System.out.println("Table (5): " + z + " at " + idx);
+							 */
+							tables_map.set(z, new Integer[] { 0, tables_map.get(z)[1] });
+
+							if (tables_colors.get(z).size() > 0
+									&& tables_colors.get(z).get(tables_colors.get(z).size() - 1) == 1) {
+								tables_colors.get(z).add(2);
+								tables_colors.get(z).add(2);
+								tables_colors.get(z).add(1);
+								tables_colors.get(z).add(1);
+								tables_colors.get(z).add(2);
+							} else {
+								tables_colors.get(z).add(1);
+								tables_colors.get(z).add(1);
+								tables_colors.get(z).add(2);
+								tables_colors.get(z).add(2);
+								tables_colors.get(z).add(2);
+							}
+							count2++;
+						}
+					}
+
+				}
+
+			}
 
 			// Set 5x4times
 			search.clear();
@@ -437,55 +553,6 @@ public class TwoRotational {
 
 			}
 
-			// Set 3-5
-			search.clear();
-			search.add(5);
-			search.add(3);
-			if (ArrayList_search(tables_map, search)) {
-				// System.out.println("Found 3-5");
-				int count = 0;
-				int count2 = 0;
-				flag = true;
-				for (int z = 0; z < tables_map.size() && (count + count2 < 2); z++) {
-					if (tables_map.get(z)[0] == 3 && count < 1) {
-						// System.out.println("\tRemoving 3");
-						tables_map.set(z, new Integer[] { 0, tables_map.get(z)[1] });
-						count++;
-						if (tables_colors.get(z).size() > 0
-								&& tables_colors.get(z).get(tables_colors.get(z).size() - 1) == 1) {
-							tables_colors.get(z).add(2);
-							tables_colors.get(z).add(1);
-							tables_colors.get(z).add(1);
-						} else {
-							tables_colors.get(z).add(1);
-							tables_colors.get(z).add(1);
-							tables_colors.get(z).add(2);
-						}
-					}
-					if (tables_map.get(z)[0] == 5 && count2 < 1) {
-						// System.out.println("\tRemoving 5");
-						tables_map.set(z, new Integer[] { 0, tables_map.get(z)[1] });
-
-						if (tables_colors.get(z).size() > 0
-								&& tables_colors.get(z).get(tables_colors.get(z).size() - 1) == 1) {
-							tables_colors.get(z).add(2);
-							tables_colors.get(z).add(2);
-							tables_colors.get(z).add(1);
-							tables_colors.get(z).add(1);
-							tables_colors.get(z).add(2);
-						} else {
-							tables_colors.get(z).add(1);
-							tables_colors.get(z).add(1);
-							tables_colors.get(z).add(2);
-							tables_colors.get(z).add(2);
-							tables_colors.get(z).add(2);
-						}
-						count2++;
-					}
-				}
-
-			}
-
 		}
 
 		int count = 0;
@@ -507,13 +574,13 @@ public class TwoRotational {
 			// System.out.println("\tFound OP(3) basic configuration");
 			if (tables_colors.get(indexes[0]).size() > 0
 					&& tables_colors.get(indexes[0]).get(tables_colors.get(indexes[0]).size() - 1) == 1) {
-				tables_colors.get(indexes[0]).add(0);
 				tables_colors.get(indexes[0]).add(2);
-				tables_colors.get(indexes[0]).add(1);
+				tables_colors.get(indexes[0]).add(0, 0);
+				tables_colors.get(indexes[0]).add(1, 1);
 			} else {
-				tables_colors.get(indexes[0]).add(0);
 				tables_colors.get(indexes[0]).add(1);
-				tables_colors.get(indexes[0]).add(2);
+				tables_colors.get(indexes[0]).add(0, 0);
+				tables_colors.get(indexes[0]).add(1, 2);
 			}
 			zero = indexes[0];
 		} else if (missing.size() == 2 && missing.contains(5) && missing.contains(6) && !missing.contains(3)) {
@@ -664,18 +731,18 @@ public class TwoRotational {
 		tables.set(0, tables.get(0) - 1);
 		ArrayList<Integer> YR = new ArrayList<Integer>();
 
-		// int scroll = 0;
-		// System.out.println("\nColor configuration");
 		for (int z = 0; z < tables_colors.size(); z++) {
-			// System.out.println("Table " + z);
 			for (int t = 0; t < tables_colors.get(z).size(); t++) {
 				YR.add(tables_colors.get(z).get(t));
-				// System.out.println("\tNode " + (scroll + t) + ": " +
-				// tables_colors.get(z).get(t));
 			}
-			// scroll += tables_colors.get(z).size();
 		}
-		// System.out.println("Configuration is valid: " +verifyYR(colors, tables));
+		/*
+		 * int scroll = 0; System.out.println("\nColor configuration"); for (int z = 0;
+		 * z < tables_colors.size(); z++) { System.out.println("Table " + z); for (int t
+		 * = 0; t < tables_colors.get(z).size(); t++) { System.out.println("\tNode " +
+		 * (scroll + t) + ": " + tables_colors.get(z).get(t)); } scroll +=
+		 * tables_colors.get(z).size(); }
+		 */
 		Solution.setColorTime((System.nanoTime() - start) / 1000000000F);
 		Solution.setTables(tables);
 		Solution.setNotes(baseSolution);
@@ -956,9 +1023,10 @@ public class TwoRotational {
 		}
 		if (!Verbose)
 			cpx.setParameter(IloCP.IntParam.LogVerbosity, IloCP.ParameterValues.Quiet);
-		int Tl = 5*(1+V/150);
-		
-		cpx.setParameter(IloCP.DoubleParam.TimeLimit, Tl);
+		int Tl = 5 * (1 + V / 50);
+
+		if (TimeLimit)
+			cpx.setParameter(IloCP.DoubleParam.TimeLimit, Tl);
 		cpx.propagate();
 		if (cpx.solve()) {
 			Solution.setLabellingTime(cpx.getInfo(IloCP.DoubleInfo.SolveTime));
@@ -977,10 +1045,11 @@ public class TwoRotational {
 			return true;
 		} else {
 			Solution.setColorTries(Solution.getColorTries() + 1);
-			Solution.setStatus("TimeLimit");
+			Solution.setLabellingTime(cpx.getInfo(IloCP.DoubleInfo.TotalTime));
+			// Solution.setStatus("TimeLimit");
 			if (exportModels) {
-				cpx.exportModel(
-						FilePath + "infeasibles/" + "Labelling_YR" + Solution.getName() + "_" + param_getOP_name() + ".cpo");
+				cpx.exportModel(FilePath + "infeasibles/" + "Labelling_YR" + Solution.getName() + "_"
+						+ param_getOP_name() + ".cpo");
 			}
 			cpx.end();
 			return false;
@@ -1331,11 +1400,13 @@ public class TwoRotational {
 		YR_Isomorphisms.add(getColorInfo(firstYR, Solution.getTables()));
 
 		if (!Solution.verifyColors()) {
+			System.out.println(Solution.getColorsString());
 			throw new ErrorThrower("Unable to generate color configuration with Poly alg.");
 		}
 		tables = Solution.getTables();
 		param_setOP_name(tables);
 		int Solve_count = 0;
+		@SuppressWarnings("unused")
 		Double time = 0.0;
 		boolean Flag = true;
 		int iteration = 0;
@@ -1348,28 +1419,18 @@ public class TwoRotational {
 			Solution.setName("" + iteration);
 			Solution.setOP_name(param_getOP_name());
 			if (iteration == 0) {
+				System.out.println("Using Polynomial coloring.");
 				Solution.setColors(generateColors_Poly(Solution));
 				Solution.setPolyColor(true);
 			}
-			if (iteration == 1) {
-				int num = 0;
-				if (AllColors)
-					num = 10000000 * 1000000;
-				else
-					num = 2;
+			if (iteration != 0) {
+				if (Verbose)
+					System.out.println("Searching for color layouts with CP...");
+				int num = 1;
 				YR_cp = generateColors_CP(Solution, num);
 				if (YR_cp.size() > 0) {
 					time = Solution.getColorTime();
 					Solution.setColors(YR_cp.get(0));
-				} else {
-					System.out.println("No more coloring solutions found.");
-					Flag = false;
-					break;
-				}
-			} else if (iteration > 1) {
-				if (iteration < YR_cp.size()) {
-					Solution.setColors(YR_cp.get(iteration - 1));
-					Solution.setColorTime(time);
 				} else {
 					Flag = false;
 					break;
@@ -1380,13 +1441,13 @@ public class TwoRotational {
 				Solutions.add(Solution);
 			} else {
 				System.out.println("No solution found with CP.");
-				/*if (generateLabels_MIP(Solution)) {
-					Solve_count++;
-					System.out.println("Solution found with MIP.");
-				} else {
-					System.out.println("Proven infeasible with MIP.");
-				} */
-				Solution.setStatus("Infeasible");
+				/*
+				 * if (generateLabels_MIP(Solution)) { Solve_count++;
+				 * System.out.println("Solution found with MIP."); } else {
+				 * System.out.println("Proven infeasible with MIP."); }
+				 */
+				if (Solution.getStatus() == "Solved")
+					Solution.setStatus("Infeasible");
 				Solutions.add(Solution);
 			}
 			if (SolLimit != 0) {
@@ -1399,14 +1460,58 @@ public class TwoRotational {
 		return Solutions;
 	}
 
-	public TwoRotational(boolean Verbose, boolean AllColors, boolean Check, int SolLimit, Boolean exportModels,
-			String FilePath) throws ErrorThrower {
+	public ArrayList<TwoRotational_Solution> solve_onlyPoly(ArrayList<Integer> tables)
+			throws ErrorThrower, IloException {
+
+		V = getOPsize(tables);
+		if (!((V % 4) == 3)) {
+			throw new ErrorThrower("V % 4 != 3 (V=" + V + ")");
+		}
+		tables.set(0, tables.get(0) - 1);
+		TwoRotational_Solution Solution = new TwoRotational_Solution(tables, V);
+		ArrayList<Integer> firstYR = generateColors_Poly(Solution);
+		Solution.setColors(firstYR);
+
+		if (!Solution.verifyColors()) {
+			System.out.println(Solution.getColorsString());
+			throw new ErrorThrower("Unable to generate color configuration with Poly alg.");
+		}
+		tables = Solution.getTables();
+		param_setOP_name(tables);
+		ArrayList<TwoRotational_Solution> Solutions = new ArrayList<TwoRotational_Solution>();
+
+		Clock = System.nanoTime();
+		Solution = new TwoRotational_Solution(tables, V);
+		Solution.setName("0");
+		Solution.setOP_name(param_getOP_name());
+		System.out.println("Using Polynomial coloring.");
+		Solution.setColors(generateColors_Poly(Solution));
+		Solution.setPolyColor(true);
+		TimeLimit=false;
+		if (!generateLabels_CP(Solution)) {
+			System.out.println("No solution found with CP.");
+			/*
+			 * if (generateLabels_MIP(Solution)) { Solve_count++;
+			 * System.out.println("Solution found with MIP."); } else {
+			 * System.out.println("Proven infeasible with MIP."); }
+			 */
+			if (Solution.getStatus() == "Solved")
+				Solution.setStatus("Infeasible");
+		}
+		Solutions.add(Solution);
+		Solution.setTotalTime((System.nanoTime() - Clock) / 1000000000F);
+
+		return Solutions;
+	}
+
+	public TwoRotational(boolean Verbose, boolean Check, int SolLimit, Boolean exportModels,
+			String FilePath, Boolean TimeLimit) throws ErrorThrower {
 		param_setVerbose(Verbose);
 		param_setExportModels(exportModels);
-		param_setAllColors(AllColors);
 		param_setCheck(Check);
 		param_setSolLimit(SolLimit);
 		param_setFilePath(FilePath);
+		param_setTimeLimit(TimeLimit);
 		if (exportModels) {
 			File f = new File(FilePath);
 			f.mkdirs();
@@ -1426,13 +1531,6 @@ public class TwoRotational {
 		Verbose = verbose;
 	}
 
-	public static Boolean param_getAllColors() {
-		return AllColors;
-	}
-
-	public static void param_setAllColors(Boolean allColors) {
-		AllColors = allColors;
-	}
 
 	public static Boolean param_getCheck() {
 		return Check;
@@ -1483,6 +1581,14 @@ public class TwoRotational {
 
 	public static void param_setFilePath(String filePath) {
 		FilePath = filePath;
+	}
+
+	public static Boolean param_getTimeLimit() {
+		return TimeLimit;
+	}
+
+	public static void param_setTimeLimit(Boolean timeLimit) {
+		TimeLimit = timeLimit;
 	}
 
 }

@@ -8,6 +8,7 @@ import java.io.PrintStream;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -24,6 +25,85 @@ public class Main {
 	@SuppressWarnings("unused")
 	private static void TimeElapsed() {
 		System.out.println("Time elapsed:" + (System.nanoTime() - Clock) / 1000000000F + "s");
+	}
+
+	@SuppressWarnings("unused")
+	private static void exportMatlab(ArrayList<Integer> tables, ArrayList<Integer> colors, String name)
+			throws IOException, ErrorThrower {
+
+		File f = new File(Path+"Matlab/");
+		f.mkdirs();
+		BufferedWriter bw = new BufferedWriter(new FileWriter(Path + "Matlab/Adjacency_" + name + ".txt"));
+		int V = 0;
+		for (int i = 0; i < tables.size(); i++)
+			V += tables.get(i);
+		int[][] ADJ = new int[V][V];
+		int scroll = 0, alpha = 0, beta = 0;
+		for (int t = 0; t < tables.size(); t++) {
+			for (int i = 0; i < tables.get(t) - 1; i++) {
+				alpha = scroll + i;
+				beta = scroll + i + 1;
+				ADJ[alpha][beta] = 1;
+				ADJ[beta][alpha] = 1;
+			}
+			if (t != 0) {
+				alpha = scroll + tables.get(t) - 1;
+				ADJ[alpha][scroll] = 1;
+				ADJ[scroll][alpha] = 1;
+			}
+			scroll += tables.get(t);
+		}
+
+		int[][] defADJ = new int[V + 1][V + 1];
+
+		for (int i = 0; i < V; i++)
+			for (int j = 0; j < V; j++)
+				defADJ[i + 1][j + 1] = ADJ[i][j];
+
+		defADJ[0][1] = 1;
+		defADJ[1][0] = 1;
+		defADJ[0][tables.get(0)] = 1;
+		defADJ[tables.get(0)][0] = 1;
+
+		for (int i = 0; i < defADJ.length; i++) {
+			for (int j = 0; j < defADJ.length; j++) {
+				if (j != V) {
+					bw.write(defADJ[i][j] + "\t");
+				} else {
+					bw.write("" + defADJ[i][j]);
+				}
+			}
+			bw.write("\n");
+
+		}
+		bw.close();
+		bw = new BufferedWriter(new FileWriter(Path + "YR_" + name + ".txt"));
+		ArrayList<Integer> Y = new ArrayList<Integer>();
+		ArrayList<Integer> R = new ArrayList<Integer>();
+		for (int i = 0; i < V; i++) {
+			if (colors.get(i) == 1)
+				Y.add(i + 1);
+			else
+				R.add(i + 1);
+		}
+		Collections.sort(Y);
+		Collections.sort(R);
+		for (int i = 0; i < Y.size(); i++) {
+			if (i != Y.size())
+				bw.write(Y.get(i) + "\t");
+			else
+				bw.write("" + Y.get(i));
+
+		}
+		bw.write("\n");
+		for (int i = 0; i < R.size(); i++) {
+			if (i != Y.size())
+				bw.write(R.get(i) + "\t");
+			else
+				bw.write("" + R.get(i));
+
+		}
+		bw.close();
 	}
 
 	private static void writeDemon(int V_in) throws ErrorThrower {
@@ -68,9 +148,9 @@ public class Main {
 		System.out.println("1 of course - 0 not at all");
 		Scanner input = new Scanner(System.in);
 		Boolean Verbose;
-		Boolean AllYR = false;
 		int RotationalType = 2;
 		Boolean ExportModels;
+		Boolean onlyPoly = false;
 		int SolLimit = 0;
 		Boolean Check;
 		if (input.nextInt() == 0) {
@@ -85,11 +165,11 @@ public class Main {
 			else
 				Verbose = false;
 			if (RotationalType == 2) {
-				System.out.println("0 one_YR - 1 all_YR");
+				System.out.println("0 all_colorings - 1 only_algorithm");
 				if (input.nextInt() == 1)
-					AllYR = true;
+					onlyPoly = true;
 				else
-					AllYR = false;
+					onlyPoly = false;
 			}
 			System.out.println("0 no_export_models - 1 export_models");
 			if (input.nextInt() == 1)
@@ -112,7 +192,7 @@ public class Main {
 				RotationalType = 2;
 
 			Verbose = false;
-			AllYR = false;
+			onlyPoly = false;
 			ExportModels = true;
 			SolLimit = 1;
 			Check = false;
@@ -129,11 +209,16 @@ public class Main {
 				writeDemon(V_in);
 				writeDemonCSV(V_in, 2);
 				DecimalFormat df = new DecimalFormat("0.0000");
-				Partition prt = new Partition(V_in, 3);
+				Partition prt = new Partition(V_in, 1);
 				ArrayList<ArrayList<Integer>> tables = prt.loadPartition();
-				TwoRotational instance = new TwoRotational(Verbose, AllYR, Check, SolLimit, ExportModels, Path);
+				TwoRotational instance = new TwoRotational(Verbose, Check, SolLimit, ExportModels, Path, true);
 				for (int i = 0; i < tables.size(); i++) {
-					ArrayList<TwoRotational_Solution> Solutions = instance.solve(tables.get(i));
+					ArrayList<TwoRotational_Solution> Solutions = null;
+					if (onlyPoly)
+						Solutions = instance.solve_onlyPoly(tables.get(i));
+					else
+						Solutions = instance.solve(tables.get(i));
+
 					if (Solutions.size() > 0) {
 						for (int j = 0; j < Solutions.size(); j++) {
 							System.out.println("Solution for " + Solutions.get(j).getOP_name());
@@ -146,12 +231,18 @@ public class Main {
 							System.out.println("\tLabels.Size: " + Solutions.get(j).getLabels().length);
 							if (Check)
 								System.out.println("\tVerify: " + Solutions.get(j).verify());
-							CSV_Printer.printRecord(Solutions.get(j).getOP_name(), Solutions.get(j).getName(),
-									Solutions.get(j).getStatus(), df.format(Solutions.get(j).getColorTime()),
-									df.format(Solutions.get(j).getLabellingTime()), Solutions.get(j).getMIP(),
-									Solutions.get(j).getPolyColor(), Solutions.get(j).getNotes(),
-									df.format(Solutions.get(j).getTotalTime()), Solutions.get(j).getSolution());
-
+							if (Solutions.get(j).getStatus() == "Solved")
+								CSV_Printer.printRecord(Solutions.get(j).getOP_name(), Solutions.get(j).getName(),
+										Solutions.get(j).getStatus(), df.format(Solutions.get(j).getColorTime()),
+										df.format(Solutions.get(j).getLabellingTime()), Solutions.get(j).getMIP(),
+										Solutions.get(j).getPolyColor(), Solutions.get(j).getNotes(),
+										df.format(Solutions.get(j).getTotalTime()), Solutions.get(j).getSolution());
+							else
+								CSV_Printer.printRecord(Solutions.get(j).getOP_name(), Solutions.get(j).getName(),
+										Solutions.get(j).getStatus(), df.format(Solutions.get(j).getColorTime()),
+										df.format(Solutions.get(j).getLabellingTime()), Solutions.get(j).getMIP(),
+										Solutions.get(j).getPolyColor(), Solutions.get(j).getNotes(),
+										df.format(Solutions.get(j).getTotalTime()), Solutions.get(j).getColorsString());
 						}
 						CSV_Printer.flush();
 					}
@@ -173,25 +264,36 @@ public class Main {
 				writeDemon(V_in);
 				writeDemonCSV(V_in, 2);
 				DecimalFormat df = new DecimalFormat("0.0000");
-				TwoRotational instance = new TwoRotational(Verbose, AllYR, Check, SolLimit, ExportModels, Path);
-				ArrayList<TwoRotational_Solution> Solutions = instance.solve(tables);
+				TwoRotational instance = new TwoRotational(Verbose, Check, SolLimit, ExportModels, Path, false);
+				ArrayList<TwoRotational_Solution> Solutions = null;
+				if (onlyPoly)
+					Solutions = instance.solve_onlyPoly(tables);
+				else
+					Solutions = instance.solve(tables);
 				if (Solutions.size() > 0) {
 					for (int i = 0; i < Solutions.size(); i++) {
 						System.out.println("Solution for " + Solutions.get(i).getOP_name());
 						System.out.println("\tStatus: " + Solutions.get(i).getStatus());
-						System.out.println("\tColorTime: " + Solutions.get(i).getColorTime() + " - LabellingTime: "
-								+ Solutions.get(i).getLabellingTime());
+						System.out.println("\tColorTime: " + df.format(Solutions.get(i).getColorTime())
+								+ " - LabellingTime: " + df.format(Solutions.get(i).getLabellingTime()));
 						System.out.println("\tColorintTries: " + Solutions.get(i).getColorTries() + " - UsingMIP: "
 								+ Solutions.get(i).getMIP());
 						System.out.println("\tColors.Size: " + Solutions.get(i).getColors().size());
 						System.out.println("\tLabels.Size: " + Solutions.get(i).getLabels().length);
 						if (Check)
 							System.out.println("\tVerify: " + Solutions.get(i).verify());
-						CSV_Printer.printRecord(Solutions.get(i).getOP_name(), Solutions.get(i).getName(),
-								Solutions.get(i).getStatus(), df.format(Solutions.get(i).getColorTime()),
-								df.format(Solutions.get(i).getLabellingTime()), Solutions.get(i).getMIP(),
-								Solutions.get(i).getPolyColor(), Solutions.get(i).getNotes(),
-								df.format(Solutions.get(i).getTotalTime()), Solutions.get(i).getSolution());
+						if (Solutions.get(i).getStatus() == "Solved")
+							CSV_Printer.printRecord(Solutions.get(i).getOP_name(), Solutions.get(i).getName(),
+									Solutions.get(i).getStatus(), df.format(Solutions.get(i).getColorTime()),
+									df.format(Solutions.get(i).getLabellingTime()), Solutions.get(i).getMIP(),
+									Solutions.get(i).getPolyColor(), Solutions.get(i).getNotes(),
+									df.format(Solutions.get(i).getTotalTime()), Solutions.get(i).getColorsString());
+						else
+							CSV_Printer.printRecord(Solutions.get(i).getOP_name(), Solutions.get(i).getName(),
+									Solutions.get(i).getStatus(), df.format(Solutions.get(i).getColorTime()),
+									df.format(Solutions.get(i).getLabellingTime()), Solutions.get(i).getMIP(),
+									Solutions.get(i).getPolyColor(), Solutions.get(i).getNotes(),
+									df.format(Solutions.get(i).getTotalTime()), Solutions.get(i).getColorsString());
 					}
 					CSV_Printer.close();
 				} else {
