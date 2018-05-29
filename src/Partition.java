@@ -28,7 +28,7 @@ public class Partition {
 	}
 
 	public ArrayList<ArrayList<Integer>> loadPartition() throws IOException {
-		File f = new File("Partitions/Partition_" + getV() + ".dat");
+		File f = new File("Partitions/Partition_" + getV() + "_" + getPartitions() + ".dat");
 		if (f.exists() && !f.isDirectory()) {
 			return loadFromFile();
 		} else {
@@ -42,14 +42,15 @@ public class Partition {
 	private static void writePartitions() throws IOException {
 		File f = new File("Partitions/");
 		f.mkdirs();
-		BufferedWriter bw = new BufferedWriter(new FileWriter("Partitions/Partition_" + getV() + ".dat", true));
+		BufferedWriter bw = new BufferedWriter(
+				new FileWriter("Partitions/Partition_" + getV() + "_" + getPartitions() + ".dat", true));
 		for (int i = 0; i < tables.size(); i++) {
 			ArrayList<Integer> table = tables.get(i);
 			for (int j = 0; j < table.size(); j++) {
 				if (j != table.size() - 1)
 					bw.write(table.get(j) + " ");
 				else
-					bw.write(""+table.get(j));
+					bw.write("" + table.get(j));
 			}
 			bw.write("\n");
 		}
@@ -71,7 +72,7 @@ public class Partition {
 
 	private static ArrayList<ArrayList<Integer>> loadFromFile() throws FileNotFoundException {
 		System.out.println("Partition file existing. Loading from file");
-		Scanner input = new Scanner(new File("Partitions/Partition_" + getV() + ".dat"));
+		Scanner input = new Scanner(new File("Partitions/Partition_" + getV() + "_" + getPartitions() + ".dat"));
 		while (input.hasNextLine()) {
 			ArrayList<Integer> table = new ArrayList<Integer>();
 			Scanner colReader = new Scanner(input.nextLine());
