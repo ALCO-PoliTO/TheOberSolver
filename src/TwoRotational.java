@@ -219,24 +219,24 @@ public class TwoRotational {
 			search.add(3);
 			Boolean Plus4 = false;
 			if (ArrayList_search(tables_map, search)) {
-				//System.out.println("Found 3-5");
+				// System.out.println("Found 3-5");
 
-					for (int z = 0; z < tables_map.size(); z++) {
-						if (tables_map.get(z).length > 2) {
-							for (int i = 0; i < tables_colors.get(z).size(); i++) {
-								if (tables_colors.get(z).get(i) == 2
-										&& tables_colors.get(z).get((i + 1) % tables_colors.get(z).size()) == 2
-										&& tables_colors.get(z).get((i + 2) % tables_colors.get(z).size()) == 1
-										&& tables_colors.get(z).get((i + 3) % tables_colors.get(z).size()) == 1) {
-									tables_colors.get(z).set((i + 2) % tables_colors.get(z).size(), 2);
-									i = tables_colors.get(z).size();
-									Plus4 = true;
-								}
+				for (int z = 0; z < tables_map.size(); z++) {
+					if (tables_map.get(z).length > 2) {
+						for (int i = 0; i < tables_colors.get(z).size(); i++) {
+							if (tables_colors.get(z).get(i) == 2
+									&& tables_colors.get(z).get((i + 1) % tables_colors.get(z).size()) == 2
+									&& tables_colors.get(z).get((i + 2) % tables_colors.get(z).size()) == 1
+									&& tables_colors.get(z).get((i + 3) % tables_colors.get(z).size()) == 1) {
+								tables_colors.get(z).set((i + 2) % tables_colors.get(z).size(), 2);
+								i = tables_colors.get(z).size();
+								Plus4 = true;
 							}
-							z = tables_map.size();
 						}
+						z = tables_map.size();
 					}
-				
+				}
+
 				if (Plus4) {
 					int count = 0;
 					int count2 = 0;
@@ -1487,7 +1487,7 @@ public class TwoRotational {
 		System.out.println("Using Polynomial coloring.");
 		Solution.setColors(generateColors_Poly(Solution));
 		Solution.setPolyColor(true);
-		TimeLimit=false;
+		TimeLimit = false;
 		if (!generateLabels_CP(Solution)) {
 			System.out.println("No solution found with CP.");
 			/*
@@ -1504,8 +1504,66 @@ public class TwoRotational {
 		return Solutions;
 	}
 
-	public TwoRotational(boolean Verbose, boolean Check, int SolLimit, Boolean exportModels,
-			String FilePath, Boolean TimeLimit) throws ErrorThrower {
+	public ArrayList<TwoRotational_Solution> solve_onlyCP(ArrayList<Integer> tables) throws ErrorThrower, IloException {
+
+		V = getOPsize(tables);
+		if (!((V % 4) == 3)) {
+			throw new ErrorThrower("V % 4 != 3 (V=" + V + ")");
+		}
+		tables.set(0, tables.get(0) - 1);
+		YR_Pool = new ArrayList<ArrayList<Integer>>();
+		YR_Isomorphisms = new ArrayList<ArrayList<ArrayList<Integer>>>();
+		int Solve_count = 0;
+		@SuppressWarnings("unused")
+		Double time = 0.0;
+		boolean Flag = true;
+		int iteration = 0;
+		ArrayList<ArrayList<Integer>> YR_cp = null;
+		ArrayList<TwoRotational_Solution> Solutions = new ArrayList<TwoRotational_Solution>();
+
+		while (Flag) {
+			Clock = System.nanoTime();
+			TwoRotational_Solution Solution = new TwoRotational_Solution(tables, V);
+			Solution.setName("" + iteration);
+			Solution.setOP_name(param_getOP_name());
+			if (Verbose)
+				System.out.println("Searching for color layouts with CP...");
+			int num = 1;
+			YR_cp = generateColors_CP(Solution, num);
+			if (YR_cp.size() > 0) {
+				time = Solution.getColorTime();
+				Solution.setColors(YR_cp.get(0));
+			} else {
+				Flag = false;
+				break;
+			}
+
+			if (generateLabels_CP(Solution)) {
+				Solve_count++;
+				Solutions.add(Solution);
+			} else {
+				System.out.println("No solution found with CP.");
+				/*
+				 * if (generateLabels_MIP(Solution)) { Solve_count++;
+				 * System.out.println("Solution found with MIP."); } else {
+				 * System.out.println("Proven infeasible with MIP."); }
+				 */
+				if (Solution.getStatus() == "Solved")
+					Solution.setStatus("Infeasible");
+				Solutions.add(Solution);
+			}
+			if (SolLimit != 0) {
+				if (Solve_count == SolLimit)
+					Flag = false;
+			}
+			Solution.setTotalTime((System.nanoTime() - Clock) / 1000000000F);
+			iteration++;
+		}
+		return Solutions;
+	}
+
+	public TwoRotational(boolean Verbose, boolean Check, int SolLimit, Boolean exportModels, String FilePath,
+			Boolean TimeLimit) throws ErrorThrower {
 		param_setVerbose(Verbose);
 		param_setExportModels(exportModels);
 		param_setCheck(Check);
@@ -1530,7 +1588,6 @@ public class TwoRotational {
 	public static void param_setVerbose(Boolean verbose) {
 		Verbose = verbose;
 	}
-
 
 	public static Boolean param_getCheck() {
 		return Check;

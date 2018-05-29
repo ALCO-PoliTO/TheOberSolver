@@ -31,7 +31,7 @@ public class Main {
 	private static void exportMatlab(ArrayList<Integer> tables, ArrayList<Integer> colors, String name)
 			throws IOException, ErrorThrower {
 
-		File f = new File(Path+"Matlab/");
+		File f = new File(Path + "Matlab/");
 		f.mkdirs();
 		BufferedWriter bw = new BufferedWriter(new FileWriter(Path + "Matlab/Adjacency_" + name + ".txt"));
 		int V = 0;
@@ -151,6 +151,8 @@ public class Main {
 		int RotationalType = 2;
 		Boolean ExportModels;
 		Boolean onlyPoly = false;
+		Boolean onlyCP = false;
+		Boolean TimeLimit = false;
 		int SolLimit = 0;
 		Boolean Check;
 		if (input.nextInt() == 0) {
@@ -165,17 +167,28 @@ public class Main {
 			else
 				Verbose = false;
 			if (RotationalType == 2) {
-				System.out.println("0 all_colorings - 1 only_algorithm");
-				if (input.nextInt() == 1)
+				System.out.println("0 all_colorings - 1 only_algorithm - 2 only_CP");
+				if (input.nextInt() == 1) {
 					onlyPoly = true;
-				else
+					onlyCP = false;
+				} else if (input.nextInt() == 0) {
 					onlyPoly = false;
+					onlyCP = false;
+				} else if (input.nextInt() == 2) {
+					onlyCP = true;
+					onlyPoly = false;
+				}
 			}
 			System.out.println("0 no_export_models - 1 export_models");
 			if (input.nextInt() == 1)
 				ExportModels = true;
 			else
 				ExportModels = false;
+			System.out.println("0 no_TimeLimit - 1 TimeLimit");
+			if (input.nextInt() == 1)
+				TimeLimit = true;
+			else
+				TimeLimit = false;
 			System.out.println("0 max_solutions - n solutions");
 			SolLimit = input.nextInt();
 			System.out.println("0 no_check_sol - 1 check_sol");
@@ -190,9 +203,10 @@ public class Main {
 				RotationalType = 1;
 			else
 				RotationalType = 2;
-
+			TimeLimit = true;
 			Verbose = false;
-			onlyPoly = true;
+			onlyPoly = false;
+			onlyCP = true;
 			ExportModels = true;
 			SolLimit = 1;
 			Check = false;
@@ -211,12 +225,14 @@ public class Main {
 				DecimalFormat df = new DecimalFormat("0.0000");
 				Partition prt = new Partition(V_in, 3);
 				ArrayList<ArrayList<Integer>> tables = prt.loadPartition();
-				TwoRotational instance = new TwoRotational(Verbose, Check, SolLimit, ExportModels, Path, true);
+				TwoRotational instance = new TwoRotational(Verbose, Check, SolLimit, ExportModels, Path, TimeLimit);
 				for (int i = 0; i < tables.size(); i++) {
 					ArrayList<TwoRotational_Solution> Solutions = null;
-					if (onlyPoly)
+					if (onlyPoly && !onlyCP)
 						Solutions = instance.solve_onlyPoly(tables.get(i));
-					else
+					else if (!onlyPoly && onlyCP)
+						Solutions = instance.solve_onlyCP(tables.get(i));
+					else 
 						Solutions = instance.solve(tables.get(i));
 
 					if (Solutions.size() > 0) {
@@ -264,11 +280,13 @@ public class Main {
 				writeDemon(V_in);
 				writeDemonCSV(V_in, 2);
 				DecimalFormat df = new DecimalFormat("0.0000");
-				TwoRotational instance = new TwoRotational(Verbose, Check, SolLimit, ExportModels, Path, false);
+				TwoRotational instance = new TwoRotational(Verbose, Check, SolLimit, ExportModels, Path, TimeLimit);
 				ArrayList<TwoRotational_Solution> Solutions = null;
-				if (onlyPoly)
+				if (onlyPoly && !onlyCP)
 					Solutions = instance.solve_onlyPoly(tables);
-				else
+				else if (!onlyPoly && onlyCP)
+					Solutions = instance.solve_onlyCP(tables);
+				else 
 					Solutions = instance.solve(tables);
 				if (Solutions.size() > 0) {
 					for (int i = 0; i < Solutions.size(); i++) {
