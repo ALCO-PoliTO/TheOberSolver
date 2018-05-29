@@ -192,7 +192,7 @@ public class Main {
 				RotationalType = 2;
 
 			Verbose = false;
-			onlyPoly = false;
+			onlyPoly = true;
 			ExportModels = true;
 			SolLimit = 1;
 			Check = false;
@@ -209,7 +209,7 @@ public class Main {
 				writeDemon(V_in);
 				writeDemonCSV(V_in, 2);
 				DecimalFormat df = new DecimalFormat("0.0000");
-				Partition prt = new Partition(V_in, 1);
+				Partition prt = new Partition(V_in, 3);
 				ArrayList<ArrayList<Integer>> tables = prt.loadPartition();
 				TwoRotational instance = new TwoRotational(Verbose, Check, SolLimit, ExportModels, Path, true);
 				for (int i = 0; i < tables.size(); i++) {
