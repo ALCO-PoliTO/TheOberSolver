@@ -20,6 +20,9 @@ public class TwoRotational {
 	private static Boolean TimeLimit = false;
 	private static String FilePath = "";
 	private static int V = 0;
+	private static Boolean Symmetry = false;
+
+
 	private static int SolLimit = 0;
 	private static ArrayList<ArrayList<Integer>> YR_Pool = null;
 	private static ArrayList<ArrayList<ArrayList<Integer>>> YR_Isomorphisms = null;
@@ -925,15 +928,34 @@ public class TwoRotational {
 		int cR = 0, cY = 0, cYR = 0;
 		for (int i = 0; i < Solution.getColors().size(); i++) {
 			if (Solution.getColors().get(i) == 1) {
-				// System.out.println("Node"+i+" is yellow");
+				//System.out.println("Node" + i + " is yellow");
 				cpx.add(cpx.eq(S[i], Y[cY]));
 				cY++;
 			} else {
 				cpx.add(cpx.eq(S[i], R[cR]));
-				// System.out.println("Node"+i+" is red");
+				//System.out.println("Node" + i + " is red");
 				cR++;
 			}
 		}
+		/*
+		 * // OP(3,4,4,4,4) cpx.add(cpx.eq(Y[0], 8)); cpx.add(cpx.eq(R[0], 8));
+		 * cpx.add(cpx.eq(S[1], Y[0])); cpx.add(cpx.eq(S[0], R[0]));
+		 * 
+		 * cpx.add(cpx.eq(R[1], 7)); cpx.add(cpx.eq(R[2], 0)); cpx.add(cpx.eq(S[2],
+		 * R[1])); cpx.add(cpx.eq(S[3], R[2]));
+		 * 
+		 * cpx.add(cpx.eq(Y[1], 1)); cpx.add(cpx.eq(Y[2], 2)); cpx.add(cpx.eq(S[4],
+		 * Y[1])); cpx.add(cpx.eq(S[5], Y[2]));
+		 * 
+		 * 
+		 * cpx.add(cpx.eq(Y[3], 0)); cpx.add(cpx.eq(Y[4], 4)); cpx.add(cpx.eq(S[6],
+		 * Y[3])); cpx.add(cpx.eq(S[7], Y[4]));
+		 */
+		if (Symmetry) {
+			cpx.add(cpx.eq(S[Solution.getTables().get(0) - 1], S[0]));
+		}
+
+
 		cR = 0;
 		cY = 0;
 		cYR = 0;
@@ -1638,6 +1660,12 @@ public class TwoRotational {
 
 	public static void param_setFilePath(String filePath) {
 		FilePath = filePath;
+	}
+	public static Boolean param_getSymmetry() {
+		return Symmetry;
+	}
+	public void param_setSymmetry(Boolean symmetry) {
+		Symmetry = symmetry;
 	}
 
 	public static Boolean param_getTimeLimit() {

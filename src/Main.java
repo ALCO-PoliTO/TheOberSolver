@@ -153,6 +153,7 @@ public class Main {
 		Boolean onlyPoly = false;
 		Boolean onlyCP = false;
 		Boolean TimeLimit = false;
+		Boolean Symmetry = false;
 		int SolLimit = 0;
 		Boolean Check;
 		if (input.nextInt() == 0) {
@@ -205,11 +206,12 @@ public class Main {
 				RotationalType = 2;
 			TimeLimit = true;
 			Verbose = false;
-			onlyPoly = false;
-			onlyCP = true;
+			onlyPoly = true;
+			onlyCP = false;
 			ExportModels = true;
 			SolLimit = 1;
 			Check = false;
+			Symmetry = false;
 		}
 		if (RotationalType == 2) {
 			System.out.println("0 partitions - 1 for instance");
@@ -226,6 +228,7 @@ public class Main {
 				Partition prt = new Partition(V_in, 3);
 				ArrayList<ArrayList<Integer>> tables = prt.loadPartition();
 				TwoRotational instance = new TwoRotational(Verbose, Check, SolLimit, ExportModels, Path, TimeLimit);
+				if (Symmetry) instance.param_setSymmetry(true);
 				for (int i = 0; i < tables.size(); i++) {
 					ArrayList<TwoRotational_Solution> Solutions = null;
 					if (onlyPoly && !onlyCP)
@@ -281,13 +284,16 @@ public class Main {
 				writeDemonCSV(V_in, 2);
 				DecimalFormat df = new DecimalFormat("0.0000");
 				TwoRotational instance = new TwoRotational(Verbose, Check, SolLimit, ExportModels, Path, TimeLimit);
+				if (Symmetry) instance.param_setSymmetry(true);
 				ArrayList<TwoRotational_Solution> Solutions = null;
 				if (onlyPoly && !onlyCP)
 					Solutions = instance.solve_onlyPoly(tables);
 				else if (!onlyPoly && onlyCP)
 					Solutions = instance.solve_onlyCP(tables);
-				else 
+				else {
+					System.out.println("Regular solving");
 					Solutions = instance.solve(tables);
+				}
 				if (Solutions.size() > 0) {
 					for (int i = 0; i < Solutions.size(); i++) {
 						System.out.println("Solution for " + Solutions.get(i).getOP_name());
@@ -305,7 +311,7 @@ public class Main {
 									Solutions.get(i).getStatus(), df.format(Solutions.get(i).getColorTime()),
 									df.format(Solutions.get(i).getLabellingTime()), Solutions.get(i).getMIP(),
 									Solutions.get(i).getPolyColor(), Solutions.get(i).getNotes(),
-									df.format(Solutions.get(i).getTotalTime()), Solutions.get(i).getColorsString());
+									df.format(Solutions.get(i).getTotalTime()), Solutions.get(i).getSolution());
 						else
 							CSV_Printer.printRecord(Solutions.get(i).getOP_name(), Solutions.get(i).getName(),
 									Solutions.get(i).getStatus(), df.format(Solutions.get(i).getColorTime()),
