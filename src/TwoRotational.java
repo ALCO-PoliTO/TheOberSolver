@@ -5,11 +5,19 @@ import java.util.Date;
 
 import ilog.cp.IloCP;
 import ilog.cplex.IloCplex;
+import ilog.concert.IloConstraint;
 import ilog.concert.IloException;
 import ilog.concert.IloIntVar;
 import ilog.concert.IloLinearNumExpr;
 import ilog.concert.IloNumExpr;
 import ilog.concert.IloNumVar;
+
+import org.chocosolver.parser.json.JSON;
+import org.chocosolver.solver.Model;
+import org.chocosolver.solver.Solver;
+import org.chocosolver.solver.constraints.Constraint;
+import org.chocosolver.solver.exception.ContradictionException;
+import org.chocosolver.solver.variables.IntVar;
 
 public class TwoRotational {
 	private static long Clock;
@@ -18,10 +26,10 @@ public class TwoRotational {
 	private static Boolean Check = false;
 	private static Boolean exportModels = false;
 	private static Boolean TimeLimit = false;
+	private static Boolean Choco = false;
 	private static String FilePath = "";
 	private static int V = 0;
 	private static Boolean Symmetry = false;
-
 
 	private static int SolLimit = 0;
 	private static ArrayList<ArrayList<Integer>> YR_Pool = null;
@@ -752,6 +760,179 @@ public class TwoRotational {
 		return YR;
 	}
 
+	public static ArrayList<ArrayList<Integer>> generateColors_CP_Choco(TwoRotational_Solution Solution, int num)
+			throws ErrorThrower, ContradictionException {
+		float start = System.nanoTime();
+		ArrayList<Integer> tables = Solution.getTables();
+		int size = getOPsize(tables);
+		int __D = size / 2;
+		int[][] ADJ = new int[size][size];
+		Model choco = new Model("generateColors_CP");
+		ArrayList<ArrayList<Integer>> YR = new ArrayList<ArrayList<Integer>>();
+		IntVar[] N = choco.intVarArray("N", size, 1, 2);
+		IntVar _D = choco.intVar(__D);
+		IntVar _S = choco.intVar(size);
+		choco.count(1, N, _D).post();
+		choco.count(2, N, _D).post();
+		choco.arithm(N[0], "=", 1).post();
+		choco.arithm(N[tables.get(0) - 1], "=", 2).post();
+
+		IntVar[][] mono = choco.intVarMatrix("mono", size, size, 0, 1);
+		IntVar[][] multi = choco.intVarMatrix("multi", size, size, 0, 1);
+
+		int scroll = 0, alpha = 0, beta = 0;
+		for (int t = 0; t < tables.size(); t++) {
+			for (int i = 0; i < tables.get(t) - 1; i++) {
+				alpha = scroll + i;
+				beta = scroll + i + 1;
+				ADJ[alpha][beta] = 1;
+				ADJ[beta][alpha] = 1;
+			}
+			if (t != 0) {
+				alpha = scroll + tables.get(t) - 1;
+				ADJ[alpha][scroll] = 1;
+				ADJ[scroll][alpha] = 1;
+			}
+			scroll += tables.get(t);
+		}
+
+		IntVar[] multi_count = choco.intVarArray("MultiCount", size * size, 0, 1);
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
+				choco.arithm(mono[i][j], "+", multi[i][j], "<=", 1).post();
+				if (ADJ[i][j] == 0) {
+					choco.arithm(mono[i][j], "=", 0).post();
+					choco.arithm(multi[i][j], "=", 0).post();
+				}
+				multi_count[j * size + i] = multi[i][j];
+			}
+		}
+		choco.count(1, multi_count, _S).post();
+
+		scroll = 0;
+		for (int t = 0; t < tables.size(); t++) {
+			for (int i = 0; i < tables.get(t) - 1; i++) {
+				alpha = scroll + i;
+				beta = scroll + i + 1;
+				if (Verbose)
+					System.out.println("Writing constraints for " + alpha + "->" + beta);
+				// YR and RY
+				choco.ifThen(
+						choco.or(choco.and(choco.arithm(N[alpha], "=", 1), choco.arithm(N[beta], "=", 2)),
+								choco.and(choco.arithm(N[alpha], "=", 2), choco.arithm(N[beta], "=", 1))),
+						choco.and(choco.arithm(mono[alpha][beta], "=", 0), choco.arithm(mono[beta][alpha], "=", 0),
+								choco.arithm(multi[alpha][beta], "=", 1), choco.arithm(multi[beta][alpha], "=", 1)));
+				// RR and YY
+				choco.ifThen(
+						choco.or(choco.and(choco.arithm(N[alpha], "=", 1), choco.arithm(N[beta], "=", 1)),
+								choco.and(choco.arithm(N[alpha], "=", 2), choco.arithm(N[beta], "=", 2))),
+						choco.and(choco.arithm(mono[alpha][beta], "=", 1), choco.arithm(mono[beta][alpha], "=", 1),
+								choco.arithm(multi[alpha][beta], "=", 0), choco.arithm(multi[beta][alpha], "=", 0)));
+			}
+			// Close the table
+			if (t != 0) {
+				alpha = scroll + tables.get(t) - 1;
+				beta = scroll;
+				if (Verbose)
+					System.out.println("Writing closing constraints for " + alpha + "->" + beta);
+				// YR and RY
+				choco.ifThen(
+						choco.or(choco.and(choco.arithm(N[alpha], "=", 1), choco.arithm(N[beta], "=", 2)),
+								choco.and(choco.arithm(N[alpha], "=", 2), choco.arithm(N[beta], "=", 1))),
+						choco.and(choco.arithm(mono[alpha][beta], "=", 0), choco.arithm(mono[beta][alpha], "=", 0),
+								choco.arithm(multi[alpha][beta], "=", 1), choco.arithm(multi[beta][alpha], "=", 1)));
+				// RR and YY
+				choco.ifThen(
+						choco.or(choco.and(choco.arithm(N[alpha], "=", 1), choco.arithm(N[beta], "=", 1)),
+								choco.and(choco.arithm(N[alpha], "=", 2), choco.arithm(N[beta], "=", 2))),
+						choco.and(choco.arithm(mono[alpha][beta], "=", 1), choco.arithm(mono[beta][alpha], "=", 1),
+								choco.arithm(multi[alpha][beta], "=", 0), choco.arithm(multi[beta][alpha], "=", 0)));
+
+			}
+			scroll += tables.get(t);
+		}
+		if (YR_Pool.size() > 0) {
+			Constraint master = null;
+			for (int i = 0; i < YR_Pool.size(); i++) {
+				if (Verbose)
+					System.out.println("Excluding color layout " + i + " from generation");
+				Constraint expr = null;
+				Boolean flag = true;
+				for (int j = 0; j < YR_Pool.get(i).size(); j++) {
+					if (j != 0 && j != (tables.get(0) - 1)) {
+						if (flag) {
+							expr = choco.arithm(N[j], "!=", YR_Pool.get(i).get(j));
+							flag = false;
+						} else
+							expr = choco.or(expr, choco.arithm(N[j], "!=", YR_Pool.get(i).get(j)));
+					}
+				}
+				if (i == 0) {
+					master = expr;
+				} else if (i > 0) {
+					master = choco.and(master, expr);
+				}
+			}
+			master.post();
+		}
+
+		Solver solver = choco.getSolver();
+		solver.propagate();
+		if (Verbose)
+			solver.showShortStatistics();
+
+		if (exportModels)
+			JSON.write(choco,
+					new File(FilePath + "solved/Color_" + Solution.getName() + "_" + param_getOP_name() + ".json"));
+
+		int count = 0;
+		int Iso_trivial_count = 0;
+		int Iso_nontrivial_count = 0;
+		int iteration = 0;
+		while (solver.solve() && count < num) {
+			ArrayList<Integer> CurrentYR = new ArrayList<Integer>();
+			iteration++;
+			for (int i = 0; i < size; i++) {
+				if (N[i].getValue() == 1) {
+					if (Verbose)
+						System.out.println("Location " + i + "\t\tYELLOW");
+					CurrentYR.add(1);
+				} else {
+					if (Verbose)
+						System.out.println("Location " + i + "\t\tRED");
+					CurrentYR.add(2);
+				}
+			}
+			if (has_TrivialIsomorphism(CurrentYR)) {
+				Iso_trivial_count++;
+				if (Verbose)
+					System.out.println("\t!!Trivial YR Isomorphism detected. Skipping.!!");
+			} else {
+				ArrayList<ArrayList<Integer>> currentYR_Iso = getColorInfo(CurrentYR, Solution.getTables());
+				if (has_Isomorphism(currentYR_Iso)) {
+					Iso_nontrivial_count++;
+					if (Verbose)
+						System.out.println("\t!!Non trivial YR Isomorphism detected. Skipping.!!");
+				} else {
+					YR_Isomorphisms.add(currentYR_Iso);
+					YR_Pool.add(CurrentYR);
+					YR.add(CurrentYR);
+					Solution.setColorTime(solver.getTimeCount());
+					count++;
+				}
+			}
+		}
+		Solution.setColorTime((System.nanoTime() - start) / 1000000000F);
+		if (Verbose) {
+			System.out.println("\t\t" + iteration + " iterations of CP.");
+			System.out.println("\t\t" + Iso_nontrivial_count + " nontrivial isomorphisms | " + Iso_trivial_count
+					+ " trivial isomorphisms");
+			System.out.println("\t\t" + count + " unique layouts.");
+		}
+		solver.reset();
+		return YR;
+	}
+
 	public static ArrayList<ArrayList<Integer>> generateColors_CP(TwoRotational_Solution Solution, int num)
 			throws IloException, ErrorThrower {
 		float start = System.nanoTime();
@@ -848,12 +1029,39 @@ public class TwoRotational {
 			}
 			scroll += tables.get(t);
 		}
+
+		if (YR_Pool.size() > 0) {
+			IloConstraint master = null;
+			for (int i = 0; i < YR_Pool.size(); i++) {
+				if (Verbose)
+					System.out.println("Excluding color layout " + i + " from generation");
+				IloConstraint expr = null;
+				Boolean flag = true;
+				for (int j = 0; j < YR_Pool.get(i).size(); j++) {
+					if (j != 0 && j != (tables.get(0) - 1)) {
+						if (flag) {
+							expr = cp.neq(N[j], YR_Pool.get(i).get(j));
+							flag = false;
+						} else
+							expr = cp.or(expr, cp.neq(N[j], YR_Pool.get(i).get(j)));
+					}
+				}
+				if (i == 0) {
+					master = expr;
+				} else if (i > 0) {
+					master = cp.and(master, expr);
+				}
+			}
+			cp.add(master);
+		}
+
 		cp.propagate();
 
 		if (!Verbose)
 			cp.setParameter(IloCP.IntParam.LogVerbosity, IloCP.ParameterValues.Quiet);
 		cp.startNewSearch();
-		cp.exportModel(FilePath + "solved/Color_" + Solution.getName() + "_" + param_getOP_name() + ".cpo");
+		if (exportModels)
+			cp.exportModel(FilePath + "solved/Color_" + Solution.getName() + "_" + param_getOP_name() + ".cpo");
 		int count = 0;
 		int Iso_trivial_count = 0;
 		int Iso_nontrivial_count = 0;
@@ -903,6 +1111,180 @@ public class TwoRotational {
 		return YR;
 	}
 
+	public static Boolean generateLabels_CP_Choco(TwoRotational_Solution Solution) throws ContradictionException {
+		Model choco = new Model("generateLabels_CP");
+		int Vx = Solution.getV() - 1;
+		int _D = Vx / 2;
+		IntVar[] S = choco.intVarArray("S", Vx, 0, _D - 1);
+		IntVar[] Y = choco.intVarArray("Y", _D, 0, _D - 1);
+		IntVar[] R = choco.intVarArray("R", _D, 0, _D - 1);
+		IntVar[] dY = choco.intVarArray("dY", _D - 1, 1, _D - 1);
+		IntVar[] dR = choco.intVarArray("dR", _D - 1, 1, _D - 1);
+		IntVar[] dYR = choco.intVarArray("dYR", _D, 0, _D - 1);
+
+		choco.allDifferent(Y).post();
+		choco.allDifferent(R).post();
+		choco.allDifferent(dY).post();
+		choco.allDifferent(dR).post();
+		choco.allDifferent(dYR).post();
+
+		int cR = 0, cY = 0, cYR = 0;
+		for (int i = 0; i < Solution.getColors().size(); i++) {
+			if (Solution.getColors().get(i) == 1) {
+				// System.out.println("Node" + i + " is yellow");
+				choco.arithm(S[i], "=", Y[cY]).post();
+				cY++;
+			} else {
+				choco.arithm(S[i], "=", R[cR]).post();
+				// System.out.println("Node" + i + " is red");
+				cR++;
+			}
+		}
+		/*
+		 * // OP(3,4,4,4,4) cpx.add(cpx.eq(Y[0], 8)); cpx.add(cpx.eq(R[0], 8));
+		 * cpx.add(cpx.eq(S[1], Y[0])); cpx.add(cpx.eq(S[0], R[0]));
+		 * 
+		 * cpx.add(cpx.eq(R[1], 7)); cpx.add(cpx.eq(R[2], 0)); cpx.add(cpx.eq(S[2],
+		 * R[1])); cpx.add(cpx.eq(S[3], R[2]));
+		 * 
+		 * cpx.add(cpx.eq(Y[1], 1)); cpx.add(cpx.eq(Y[2], 2)); cpx.add(cpx.eq(S[4],
+		 * Y[1])); cpx.add(cpx.eq(S[5], Y[2]));
+		 * 
+		 * 
+		 * cpx.add(cpx.eq(Y[3], 0)); cpx.add(cpx.eq(Y[4], 4)); cpx.add(cpx.eq(S[6],
+		 * Y[3])); cpx.add(cpx.eq(S[7], Y[4]));
+		 */
+		if (Symmetry) {
+			choco.arithm(S[Solution.getTables().get(0) - 1], "=", S[0]).post();
+		}
+
+		cR = 0;
+		cY = 0;
+		cYR = 0;
+		int scroll = 0;
+		int alpha = 0;
+		int beta = 0;
+		for (int t = 0; t < Solution.getTables().size(); t++) {
+			for (int i = 0; i < Solution.getTables().get(t) - 1; i++) {
+				alpha = scroll + i;
+				beta = scroll + i + 1;
+
+				// YY
+				if (Solution.getColors().get(alpha) == 1 && Solution.getColors().get(beta) == 1) {
+
+					if (Verbose)
+						System.out.println("Writing constraints YY for " + alpha + "->" + beta);
+					S[alpha].sub(S[beta]).add(_D).mod(_D).eq(dY[cY]).post();
+					cY++;
+					S[beta].sub(S[alpha]).add(_D).mod(_D).eq(dY[cY]).post();
+					cY++;
+				}
+				// RR
+				if (Solution.getColors().get(alpha) == 2 && Solution.getColors().get(beta) == 2) {
+					if (Verbose)
+						System.out.println("Writing constraints RR for " + alpha + "->" + beta);
+					S[alpha].sub(S[beta]).add(_D).mod(_D).eq(dR[cR]).post();
+					cR++;
+					S[beta].sub(S[alpha]).add(_D).mod(_D).eq(dR[cR]).post();
+					cR++;
+
+				}
+				// YR
+				if (Solution.getColors().get(alpha) == 1 && Solution.getColors().get(beta) == 2) {
+					if (Verbose)
+						System.out.println("Writing constraints YR for " + alpha + "->" + beta);
+					S[alpha].sub(S[beta]).add(_D).mod(_D).eq(dYR[cYR]).post();
+					cYR++;
+				}
+				// RY
+				if (Solution.getColors().get(alpha) == 2 && Solution.getColors().get(beta) == 1) {
+					if (Verbose)
+						System.out.println("Writing constraints RY for " + alpha + "->" + beta);
+					S[beta].sub(S[alpha]).add(_D).mod(_D).eq(dYR[cYR]).post();
+					cYR++;
+				}
+			}
+			// Close the table
+			if (t != 0) {
+				alpha = scroll + Solution.getTables().get(t) - 1;
+				beta = scroll;
+				// YY
+				if (Solution.getColors().get(alpha) == 1 && Solution.getColors().get(beta) == 1) {
+
+					if (Verbose)
+						System.out.println("Writing constraints YY for " + alpha + "->" + beta);
+					S[alpha].sub(S[beta]).add(_D).mod(_D).eq(dY[cY]).post();
+					cY++;
+					S[beta].sub(S[alpha]).add(_D).mod(_D).eq(dY[cY]).post();
+					cY++;
+				}
+				// RR
+				if (Solution.getColors().get(alpha) == 2 && Solution.getColors().get(beta) == 2) {
+					if (Verbose)
+						System.out.println("Writing constraints RR for " + alpha + "->" + beta);
+					S[alpha].sub(S[beta]).add(_D).mod(_D).eq(dR[cR]).post();
+					cR++;
+					S[beta].sub(S[alpha]).add(_D).mod(_D).eq(dR[cR]).post();
+					cR++;
+
+				}
+				// YR
+				if (Solution.getColors().get(alpha) == 1 && Solution.getColors().get(beta) == 2) {
+					if (Verbose)
+						System.out.println("Writing constraints YR for " + alpha + "->" + beta);
+					S[alpha].sub(S[beta]).add(_D).mod(_D).eq(dYR[cYR]).post();
+					cYR++;
+				}
+				// RY
+				if (Solution.getColors().get(alpha) == 2 && Solution.getColors().get(beta) == 1) {
+					if (Verbose)
+						System.out.println("Writing constraints RY for " + alpha + "->" + beta);
+					S[beta].sub(S[alpha]).add(_D).mod(_D).eq(dYR[cYR]).post();
+					cYR++;
+				}
+			}
+			scroll += Solution.getTables().get(t);
+		}
+
+		Solver solver = choco.getSolver();
+		solver.propagate();
+		if (Verbose)
+			solver.showShortStatistics();
+
+		if (exportModels)
+			JSON.write(choco,
+					new File(FilePath + "solved/Color_" + Solution.getName() + "_" + param_getOP_name() + ".json"));
+
+		int Tl = 10 * (1 + V / 50);
+		if (TimeLimit)
+			solver.limitTime(Tl + "s");
+
+		if (solver.solve()) {
+			Solution.setLabellingTime(solver.getTimeCount());
+			int[] labels = new int[Vx];
+			for (int i = 0; i < Vx; i++) {
+				labels[i] = S[i].getValue();
+				// System.out.println("Node "+i+" is "+Solution.getColors().get(i)+" and labeled
+				// as "+labels[i]);
+			}
+			Solution.setLabels(labels);
+			if (exportModels) {
+				JSON.write(choco, new File(FilePath + "solved/" + "Labelling_YR" + Solution.getName() + "_"
+						+ param_getOP_name() + ".json"));
+			}
+			return true;
+		} else {
+			Solution.setColorTries(Solution.getColorTries() + 1);
+			Solution.setLabellingTime(solver.getTimeCount());
+			// Solution.setStatus("TimeLimit");
+			if (exportModels) {
+				JSON.write(choco, new File(FilePath + "infeasibles/" + "Labelling_YR" + Solution.getName() + "_"
+						+ param_getOP_name() + ".json"));
+			}
+			return false;
+		}
+	}
+
 	public static Boolean generateLabels_CP(TwoRotational_Solution Solution) throws IloException {
 		IloCP cpx = new IloCP();
 		int Vx = Solution.getV() - 1;
@@ -928,12 +1310,12 @@ public class TwoRotational {
 		int cR = 0, cY = 0, cYR = 0;
 		for (int i = 0; i < Solution.getColors().size(); i++) {
 			if (Solution.getColors().get(i) == 1) {
-				//System.out.println("Node" + i + " is yellow");
+				// System.out.println("Node" + i + " is yellow");
 				cpx.add(cpx.eq(S[i], Y[cY]));
 				cY++;
 			} else {
 				cpx.add(cpx.eq(S[i], R[cR]));
-				//System.out.println("Node" + i + " is red");
+				// System.out.println("Node" + i + " is red");
 				cR++;
 			}
 		}
@@ -954,7 +1336,6 @@ public class TwoRotational {
 		if (Symmetry) {
 			cpx.add(cpx.eq(S[Solution.getTables().get(0) - 1], S[0]));
 		}
-
 
 		cR = 0;
 		cY = 0;
@@ -1406,7 +1787,7 @@ public class TwoRotational {
 
 	}
 
-	public ArrayList<TwoRotational_Solution> solve(ArrayList<Integer> tables) throws ErrorThrower, IloException {
+	public ArrayList<TwoRotational_Solution> solve(ArrayList<Integer> tables) throws ErrorThrower, IloException, ContradictionException {
 
 		V = getOPsize(tables);
 		if (!((V % 4) == 3)) {
@@ -1449,7 +1830,10 @@ public class TwoRotational {
 				if (Verbose)
 					System.out.println("Searching for color layouts with CP...");
 				int num = 1;
-				YR_cp = generateColors_CP(Solution, num);
+				if (Choco)
+					YR_cp = generateColors_CP_Choco(Solution, num);
+				else
+					YR_cp = generateColors_CP(Solution, num);
 				if (YR_cp.size() > 0) {
 					time = Solution.getColorTime();
 					Solution.setColors(YR_cp.get(0));
@@ -1458,7 +1842,12 @@ public class TwoRotational {
 					break;
 				}
 			}
-			if (generateLabels_CP(Solution)) {
+			Boolean res = false;
+			if (Choco)
+				res = generateLabels_CP_Choco(Solution);
+			else
+				res = generateLabels_CP(Solution);
+			if (res) {
 				Solve_count++;
 				Solutions.add(Solution);
 			} else {
@@ -1483,7 +1872,7 @@ public class TwoRotational {
 	}
 
 	public ArrayList<TwoRotational_Solution> solve_onlyPoly(ArrayList<Integer> tables)
-			throws ErrorThrower, IloException {
+			throws ErrorThrower, IloException, ContradictionException {
 
 		V = getOPsize(tables);
 		if (!((V % 4) == 3)) {
@@ -1510,7 +1899,12 @@ public class TwoRotational {
 		Solution.setColors(generateColors_Poly(Solution));
 		Solution.setPolyColor(true);
 		TimeLimit = false;
-		if (!generateLabels_CP(Solution)) {
+		Boolean res = false;
+		if (Choco)
+			res = generateLabels_CP_Choco(Solution);
+		else
+			res = generateLabels_CP(Solution);
+		if (!res) {
 			System.out.println("No solution found with CP.");
 			/*
 			 * if (generateLabels_MIP(Solution)) { Solve_count++;
@@ -1526,13 +1920,15 @@ public class TwoRotational {
 		return Solutions;
 	}
 
-	public ArrayList<TwoRotational_Solution> solve_onlyCP(ArrayList<Integer> tables) throws ErrorThrower, IloException {
+	public ArrayList<TwoRotational_Solution> solve_onlyCP(ArrayList<Integer> tables)
+			throws ErrorThrower, IloException, ContradictionException {
 
 		V = getOPsize(tables);
 		if (!((V % 4) == 3)) {
 			throw new ErrorThrower("V % 4 != 3 (V=" + V + ")");
 		}
 		tables.set(0, tables.get(0) - 1);
+		param_setOP_name(tables);
 		YR_Pool = new ArrayList<ArrayList<Integer>>();
 		YR_Isomorphisms = new ArrayList<ArrayList<ArrayList<Integer>>>();
 		int Solve_count = 0;
@@ -1551,7 +1947,10 @@ public class TwoRotational {
 			if (Verbose)
 				System.out.println("Searching for color layouts with CP...");
 			int num = 1;
-			YR_cp = generateColors_CP(Solution, num);
+			if (Choco)
+				YR_cp = generateColors_CP_Choco(Solution, num);
+			else
+				YR_cp = generateColors_CP(Solution, num);
 			if (YR_cp.size() > 0) {
 				time = Solution.getColorTime();
 				Solution.setColors(YR_cp.get(0));
@@ -1559,8 +1958,12 @@ public class TwoRotational {
 				Flag = false;
 				break;
 			}
-
-			if (generateLabels_CP(Solution)) {
+			Boolean res = false;
+			if (Choco)
+				res = generateLabels_CP_Choco(Solution);
+			else
+				res = generateLabels_CP(Solution);
+			if (res) {
 				Solve_count++;
 				Solutions.add(Solution);
 			} else {
@@ -1585,13 +1988,14 @@ public class TwoRotational {
 	}
 
 	public TwoRotational(boolean Verbose, boolean Check, int SolLimit, Boolean exportModels, String FilePath,
-			Boolean TimeLimit) throws ErrorThrower {
+			Boolean TimeLimit, Boolean Choco) throws ErrorThrower {
 		param_setVerbose(Verbose);
 		param_setExportModels(exportModels);
 		param_setCheck(Check);
 		param_setSolLimit(SolLimit);
 		param_setFilePath(FilePath);
 		param_setTimeLimit(TimeLimit);
+		param_setChoco(Choco);
 		if (exportModels) {
 			File f = new File(FilePath);
 			f.mkdirs();
@@ -1661,9 +2065,11 @@ public class TwoRotational {
 	public static void param_setFilePath(String filePath) {
 		FilePath = filePath;
 	}
+
 	public static Boolean param_getSymmetry() {
 		return Symmetry;
 	}
+
 	public void param_setSymmetry(Boolean symmetry) {
 		Symmetry = symmetry;
 	}
@@ -1674,6 +2080,14 @@ public class TwoRotational {
 
 	public static void param_setTimeLimit(Boolean timeLimit) {
 		TimeLimit = timeLimit;
+	}
+
+	public static Boolean param_getChoco() {
+		return Choco;
+	}
+
+	public static void param_setChoco(Boolean choco) {
+		Choco = choco;
 	}
 
 }

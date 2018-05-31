@@ -8,5 +8,8 @@
 	<classpathentry kind="lib" path="/Users/gabrieledragotto/Applications/IBM/ILOG/CPLEX_Studio127/cplex/lib/cplex.jar"/>
 	<classpathentry kind="lib" path="/Users/gabrieledragotto/Applications/IBM/ILOG/CPLEX_Studio127/cpoptimizer/lib/ILOG.CP.jar"/>
 	<classpathentry kind="lib" path="/Users/gabrieledragotto/Documents/Tesi/commons-csv-1.5.jar"/>
+	<classpathentry kind="lib" path="/Users/gabrieledragotto/Documents/Eclipse_wspace/TheOberSolver/Res/choco-4.0.6/choco-solver-4.0.6-with-dependencies.jar"/>
+	<classpathentry kind="lib" path="/Users/gabrieledragotto/Documents/Eclipse_wspace/TheOberSolver/Res/choco-4.0.6/choco-solver-4.0.6-sources.jar"/>
+	<classpathentry kind="lib" path="/Users/gabrieledragotto/Documents/Eclipse_wspace/TheOberSolver/Res/choco-4.0.6/choco-parsers-4.0.4-with-dependencies.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

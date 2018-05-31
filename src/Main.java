@@ -14,6 +14,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
+import org.chocosolver.solver.exception.ContradictionException;
 
 import ilog.concert.IloException;
 
@@ -141,15 +142,16 @@ public class Main {
 	}
 
 	@SuppressWarnings("resource")
-	public static void main(String[] args) throws ErrorThrower, IloException, IOException {
+	public static void main(String[] args) throws ErrorThrower, IloException, IOException, ContradictionException {
 
 		Clock = System.nanoTime();
 		System.out.println("Excuse me, are you lazy?");
 		System.out.println("1 of course - 0 not at all");
 		Scanner input = new Scanner(System.in);
-		Boolean Verbose;
+		Boolean Verbose= false;
 		int RotationalType = 2;
-		Boolean ExportModels;
+		Boolean ExportModels= false;
+		Boolean Choco = false;
 		Boolean onlyPoly = false;
 		Boolean onlyCP = false;
 		Boolean TimeLimit = false;
@@ -205,9 +207,10 @@ public class Main {
 			else
 				RotationalType = 2;
 			TimeLimit = true;
+			Choco = true;
 			Verbose = false;
-			onlyPoly = true;
-			onlyCP = false;
+			onlyPoly = false;
+			onlyCP = true;
 			ExportModels = true;
 			SolLimit = 1;
 			Check = false;
@@ -227,7 +230,7 @@ public class Main {
 				DecimalFormat df = new DecimalFormat("0.0000");
 				Partition prt = new Partition(V_in, 3);
 				ArrayList<ArrayList<Integer>> tables = prt.loadPartition();
-				TwoRotational instance = new TwoRotational(Verbose, Check, SolLimit, ExportModels, Path, TimeLimit);
+				TwoRotational instance = new TwoRotational(Verbose, Check, SolLimit, ExportModels, Path, TimeLimit,Choco);
 				if (Symmetry) instance.param_setSymmetry(true);
 				for (int i = 0; i < tables.size(); i++) {
 					ArrayList<TwoRotational_Solution> Solutions = null;
@@ -283,7 +286,7 @@ public class Main {
 				writeDemon(V_in);
 				writeDemonCSV(V_in, 2);
 				DecimalFormat df = new DecimalFormat("0.0000");
-				TwoRotational instance = new TwoRotational(Verbose, Check, SolLimit, ExportModels, Path, TimeLimit);
+				TwoRotational instance = new TwoRotational(Verbose, Check, SolLimit, ExportModels, Path, TimeLimit, Choco);
 				if (Symmetry) instance.param_setSymmetry(true);
 				ArrayList<TwoRotational_Solution> Solutions = null;
 				if (onlyPoly && !onlyCP)
