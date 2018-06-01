@@ -148,9 +148,9 @@ public class Main {
 		System.out.println("Excuse me, are you lazy?");
 		System.out.println("1 of course - 0 not at all");
 		Scanner input = new Scanner(System.in);
-		Boolean Verbose= false;
+		Boolean Verbose = false;
 		int RotationalType = 2;
-		Boolean ExportModels= false;
+		Boolean ExportModels = false;
 		Boolean Choco = false;
 		Boolean onlyPoly = false;
 		Boolean onlyCP = false;
@@ -181,6 +181,11 @@ public class Main {
 					onlyCP = true;
 					onlyPoly = false;
 				}
+				System.out.println("0 no_symmetry - 1 symmetry");
+				if (input.nextInt() == 1) 
+					Symmetry = true;
+				else
+					Symmetry = false;
 			}
 			System.out.println("0 no_export_models - 1 export_models");
 			if (input.nextInt() == 1)
@@ -206,6 +211,9 @@ public class Main {
 				Choco = false;
 
 		} else {
+			System.out.println("Lazy configuration: ");
+			System.out.println(
+					"\tChoco=0;Timelimit=1;Verbose=0;coloringPoly=1;ExportModels=1;SolLimit=1;Symmetry=0;");
 			System.out.println("1 OneRotational - 2 TwoRotational");
 			if (input.nextInt() == 1)
 				RotationalType = 1;
@@ -215,7 +223,7 @@ public class Main {
 			Choco = true;
 			Verbose = false;
 			onlyPoly = false;
-			onlyCP = true;
+			onlyCP = false;
 			ExportModels = true;
 			SolLimit = 1;
 			Symmetry = false;
@@ -234,15 +242,16 @@ public class Main {
 				DecimalFormat df = new DecimalFormat("0.0000");
 				Partition prt = new Partition(V_in, 3);
 				ArrayList<ArrayList<Integer>> tables = prt.loadPartition();
-				TwoRotational instance = new TwoRotational(Verbose, SolLimit, ExportModels, Path, TimeLimit,Choco);
-				if (Symmetry) instance.param_setSymmetry(true);
+				TwoRotational instance = new TwoRotational(Verbose, SolLimit, ExportModels, Path, TimeLimit, Choco);
+				if (Symmetry)
+					instance.param_setSymmetry(true);
 				for (int i = 0; i < tables.size(); i++) {
 					ArrayList<TwoRotational_Solution> Solutions = null;
 					if (onlyPoly && !onlyCP)
 						Solutions = instance.solve_onlyPoly(tables.get(i));
 					else if (!onlyPoly && onlyCP)
 						Solutions = instance.solve_onlyCP(tables.get(i));
-					else 
+					else
 						Solutions = instance.solve(tables.get(i));
 
 					if (Solutions.size() > 0) {
@@ -291,7 +300,8 @@ public class Main {
 				writeDemonCSV(V_in, 2);
 				DecimalFormat df = new DecimalFormat("0.0000");
 				TwoRotational instance = new TwoRotational(Verbose, SolLimit, ExportModels, Path, TimeLimit, Choco);
-				if (Symmetry) instance.param_setSymmetry(true);
+				if (Symmetry)
+					instance.param_setSymmetry(true);
 				ArrayList<TwoRotational_Solution> Solutions = null;
 				if (onlyPoly && !onlyCP)
 					Solutions = instance.solve_onlyPoly(tables);
