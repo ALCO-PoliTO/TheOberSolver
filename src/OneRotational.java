@@ -174,7 +174,7 @@ public class OneRotational {
 				beta = scroll + i + 1;
 				if (Verbose)
 					System.out.println("Writing constraints for " + alpha + "->" + beta);
-				Diff[cnt].eq(Diff[cnt].min(A[alpha].sub(A[beta]).abs(), A[alpha].sub(A[beta]).abs().mul(-1).add(n)));
+				Diff[cnt].eq(A[alpha].sub(A[beta]).abs().min(A[alpha].sub(A[beta]).abs().mul(-1).add(n))).post();
 				cnt++;
 			}
 			// Close the table
@@ -183,7 +183,7 @@ public class OneRotational {
 				beta = scroll;
 				if (Verbose)
 					System.out.println("Writing closing constraints for " + alpha + "->" + beta);
-				Diff[cnt].eq(Diff[cnt].min(A[alpha].sub(A[beta]).abs(), A[alpha].sub(A[beta]).abs().mul(-1).add(n)));
+				Diff[cnt].eq(A[alpha].sub(A[beta]).abs().min(A[alpha].sub(A[beta]).abs().mul(-1).add(n))).post();
 				cnt++;
 			}
 			scroll += Solution.getTables().get(t);
@@ -266,9 +266,8 @@ public class OneRotational {
 		return Solutions;
 	}
 
-	public OneRotational(boolean Verbose, boolean Check, int SolLimit, Boolean exportModels, String FilePath, Boolean TimeLimit, Boolean Choco) {
+	public OneRotational(boolean Verbose, int SolLimit, Boolean exportModels, String FilePath, Boolean TimeLimit, Boolean Choco) {
 		param_setVerbose(Verbose);
-		param_setCheck(Check);
 		param_setSolLimit(SolLimit);
 		param_setExportModels(exportModels);
 		param_setFilePath(FilePath);

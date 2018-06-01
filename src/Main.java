@@ -157,7 +157,7 @@ public class Main {
 		Boolean TimeLimit = false;
 		Boolean Symmetry = false;
 		int SolLimit = 0;
-		Boolean Check;
+		Boolean Check = false;
 		if (input.nextInt() == 0) {
 			System.out.println("1 OneRotational - 2 TwoRotational");
 			if (input.nextInt() == 1)
@@ -212,13 +212,12 @@ public class Main {
 			else
 				RotationalType = 2;
 			TimeLimit = true;
-			Choco = false;
+			Choco = true;
 			Verbose = false;
 			onlyPoly = false;
 			onlyCP = true;
 			ExportModels = true;
 			SolLimit = 1;
-			Check = false;
 			Symmetry = false;
 		}
 		if (RotationalType == 2) {
@@ -235,7 +234,7 @@ public class Main {
 				DecimalFormat df = new DecimalFormat("0.0000");
 				Partition prt = new Partition(V_in, 3);
 				ArrayList<ArrayList<Integer>> tables = prt.loadPartition();
-				TwoRotational instance = new TwoRotational(Verbose, Check, SolLimit, ExportModels, Path, TimeLimit,Choco);
+				TwoRotational instance = new TwoRotational(Verbose, SolLimit, ExportModels, Path, TimeLimit,Choco);
 				if (Symmetry) instance.param_setSymmetry(true);
 				for (int i = 0; i < tables.size(); i++) {
 					ArrayList<TwoRotational_Solution> Solutions = null;
@@ -291,7 +290,7 @@ public class Main {
 				writeDemon(V_in);
 				writeDemonCSV(V_in, 2);
 				DecimalFormat df = new DecimalFormat("0.0000");
-				TwoRotational instance = new TwoRotational(Verbose, Check, SolLimit, ExportModels, Path, TimeLimit, Choco);
+				TwoRotational instance = new TwoRotational(Verbose, SolLimit, ExportModels, Path, TimeLimit, Choco);
 				if (Symmetry) instance.param_setSymmetry(true);
 				ArrayList<TwoRotational_Solution> Solutions = null;
 				if (onlyPoly && !onlyCP)
@@ -347,7 +346,7 @@ public class Main {
 				DecimalFormat df = new DecimalFormat("0.0000");
 				Partition prt = new Partition(V_in, 3);
 				ArrayList<ArrayList<Integer>> tables = prt.loadPartition();
-				OneRotational instance = new OneRotational(Verbose, Check, SolLimit, ExportModels, Path, TimeLimit, Choco);
+				OneRotational instance = new OneRotational(Verbose, SolLimit, ExportModels, Path, TimeLimit, Choco);
 				for (int i = 0; i < tables.size(); i++) {
 					ArrayList<OneRotational_Solution> Solutions = instance.solve(tables.get(i));
 					if (Solutions.size() > 0) {
@@ -386,7 +385,7 @@ public class Main {
 				writeDemon(V_in);
 				writeDemonCSV(V_in, 1);
 				DecimalFormat df = new DecimalFormat("0.0000");
-				OneRotational instance = new OneRotational(Verbose, Check, SolLimit, ExportModels, Path, TimeLimit, Choco);
+				OneRotational instance = new OneRotational(Verbose, SolLimit, ExportModels, Path, TimeLimit, Choco);
 				ArrayList<OneRotational_Solution> Solutions = instance.solve(tables);
 				if (Solutions.size() > 0) {
 					for (int i = 0; i < Solutions.size(); i++) {

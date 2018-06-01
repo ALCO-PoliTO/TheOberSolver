@@ -1987,11 +1987,10 @@ public class TwoRotational {
 		return Solutions;
 	}
 
-	public TwoRotational(boolean Verbose, boolean Check, int SolLimit, Boolean exportModels, String FilePath,
+	public TwoRotational(boolean Verbose, int SolLimit, Boolean exportModels, String FilePath,
 			Boolean TimeLimit, Boolean Choco) throws ErrorThrower {
 		param_setVerbose(Verbose);
 		param_setExportModels(exportModels);
-		param_setCheck(Check);
 		param_setSolLimit(SolLimit);
 		param_setFilePath(FilePath);
 		param_setTimeLimit(TimeLimit);
