@@ -1,5 +1,6 @@
 # TheOberSolver
 This repository is maintained by ALCO@Politecnico di Torino.
+See section [releases](https://github.com/ALCO-PoliTO/TheOberSolver/releases) for current release.
 
 ## License
 
