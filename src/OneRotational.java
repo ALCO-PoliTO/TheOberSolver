@@ -1,6 +1,12 @@
 import java.io.File;
 import java.util.ArrayList;
 
+import org.chocosolver.parser.json.JSON;
+import org.chocosolver.solver.Model;
+import org.chocosolver.solver.Solver;
+import org.chocosolver.solver.exception.ContradictionException;
+import org.chocosolver.solver.variables.IntVar;
+
 import ilog.concert.IloException;
 import ilog.concert.IloIntVar;
 import ilog.cp.IloCP;
@@ -9,8 +15,10 @@ public class OneRotational {
 
 	private static long Clock;
 	private static Boolean Verbose = true;
+	private static Boolean Choco = true;
 	private static String OP_name = "";
 	private static Boolean Check = false;
+	private static Boolean TimeLimit = false;
 	private static Boolean exportModels = false;
 	private static String FilePath = "";
 	private static int V = 0;
@@ -36,24 +44,29 @@ public class OneRotational {
 
 		if (n % 2 == 1) {
 			// n is odd
-			if (Verbose)System.out.println("n="+n+" is odd");
+			if (Verbose)
+				System.out.println("n=" + n + " is odd");
 			Diff = new IloIntVar[n - 1];
-			Diff = cpx.intVarArray(n - 1, 1, n/2, "Diff");
-			for (int i = 1; i <= (n - 1)/2; i++) {
+			Diff = cpx.intVarArray(n - 1, 1, n / 2, "Diff");
+			for (int i = 1; i <= (n - 1) / 2; i++) {
 				cpx.add(cpx.eq(cpx.count(Diff, i), 2));
-				if (Verbose)System.out.println("\t\t"+i+" (2 times)");
+				if (Verbose)
+					System.out.println("\t\t" + i + " (2 times)");
 			}
 		} else {
 			// n is even
-			if (Verbose)System.out.println("n="+n+" is even");
+			if (Verbose)
+				System.out.println("n=" + n + " is even");
 			Diff = new IloIntVar[(n - 2) + 1];
-			Diff = cpx.intVarArray((n - 2) + 1, 1, n/2, "Diff");
-			for (int i = 1; i <= (n - 2)/2; i++) {
+			Diff = cpx.intVarArray((n - 2) + 1, 1, n / 2, "Diff");
+			for (int i = 1; i <= (n - 2) / 2; i++) {
 				cpx.add(cpx.eq(cpx.count(Diff, i), 2));
-				if (Verbose)System.out.println("\t\t"+i+" (2 times)");
+				if (Verbose)
+					System.out.println("\t\t" + i + " (2 times)");
 			}
 			cpx.add(cpx.eq(cpx.count(Diff, (n / 2)), 1));
-			if (Verbose)System.out.println("\t\t"+(n/2)+" (1 time)");
+			if (Verbose)
+				System.out.println("\t\t" + (n / 2) + " (1 time)");
 		}
 
 		cpx.add(cpx.allDiff(A));
@@ -63,7 +76,7 @@ public class OneRotational {
 		int beta = 0;
 		int cnt = 0;
 		for (int t = 0; t < Solution.getTables().size(); t++) {
-			for (int i = 0; i < Solution.getTables().get(t) -1; i++) {
+			for (int i = 0; i < Solution.getTables().get(t) - 1; i++) {
 				alpha = scroll + i;
 				beta = scroll + i + 1;
 				if (Verbose)
@@ -88,6 +101,7 @@ public class OneRotational {
 		if (!Verbose)
 			cpx.setParameter(IloCP.IntParam.LogVerbosity, IloCP.ParameterValues.Quiet);
 		int Tl = V;
+		if (TimeLimit)
 		cpx.setParameter(IloCP.DoubleParam.TimeLimit, Tl);
 		cpx.propagate();
 		if (cpx.solve()) {
@@ -98,7 +112,7 @@ public class OneRotational {
 				// System.out.println("Node "+i+" is labeled as "+labels[i]);
 			}
 			Solution.setLabels(labels);
-			
+
 			if (exportModels) {
 				cpx.exportModel(
 						FilePath + "solved/" + "Labelling_" + Solution.getName() + "_" + param_getOP_name() + ".cpo");
@@ -108,25 +122,112 @@ public class OneRotational {
 		} else {
 			Solution.setStatus("Infeasible");
 			if (exportModels) {
-				cpx.exportModel(
-						FilePath + "infeasibles/" + "Labelling_" + Solution.getName() + "_" + param_getOP_name() + ".cpo");
+				cpx.exportModel(FilePath + "infeasibles/" + "Labelling_" + Solution.getName() + "_" + param_getOP_name()
+						+ ".cpo");
 			}
 			cpx.end();
 			return false;
 		}
 	}
 
-	public ArrayList<OneRotational_Solution> solve(ArrayList<Integer> tables) throws ErrorThrower, IloException {
+	public static Boolean generateLabels_CP_Choco(OneRotational_Solution Solution) throws ContradictionException {
+		Model choco = new Model("generateLabels_CP");
+		int n = Solution.getV();
+
+		IntVar[] A = choco.intVarArray("A", n, 0, n - 1);
+		IntVar[] Diff = null;
+		IntVar two = choco.intVar(2);
+		IntVar one = choco.intVar(1);
+		if (n % 2 == 1) {
+			// n is odd
+			if (Verbose)
+				System.out.println("n=" + n + " is odd");
+			Diff = choco.intVarArray("Diff", n - 1, 1, n / 2);
+			for (int i = 1; i <= (n - 1) / 2; i++) {
+				choco.count(i, Diff, two).post();
+				if (Verbose)
+					System.out.println("\t\t" + i + " (2 times)");
+			}
+		} else {
+			// n is even
+			if (Verbose)
+				System.out.println("n=" + n + " is even");
+			Diff = choco.intVarArray("Diff", (n - 2) + 1, 1, n / 2);
+			for (int i = 1; i <= (n - 2) / 2; i++) {
+				choco.count(i, Diff, two).post();
+				if (Verbose)
+					System.out.println("\t\t" + i + " (2 times)");
+			}
+			choco.count((n / 2), Diff, one).post();
+			if (Verbose)
+				System.out.println("\t\t" + (n / 2) + " (1 time)");
+		}
+		choco.allDifferent(A).post();
+
+		int scroll = 0;
+		int alpha = 0;
+		int beta = 0;
+		int cnt = 0;
+		for (int t = 0; t < Solution.getTables().size(); t++) {
+			for (int i = 0; i < Solution.getTables().get(t) - 1; i++) {
+				alpha = scroll + i;
+				beta = scroll + i + 1;
+				if (Verbose)
+					System.out.println("Writing constraints for " + alpha + "->" + beta);
+				Diff[cnt].eq(Diff[cnt].min(A[alpha].sub(A[beta]).abs(), A[alpha].sub(A[beta]).abs().mul(-1).add(n)));
+				cnt++;
+			}
+			// Close the table
+			if (t != 0) {
+				alpha = scroll + Solution.getTables().get(t) - 1;
+				beta = scroll;
+				if (Verbose)
+					System.out.println("Writing closing constraints for " + alpha + "->" + beta);
+				Diff[cnt].eq(Diff[cnt].min(A[alpha].sub(A[beta]).abs(), A[alpha].sub(A[beta]).abs().mul(-1).add(n)));
+				cnt++;
+			}
+			scroll += Solution.getTables().get(t);
+		}
+		Solver solver = choco.getSolver();
+		solver.propagate();
+		if (Verbose)
+			solver.showShortStatistics();
+
+		int Tl = V;
+		if (TimeLimit)
+		solver.limitTime(Tl + "s");
+		if (solver.solve()) {
+			Solution.setLabellingTime(solver.getTimeCount());
+			int[] labels = new int[n];
+			for (int i = 0; i < n; i++) {
+				labels[i] = A[i].getValue();
+				// System.out.println("Node "+i+" is labeled as "+labels[i]);
+			}
+			Solution.setLabels(labels);
+
+			if (exportModels) {
+				JSON.write(choco, new File(FilePath + "solved/" + "Labelling_" + Solution.getName() + "_" + param_getOP_name() + ".json"));
+			}
+			return true;
+		} else {
+			Solution.setStatus("Infeasible");
+			if (exportModels) {
+				JSON.write(choco, new File(FilePath + "infeasibles/" + "Labelling_" + Solution.getName() + "_" + param_getOP_name() + ".json"));
+			}
+			return false;
+		}
+	}
+
+	public ArrayList<OneRotational_Solution> solve(ArrayList<Integer> tables) throws ErrorThrower, IloException, ContradictionException {
 		tables.set(0, tables.get(0) - 1);
 		V = getOPsize(tables);
 		if (V < 1) {
 			throw new ErrorThrower("Less than 3 nodes!");
 		}
-		
+
 		OneRotational_Solution Solution = null;
 		ArrayList<OneRotational_Solution> Solutions = new ArrayList<OneRotational_Solution>();
 		param_setOP_name(tables);
-		
 
 		int Solve_count = 0;
 		boolean Flag = true;
@@ -137,8 +238,12 @@ public class OneRotational {
 			Solution = new OneRotational_Solution(tables, V);
 			Solution.setName("" + iteration);
 			Solution.setOP_name(param_getOP_name());
-			
-			if (generateLabels_CP(Solution)) {
+			Boolean res = false;
+			if (Choco)
+				res = generateLabels_CP_Choco(Solution);
+			else
+				res = generateLabels_CP(Solution);
+			if (res) {
 				Solve_count++;
 				Solutions.add(Solution);
 			} else {
@@ -161,12 +266,14 @@ public class OneRotational {
 		return Solutions;
 	}
 
-	public OneRotational(boolean Verbose, boolean Check, int SolLimit, Boolean exportModels, String FilePath) {
+	public OneRotational(boolean Verbose, boolean Check, int SolLimit, Boolean exportModels, String FilePath, Boolean TimeLimit, Boolean Choco) {
 		param_setVerbose(Verbose);
 		param_setCheck(Check);
 		param_setSolLimit(SolLimit);
 		param_setExportModels(exportModels);
 		param_setFilePath(FilePath);
+		param_setTimeLimit(TimeLimit);
+		param_setChoco(Choco);
 		if (exportModels) {
 			File f = new File(FilePath);
 			f.mkdirs();
@@ -242,6 +349,22 @@ public class OneRotational {
 
 	public static void param_setV(int v) {
 		V = v;
+	}
+
+	public static Boolean param_getTimeLimit() {
+		return TimeLimit;
+	}
+
+	public static void param_setTimeLimit(Boolean timeLimit) {
+		TimeLimit = timeLimit;
+	}
+
+	public static Boolean param_getChoco() {
+		return Choco;
+	}
+
+	public static void param_setChoco(Boolean choco) {
+		Choco = choco;
 	}
 
 }

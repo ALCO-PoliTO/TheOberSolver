@@ -199,6 +199,11 @@ public class Main {
 				Check = true;
 			else
 				Check = false;
+			System.out.println("0 CPLEX - 1 Choco");
+			if (input.nextInt() == 1)
+				Choco = true;
+			else
+				Choco = false;
 
 		} else {
 			System.out.println("1 OneRotational - 2 TwoRotational");
@@ -207,7 +212,7 @@ public class Main {
 			else
 				RotationalType = 2;
 			TimeLimit = true;
-			Choco = true;
+			Choco = false;
 			Verbose = false;
 			onlyPoly = false;
 			onlyCP = true;
@@ -342,7 +347,7 @@ public class Main {
 				DecimalFormat df = new DecimalFormat("0.0000");
 				Partition prt = new Partition(V_in, 3);
 				ArrayList<ArrayList<Integer>> tables = prt.loadPartition();
-				OneRotational instance = new OneRotational(Verbose, Check, SolLimit, ExportModels, Path);
+				OneRotational instance = new OneRotational(Verbose, Check, SolLimit, ExportModels, Path, TimeLimit, Choco);
 				for (int i = 0; i < tables.size(); i++) {
 					ArrayList<OneRotational_Solution> Solutions = instance.solve(tables.get(i));
 					if (Solutions.size() > 0) {
@@ -381,7 +386,7 @@ public class Main {
 				writeDemon(V_in);
 				writeDemonCSV(V_in, 1);
 				DecimalFormat df = new DecimalFormat("0.0000");
-				OneRotational instance = new OneRotational(Verbose, Check, SolLimit, ExportModels, Path);
+				OneRotational instance = new OneRotational(Verbose, Check, SolLimit, ExportModels, Path, TimeLimit, Choco);
 				ArrayList<OneRotational_Solution> Solutions = instance.solve(tables);
 				if (Solutions.size() > 0) {
 					for (int i = 0; i < Solutions.size(); i++) {
