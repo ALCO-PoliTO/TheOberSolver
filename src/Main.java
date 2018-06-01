@@ -112,6 +112,8 @@ public class Main {
 		String unique = now.get(Calendar.HOUR_OF_DAY) + "_" + now.get(Calendar.MINUTE) + "-"
 				+ ThreadLocalRandom.current().nextInt(0, 100 + 1);
 		try {
+			File o = new File("out/");
+			o.mkdirs();
 			Path = "out/OP_" + V_in + "_at" + unique + "/";
 			File f = new File(Path);
 			f.mkdirs();
