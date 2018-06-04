@@ -1,6 +1,7 @@
 # TheOberSolver
 This repository is maintained by ALCO@Politecnico di Torino.
 TheObersolver is a pre-release software for solving the [Oberwolfach Problem](https://en.m.wikipedia.org/wiki/Oberwolfach_problem).
+
 See section [releases](https://github.com/ALCO-PoliTO/TheOberSolver/releases) for current release.
 
 ## License
