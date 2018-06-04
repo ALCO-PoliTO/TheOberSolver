@@ -258,7 +258,6 @@ public class Main {
 					if (Mod0) {
 						Boolean flag = true;
 						for (int u = 0; u < tables.get(i).size() && flag; u++) {
-							System.out.println("Modifying tables...");
 							if (tables.get(i).get(u) > 2 || (u == 0 && tables.get(i).get(u) > 3)) {
 								tables.get(i).set(0, (tables.get(i).get(0) - 1));
 								flag = false;
@@ -377,7 +376,6 @@ public class Main {
 				if (Mod0) {
 					Boolean flag = true;
 					for (int u = 0; u < tables.size() && flag; u++) {
-						System.out.println("Modifying tables...");
 						if (tables.get(u) > 2 || (u == 0 && tables.get(u) > 3)) {
 							tables.set(0, (tables.get(0) - 1));
 							flag = false;

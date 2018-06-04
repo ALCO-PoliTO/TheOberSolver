@@ -52,7 +52,7 @@ public class TwoRotational_Solution_M0 {
 						setCriticDiff((labels[alpha] - labels[beta] + mod) % mod);
 					else
 						setCriticDiff((labels[beta] - labels[alpha] + mod) % mod);
-					setNotes(Solution.getNotes() + " - 4t with CDiff=" + getCriticDiff());
+					setNotes(Solution.getNotes() + " | 4t CDiff=" + getCriticDiff());
 				}
 			}
 			scroll += tables.get(t);
@@ -68,7 +68,7 @@ public class TwoRotational_Solution_M0 {
 		for (int i = 0; i < Labels.size(); i++)
 			labels[i] = Labels.get(i);
 
-		// Add infinites
+		// Add infinite-s
 		colors.add(getCriticIndex(), 0);
 		colors.add(0, 0);
 		String OP = "OP(";
