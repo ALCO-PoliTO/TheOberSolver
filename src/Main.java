@@ -184,7 +184,7 @@ public class Main {
 					onlyPoly = false;
 				}
 				System.out.println("0 no_symmetry - 1 symmetry");
-				if (input.nextInt() == 1) 
+				if (input.nextInt() == 1)
 					Symmetry = true;
 				else
 					Symmetry = false;
@@ -214,8 +214,7 @@ public class Main {
 
 		} else {
 			System.out.println("Lazy configuration: ");
-			System.out.println(
-					"\tChoco=0;Timelimit=1;Verbose=0;coloringPoly=1;ExportModels=1;SolLimit=1;Symmetry=0;");
+			System.out.println("\tChoco=0;Timelimit=1;Verbose=0;coloringPoly=1;ExportModels=1;SolLimit=1;Symmetry=0;");
 			System.out.println("1 OneRotational - 2 TwoRotational");
 			if (input.nextInt() == 1)
 				RotationalType = 1;
@@ -236,8 +235,12 @@ public class Main {
 				System.out.println("Insert number of nodes");
 				int V_in = input.nextInt();
 				TimeElapsed();
-				if (!(V_in % 4 == 3)) {
+				if (!(V_in % 4 == 3) && !(V_in % 4 == 0)) {
 					throw new ErrorThrower("V % 4 != 3");
+				}
+				Boolean Mod0 = false;
+				if (V_in % 4 == 0) {
+					Mod0 = true;
 				}
 				writeDemon(V_in);
 				writeDemonCSV(V_in, 2);
@@ -248,7 +251,21 @@ public class Main {
 				if (Symmetry)
 					instance.param_setSymmetry(true);
 				for (int i = 0; i < tables.size(); i++) {
-					ArrayList<TwoRotational_Solution> Solutions = null;
+					ArrayList<TwoRotational_Solution> Solutions = new ArrayList<TwoRotational_Solution>();
+					ArrayList<TwoRotational_Solution_M0> Solutions_Mod0 = new ArrayList<TwoRotational_Solution_M0>();
+
+					// 4t Solution
+					if (Mod0) {
+						Boolean flag = true;
+						for (int u = 0; u < tables.get(i).size() && flag; u++) {
+							System.out.println("Modifying tables...");
+							if (tables.get(i).get(u) > 2 || (u == 0 && tables.get(i).get(u) > 3)) {
+								tables.get(i).set(0, (tables.get(i).get(0) - 1));
+								flag = false;
+							}
+						}
+					}
+
 					if (onlyPoly && !onlyCP)
 						Solutions = instance.solve_onlyPoly(tables.get(i));
 					else if (!onlyPoly && onlyCP)
@@ -256,34 +273,79 @@ public class Main {
 					else
 						Solutions = instance.solve(tables.get(i));
 
+					// 4t solution
+					if (Mod0) {
+						System.out.println("Converting 4t+3 to 4t...");
+						if (Solutions.size() > 0) {
+							for (int j = 0; j < Solutions.size(); j++) {
+								Solutions_Mod0.add(new TwoRotational_Solution_M0(Solutions.get(j)));
+							}
+						}
+					}
+
 					if (Solutions.size() > 0) {
 						for (int j = 0; j < Solutions.size(); j++) {
-							System.out.println("Solution for " + Solutions.get(j).getOP_name());
-							System.out.println("\tStatus: " + Solutions.get(j).getStatus());
-							System.out.println("\tColorTime: " + df.format(Solutions.get(j).getColorTime())
-									+ " - LabellingTime: " + df.format(Solutions.get(j).getLabellingTime()));
-							System.out.println("\tColorintTries: " + Solutions.get(j).getColorTries() + " - UsingMIP: "
-									+ Solutions.get(j).getMIP());
-							System.out.println("\tColors.Size: " + Solutions.get(j).getColors().size());
-							System.out.println("\tLabels.Size: " + Solutions.get(j).getLabels().length);
-							if (Check)
-								System.out.println("\tVerify: " + Solutions.get(j).verify());
-							if (Solutions.get(j).getStatus() == "Solved")
-								CSV_Printer.printRecord(Solutions.get(j).getOP_name(), Solutions.get(j).getName(),
-										Solutions.get(j).getStatus(), df.format(Solutions.get(j).getColorTime()),
-										df.format(Solutions.get(j).getLabellingTime()), Solutions.get(j).getMIP(),
-										Solutions.get(j).getPolyColor(), Solutions.get(j).getNotes(),
-										df.format(Solutions.get(j).getTotalTime()), Solutions.get(j).getSolution());
-							else
-								CSV_Printer.printRecord(Solutions.get(j).getOP_name(), Solutions.get(j).getName(),
-										Solutions.get(j).getStatus(), df.format(Solutions.get(j).getColorTime()),
-										df.format(Solutions.get(j).getLabellingTime()), Solutions.get(j).getMIP(),
-										Solutions.get(j).getPolyColor(), Solutions.get(j).getNotes(),
-										df.format(Solutions.get(j).getTotalTime()), Solutions.get(j).getColorsString());
+
+							if (!Mod0) {
+								System.out.println("Solution for " + Solutions.get(j).getOP_name());
+								System.out.println("\tStatus: " + Solutions.get(j).getStatus());
+								System.out.println("\tColorTime: " + df.format(Solutions.get(j).getColorTime())
+										+ " - LabellingTime: " + df.format(Solutions.get(j).getLabellingTime()));
+								System.out.println("\tColorintTries: " + Solutions.get(j).getColorTries()
+										+ " - UsingMIP: " + Solutions.get(j).getMIP());
+								System.out.println("\tColors.Size: " + Solutions.get(j).getColors().size());
+								System.out.println("\tLabels.Size: " + Solutions.get(j).getLabels().length);
+								if (Check)
+									System.out.println("\tVerify: " + Solutions.get(j).verify());
+								if (Solutions.get(j).getStatus() == "Solved")
+									CSV_Printer.printRecord(Solutions.get(j).getOP_name(), Solutions.get(j).getName(),
+											Solutions.get(j).getStatus(), df.format(Solutions.get(j).getColorTime()),
+											df.format(Solutions.get(j).getLabellingTime()), Solutions.get(j).getMIP(),
+											Solutions.get(j).getPolyColor(), Solutions.get(j).getNotes(),
+											df.format(Solutions.get(j).getTotalTime()), Solutions.get(j).getSolution());
+								else
+									CSV_Printer.printRecord(Solutions.get(j).getOP_name(), Solutions.get(j).getName(),
+											Solutions.get(j).getStatus(), df.format(Solutions.get(j).getColorTime()),
+											df.format(Solutions.get(j).getLabellingTime()), Solutions.get(j).getMIP(),
+											Solutions.get(j).getPolyColor(), Solutions.get(j).getNotes(),
+											df.format(Solutions.get(j).getTotalTime()),
+											Solutions.get(j).getColorsString());
+							} else {
+								System.out.println("Solution for " + Solutions_Mod0.get(j).getOP_name());
+								System.out.println("\tStatus: " + Solutions_Mod0.get(j).getStatus());
+								System.out.println("\tCritical Difference: " + Solutions_Mod0.get(j).getCriticDiff());
+								System.out.println("\tCritical Table: " + Solutions_Mod0.get(j).getCriticTable());
+								System.out.println("\tColorTime: " + df.format(Solutions_Mod0.get(j).getColorTime())
+										+ " - LabellingTime: " + df.format(Solutions_Mod0.get(j).getLabellingTime()));
+								System.out.println("\tColorintTries: " + Solutions_Mod0.get(j).getColorTries()
+										+ " - UsingMIP: " + Solutions_Mod0.get(j).getMIP());
+								System.out.println("\tColors.Size: " + Solutions_Mod0.get(j).getColors().size());
+								System.out.println("\tLabels.Size: " + Solutions_Mod0.get(j).getLabels().length);
+								if (Check)
+									System.out.println("\tVerify: " + Solutions_Mod0.get(j).verify());
+								if (Solutions_Mod0.get(j).getStatus() == "Solved")
+									CSV_Printer.printRecord(Solutions_Mod0.get(j).getOP_name(),
+											Solutions_Mod0.get(j).getName(), Solutions_Mod0.get(j).getStatus(),
+											df.format(Solutions_Mod0.get(j).getColorTime()),
+											df.format(Solutions_Mod0.get(j).getLabellingTime()),
+											Solutions_Mod0.get(j).getMIP(), Solutions_Mod0.get(j).getPolyColor(),
+											Solutions_Mod0.get(j).getNotes(),
+											df.format(Solutions_Mod0.get(j).getTotalTime()),
+											Solutions_Mod0.get(j).getSolution());
+								else
+									CSV_Printer.printRecord(Solutions_Mod0.get(j).getOP_name(),
+											Solutions_Mod0.get(j).getName(), Solutions_Mod0.get(j).getStatus(),
+											df.format(Solutions_Mod0.get(j).getColorTime()),
+											df.format(Solutions_Mod0.get(j).getLabellingTime()),
+											Solutions_Mod0.get(j).getMIP(), Solutions_Mod0.get(j).getPolyColor(),
+											Solutions_Mod0.get(j).getNotes(),
+											df.format(Solutions_Mod0.get(j).getTotalTime()),
+											Solutions_Mod0.get(j).getColorsString());
+							}
 						}
 						CSV_Printer.flush();
 					}
-
+					System.gc();
 				}
 				CSV_Printer.close();
 			} else {
@@ -295,8 +357,12 @@ public class Main {
 					tables.add(num);
 					V_in += num;
 				}
-				if (!(V_in % 4 == 3)) {
+				if (!(V_in % 4 == 3) && !(V_in % 4 == 0)) {
 					throw new ErrorThrower("V % 4 != 3");
+				}
+				Boolean Mod0 = false;
+				if (V_in % 4 == 0) {
+					Mod0 = true;
 				}
 				writeDemon(V_in);
 				writeDemonCSV(V_in, 2);
@@ -304,40 +370,99 @@ public class Main {
 				TwoRotational instance = new TwoRotational(Verbose, SolLimit, ExportModels, Path, TimeLimit, Choco);
 				if (Symmetry)
 					instance.param_setSymmetry(true);
-				ArrayList<TwoRotational_Solution> Solutions = null;
+				ArrayList<TwoRotational_Solution> Solutions = new ArrayList<TwoRotational_Solution>();
+				ArrayList<TwoRotational_Solution_M0> Solutions_Mod0 = new ArrayList<TwoRotational_Solution_M0>();
+
+				// 4t Solution
+				if (Mod0) {
+					Boolean flag = true;
+					for (int u = 0; u < tables.size() && flag; u++) {
+						System.out.println("Modifying tables...");
+						if (tables.get(u) > 2 || (u == 0 && tables.get(u) > 3)) {
+							tables.set(0, (tables.get(0) - 1));
+							flag = false;
+						}
+					}
+				}
+
 				if (onlyPoly && !onlyCP)
 					Solutions = instance.solve_onlyPoly(tables);
 				else if (!onlyPoly && onlyCP)
 					Solutions = instance.solve_onlyCP(tables);
 				else {
-					System.out.println("Regular solving");
 					Solutions = instance.solve(tables);
 				}
+
+				// 4t solution
+				if (Mod0) {
+					System.out.println("Converting 4t+3 to 4t...");
+					if (Solutions.size() > 0) {
+						for (int j = 0; j < Solutions.size(); j++) {
+							Solutions_Mod0.add(new TwoRotational_Solution_M0(Solutions.get(j)));
+						}
+					}
+				}
+
 				if (Solutions.size() > 0) {
 					for (int i = 0; i < Solutions.size(); i++) {
-						System.out.println("Solution for " + Solutions.get(i).getOP_name());
-						System.out.println("\tStatus: " + Solutions.get(i).getStatus());
-						System.out.println("\tColorTime: " + df.format(Solutions.get(i).getColorTime())
-								+ " - LabellingTime: " + df.format(Solutions.get(i).getLabellingTime()));
-						System.out.println("\tColorintTries: " + Solutions.get(i).getColorTries() + " - UsingMIP: "
-								+ Solutions.get(i).getMIP());
-						System.out.println("\tColors.Size: " + Solutions.get(i).getColors().size());
-						System.out.println("\tLabels.Size: " + Solutions.get(i).getLabels().length);
-						if (Check)
-							System.out.println("\tVerify: " + Solutions.get(i).verify());
-						if (Solutions.get(i).getStatus() == "Solved")
-							CSV_Printer.printRecord(Solutions.get(i).getOP_name(), Solutions.get(i).getName(),
-									Solutions.get(i).getStatus(), df.format(Solutions.get(i).getColorTime()),
-									df.format(Solutions.get(i).getLabellingTime()), Solutions.get(i).getMIP(),
-									Solutions.get(i).getPolyColor(), Solutions.get(i).getNotes(),
-									df.format(Solutions.get(i).getTotalTime()), Solutions.get(i).getSolution());
-						else
-							CSV_Printer.printRecord(Solutions.get(i).getOP_name(), Solutions.get(i).getName(),
-									Solutions.get(i).getStatus(), df.format(Solutions.get(i).getColorTime()),
-									df.format(Solutions.get(i).getLabellingTime()), Solutions.get(i).getMIP(),
-									Solutions.get(i).getPolyColor(), Solutions.get(i).getNotes(),
-									df.format(Solutions.get(i).getTotalTime()), Solutions.get(i).getColorsString());
+
+						if (!Mod0) {
+							System.out.println("Solution for " + Solutions.get(i).getOP_name());
+							System.out.println("\tStatus: " + Solutions.get(i).getStatus());
+							System.out.println("\tColorTime: " + df.format(Solutions.get(i).getColorTime())
+									+ " - LabellingTime: " + df.format(Solutions.get(i).getLabellingTime()));
+							System.out.println("\tColorintTries: " + Solutions.get(i).getColorTries() + " - UsingMIP: "
+									+ Solutions.get(i).getMIP());
+							System.out.println("\tColors.Size: " + Solutions.get(i).getColors().size());
+							System.out.println("\tLabels.Size: " + Solutions.get(i).getLabels().length);
+							if (Check)
+								System.out.println("\tVerify: " + Solutions.get(i).verify());
+							if (Solutions.get(i).getStatus() == "Solved")
+								CSV_Printer.printRecord(Solutions.get(i).getOP_name(), Solutions.get(i).getName(),
+										Solutions.get(i).getStatus(), df.format(Solutions.get(i).getColorTime()),
+										df.format(Solutions.get(i).getLabellingTime()), Solutions.get(i).getMIP(),
+										Solutions.get(i).getPolyColor(), Solutions.get(i).getNotes(),
+										df.format(Solutions.get(i).getTotalTime()), Solutions.get(i).getSolution());
+							else
+								CSV_Printer.printRecord(Solutions.get(i).getOP_name(), Solutions.get(i).getName(),
+										Solutions.get(i).getStatus(), df.format(Solutions.get(i).getColorTime()),
+										df.format(Solutions.get(i).getLabellingTime()), Solutions.get(i).getMIP(),
+										Solutions.get(i).getPolyColor(), Solutions.get(i).getNotes(),
+										df.format(Solutions.get(i).getTotalTime()), Solutions.get(i).getColorsString());
+						} else {
+							System.out.println("Solution for " + Solutions_Mod0.get(i).getOP_name());
+							System.out.println("\tStatus: " + Solutions_Mod0.get(i).getStatus());
+							System.out.println("\tCritical Difference: " + Solutions_Mod0.get(i).getCriticDiff());
+							System.out.println("\tCritical Table: " + Solutions_Mod0.get(i).getCriticTable());
+							System.out.println("\tColorTime: " + df.format(Solutions_Mod0.get(i).getColorTime())
+									+ " - LabellingTime: " + df.format(Solutions_Mod0.get(i).getLabellingTime()));
+							System.out.println("\tColorintTries: " + Solutions_Mod0.get(i).getColorTries()
+									+ " - UsingMIP: " + Solutions_Mod0.get(i).getMIP());
+							System.out.println("\tColors.Size: " + Solutions_Mod0.get(i).getColors().size());
+							System.out.println("\tLabels.Size: " + Solutions_Mod0.get(i).getLabels().length);
+							if (Check)
+								System.out.println("\tVerify: " + Solutions_Mod0.get(i).verify());
+							if (Solutions_Mod0.get(i).getStatus() == "Solved")
+								CSV_Printer.printRecord(Solutions_Mod0.get(i).getOP_name(),
+										Solutions_Mod0.get(i).getName(), Solutions_Mod0.get(i).getStatus(),
+										df.format(Solutions_Mod0.get(i).getColorTime()),
+										df.format(Solutions_Mod0.get(i).getLabellingTime()),
+										Solutions_Mod0.get(i).getMIP(), Solutions_Mod0.get(i).getPolyColor(),
+										Solutions_Mod0.get(i).getNotes(),
+										df.format(Solutions_Mod0.get(i).getTotalTime()),
+										Solutions_Mod0.get(i).getSolution());
+							else
+								CSV_Printer.printRecord(Solutions_Mod0.get(i).getOP_name(),
+										Solutions_Mod0.get(i).getName(), Solutions_Mod0.get(i).getStatus(),
+										df.format(Solutions_Mod0.get(i).getColorTime()),
+										df.format(Solutions_Mod0.get(i).getLabellingTime()),
+										Solutions_Mod0.get(i).getMIP(), Solutions_Mod0.get(i).getPolyColor(),
+										Solutions_Mod0.get(i).getNotes(),
+										df.format(Solutions_Mod0.get(i).getTotalTime()),
+										Solutions_Mod0.get(i).getColorsString());
+						}
 					}
+
 					CSV_Printer.close();
 				} else {
 					System.out.println("No Solution found.");

@@ -4,6 +4,9 @@ import java.util.Collections;
 public class TwoRotational_Solution_M0 {
 	private static ArrayList<Integer> tables = new ArrayList<Integer>();
 	private int V;
+	private int criticTable = -1;
+	private int criticIndex = -1;
+	private int criticDiff = -1;
 	private String name;
 	private String OP_name;
 	private String Status = "Solved";
@@ -17,11 +20,66 @@ public class TwoRotational_Solution_M0 {
 	private ArrayList<Integer> colors = new ArrayList<Integer>();
 	private int[] labels = null;
 
-	public TwoRotational_Solution_M0(ArrayList<Integer> tables, int v) {
-		super();
-		this.setTables(tables);
-		setV(v);
-		setLabels(new int[V - 1]);
+	public TwoRotational_Solution_M0(TwoRotational_Solution Solution) {
+		setTables(Solution.getTables());
+		setV(Solution.getV() + 1);
+		setLabels(Solution.getLabels());
+		setColors(Solution.getColors());
+		setLabellingTime(Solution.getLabellingTime());
+		setColorTime(Solution.getColorTime());
+		setMIP(Solution.getMIP());
+		setColorTries(Solution.getColorTries());
+		setNotes(Solution.getNotes() + " - Mod=0");
+		setStatus(Solution.getStatus());
+		setName(Solution.getName());
+		setTotalTime(Solution.getTotalTime());
+
+		int alpha = 0;
+		int beta = 0;
+		int scroll = 0;
+		Boolean flag = true;
+		for (int t = 0; t < tables.size() && flag; t++) {
+			for (int i = 0; i < tables.get(t) - 1 && flag; i++) {
+				alpha = (i % tables.get(t)) + scroll;
+				beta = ((i % tables.get(t)) + 1) % tables.get(t) + scroll;
+
+				if (colors.get(alpha) != colors.get(beta)) {
+					flag = false;
+					setCriticIndex(beta);
+					setCriticTable(t);
+					int mod = (getV() - 2) / 2;
+					if (colors.get(alpha) == 1)
+						setCriticDiff((labels[alpha] - labels[beta] + mod) % mod);
+					else
+						setCriticDiff((labels[beta] - labels[alpha] + mod) % mod);
+					setNotes(Solution.getNotes() + " - 4t with CDiff=" + getCriticDiff());
+				}
+			}
+			scroll += tables.get(t);
+		}
+		tables.set(getCriticTable(), tables.get(getCriticTable()) + 1);
+		tables.set(0, tables.get(0) + 1);
+		ArrayList<Integer> Labels = new ArrayList<Integer>();
+		for (int i = 0; i < labels.length; i++)
+			Labels.add(labels[i]);
+		Labels.add(getCriticIndex(), -1);
+		Labels.add(0, -1);
+		labels = new int[Labels.size()];
+		for (int i = 0; i < Labels.size(); i++)
+			labels[i] = Labels.get(i);
+
+		// Add infinites
+		colors.add(getCriticIndex(), 0);
+		colors.add(0, 0);
+		String OP = "OP(";
+		for (int t = 0; t < tables.size(); t++) {
+			if (t != (tables.size() - 1)) {
+				OP += tables.get(t) + ",";
+			} else
+				OP += tables.get(t) + ")";
+
+		}
+		setOP_name(OP);
 	}
 
 	public boolean verify() {
@@ -31,35 +89,21 @@ public class TwoRotational_Solution_M0 {
 		int scroll = 0;
 		int alpha = 0;
 		int beta = 0;
+		int mod = (getV() - 2) / 2;
 		for (int t = 0; t < tables.size(); t++) {
-			for (int i = 0; i < tables.get(t) - 1; i++) {
-				alpha = scroll + i;
-				beta = scroll + i + 1;
+			for (int i = 0; i < tables.get(t); i++) {
+				alpha = (i % tables.get(t)) + scroll;
+				beta = ((i % tables.get(t)) + 1) % tables.get(t) + scroll;
 				if (colors.get(alpha) == 1 && colors.get(beta) == 1) {
-					dY.add((labels[alpha] - labels[beta] + V / 2) % (V / 2));
-					dY.add((labels[beta] - labels[alpha] + V / 2) % (V / 2));
+					dY.add((labels[alpha] - labels[beta] + mod) % mod);
+					dY.add((labels[beta] - labels[alpha] + mod) % mod);
 				} else if (colors.get(alpha) == 2 && colors.get(beta) == 2) {
-					dR.add((labels[alpha] - labels[beta] + V / 2) % (V / 2));
-					dR.add((labels[beta] - labels[alpha] + V / 2) % (V / 2));
+					dR.add((labels[alpha] - labels[beta] + mod) % mod);
+					dR.add((labels[beta] - labels[alpha] + mod) % mod);
 				} else if (colors.get(alpha) == 1 && colors.get(beta) == 2) {
-					dYR.add((labels[alpha] - labels[beta] + V / 2) % (V / 2));
+					dYR.add((labels[alpha] - labels[beta] + mod) % mod);
 				} else if (colors.get(alpha) == 2 && colors.get(beta) == 1) {
-					dYR.add((labels[beta] - labels[alpha] + V / 2) % (V / 2));
-				}
-			}
-			if (t != 0) {
-				alpha = scroll + tables.get(t) - 1;
-				beta = scroll;
-				if (colors.get(alpha) == 1 && colors.get(beta) == 1) {
-					dY.add((labels[alpha] - labels[beta] + V / 2) % (V / 2));
-					dY.add((labels[beta] - labels[alpha] + V / 2) % (V / 2));
-				} else if (colors.get(alpha) == 2 && colors.get(beta) == 2) {
-					dR.add((labels[alpha] - labels[beta] + V / 2) % (V / 2));
-					dR.add((labels[beta] - labels[alpha] + V / 2) % (V / 2));
-				} else if (colors.get(alpha) == 1 && colors.get(beta) == 2) {
-					dYR.add((labels[alpha] - labels[beta] + V / 2) % (V / 2));
-				} else if (colors.get(alpha) == 2 && colors.get(beta) == 1) {
-					dYR.add((labels[beta] - labels[alpha] + V / 2) % (V / 2));
+					dYR.add((labels[beta] - labels[alpha] + mod) % mod);
 				}
 			}
 			scroll += tables.get(t);
@@ -68,16 +112,16 @@ public class TwoRotational_Solution_M0 {
 		Collections.sort(dR);
 		Collections.sort(dYR);
 
-		// System.out.println("dY");
-		// for (int i=0;i<dY.size();i++)
-		// System.out.print(dY.get(i)+" ");
-		// System.out.println("\ndR");
-		// for (int i=0;i<dR.size();i++)
-		// System.out.print(dR.get(i)+" ");
-		// System.out.println("\ndYR");
-		// for (int i=0;i<dYR.size();i++)
-		// System.out.print(dYR.get(i)+" ");
-		// System.out.println("");
+		//System.out.println("dY");
+		//for (int i = 0; i < dY.size(); i++)
+		//	System.out.print(dY.get(i) + " ");
+		//System.out.println("\ndR");
+		//for (int i = 0; i < dR.size(); i++)
+		//	System.out.print(dR.get(i) + " ");
+		//System.out.println("\ndYR");
+		//for (int i = 0; i < dYR.size(); i++)
+		//	System.out.print(dYR.get(i) + " ");
+		//System.out.println("");
 		int nR = 0;
 		int nY = 0;
 		int nYR = 0;
@@ -87,75 +131,17 @@ public class TwoRotational_Solution_M0 {
 		for (int i = 0; i < dR.size(); i++)
 			if (dR.get(i) == (i + 1))
 				nR++;
-		for (int i = 0; i < dYR.size(); i++)
-			if (dYR.get(i) == (i))
+		int index = 0;
+		for (int i = 0; i < dYR.size()+1; i++) {
+			if (i == getCriticDiff() && ((i+1) < dYR.size()))
+				i++;
+
+			if (dYR.get(index) == (i)) {
 				nYR++;
-		if (nR == nY && nY == (V / 2 - 1) && nYR == (V / 2))
-			return true;
-		else
-			return false;
-	}
-
-	public boolean verifyColors() {
-		int dR = 0;
-		int dY = 0;
-		int dYR = 0;
-		int scroll = 0;
-		int alpha = 0;
-		int beta = 0;
-
-		@SuppressWarnings("unused")
-		int B = 0, R = 0;
-
-		for (int t = 0; t < tables.size(); t++) {
-			for (int i = 0; i < tables.get(t); i++) {
-				if (colors.get(scroll + i) == 1)
-					B++;
-				if (colors.get(scroll + i) == 2)
-					R++;
+				index++;
 			}
-			scroll += tables.get(t);
 		}
-
-		scroll = 0;
-
-		for (int t = 0; t < tables.size(); t++) {
-			for (int i = 0; i < tables.get(t) - 1; i++) {
-				alpha = scroll + i;
-				beta = scroll + i + 1;
-				if (colors.get(alpha) == 1 && colors.get(beta) == 1) {
-					dY++;
-					dY++;
-				} else if (colors.get(alpha) == 2 && colors.get(beta) == 2) {
-					dR++;
-					dR++;
-				} else if (colors.get(alpha) == 1 && colors.get(beta) == 2) {
-					dYR++;
-				} else if (colors.get(alpha) == 2 && colors.get(beta) == 1) {
-					dYR++;
-				}
-			}
-			if (t != 0) {
-				alpha = scroll + tables.get(t) - 1;
-				beta = scroll;
-				if (colors.get(alpha) == 1 && colors.get(beta) == 1) {
-					dY++;
-					dY++;
-				} else if (colors.get(alpha) == 2 && colors.get(beta) == 2) {
-					dR++;
-					dR++;
-				} else if (colors.get(alpha) == 1 && colors.get(beta) == 2) {
-					dYR++;
-				} else if (colors.get(alpha) == 2 && colors.get(beta) == 1) {
-					dYR++;
-				}
-			}
-			scroll += tables.get(t);
-		}
-		// System.out.println("V: " + V + " - |dY|: " + dY + " - |dR|: " + dR + " -
-		// |dYR|:" + dYR);
-		// System.out.println("Y: " + B + " - R: " + R);
-		if ((dY == dR) && (dYR == ((V - 1) / 2)) && (dYR == (dY + 1)))
+		if (nR == nY && nY == (mod - 1) && nYR == nY && !dYR.contains(getCriticDiff()))
 			return true;
 		else
 			return false;
@@ -198,43 +184,45 @@ public class TwoRotational_Solution_M0 {
 	}
 
 	public String getSolution() {
-		if (Status.equals("Solved") && colors.size() == (V - 1) && labels.length == (V - 1)) {
+		if (Status.equals("Solved")) {
 
 			String ret = "";
 			int scroll = 0;
+			int infinity = 1;
 			for (int t = 0; t < tables.size(); t++) {
 				ret += "(";
 				for (int i = 0; i < tables.get(t); i++) {
-					if (i == 0 && t == 0)
-						ret += "\\infty, ";
-
-					ret += "(" + labels[i + scroll] + "," + colors.get(i + scroll) + ")";
+					if (labels[i + scroll] == -1) {
+						ret += "\\infty_" + infinity;
+						infinity++;
+					} else
+						ret += "(" + labels[i + scroll] + "," + colors.get(i + scroll) + ")";
 					if (i != tables.get(t) - 1)
 						ret += ", ";
 				}
 				ret += ") ";
-				if (t != tables.size() - 1)
-					scroll += tables.get(t);
+				scroll += tables.get(t);
 			}
 			return ret;
 		} else {
 			return "";
 		}
 	}
-	
 
 	public String getColorsString() {
 		if (colors.size() == (V - 1)) {
 
 			String ret = "";
 			int scroll = 0;
+			int infinity = 1;
 			for (int t = 0; t < tables.size(); t++) {
 				ret += "(";
 				for (int i = 0; i < tables.get(t); i++) {
-					if (i == 0 && t == 0)
-						ret += "\\infty, ";
-
-					ret += "(" + colors.get(i + scroll) + ")";
+					if (colors.get(i + scroll) == 0) {
+						ret += "\\infty_" + infinity + ", ";
+						infinity++;
+					} else
+						ret += "(" + colors.get(i + scroll) + ")";
 					if (i != tables.get(t) - 1)
 						ret += ", ";
 				}
@@ -322,6 +310,30 @@ public class TwoRotational_Solution_M0 {
 
 	public void setNotes(String notes) {
 		this.notes = notes;
+	}
+
+	public int getCriticIndex() {
+		return criticIndex;
+	}
+
+	public void setCriticIndex(int criticIndex) {
+		this.criticIndex = criticIndex;
+	}
+
+	public int getCriticTable() {
+		return criticTable;
+	}
+
+	public void setCriticTable(int criticTable) {
+		this.criticTable = criticTable;
+	}
+
+	public int getCriticDiff() {
+		return criticDiff;
+	}
+
+	public void setCriticDiff(int criticDiff) {
+		this.criticDiff = criticDiff;
 	}
 
 }
