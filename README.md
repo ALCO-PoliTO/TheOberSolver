@@ -2,7 +2,7 @@
 This repository is maintained by ALCO@Politecnico di Torino.
 TheObersolver is a pre-release software for solving the [Oberwolfach Problem](https://en.m.wikipedia.org/wiki/Oberwolfach_problem).
 
-This software uses [Choco Solver](http://www.choco-solver.org) and can be run as well with [IBM Cplex](https://developer.ibm.com/academic/). As for the former one, scholars are entitled to obtaina free license via the IBM Academic Initiative.
+This software uses [Choco Solver](http://www.choco-solver.org) and can be run as well with [IBM CPLEX](https://developer.ibm.com/academic/). As for the former one, scholars are entitled to obtaina free license via the IBM Academic Initiative.
 
 See section [releases](https://github.com/ALCO-PoliTO/TheOberSolver/releases) for current release.
 
