@@ -1790,9 +1790,11 @@ public class TwoRotational {
 	public ArrayList<TwoRotational_Solution> solve(ArrayList<Integer> tables) throws ErrorThrower, IloException, ContradictionException {
 
 		V = getOPsize(tables);
-		if (!((V % 4) == 3)) {
-			throw new ErrorThrower("V % 4 != 3 (V=" + V + ")");
+		Boolean Mod0 = false;
+		if (!((V % 4) == 3) || !((V % 4) == 0)) {
+			throw new ErrorThrower("V % 4 != ( 3 || 0) (V=" + V + ")");
 		}
+		if (V%4 == 0) Mod0 = true;
 		tables.set(0, tables.get(0) - 1);
 		TwoRotational_Solution Solution = new TwoRotational_Solution(tables, V);
 		ArrayList<Integer> firstYR = generateColors_Poly(Solution);
