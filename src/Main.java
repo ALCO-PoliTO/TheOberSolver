@@ -152,6 +152,7 @@ public class Main {
 		Scanner input = new Scanner(System.in);
 		Boolean Verbose = false;
 		int RotationalType = 2;
+		int SymmetryValue = 2;
 		Boolean ExportModels = false;
 		Boolean Choco = false;
 		Boolean onlyPoly = false;
@@ -227,7 +228,8 @@ public class Main {
 			onlyCP = false;
 			ExportModels = true;
 			SolLimit = 1;
-			Symmetry = false;
+			Symmetry = true;
+			SymmetryValue = 6;
 		}
 		if (RotationalType == 2) {
 			System.out.println("0 partitions - 1 for instance");
@@ -250,6 +252,8 @@ public class Main {
 				TwoRotational instance = new TwoRotational(Verbose, SolLimit, ExportModels, Path, TimeLimit, Choco);
 				if (Symmetry)
 					instance.param_setSymmetry(true);
+				if (Symmetry && SymmetryValue != -1)
+					instance.param_setSymmetryValue(SymmetryValue);
 				for (int i = 0; i < tables.size(); i++) {
 					ArrayList<TwoRotational_Solution> Solutions = new ArrayList<TwoRotational_Solution>();
 					ArrayList<TwoRotational_Solution_M0> Solutions_Mod0 = new ArrayList<TwoRotational_Solution_M0>();
@@ -369,6 +373,8 @@ public class Main {
 				TwoRotational instance = new TwoRotational(Verbose, SolLimit, ExportModels, Path, TimeLimit, Choco);
 				if (Symmetry)
 					instance.param_setSymmetry(true);
+				if (Symmetry && SymmetryValue != -1)
+					instance.param_setSymmetryValue(SymmetryValue);
 				ArrayList<TwoRotational_Solution> Solutions = new ArrayList<TwoRotational_Solution>();
 				ArrayList<TwoRotational_Solution_M0> Solutions_Mod0 = new ArrayList<TwoRotational_Solution_M0>();
 

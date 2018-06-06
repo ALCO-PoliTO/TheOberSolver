@@ -29,6 +29,7 @@ public class TwoRotational {
 	private static Boolean Choco = false;
 	private static String FilePath = "";
 	private static int V = 0;
+	private static int SymmetryValue = -1;
 	private static Boolean Symmetry = false;
 
 	private static int SolLimit = 0;
@@ -1155,7 +1156,12 @@ public class TwoRotational {
 		 * Y[3])); cpx.add(cpx.eq(S[7], Y[4]));
 		 */
 		if (Symmetry) {
-			choco.arithm(S[Solution.getTables().get(0) - 1], "=", S[0]).post();
+			if (SymmetryValue != -1) {
+				choco.arithm(S[Solution.getTables().get(0) - 1], "=", S[0]).post();
+				choco.arithm(S[0], "=", SymmetryValue).post();
+			} else
+
+				choco.arithm(S[Solution.getTables().get(0) - 1], "=", S[0]).post();
 		}
 
 		cR = 0;
@@ -1334,7 +1340,12 @@ public class TwoRotational {
 		 * Y[3])); cpx.add(cpx.eq(S[7], Y[4]));
 		 */
 		if (Symmetry) {
-			cpx.add(cpx.eq(S[Solution.getTables().get(0) - 1], S[0]));
+			if (SymmetryValue != -1) {
+				cpx.add(cpx.eq(S[Solution.getTables().get(0) - 1], S[0]));
+				cpx.add(cpx.eq(S[0], SymmetryValue));
+			} else
+				cpx.add(cpx.eq(S[Solution.getTables().get(0) - 1], S[0]));
+
 		}
 
 		cR = 0;
@@ -1787,7 +1798,8 @@ public class TwoRotational {
 
 	}
 
-	public ArrayList<TwoRotational_Solution> solve(ArrayList<Integer> tables) throws ErrorThrower, IloException, ContradictionException {
+	public ArrayList<TwoRotational_Solution> solve(ArrayList<Integer> tables)
+			throws ErrorThrower, IloException, ContradictionException {
 
 		V = getOPsize(tables);
 		if (!((V % 4) == 3)) {
@@ -1987,8 +1999,8 @@ public class TwoRotational {
 		return Solutions;
 	}
 
-	public TwoRotational(boolean Verbose, int SolLimit, Boolean exportModels, String FilePath,
-			Boolean TimeLimit, Boolean Choco) throws ErrorThrower {
+	public TwoRotational(boolean Verbose, int SolLimit, Boolean exportModels, String FilePath, Boolean TimeLimit,
+			Boolean Choco) throws ErrorThrower {
 		param_setVerbose(Verbose);
 		param_setExportModels(exportModels);
 		param_setSolLimit(SolLimit);
@@ -2087,6 +2099,14 @@ public class TwoRotational {
 
 	public static void param_setChoco(Boolean choco) {
 		Choco = choco;
+	}
+
+	public static int param_getSymmetryValue() {
+		return SymmetryValue;
+	}
+
+	public void param_setSymmetryValue(int symmetryValue) {
+		SymmetryValue = symmetryValue;
 	}
 
 }
