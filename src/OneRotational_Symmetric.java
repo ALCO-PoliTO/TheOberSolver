@@ -13,7 +13,6 @@ import org.chocosolver.solver.variables.IntVar;
 
 import ilog.concert.IloException;
 import ilog.concert.IloIntVar;
-import ilog.concert.IloNumVar;
 import ilog.cp.IloCP;
 import ilog.cp.IloSearchPhase;
 
@@ -209,7 +208,6 @@ public class OneRotational_Symmetric {
 			cpx.setParameter(IloCP.DoubleParam.TimeLimit, Tl);
 		IloSearchPhase phaseOne = cpx.searchPhase(N);
 		cpx.setSearchPhases(phaseOne);
-		
 
 		if (cpx.propagate()) {
 			System.out.println("\tPopagation sorted effects.");
@@ -452,17 +450,7 @@ public class OneRotational_Symmetric {
 
 	}
 
-	public ArrayList<OneRotational_SolutionSymmetric> solve(ArrayList<Integer> tables)
-			throws ErrorThrower, IloException, ContradictionException {
-		V = getOPsize(tables);
-		if (V < 1) {
-			throw new ErrorThrower("Less than 3 nodes!");
-		}
-		if ((V % 2) == 0) {
-			throw new ErrorThrower("Order of graph must be odd!");
-		}
-
-		// Only one table of with odd order
+	public Boolean validConfiguration(ArrayList<Integer> tables) {
 		tableSizes = new HashMap<Integer, Integer>();
 		for (int t = 0; t < tables.size(); t++) {
 			if (tableSizes.containsKey(tables.get(t)))
@@ -478,7 +466,23 @@ public class OneRotational_Symmetric {
 				}
 			}
 		}
-		if (checkFlag > 1) {
+		if (checkFlag > 1)
+			return false;
+		else
+			return true;
+	}
+
+	public ArrayList<OneRotational_SolutionSymmetric> solve(ArrayList<Integer> tables)
+			throws ErrorThrower, IloException, ContradictionException {
+		V = getOPsize(tables);
+		if (V < 1) {
+			throw new ErrorThrower("Less than 3 nodes!");
+		}
+		if ((V % 2) == 0) {
+			throw new ErrorThrower("Order of graph must be odd!");
+		}
+
+		if (!validConfiguration(tables)) {
 			throw new ErrorThrower("More than odd table with odd participants.");
 		}
 

@@ -224,7 +224,16 @@ public class Main {
 
 		} else {
 			System.out.println("Lazy configuration: ");
-			System.out.println("\tChoco=0;Timelimit=1;Verbose=0;coloringPoly=1;ExportModels=1;SolLimit=1;Symmetry=0;");
+			TimeLimit = true;
+			Choco = false;
+			Verbose = false;
+			onlyPoly = false;
+			onlyCP = false;
+			ExportModels = true;
+			SolLimit = 1;
+			Symmetry = true;
+			SymmetryValue = 6;
+			System.out.println("\tChoco="+Choco+";Timelimit="+TimeLimit+";Verbose="+Verbose+";onlyPoly="+onlyPoly+";onlyCP="+onlyCP+";ExportModels="+ExportModels+";SolLimit="+SolLimit+";Symmetry="+Symmetry+";");
 			System.out.println("1 OneRotational - 2 TwoRotational - 3 TwoRotationalTraetta");
 			switch (input.nextInt()) {
 			case 1:
@@ -239,15 +248,6 @@ public class Main {
 			default:
 				RotationalType = 2;
 			}
-			TimeLimit = true;
-			Choco = true;
-			Verbose = false;
-			onlyPoly = false;
-			onlyCP = false;
-			ExportModels = true;
-			SolLimit = 1;
-			Symmetry = true;
-			SymmetryValue = 6;
 		}
 
 		switch (RotationalType) {
@@ -517,7 +517,6 @@ public class Main {
 							System.out.println("Solution for " + Solutions.get(j).getOP_name());
 							System.out.println("\tStatus: " + Solutions.get(j).getStatus());
 							System.out.println("\tLabellingTime: " + df.format(Solutions.get(j).getLabellingTime()));
-							System.out.println("\tUsingMIP: " + Solutions.get(j).getMIP());
 							System.out.println("\tLabels.Size: " + Solutions.get(j).getLabels().length);
 							if (Check)
 								System.out.println("\tVerify: " + Solutions.get(j).verify());
@@ -555,7 +554,6 @@ public class Main {
 						System.out.println("Solution for " + Solutions.get(i).getOP_name());
 						System.out.println("\tStatus: " + Solutions.get(i).getStatus());
 						System.out.println("\tLabellingTime: " + df.format(Solutions.get(i).getLabellingTime()));
-						System.out.println("\tUsingMIP: " + Solutions.get(i).getMIP());
 						System.out.println("\tLabels.Size: " + Solutions.get(i).getLabels().length);
 						CSV_Printer.printRecord(Solutions.get(i).getOP_name(), Solutions.get(i).getName(),
 								Solutions.get(i).getStatus(), df.format(Solutions.get(i).getLabellingTime()),
@@ -572,7 +570,7 @@ public class Main {
 			break;
 
 		default: {
-			System.out.println("2RotTr");
+			System.out.println("1RotationalSymmetric");
 			System.out.println("0 partitions - 1 for instance");
 			if (input.nextInt() == 0) {
 				System.out.println("Insert number of nodes");
@@ -586,27 +584,32 @@ public class Main {
 				DecimalFormat df = new DecimalFormat("0.0000");
 				Partition prt = new Partition(V_in, 3);
 				ArrayList<ArrayList<Integer>> tables = prt.loadPartition();
-				OneRotational_Symmetric instance = new OneRotational_Symmetric(Verbose, SolLimit, ExportModels, Path, TimeLimit, Choco);
+				OneRotational_Symmetric instance = new OneRotational_Symmetric(Verbose, SolLimit, ExportModels, Path,
+						TimeLimit, Choco);
 				for (int i = 0; i < tables.size(); i++) {
-					ArrayList<OneRotational_SolutionSymmetric> Solutions = instance.solve(tables.get(i));
-					if (Solutions.size() > 0) {
-						for (int j = 0; j < Solutions.size(); j++) {
-							System.out.println("Solution for " + Solutions.get(j).getOP_name());
-							System.out.println("\tStatus: " + Solutions.get(j).getStatus());
-							System.out.println("\tLabellingTime: " + df.format(Solutions.get(j).getLabellingTime()));
-							System.out.println("\tUsingMIP: " + Solutions.get(j).getMIP());
-							System.out.println("\tLabels.Size: " + Solutions.get(j).getLabels().length);
-							if (Check)
-								System.out.println("\tVerify: " + Solutions.get(j).verify());
+					if (instance.validConfiguration(tables.get(i))) {
+						ArrayList<OneRotational_SolutionSymmetric> Solutions = instance.solve(tables.get(i));
+						if (Solutions.size() > 0) {
+							for (int j = 0; j < Solutions.size(); j++) {
+								System.out.println("Solution for " + Solutions.get(j).getOP_name());
+								System.out.println("\tStatus: " + Solutions.get(j).getStatus());
+								System.out.println("\tMinimal Problem: " + Solutions.get(j).getOP_nameRed());
+								System.out
+										.println("\tLabellingTime: " + df.format(Solutions.get(j).getLabellingTime()));
+								System.out.println("\tLabels.Size: " + Solutions.get(j).getLabels().length);
+								if (Check)
+									System.out.println("\tVerify: " + Solutions.get(j).verify());
 
-							CSV_Printer.printRecord(Solutions.get(j).getOP_name(), Solutions.get(j).getName(),
-									Solutions.get(j).getStatus(), df.format(Solutions.get(j).getLabellingTime()),
-									Solutions.get(j).getNotes(), df.format(Solutions.get(j).getTotalTime()),
-									Solutions.get(j).getSolution());
+								CSV_Printer.printRecord(Solutions.get(j).getOP_name(), Solutions.get(j).getName(),
+										Solutions.get(j).getStatus(), df.format(Solutions.get(j).getLabellingTime()),
+										Solutions.get(j).getOP_nameRed() + " - " + Solutions.get(j).getNotes(),
+										df.format(Solutions.get(j).getTotalTime()), Solutions.get(j).getSolution());
 
+							}
+							CSV_Printer.flush();
 						}
-						CSV_Printer.flush();
-					}
+					} else
+						System.out.println("Configuration " + i + " not valid. Skipping.");
 
 				}
 				CSV_Printer.close();
@@ -625,19 +628,20 @@ public class Main {
 				writeDemon(V_in);
 				writeDemonCSV(V_in, 1);
 				DecimalFormat df = new DecimalFormat("0.0000");
-				OneRotational_Symmetric instance = new OneRotational_Symmetric(Verbose, SolLimit, ExportModels, Path, TimeLimit, Choco);
+				OneRotational_Symmetric instance = new OneRotational_Symmetric(Verbose, SolLimit, ExportModels, Path,
+						TimeLimit, Choco);
 				ArrayList<OneRotational_SolutionSymmetric> Solutions = instance.solve(tables);
 				if (Solutions.size() > 0) {
 					for (int i = 0; i < Solutions.size(); i++) {
 						System.out.println("Solution for " + Solutions.get(i).getOP_name());
 						System.out.println("\tStatus: " + Solutions.get(i).getStatus());
+						System.out.println("\tMinimal Problem: " + Solutions.get(i).getOP_nameRed());
 						System.out.println("\tLabellingTime: " + df.format(Solutions.get(i).getLabellingTime()));
-						System.out.println("\tUsingMIP: " + Solutions.get(i).getMIP());
 						System.out.println("\tLabels.Size: " + Solutions.get(i).getLabels().length);
 						CSV_Printer.printRecord(Solutions.get(i).getOP_name(), Solutions.get(i).getName(),
 								Solutions.get(i).getStatus(), df.format(Solutions.get(i).getLabellingTime()),
-								Solutions.get(i).getNotes(), df.format(Solutions.get(i).getTotalTime()),
-								Solutions.get(i).getSolution());
+								Solutions.get(i).getOP_nameRed() + " - " + Solutions.get(i).getNotes(),
+								df.format(Solutions.get(i).getTotalTime()), Solutions.get(i).getSolution());
 					}
 					CSV_Printer.close();
 				} else {
