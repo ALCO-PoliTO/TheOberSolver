@@ -586,9 +586,9 @@ public class Main {
 				DecimalFormat df = new DecimalFormat("0.0000");
 				Partition prt = new Partition(V_in, 3);
 				ArrayList<ArrayList<Integer>> tables = prt.loadPartition();
-				OneRotational_Traetta instance = new OneRotational_Traetta(Verbose, SolLimit, ExportModels, Path, TimeLimit, Choco);
+				OneRotational_Symmetric instance = new OneRotational_Symmetric(Verbose, SolLimit, ExportModels, Path, TimeLimit, Choco);
 				for (int i = 0; i < tables.size(); i++) {
-					ArrayList<OneRotational_SolutionTraetta> Solutions = instance.solve(tables.get(i));
+					ArrayList<OneRotational_SolutionSymmetric> Solutions = instance.solve(tables.get(i));
 					if (Solutions.size() > 0) {
 						for (int j = 0; j < Solutions.size(); j++) {
 							System.out.println("Solution for " + Solutions.get(j).getOP_name());
@@ -625,8 +625,8 @@ public class Main {
 				writeDemon(V_in);
 				writeDemonCSV(V_in, 1);
 				DecimalFormat df = new DecimalFormat("0.0000");
-				OneRotational_Traetta instance = new OneRotational_Traetta(Verbose, SolLimit, ExportModels, Path, TimeLimit, Choco);
-				ArrayList<OneRotational_SolutionTraetta> Solutions = instance.solve(tables);
+				OneRotational_Symmetric instance = new OneRotational_Symmetric(Verbose, SolLimit, ExportModels, Path, TimeLimit, Choco);
+				ArrayList<OneRotational_SolutionSymmetric> Solutions = instance.solve(tables);
 				if (Solutions.size() > 0) {
 					for (int i = 0; i < Solutions.size(); i++) {
 						System.out.println("Solution for " + Solutions.get(i).getOP_name());

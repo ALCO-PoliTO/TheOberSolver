@@ -15,7 +15,7 @@ import ilog.concert.IloException;
 import ilog.concert.IloIntVar;
 import ilog.cp.IloCP;
 
-public class OneRotational_Traetta {
+public class OneRotational_Symmetric {
 
 	private static long Clock;
 	private static Boolean Verbose = true;
@@ -44,7 +44,7 @@ public class OneRotational_Traetta {
 		return size;
 	}
 
-	private static Boolean preProcess(OneRotational_SolutionTraetta Solution) {
+	private static Boolean preProcess(OneRotational_SolutionSymmetric Solution) {
 		// Decompose the configuration into the minimal one
 		// Rest of graph is constructed
 		Boolean infiniteTable = false;
@@ -139,7 +139,7 @@ public class OneRotational_Traetta {
 		return true;
 	}
 
-	public static Boolean generateLabels_CP(OneRotational_SolutionTraetta Solution) throws IloException {
+	public static Boolean generateLabels_CP(OneRotational_SolutionSymmetric Solution) throws IloException {
 
 		preProcess(Solution);
 		Solution.setTablesRed(tablesCP);
@@ -205,7 +205,9 @@ public class OneRotational_Traetta {
 		int Tl = V;
 		if (TimeLimit)
 			cpx.setParameter(IloCP.DoubleParam.TimeLimit, Tl);
-		cpx.propagate();
+		if (cpx.propagate()) {
+			System.out.println("Popagation sorted effects.");
+		}
 		// cpx.exportModel("test.cpo");
 		if (cpx.solve()) {
 			Solution.setLabellingTime(cpx.getInfo(IloCP.DoubleInfo.SolveTime));
@@ -293,7 +295,7 @@ public class OneRotational_Traetta {
 
 	}
 
-	public static Boolean generateLabels_CP_Choco(OneRotational_SolutionTraetta Solution)
+	public static Boolean generateLabels_CP_Choco(OneRotational_SolutionSymmetric Solution)
 			throws ContradictionException {
 
 		preProcess(Solution);
@@ -444,7 +446,7 @@ public class OneRotational_Traetta {
 
 	}
 
-	public ArrayList<OneRotational_SolutionTraetta> solve(ArrayList<Integer> tables)
+	public ArrayList<OneRotational_SolutionSymmetric> solve(ArrayList<Integer> tables)
 			throws ErrorThrower, IloException, ContradictionException {
 		V = getOPsize(tables);
 		if (V < 1) {
@@ -474,8 +476,8 @@ public class OneRotational_Traetta {
 			throw new ErrorThrower("More than odd table with odd participants.");
 		}
 
-		OneRotational_SolutionTraetta Solution = null;
-		ArrayList<OneRotational_SolutionTraetta> Solutions = new ArrayList<OneRotational_SolutionTraetta>();
+		OneRotational_SolutionSymmetric Solution = null;
+		ArrayList<OneRotational_SolutionSymmetric> Solutions = new ArrayList<OneRotational_SolutionSymmetric>();
 		param_setOP_name(tables);
 
 		int Solve_count = 0;
@@ -484,7 +486,7 @@ public class OneRotational_Traetta {
 
 		while (Flag) {
 			Clock = System.nanoTime();
-			Solution = new OneRotational_SolutionTraetta(tables, V);
+			Solution = new OneRotational_SolutionSymmetric(tables, V);
 			Solution.setName("" + iteration);
 			Solution.setOP_name(param_getOP_name());
 			Boolean res = false;
@@ -515,7 +517,7 @@ public class OneRotational_Traetta {
 		return Solutions;
 	}
 
-	public OneRotational_Traetta(boolean Verbose, int SolLimit, Boolean exportModels, String FilePath,
+	public OneRotational_Symmetric(boolean Verbose, int SolLimit, Boolean exportModels, String FilePath,
 			Boolean TimeLimit, Boolean Choco) {
 		param_setVerbose(Verbose);
 		param_setSolLimit(SolLimit);
@@ -570,7 +572,7 @@ public class OneRotational_Traetta {
 	}
 
 	public static void param_setExportModels(Boolean exportModels) {
-		OneRotational_Traetta.exportModels = exportModels;
+		OneRotational_Symmetric.exportModels = exportModels;
 	}
 
 	public static String param_getFilePath() {

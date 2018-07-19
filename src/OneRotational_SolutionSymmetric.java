@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class OneRotational_SolutionTraetta {
+public class OneRotational_SolutionSymmetric {
 	private static ArrayList<Integer> tables = new ArrayList<Integer>();
 	private static ArrayList<Integer> tablesRed = new ArrayList<Integer>();
 	private int V;
@@ -15,7 +15,7 @@ public class OneRotational_SolutionTraetta {
 	private double totalTime = -1.0;
 	private int[] labels = null;
 
-	public OneRotational_SolutionTraetta(ArrayList<Integer> tables, int v) {
+	public OneRotational_SolutionSymmetric(ArrayList<Integer> tables, int v) {
 		super();
 		setTables(tables);
 		setV(v);

@@ -17,17 +17,17 @@ public class QuickTests {
 		tables.add(3);
 		tables.add(4);
 		tables.add(4);
-		tables.add(6);
+		tables.add(4);
 		Boolean Verbose = false;
 		Boolean ExportModels = false;
-		Boolean Choco = true;
+		Boolean Choco = false;
 		Boolean TimeLimit = false;
-		int SolLimit = 50;
+		int SolLimit = 1;
 		String Path = "";
 		DecimalFormat df = new DecimalFormat("0.0000");
-		OneRotational_Traetta instance = new OneRotational_Traetta(Verbose, SolLimit, ExportModels, Path, TimeLimit,
+		OneRotational_Symmetric instance = new OneRotational_Symmetric(Verbose, SolLimit, ExportModels, Path, TimeLimit,
 				Choco);
-		ArrayList<OneRotational_SolutionTraetta> Solutions = instance.solve(tables);
+		ArrayList<OneRotational_SolutionSymmetric> Solutions = instance.solve(tables);
 		if (Solutions.size() > 0) {
 			for (int i = 0; i < Solutions.size(); i++) {
 				System.out.println("Solution for " + Solutions.get(i).getOP_name());
