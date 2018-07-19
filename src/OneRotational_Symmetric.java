@@ -13,7 +13,9 @@ import org.chocosolver.solver.variables.IntVar;
 
 import ilog.concert.IloException;
 import ilog.concert.IloIntVar;
+import ilog.concert.IloNumVar;
 import ilog.cp.IloCP;
+import ilog.cp.IloSearchPhase;
 
 public class OneRotational_Symmetric {
 
@@ -205,8 +207,12 @@ public class OneRotational_Symmetric {
 		int Tl = V;
 		if (TimeLimit)
 			cpx.setParameter(IloCP.DoubleParam.TimeLimit, Tl);
+		IloSearchPhase phaseOne = cpx.searchPhase(N);
+		cpx.setSearchPhases(phaseOne);
+		
+
 		if (cpx.propagate()) {
-			System.out.println("Popagation sorted effects.");
+			System.out.println("\tPopagation sorted effects.");
 		}
 		// cpx.exportModel("test.cpo");
 		if (cpx.solve()) {

@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.Date;
 
 import ilog.cp.IloCP;
+import ilog.cp.IloSearchPhase;
 import ilog.cplex.IloCplex;
 import ilog.concert.IloConstraint;
 import ilog.concert.IloException;
@@ -1055,7 +1056,9 @@ public class TwoRotational {
 			}
 			cp.add(master);
 		}
-
+		
+		IloSearchPhase phaseOne = cp.searchPhase(N);
+		cp.setSearchPhases(phaseOne);
 		cp.propagate();
 
 		if (!Verbose)
@@ -1441,6 +1444,9 @@ public class TwoRotational {
 
 		if (TimeLimit)
 			cpx.setParameter(IloCP.DoubleParam.TimeLimit, Tl);
+		
+		IloSearchPhase phaseOne = cpx.searchPhase(S);
+		cpx.setSearchPhases(phaseOne);
 		cpx.propagate();
 		if (cpx.solve()) {
 			Solution.setLabellingTime(cpx.getInfo(IloCP.DoubleInfo.SolveTime));

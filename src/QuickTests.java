@@ -3,7 +3,6 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import org.chocosolver.solver.exception.ContradictionException;
-
 import ilog.concert.IloException;
 
 public class QuickTests {

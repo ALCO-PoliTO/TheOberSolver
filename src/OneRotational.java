@@ -10,6 +10,7 @@ import org.chocosolver.solver.variables.IntVar;
 import ilog.concert.IloException;
 import ilog.concert.IloIntVar;
 import ilog.cp.IloCP;
+import ilog.cp.IloSearchPhase;
 
 public class OneRotational {
 
@@ -103,6 +104,8 @@ public class OneRotational {
 		int Tl = V;
 		if (TimeLimit)
 		cpx.setParameter(IloCP.DoubleParam.TimeLimit, Tl);
+		IloSearchPhase phaseOne = cpx.searchPhase(A);
+		cpx.setSearchPhases(phaseOne);
 		cpx.propagate();
 		if (cpx.solve()) {
 			Solution.setLabellingTime(cpx.getInfo(IloCP.DoubleInfo.SolveTime));
