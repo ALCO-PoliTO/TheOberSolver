@@ -1,5 +1,9 @@
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.ListIterator;
+import java.util.Map;
 
 import org.chocosolver.parser.json.JSON;
 import org.chocosolver.solver.Model;
@@ -24,6 +28,12 @@ public class OneRotational {
 	private static String FilePath = "";
 	private static int V = 0;
 	private static int SolLimit = 0;
+	private static Map<Integer, Integer> tableSizes = null;
+	private static ArrayList<Integer> tablesCP = null;
+	private static ArrayList<Integer> openCycles = null;
+	private static ArrayList<Integer> doubleTables = null;
+	private static int V_CP = 0;
+	private static int D_CP = 0;
 
 	private static int getOPsize(ArrayList<Integer> table) throws ErrorThrower {
 		int size = 0;
@@ -35,85 +45,241 @@ public class OneRotational {
 		return size;
 	}
 
-	public static Boolean generateLabels_CP(OneRotational_Solution Solution) throws IloException {
-		IloCP cpx = new IloCP();
-		int n = Solution.getV();
+	private static Boolean preProcess(OneRotational_Solution Solution) {
+		// Decompose the configuration into the minimal one
+		// Rest of graph is constructed
+		Boolean infiniteTable = false;
+		tablesCP = new ArrayList<Integer>();
+		int infiniteIndex = 0;
 
-		IloIntVar[] A = new IloIntVar[n];
-		IloIntVar[] Diff = null;
-		A = cpx.intVarArray(n, 0, n - 1, "A");
+		ArrayList<Integer> tablesWorking = new ArrayList<Integer>(Solution.getTables());
+		Map<Integer, Integer> sizesWorking = new HashMap<Integer, Integer>(tableSizes);
+		openCycles = new ArrayList<Integer>();
+		doubleTables = new ArrayList<Integer>();
+		int counter = 0;
+		V_CP = 0;
+		D_CP = 0;
+		for (int t = 0; t < tablesWorking.size(); t++) {
+			if (tablesWorking.get(t) % 2 == 1) {
+				// Infinite table is the one with odd cardinality
+				if (sizesWorking.get(tablesWorking.get(t)) > 0) {
+					if (!infiniteTable && sizesWorking.get(tablesWorking.get(t)) % 2 == 1) {
+						infiniteIndex = counter;
+						tablesCP.add((tablesWorking.get(t) - 1) / 2);
+						V_CP += (tablesWorking.get(t) - 1) / 2;
+						D_CP += (tablesWorking.get(t) + 1) / 2 - 2;
+						sizesWorking.replace(tablesWorking.get(t), sizesWorking.get(tablesWorking.get(t)) - 1);
+						infiniteTable = true;
+						counter++;
+					}
+					if (sizesWorking.get(tablesWorking.get(t)) > 1) {
+						// Double cycle of odd cardinality
+						tablesCP.add(tablesWorking.get(t));
+						V_CP += tablesWorking.get(t);
+						D_CP += tablesWorking.get(t);
+						// Remove the redundant table
+						doubleTables.add(counter);
+						sizesWorking.replace(tablesWorking.get(t), sizesWorking.get(tablesWorking.get(t)) - 2);
+						counter++;
+					}
+				}
+			} else {
+				// Even tables
+				if (sizesWorking.get(tablesWorking.get(t)) > 1) {
+					tablesCP.add(tablesWorking.get(t));
+					V_CP += tablesWorking.get(t);
+					D_CP += tablesWorking.get(t);
+					doubleTables.add(counter);
+					sizesWorking.replace(tablesWorking.get(t), sizesWorking.get(tablesWorking.get(t)) - 2);
+					counter++;
+				}
+				if (sizesWorking.get(tablesWorking.get(t)) == 1) {
+					// Open cycle
+					openCycles.add(counter);
+					V_CP += tablesWorking.get(t) / 2;
+					D_CP += tablesWorking.get(t) / 2;
+					tablesCP.add((tablesWorking.get(t) / 2));
+					sizesWorking.replace(tablesWorking.get(t), sizesWorking.get(tablesWorking.get(t)) - 1);
+					counter++;
+				}
+			}
+		}
+		if (infiniteIndex != 0)
+			Collections.swap(tablesCP, 0, infiniteIndex);
+		if (openCycles.contains(0)) {
+			int criticalIndex = -1;
+			for (int t = 0; t < openCycles.size(); t++)
+				if (openCycles.get(t) == 0) {
+					criticalIndex = t;
+					break;
+				}
+			openCycles.set(criticalIndex, infiniteIndex);
+			if (criticalIndex == -1) {
+				for (int t = 0; t < doubleTables.size(); t++)
+					if (doubleTables.get(t) == 0) {
+						criticalIndex = t;
+						break;
+					}
+				doubleTables.set(criticalIndex, infiniteIndex);
+			}
 
-		if (n % 2 == 1) {
-			// n is odd
-			if (Verbose)
-				System.out.println("n=" + n + " is odd");
-			Diff = new IloIntVar[n - 1];
-			Diff = cpx.intVarArray(n - 1, 1, n / 2, "Diff");
-			for (int i = 1; i <= (n - 1) / 2; i++) {
-				cpx.add(cpx.eq(cpx.count(Diff, i), 2));
-				if (Verbose)
-					System.out.println("\t\t" + i + " (2 times)");
-			}
-		} else {
-			// n is even
-			if (Verbose)
-				System.out.println("n=" + n + " is even");
-			Diff = new IloIntVar[(n - 2) + 1];
-			Diff = cpx.intVarArray((n - 2) + 1, 1, n / 2, "Diff");
-			for (int i = 1; i <= (n - 2) / 2; i++) {
-				cpx.add(cpx.eq(cpx.count(Diff, i), 2));
-				if (Verbose)
-					System.out.println("\t\t" + i + " (2 times)");
-			}
-			cpx.add(cpx.eq(cpx.count(Diff, (n / 2)), 1));
-			if (Verbose)
-				System.out.println("\t\t" + (n / 2) + " (1 time)");
 		}
 
-		cpx.add(cpx.allDiff(A));
+		if (Verbose) {
+			System.out.println("Total Vertexs to compute: " + V_CP);
+			System.out.println("Total Differences to compute: " + D_CP);
+			for (int i = 0; i < tablesCP.size(); i++) {
+				String flag = "";
+				if (openCycles.contains(i))
+					flag += "OPEN";
+				if (doubleTables.contains(i))
+					flag += "DOUBLE";
+				System.out.println("Table of " + tablesCP.get(i) + " " + flag);
+			}
+		}
+		return true;
+	}
+
+	public static Boolean generateLabels_CP(OneRotational_Solution Solution) throws IloException {
+
+
+		preProcess(Solution);
+		Solution.setTablesRed(tablesCP);
+
+		IloCP cpx = new IloCP();
+		int n = (Solution.getV() - 1) / 2;
+
+		IloIntVar[] N = cpx.intVarArray(V_CP, 0, (2 * n - 1), "N");
+		IloIntVar[] Diff = cpx.intVarArray(D_CP * 2, 1, 2 * n - 1, "Diff");
+		cpx.add(cpx.eq(cpx.count(Diff, n), 0));
+		for (int i = 0; i < n; i++) {
+			cpx.add(cpx.eq(cpx.sum(cpx.count(N, i), cpx.count(N, i + n)), 1));
+		}
+
+		cpx.add(cpx.allDiff(N));
+		cpx.add(cpx.allDiff(Diff));
 
 		int scroll = 0;
 		int alpha = 0;
 		int beta = 0;
 		int cnt = 0;
-		for (int t = 0; t < Solution.getTables().size(); t++) {
-			for (int i = 0; i < Solution.getTables().get(t) - 1; i++) {
+		for (int t = 0; t < tablesCP.size(); t++) {
+			if (Verbose)
+				System.out.println("Table " + t + " with cardinality " + tablesCP.get(t));
+			for (int i = 0; i < tablesCP.get(t) - 1; i++) {
 				alpha = scroll + i;
 				beta = scroll + i + 1;
 				if (Verbose)
 					System.out.println("Writing constraints for " + alpha + "->" + beta);
-				cpx.add(cpx.addEq(Diff[cnt], cpx.min(cpx.abs(cpx.diff(A[alpha], A[beta])),
-						cpx.diff(n, cpx.abs(cpx.diff(A[alpha], A[beta]))))));
+				cpx.add(cpx.eq(Diff[cnt], cpx.modulo(cpx.sum(cpx.diff(N[alpha], N[beta]), 2 * n), 2 * n)));
+				cnt++;
+				cpx.add(cpx.eq(Diff[cnt], cpx.modulo(cpx.sum(cpx.diff(N[beta], N[alpha]), 2 * n), 2 * n)));
 				cnt++;
 			}
 			// Close the table
-			if (t != 0) {
-				alpha = scroll + Solution.getTables().get(t) - 1;
+			if (t != 0 && !openCycles.contains(t)) {
+				alpha = scroll + tablesCP.get(t) - 1;
 				beta = scroll;
 				if (Verbose)
 					System.out.println("Writing closing constraints for " + alpha + "->" + beta);
-				cpx.add(cpx.addEq(Diff[cnt], cpx.min(cpx.abs(cpx.diff(A[alpha], A[beta])),
-						cpx.diff(n, cpx.abs(cpx.diff(A[alpha], A[beta]))))));
+				cpx.add(cpx.eq(Diff[cnt], cpx.modulo(cpx.sum(cpx.diff(N[alpha], N[beta]), 2 * n), 2 * n)));
+				cnt++;
+				cpx.add(cpx.eq(Diff[cnt], cpx.modulo(cpx.sum(cpx.diff(N[beta], N[alpha]), 2 * n), 2 * n)));
 				cnt++;
 			}
-			scroll += Solution.getTables().get(t);
+			// Relation between complementary (modulo) label in open cycles
+			if (openCycles.contains(t)) {
+				cpx.add(cpx.eq(Diff[cnt],
+						cpx.modulo(cpx.sum(
+								cpx.diff(cpx.modulo(cpx.sum(N[scroll], n), 2 * n), N[scroll + tablesCP.get(t) - 1]),
+								2 * n), 2 * n)));
+				cnt++;
+				cpx.add(cpx.eq(Diff[cnt],
+						cpx.modulo(cpx.sum(
+								cpx.diff(N[scroll + tablesCP.get(t) - 1], cpx.modulo(cpx.sum(N[scroll], n), 2 * n)),
+								2 * n), 2 * n)));
+				cnt++;
+			}
+			scroll += tablesCP.get(t);
 		}
-
 		if (!Verbose)
 			cpx.setParameter(IloCP.IntParam.LogVerbosity, IloCP.ParameterValues.Quiet);
 		int Tl = V;
 		if (TimeLimit)
-		cpx.setParameter(IloCP.DoubleParam.TimeLimit, Tl);
-		IloSearchPhase phaseOne = cpx.searchPhase(A);
+			cpx.setParameter(IloCP.DoubleParam.TimeLimit, Tl);
+		IloSearchPhase phaseOne = cpx.searchPhase(N);
 		cpx.setSearchPhases(phaseOne);
-		cpx.propagate();
+
+		if (cpx.propagate()) {
+			System.out.println("\tPopagation sorted effects.");
+		}
+		cpx.exportModel("test.cpo");
 		if (cpx.solve()) {
 			Solution.setLabellingTime(cpx.getInfo(IloCP.DoubleInfo.SolveTime));
-			int[] labels = new int[n];
-			for (int i = 0; i < n; i++) {
-				labels[i] = cpx.getIntValue(A[i]);
-				// System.out.println("Node "+i+" is labeled as "+labels[i]);
+			int[] labels = new int[V];
+			ArrayList<Integer> table = new ArrayList<Integer>();
+			ArrayList<Integer> newTables = new ArrayList<Integer>();
+			// Table with infinite
+			labels[0] = -1;
+			scroll = 1;
+			int scroll_sol = 0;
+			// System.out.println("--Infinite table");
+			for (int j = 0; j < tablesCP.get(0); j++) {
+				labels[scroll] = cpx.getIntValue(N[scroll_sol]);
+				table.add((labels[scroll] + n) % (2 * n));
+				// System.out.println(scroll + " = " + labels[scroll]);
+				scroll++;
+				scroll_sol++;
 			}
+			ListIterator<Integer> iter = table.listIterator(table.size());
+			while (iter.hasPrevious()) {
+				labels[scroll] = iter.previous();
+				// System.out.println(scroll + " = " + labels[scroll]);
+				scroll++;
+			}
+			newTables.add(tablesCP.get(0) * 2 + 1);
+			table.clear();
+
+			for (int j = 1; j < tablesCP.size(); j++) {
+				table.clear();
+				if (openCycles.contains(j)) {
+					// System.out.println("--Cycle table of "+tablesCP.get(j));
+					for (int z = 0; z < tablesCP.get(j); z++) {
+						labels[scroll] = cpx.getIntValue(N[scroll_sol]);
+						table.add((labels[scroll] + n) % (2 * n));
+						// System.out.println(scroll + " = " + labels[scroll]);
+						scroll++;
+						scroll_sol++;
+					}
+					for (int z = 0; z < table.size(); z++) {
+						labels[scroll] = table.get(z);
+						// System.out.println(scroll + " = " + labels[scroll]);
+						scroll++;
+					}
+					newTables.add(tablesCP.get(j) * 2);
+				} else if (doubleTables.contains(j)) {
+					// System.out.println("--Double table of "+tablesCP.get(j));
+					for (int z = 0; z < tablesCP.get(j); z++) {
+						labels[scroll] = cpx.getIntValue(N[scroll_sol]);
+						table.add((labels[scroll] + n) % (2 * n));
+						// System.out.println(scroll + " = " + labels[scroll]);
+						scroll++;
+						scroll_sol++;
+					}
+					// System.out.println("--Copy table of "+table.size());
+					for (int z = 0; z < table.size(); z++) {
+						labels[scroll] = table.get(z);
+						// System.out.println(scroll + " = " + labels[scroll]);
+						scroll++;
+					}
+					newTables.add(tablesCP.get(j));
+					newTables.add(tablesCP.get(j));
+				}
+
+			}
+			param_setOP_name(newTables);
+			Solution.setOP_name(param_getOP_name());
+			Solution.setTables(newTables);
 			Solution.setLabels(labels);
 
 			if (exportModels) {
@@ -131,101 +297,193 @@ public class OneRotational {
 			cpx.end();
 			return false;
 		}
+
 	}
 
-	public static Boolean generateLabels_CP_Choco(OneRotational_Solution Solution) throws ContradictionException {
-		Model choco = new Model("generateLabels_CP");
-		int n = Solution.getV();
+	public static Boolean generateLabels_CP_Choco(OneRotational_Solution Solution)
+			throws ContradictionException {
 
-		IntVar[] A = choco.intVarArray("A", n, 0, n - 1);
-		IntVar[] Diff = null;
-		IntVar two = choco.intVar(2);
+		preProcess(Solution);
+		Solution.setTablesRed(tablesCP);
+
+		Model choco = new Model("generateLabels_CP");
+		int n = (Solution.getV() - 1) / 2;
+
+		IntVar[] N = choco.intVarArray("N", V_CP, 0, (2 * n - 1));
+		IntVar[] Diff = choco.intVarArray("Diff", D_CP * 2, 1, 2 * n - 1);
+		IntVar zero = choco.intVar(0);
 		IntVar one = choco.intVar(1);
-		if (n % 2 == 1) {
-			// n is odd
-			if (Verbose)
-				System.out.println("n=" + n + " is odd");
-			Diff = choco.intVarArray("Diff", n - 1, 1, n / 2);
-			for (int i = 1; i <= (n - 1) / 2; i++) {
-				choco.count(i, Diff, two).post();
-				if (Verbose)
-					System.out.println("\t\t" + i + " (2 times)");
-			}
-		} else {
-			// n is even
-			if (Verbose)
-				System.out.println("n=" + n + " is even");
-			Diff = choco.intVarArray("Diff", (n - 2) + 1, 1, n / 2);
-			for (int i = 1; i <= (n - 2) / 2; i++) {
-				choco.count(i, Diff, two).post();
-				if (Verbose)
-					System.out.println("\t\t" + i + " (2 times)");
-			}
-			choco.count((n / 2), Diff, one).post();
-			if (Verbose)
-				System.out.println("\t\t" + (n / 2) + " (1 time)");
+
+		choco.count(n, Diff, zero).post();
+		for (int i = 0; i < n; i++) {
+			choco.among(one, N, new int[] { i, (i + n) }).post();
 		}
-		choco.allDifferent(A).post();
+
+		choco.allDifferent(N).post();
+		choco.allDifferent(Diff).post();
 
 		int scroll = 0;
 		int alpha = 0;
 		int beta = 0;
 		int cnt = 0;
-		for (int t = 0; t < Solution.getTables().size(); t++) {
-			for (int i = 0; i < Solution.getTables().get(t) - 1; i++) {
+		for (int t = 0; t < tablesCP.size(); t++) {
+			if (Verbose)
+				System.out.println("Table " + t + " with cardinality " + tablesCP.get(t));
+			for (int i = 0; i < tablesCP.get(t) - 1; i++) {
 				alpha = scroll + i;
 				beta = scroll + i + 1;
 				if (Verbose)
 					System.out.println("Writing constraints for " + alpha + "->" + beta);
-				Diff[cnt].eq(A[alpha].sub(A[beta]).abs().min(A[alpha].sub(A[beta]).abs().mul(-1).add(n))).post();
+				Diff[cnt].eq(N[alpha].sub(N[beta]).add(2 * n).mod(2 * n)).post();
+				cnt++;
+				Diff[cnt].eq(N[beta].sub(N[alpha]).add(2 * n).mod(2 * n)).post();
 				cnt++;
 			}
 			// Close the table
-			if (t != 0) {
-				alpha = scroll + Solution.getTables().get(t) - 1;
+			if (t != 0 && !openCycles.contains(t)) {
+				alpha = scroll + tablesCP.get(t) - 1;
 				beta = scroll;
 				if (Verbose)
 					System.out.println("Writing closing constraints for " + alpha + "->" + beta);
-				Diff[cnt].eq(A[alpha].sub(A[beta]).abs().min(A[alpha].sub(A[beta]).abs().mul(-1).add(n))).post();
+				Diff[cnt].eq(N[alpha].sub(N[beta]).add(2 * n).mod(2 * n)).post();
+				cnt++;
+				Diff[cnt].eq(N[beta].sub(N[alpha]).add(2 * n).mod(2 * n)).post();
 				cnt++;
 			}
-			scroll += Solution.getTables().get(t);
+			// Relation between complementary (modulo) label in open cycles
+			if (openCycles.contains(t)) {
+				Diff[cnt].eq((N[scroll].add(n).mod(2 * n)).sub(N[scroll + tablesCP.get(t) - 1]).add(2 * n).mod(2 * n))
+						.post();
+				cnt++;
+				Diff[cnt].eq((N[scroll + tablesCP.get(t) - 1]).sub(N[scroll].add(n).mod(2 * n)).add(2 * n).mod(2 * n))
+						.post();
+				cnt++;
+			}
+			scroll += tablesCP.get(t);
 		}
 		Solver solver = choco.getSolver();
+		// JSON.write(choco, new File("chocotest.json"));
 		solver.propagate();
 		if (Verbose)
 			solver.showShortStatistics();
-
-		int Tl = V;
-		if (TimeLimit)
-		solver.limitTime(Tl + "s");
 		if (solver.solve()) {
 			Solution.setLabellingTime(solver.getTimeCount());
-			int[] labels = new int[n];
-			for (int i = 0; i < n; i++) {
-				labels[i] = A[i].getValue();
-				// System.out.println("Node "+i+" is labeled as "+labels[i]);
+			int[] labels = new int[V];
+			ArrayList<Integer> table = new ArrayList<Integer>();
+			ArrayList<Integer> newTables = new ArrayList<Integer>();
+			// Table with infinite
+			labels[0] = -1;
+			scroll = 1;
+			int scroll_sol = 0;
+			// System.out.println("--Infinite table");
+			for (int j = 0; j < tablesCP.get(0); j++) {
+				labels[scroll] = N[scroll_sol].getValue();
+				table.add((labels[scroll] + n) % (2 * n));
+				// System.out.println(scroll + " = " + labels[scroll]);
+				scroll++;
+				scroll_sol++;
 			}
+			ListIterator<Integer> iter = table.listIterator(table.size());
+			while (iter.hasPrevious()) {
+				labels[scroll] = iter.previous();
+				// System.out.println(scroll + " = " + labels[scroll]);
+				scroll++;
+			}
+			newTables.add(tablesCP.get(0) * 2 + 1);
+			table.clear();
+
+			for (int j = 1; j < tablesCP.size(); j++) {
+				table.clear();
+				if (openCycles.contains(j)) {
+					// System.out.println("--Cycle table of "+tablesCP.get(j));
+					for (int z = 0; z < tablesCP.get(j); z++) {
+						labels[scroll] = N[scroll_sol].getValue();
+						table.add((labels[scroll] + n) % (2 * n));
+						// System.out.println(scroll + " = " + labels[scroll]);
+						scroll++;
+						scroll_sol++;
+					}
+					for (int z = 0; z < table.size(); z++) {
+						labels[scroll] = table.get(z);
+						// System.out.println(scroll + " = " + labels[scroll]);
+						scroll++;
+					}
+					newTables.add(tablesCP.get(j) * 2);
+				} else if (doubleTables.contains(j)) {
+					// System.out.println("--Double table of "+tablesCP.get(j));
+					for (int z = 0; z < tablesCP.get(j); z++) {
+						labels[scroll] = N[scroll_sol].getValue();
+						table.add((labels[scroll] + n) % (2 * n));
+						// System.out.println(scroll + " = " + labels[scroll]);
+						scroll++;
+						scroll_sol++;
+					}
+					// System.out.println("--Copy table of "+table.size());
+					for (int z = 0; z < table.size(); z++) {
+						labels[scroll] = table.get(z);
+						// System.out.println(scroll + " = " + labels[scroll]);
+						scroll++;
+					}
+					newTables.add(tablesCP.get(j));
+					newTables.add(tablesCP.get(j));
+				}
+
+			}
+			param_setOP_name(newTables);
+			Solution.setOP_name(param_getOP_name());
+			Solution.setTables(newTables);
 			Solution.setLabels(labels);
 
 			if (exportModels) {
-				JSON.write(choco, new File(FilePath + "solved/" + "Labelling_" + Solution.getName() + "_" + param_getOP_name() + ".json"));
+				JSON.write(choco, new File(
+						FilePath + "solved/" + "Labelling_" + Solution.getName() + "_" + param_getOP_name() + ".json"));
 			}
+
 			return true;
 		} else {
 			Solution.setStatus("Infeasible");
 			if (exportModels) {
-				JSON.write(choco, new File(FilePath + "infeasibles/" + "Labelling_" + Solution.getName() + "_" + param_getOP_name() + ".json"));
+				JSON.write(choco, new File(
+						FilePath + "solved/" + "Labelling_" + Solution.getName() + "_" + param_getOP_name() + ".json"));
 			}
 			return false;
 		}
+
 	}
 
-	public ArrayList<OneRotational_Solution> solve(ArrayList<Integer> tables) throws ErrorThrower, IloException, ContradictionException {
-		tables.set(0, tables.get(0) - 1);
+	public Boolean validConfiguration(ArrayList<Integer> tables) {
+		tableSizes = new HashMap<Integer, Integer>();
+		for (int t = 0; t < tables.size(); t++) {
+			if (tableSizes.containsKey(tables.get(t)))
+				tableSizes.replace(tables.get(t), tableSizes.get(tables.get(t)) + 1);
+			else
+				tableSizes.put(tables.get(t), 1);
+		}
+		int checkFlag = 0;
+		for (Map.Entry<Integer, Integer> entry : tableSizes.entrySet()) {
+			if ((entry.getKey() % 2) == 1) {
+				if ((entry.getValue() % 2) == 1) {
+					checkFlag++;
+				}
+			}
+		}
+		if (checkFlag > 1)
+			return false;
+		else
+			return true;
+	}
+
+	public ArrayList<OneRotational_Solution> solve(ArrayList<Integer> tables)
+			throws ErrorThrower, IloException, ContradictionException {
 		V = getOPsize(tables);
 		if (V < 1) {
 			throw new ErrorThrower("Less than 3 nodes!");
+		}
+		if ((V % 2) == 0) {
+			throw new ErrorThrower("Order of graph must be odd!");
+		}
+		if (!validConfiguration(tables)) {
+			throw new ErrorThrower("More than odd table with odd participants.");
 		}
 
 		OneRotational_Solution Solution = null;
@@ -269,7 +527,8 @@ public class OneRotational {
 		return Solutions;
 	}
 
-	public OneRotational(boolean Verbose, int SolLimit, Boolean exportModels, String FilePath, Boolean TimeLimit, Boolean Choco) {
+	public OneRotational(boolean Verbose, int SolLimit, Boolean exportModels, String FilePath,
+			Boolean TimeLimit, Boolean Choco) {
 		param_setVerbose(Verbose);
 		param_setSolLimit(SolLimit);
 		param_setExportModels(exportModels);
@@ -290,9 +549,7 @@ public class OneRotational {
 		return OP_name;
 	}
 
-	public static void param_setOP_name(ArrayList<Integer> tables) {
-		ArrayList<Integer> tcopy = new ArrayList<Integer>(tables);
-		tcopy.set(0, tcopy.get(0) + 1);
+	public static void param_setOP_name(ArrayList<Integer> tcopy) {
 		String OP = "OP(";
 		for (int t = 0; t < tcopy.size(); t++) {
 			if (t != (tcopy.size() - 1)) {
@@ -301,7 +558,6 @@ public class OneRotational {
 				OP += tcopy.get(t) + ")";
 
 		}
-		tcopy.clear();
 		OP_name = OP;
 	}
 

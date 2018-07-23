@@ -3,9 +3,11 @@ import java.util.Collections;
 
 public class OneRotational_Solution {
 	private static ArrayList<Integer> tables = new ArrayList<Integer>();
+	private static ArrayList<Integer> tablesRed = new ArrayList<Integer>();
 	private int V;
 	private String name;
 	private String OP_name;
+	private String OP_name_red;
 	private String Status = "Solved";
 	private double labellingTime = -1.0;
 	private Boolean MIP = false;
@@ -17,7 +19,7 @@ public class OneRotational_Solution {
 		super();
 		setTables(tables);
 		setV(v);
-		setLabels(new int[V - 1]);
+		setLabels(new int[V]);
 	}
 
 	public boolean verify() {
@@ -27,75 +29,51 @@ public class OneRotational_Solution {
 		int beta = 0;
 		int a = 0;
 		int b = 0;
+		int n = (V - 1) / 2;
 		for (int t = 0; t < tables.size(); t++) {
 			for (int i = 0; i < tables.get(t) - 1; i++) {
 				alpha = scroll + i;
 				beta = scroll + i + 1;
-				a = Math.abs(labels[alpha] - labels[beta]);
-				b = getV() - Math.abs(labels[alpha] - labels[beta]);
-				if (a < b)
+				if (labels[alpha] != -1 && labels[beta] != -1) {
+					a = (labels[alpha] - labels[beta] + 2 * n) % (2 * n);
+					b = (labels[beta] - labels[alpha] + 2 * n) % (2 * n);
 					Diff.add(a);
-				else
 					Diff.add(b);
-
+				}
 			}
 			if (t != 0) {
 				alpha = scroll + tables.get(t) - 1;
 				beta = scroll;
-				a = Math.abs(labels[alpha] - labels[beta]);
-				b = getV() - Math.abs(labels[alpha] - labels[beta]);
-				if (a < b)
+				if (labels[alpha] != -1 && labels[beta] != -1) {
+					a = (labels[alpha] - labels[beta] + 2 * n) % (2 * n);
+					b = (labels[beta] - labels[alpha] + 2 * n) % (2 * n);
 					Diff.add(a);
-				else
 					Diff.add(b);
+				}
 			}
 			scroll += tables.get(t);
 		}
-		Collections.sort(Diff);
+		int count = 0;
+		int count2 = 0;
+		ArrayList<Integer> labelsList = new ArrayList<Integer>();
+		for (int i = 0; i < labels.length; i++)
+			labelsList.add(labels[i]);
 
-		int nDiff = 0;
-		// System.out.println("v:" + getV());
-		// System.out.println("Diff:" + Diff.size());
-		if (labels.length % 2 == 0) {
-			int i = 0;
-			int j = 1;
-			while (i < getV() - 2) {
-				// System.out.println(i + " and " + (i + 1) + " should be equal to " + j);
-				// System.out.println(Diff.get(i) + " and " +Diff.get(i+1));
-				if ((Diff.get(i) == j) && (Diff.get(i + 1) == j))
-					nDiff = nDiff + 2;
-				i = i + 2;
-				j++;
-			}
-			// System.out.println((Diff.size() - 1) + " should be equal to " + (getV() /
-			// 2));
-			if (Diff.get(Diff.size() - 1) == (getV() / 2))
-				nDiff++;
-			// System.out.println(((getV() - 2) + 1)+" vs "+nDiff);
-			if (nDiff == ((getV() - 2) + 1))
-				return true;
-			else
-				return false;
-		}
+		for (int i = 1; i < (2 * n); i++)
+			if (Collections.frequency(Diff, i) == 2)
+				count++;
+		for (int i = 0; i < (2 * n - 1); i++)
+			if (Collections.frequency(labelsList, i) == 1)
+				count2++;
 
-		if (labels.length % 2 == 1) {
-			int i = 0;
-			int j = 1;
-			while (i < getV() - 1) {
-				// System.out.println(i + " and " + (i + 1) + " should be equal to " + j);
-				// System.out.println(Diff.get(i) + " and " +Diff.get(i+1));
-				if ((Diff.get(i) == j) && (Diff.get(i + 1) == j))
-					nDiff = nDiff + 2;
-				i = i + 2;
-				j++;
-			}
-			if (nDiff == (getV() - 1))
-				return true;
-			else
-				return false;
-		}
+		if (Collections.frequency(labelsList, -1) == 1)
+			count2++;
 
-		return true;
+		if (count == (2 * n - 1) && count2 == (2 * n))
+			return true;
+		else
+			return false;
+
 	}
 
 	public int getV() {
@@ -133,11 +111,11 @@ public class OneRotational_Solution {
 		for (int t = 0; t < tables.size(); t++) {
 			ret += "(";
 			for (int i = 0; i < tables.get(t); i++) {
-				if (i == 0 && t == 0)
+				if (labels[i + scroll] == (-1))
 					ret += "\\infty, ";
-
-				ret += "" + labels[i + scroll];
-				if (i != tables.get(t) - 1)
+				else
+					ret += "" + labels[i + scroll];
+				if (i != tables.get(t) - 1 && labels[i + scroll] != -1)
 					ret += ", ";
 			}
 			ret += ") ";
@@ -187,6 +165,10 @@ public class OneRotational_Solution {
 		return OP_name;
 	}
 
+	public String getOP_nameRed() {
+		return OP_name_red;
+	}
+
 	public void setOP_name(String oP_name) {
 		OP_name = oP_name;
 	}
@@ -197,6 +179,23 @@ public class OneRotational_Solution {
 
 	public void setNotes(String notes) {
 		this.notes = notes;
+	}
+
+	public static ArrayList<Integer> getTablesRed() {
+		return tablesRed;
+	}
+
+	public void setTablesRed(ArrayList<Integer> tred) {
+		tablesRed = tred;
+		String OP = "(";
+		for (int t = 0; t < tablesRed.size(); t++) {
+			if (t != (tablesRed.size() - 1)) {
+				OP += tablesRed.get(t) + ",";
+			} else
+				OP += tablesRed.get(t) + ")";
+
+		}
+		OP_name_red = OP;
 	}
 
 }

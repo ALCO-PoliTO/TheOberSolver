@@ -162,16 +162,13 @@ public class Main {
 		int SolLimit = 0;
 		Boolean Check = false;
 		if (input.nextInt() == 0) {
-			System.out.println("1 OneRotational - 2 TwoRotational - 3 TwoRotationalTraetta");
+			System.out.println("1 OneRotational_Whist - 2 TwoRotational");
 			switch (input.nextInt()) {
 			case 1:
 				RotationalType = 1;
 				break;
 			case 2:
 				RotationalType = 2;
-				break;
-			case 3:
-				RotationalType = 3;
 				break;
 			default:
 				RotationalType = 2;
@@ -233,17 +230,16 @@ public class Main {
 			SolLimit = 1;
 			Symmetry = true;
 			SymmetryValue = 6;
-			System.out.println("\tChoco="+Choco+";Timelimit="+TimeLimit+";Verbose="+Verbose+";onlyPoly="+onlyPoly+";onlyCP="+onlyCP+";ExportModels="+ExportModels+";SolLimit="+SolLimit+";Symmetry="+Symmetry+";");
-			System.out.println("1 OneRotational - 2 TwoRotational - 3 TwoRotationalTraetta");
+			System.out.println("\tChoco=" + Choco + ";Timelimit=" + TimeLimit + ";Verbose=" + Verbose + ";onlyPoly="
+					+ onlyPoly + ";onlyCP=" + onlyCP + ";ExportModels=" + ExportModels + ";SolLimit=" + SolLimit
+					+ ";Symmetry=" + Symmetry + ";");
+			System.out.println("1 OneRotational_Whist - 2 TwoRotational - 3 TwoRotationalTraetta");
 			switch (input.nextInt()) {
 			case 1:
 				RotationalType = 1;
 				break;
 			case 2:
 				RotationalType = 2;
-				break;
-			case 3:
-				RotationalType = 3;
 				break;
 			default:
 				RotationalType = 2;
@@ -509,12 +505,14 @@ public class Main {
 				DecimalFormat df = new DecimalFormat("0.0000");
 				Partition prt = new Partition(V_in, 3);
 				ArrayList<ArrayList<Integer>> tables = prt.loadPartition();
-				OneRotational instance = new OneRotational(Verbose, SolLimit, ExportModels, Path, TimeLimit, Choco);
+				OneRotational instance = new OneRotational(Verbose, SolLimit, ExportModels, Path,
+						TimeLimit, Choco);
 				for (int i = 0; i < tables.size(); i++) {
 					ArrayList<OneRotational_Solution> Solutions = instance.solve(tables.get(i));
 					if (Solutions.size() > 0) {
 						for (int j = 0; j < Solutions.size(); j++) {
 							System.out.println("Solution for " + Solutions.get(j).getOP_name());
+							System.out.println("\tMinimal Problem: " + Solutions.get(i).getOP_nameRed());
 							System.out.println("\tStatus: " + Solutions.get(j).getStatus());
 							System.out.println("\tLabellingTime: " + df.format(Solutions.get(j).getLabellingTime()));
 							System.out.println("\tLabels.Size: " + Solutions.get(j).getLabels().length);
@@ -547,11 +545,13 @@ public class Main {
 				writeDemon(V_in);
 				writeDemonCSV(V_in, 1);
 				DecimalFormat df = new DecimalFormat("0.0000");
-				OneRotational instance = new OneRotational(Verbose, SolLimit, ExportModels, Path, TimeLimit, Choco);
+				OneRotational instance = new OneRotational(Verbose, SolLimit, ExportModels, Path,
+						TimeLimit, Choco);
 				ArrayList<OneRotational_Solution> Solutions = instance.solve(tables);
 				if (Solutions.size() > 0) {
 					for (int i = 0; i < Solutions.size(); i++) {
 						System.out.println("Solution for " + Solutions.get(i).getOP_name());
+						System.out.println("\tMinimal Problem: " + Solutions.get(i).getOP_nameRed());
 						System.out.println("\tStatus: " + Solutions.get(i).getStatus());
 						System.out.println("\tLabellingTime: " + df.format(Solutions.get(i).getLabellingTime()));
 						System.out.println("\tLabels.Size: " + Solutions.get(i).getLabels().length);
@@ -568,88 +568,6 @@ public class Main {
 
 		}
 			break;
-
-		default: {
-			System.out.println("1RotationalSymmetric");
-			System.out.println("0 partitions - 1 for instance");
-			if (input.nextInt() == 0) {
-				System.out.println("Insert number of nodes");
-				int V_in = input.nextInt();
-				TimeElapsed();
-				if (!(V_in > 2)) {
-					throw new ErrorThrower("V < 3");
-				}
-				writeDemon(V_in);
-				writeDemonCSV(V_in, 1);
-				DecimalFormat df = new DecimalFormat("0.0000");
-				Partition prt = new Partition(V_in, 3);
-				ArrayList<ArrayList<Integer>> tables = prt.loadPartition();
-				OneRotational_Symmetric instance = new OneRotational_Symmetric(Verbose, SolLimit, ExportModels, Path,
-						TimeLimit, Choco);
-				for (int i = 0; i < tables.size(); i++) {
-					if (instance.validConfiguration(tables.get(i))) {
-						ArrayList<OneRotational_SolutionSymmetric> Solutions = instance.solve(tables.get(i));
-						if (Solutions.size() > 0) {
-							for (int j = 0; j < Solutions.size(); j++) {
-								System.out.println("Solution for " + Solutions.get(j).getOP_name());
-								System.out.println("\tStatus: " + Solutions.get(j).getStatus());
-								System.out.println("\tMinimal Problem: " + Solutions.get(j).getOP_nameRed());
-								System.out
-										.println("\tLabellingTime: " + df.format(Solutions.get(j).getLabellingTime()));
-								System.out.println("\tLabels.Size: " + Solutions.get(j).getLabels().length);
-								if (Check)
-									System.out.println("\tVerify: " + Solutions.get(j).verify());
-
-								CSV_Printer.printRecord(Solutions.get(j).getOP_name(), Solutions.get(j).getName(),
-										Solutions.get(j).getStatus(), df.format(Solutions.get(j).getLabellingTime()),
-										Solutions.get(j).getOP_nameRed() + " - " + Solutions.get(j).getNotes(),
-										df.format(Solutions.get(j).getTotalTime()), Solutions.get(j).getSolution());
-
-							}
-							CSV_Printer.flush();
-						}
-					} else
-						System.out.println("Configuration " + i + " not valid. Skipping.");
-
-				}
-				CSV_Printer.close();
-			} else {
-				System.out.println("Insert the length of the next table. -1 to end input");
-				ArrayList<Integer> tables = new ArrayList<Integer>();
-				int num;
-				int V_in = 0;
-				while ((num = input.nextInt()) > 0) {
-					tables.add(num);
-					V_in += num;
-				}
-				if (!(V_in > 2)) {
-					throw new ErrorThrower("V < 3");
-				}
-				writeDemon(V_in);
-				writeDemonCSV(V_in, 1);
-				DecimalFormat df = new DecimalFormat("0.0000");
-				OneRotational_Symmetric instance = new OneRotational_Symmetric(Verbose, SolLimit, ExportModels, Path,
-						TimeLimit, Choco);
-				ArrayList<OneRotational_SolutionSymmetric> Solutions = instance.solve(tables);
-				if (Solutions.size() > 0) {
-					for (int i = 0; i < Solutions.size(); i++) {
-						System.out.println("Solution for " + Solutions.get(i).getOP_name());
-						System.out.println("\tStatus: " + Solutions.get(i).getStatus());
-						System.out.println("\tMinimal Problem: " + Solutions.get(i).getOP_nameRed());
-						System.out.println("\tLabellingTime: " + df.format(Solutions.get(i).getLabellingTime()));
-						System.out.println("\tLabels.Size: " + Solutions.get(i).getLabels().length);
-						CSV_Printer.printRecord(Solutions.get(i).getOP_name(), Solutions.get(i).getName(),
-								Solutions.get(i).getStatus(), df.format(Solutions.get(i).getLabellingTime()),
-								Solutions.get(i).getOP_nameRed() + " - " + Solutions.get(i).getNotes(),
-								df.format(Solutions.get(i).getTotalTime()), Solutions.get(i).getSolution());
-					}
-					CSV_Printer.close();
-				} else {
-					System.out.println("No Solution found.");
-				}
-			}
-
-		}
 		}
 
 		TimeElapsed();

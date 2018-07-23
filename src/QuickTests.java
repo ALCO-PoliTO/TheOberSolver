@@ -9,19 +9,11 @@ public class QuickTests {
 
 	public static void main(String[] args) throws ErrorThrower, IloException, IOException, ContradictionException {
 
-		System.out.println("Insert the length of the next table. -1 to end input");
+		System.out.println("Quick Tests");
 		ArrayList<Integer> tables = new ArrayList<Integer>();
-		tables.add(5);
-		tables.add(7);
-		tables.add(7);
-		tables.add(17);
-		tables.add(17);
-		tables.add(20);
-		tables.add(50);
-		tables.add(20);
-		tables.add(6);
-		tables.add(6);
-		tables.add(12);
+		tables.add(3);
+		tables.add(4);
+		tables.add(24);
 		Boolean Verbose = false;
 		Boolean ExportModels = false;
 		Boolean Choco = false;
@@ -29,9 +21,9 @@ public class QuickTests {
 		int SolLimit = 1;
 		String Path = "";
 		DecimalFormat df = new DecimalFormat("0.0000");
-		OneRotational_Symmetric instance = new OneRotational_Symmetric(Verbose, SolLimit, ExportModels, Path, TimeLimit,
+		OneRotational instance = new OneRotational(Verbose, SolLimit, ExportModels, Path, TimeLimit,
 				Choco);
-		ArrayList<OneRotational_SolutionSymmetric> Solutions = instance.solve(tables);
+		ArrayList<OneRotational_Solution> Solutions = instance.solve(tables);
 		if (Solutions.size() > 0) {
 			for (int i = 0; i < Solutions.size(); i++) {
 				System.out.println("Solution for " + Solutions.get(i).getOP_name());
