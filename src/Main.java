@@ -162,7 +162,7 @@ public class Main {
 		int SolLimit = 0;
 		Boolean Check = false;
 		if (input.nextInt() == 0) {
-			System.out.println("1 OneRotational_Whist - 2 TwoRotational");
+			System.out.println("1 OneRotational - 2 TwoRotational");
 			switch (input.nextInt()) {
 			case 1:
 				RotationalType = 1;
@@ -233,7 +233,7 @@ public class Main {
 			System.out.println("\tChoco=" + Choco + ";Timelimit=" + TimeLimit + ";Verbose=" + Verbose + ";onlyPoly="
 					+ onlyPoly + ";onlyCP=" + onlyCP + ";ExportModels=" + ExportModels + ";SolLimit=" + SolLimit
 					+ ";Symmetry=" + Symmetry + ";");
-			System.out.println("1 OneRotational_Whist - 2 TwoRotational - 3 TwoRotationalTraetta");
+			System.out.println("1 OneRotational - 2 TwoRotational - 3 TwoRotationalTraetta");
 			switch (input.nextInt()) {
 			case 1:
 				RotationalType = 1;
