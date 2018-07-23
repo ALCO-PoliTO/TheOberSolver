@@ -11,9 +11,9 @@ public class QuickTests {
 
 		System.out.println("Quick Tests");
 		ArrayList<Integer> tables = new ArrayList<Integer>();
-		tables.add(3);
-		tables.add(4);
-		tables.add(24);
+		tables.add(10);
+		tables.add(50);
+		tables.add(17);
 		Boolean Verbose = false;
 		Boolean ExportModels = false;
 		Boolean Choco = false;
@@ -26,14 +26,15 @@ public class QuickTests {
 		ArrayList<OneRotational_Solution> Solutions = instance.solve(tables);
 		if (Solutions.size() > 0) {
 			for (int i = 0; i < Solutions.size(); i++) {
-				System.out.println("Solution for " + Solutions.get(i).getOP_name());
-				System.out.println("\tMinimal Problem: " + Solutions.get(i).getOP_nameRed());
-				System.out.println("\tStatus: " + Solutions.get(i).getStatus());
-				System.out.println("\tLabellingTime: " + df.format(Solutions.get(i).getLabellingTime()));
-				System.out.println("\tUsingMIP: " + Solutions.get(i).getMIP());
-				System.out.println("\tLabels.Size: " + Solutions.get(i).getLabels().length);
-				System.out.println("\tSolution: "+Solutions.get(i).getSolution());
-				System.out.println("\tVerification: "+Solutions.get(i).verify());
+				OneRotational_SolutionM2 Soluzionen = new OneRotational_SolutionM2(Solutions.get(i));
+				System.out.println("Solution for " + Soluzionen.getOP_name());
+				System.out.println("\tMinimal Problem: " + Soluzionen.getOP_nameRed());
+				System.out.println("\tStatus: " + Soluzionen.getStatus());
+				System.out.println("\tLabellingTime: " + df.format(Soluzionen.getLabellingTime()));
+				System.out.println("\tUsingMIP: " + Soluzionen.getMIP());
+				System.out.println("\tLabels.Size: " + Soluzionen.getLabels().length);
+				System.out.println("\tSolution: "+Soluzionen.getSolution());
+				System.out.println("\tVerification: "+Soluzionen.verify());
 			}
 		} else {
 			System.out.println("No Solution found.");

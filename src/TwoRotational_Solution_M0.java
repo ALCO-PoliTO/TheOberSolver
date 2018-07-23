@@ -29,7 +29,7 @@ public class TwoRotational_Solution_M0 {
 		setColorTime(Solution.getColorTime());
 		setMIP(Solution.getMIP());
 		setColorTries(Solution.getColorTries());
-		setNotes(Solution.getNotes() + " - Mod=0");
+		setNotes(Solution.getNotes() + " (4t)");
 		setStatus(Solution.getStatus());
 		setName(Solution.getName());
 		setTotalTime(Solution.getTotalTime());
@@ -52,7 +52,7 @@ public class TwoRotational_Solution_M0 {
 						setCriticDiff((labels[alpha] - labels[beta] + mod) % mod);
 					else
 						setCriticDiff((labels[beta] - labels[alpha] + mod) % mod);
-					setNotes(Solution.getNotes() + " | 4t CDiff=" + getCriticDiff());
+					setNotes(Solution.getNotes() + " " + getCriticDiff());
 				}
 			}
 			scroll += tables.get(t);

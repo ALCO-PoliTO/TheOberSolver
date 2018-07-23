@@ -181,7 +181,7 @@ public class OneRotational_Solution {
 		this.notes = notes;
 	}
 
-	public static ArrayList<Integer> getTablesRed() {
+	public ArrayList<Integer> getTablesRed() {
 		return tablesRed;
 	}
 

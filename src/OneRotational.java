@@ -142,7 +142,6 @@ public class OneRotational {
 
 	public static Boolean generateLabels_CP(OneRotational_Solution Solution) throws IloException {
 
-
 		preProcess(Solution);
 		Solution.setTablesRed(tablesCP);
 
@@ -211,9 +210,10 @@ public class OneRotational {
 		cpx.setSearchPhases(phaseOne);
 
 		if (cpx.propagate()) {
-			System.out.println("\tPopagation sorted effects.");
+			if (Verbose)
+				System.out.println("\tPropagation sorted effects.");
 		}
-		cpx.exportModel("test.cpo");
+
 		if (cpx.solve()) {
 			Solution.setLabellingTime(cpx.getInfo(IloCP.DoubleInfo.SolveTime));
 			int[] labels = new int[V];
@@ -300,8 +300,7 @@ public class OneRotational {
 
 	}
 
-	public static Boolean generateLabels_CP_Choco(OneRotational_Solution Solution)
-			throws ContradictionException {
+	public static Boolean generateLabels_CP_Choco(OneRotational_Solution Solution) throws ContradictionException {
 
 		preProcess(Solution);
 		Solution.setTablesRed(tablesCP);
@@ -476,6 +475,9 @@ public class OneRotational {
 	public ArrayList<OneRotational_Solution> solve(ArrayList<Integer> tables)
 			throws ErrorThrower, IloException, ContradictionException {
 		V = getOPsize(tables);
+		if ((V % 4) != 1) {
+			throw new ErrorThrower("Problem is not 4t+1");
+		}
 		if (V < 1) {
 			throw new ErrorThrower("Less than 3 nodes!");
 		}
@@ -527,8 +529,8 @@ public class OneRotational {
 		return Solutions;
 	}
 
-	public OneRotational(boolean Verbose, int SolLimit, Boolean exportModels, String FilePath,
-			Boolean TimeLimit, Boolean Choco) {
+	public OneRotational(boolean Verbose, int SolLimit, Boolean exportModels, String FilePath, Boolean TimeLimit,
+			Boolean Choco) {
 		param_setVerbose(Verbose);
 		param_setSolLimit(SolLimit);
 		param_setExportModels(exportModels);
