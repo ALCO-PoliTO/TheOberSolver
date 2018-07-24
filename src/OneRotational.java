@@ -472,6 +472,25 @@ public class OneRotational {
 			return true;
 	}
 
+	public Boolean checkExistence() {
+		int n = (V - 1) / 2;
+		Boolean ret = false;
+		if (n % 2 == 0)
+			if (n % 4 == 0)
+				ret = true;
+		if (n % 2 == 1) {
+			int sum = 0;
+			for (Map.Entry<Integer, Integer> entry : tableSizes.entrySet())
+				if ((entry.getKey() % 2) == 0)
+					sum += entry.getValue();
+
+			if (n % 4 == (1 + 2 * (sum)))
+				ret = true;
+		}
+		return ret;
+
+	}
+
 	public ArrayList<OneRotational_Solution> solve(ArrayList<Integer> tables)
 			throws ErrorThrower, IloException, ContradictionException {
 		V = getOPsize(tables);
@@ -485,9 +504,8 @@ public class OneRotational {
 			throw new ErrorThrower("Order of graph must be odd!");
 		}
 		if (!validConfiguration(tables)) {
-			throw new ErrorThrower("More than odd table with odd participants.");
+			throw new ErrorThrower("More than one odd table with odd participants.");
 		}
-
 		OneRotational_Solution Solution = null;
 		ArrayList<OneRotational_Solution> Solutions = new ArrayList<OneRotational_Solution>();
 		param_setOP_name(tables);
@@ -495,10 +513,14 @@ public class OneRotational {
 		int Solve_count = 0;
 		boolean Flag = true;
 		int iteration = 0;
-
+		
 		while (Flag) {
 			Clock = System.nanoTime();
 			Solution = new OneRotational_Solution(tables, V);
+
+			if (!checkExistence()) 
+				Solution.setNotes(Solution.getNotes() + " falseExistenceConditions");
+			
 			Solution.setName("" + iteration);
 			Solution.setOP_name(param_getOP_name());
 			Boolean res = false;
@@ -511,13 +533,10 @@ public class OneRotational {
 				Solutions.add(Solution);
 			} else {
 				System.out.println("No solution found with CP.");
-				/*
-				 * if (generateLabels_MIP(Solution)) { Solve_count++;
-				 * System.out.println("Solution found with MIP."); } else {
-				 * System.out.println("Proven infeasible with MIP."); }
-				 */
+
 				Solution.setStatus("Infeasible");
 				Solutions.add(Solution);
+				Solve_count++;
 			}
 			if (SolLimit != 0) {
 				if (Solve_count == SolLimit)

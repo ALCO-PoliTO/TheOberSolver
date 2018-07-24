@@ -28,6 +28,18 @@ public class Main {
 		System.out.println("Time elapsed:" + (System.nanoTime() - Clock) / 1000000000F + "s");
 	}
 
+	public static String getOP_name(ArrayList<Integer> tcopy) {
+		String OP = "OP(";
+		for (int t = 0; t < tcopy.size(); t++) {
+			if (t != (tcopy.size() - 1)) {
+				OP += tcopy.get(t) + ",";
+			} else
+				OP += tcopy.get(t) + ")";
+
+		}
+		return OP;
+	}
+
 	@SuppressWarnings("unused")
 	private static void exportMatlab(ArrayList<Integer> tables, ArrayList<Integer> colors, String name)
 			throws IOException, ErrorThrower {
@@ -233,7 +245,7 @@ public class Main {
 			System.out.println("\tChoco=" + Choco + ";Timelimit=" + TimeLimit + ";Verbose=" + Verbose + ";onlyPoly="
 					+ onlyPoly + ";onlyCP=" + onlyCP + ";ExportModels=" + ExportModels + ";SolLimit=" + SolLimit
 					+ ";Symmetry=" + Symmetry + ";");
-			System.out.println("1 OneRotational - 2 TwoRotational - 3 TwoRotationalTraetta");
+			System.out.println("1 OneRotational - 2 TwoRotational");
 			switch (input.nextInt()) {
 			case 1:
 				RotationalType = 1;
@@ -500,36 +512,104 @@ public class Main {
 				if (!(V_in > 2)) {
 					throw new ErrorThrower("V < 3");
 				}
+				if (!(V_in % 4 == 1) && !(V_in % 4 == 2)) {
+					throw new ErrorThrower("V % 4 != 2 && V % 4 != 1");
+				}
+				Boolean Mod2 = false;
+				if (V_in % 4 == 2) {
+					Mod2 = true;
+				}
+
 				writeDemon(V_in);
 				writeDemonCSV(V_in, 1);
 				DecimalFormat df = new DecimalFormat("0.0000");
 				Partition prt = new Partition(V_in, 3);
 				ArrayList<ArrayList<Integer>> tables = prt.loadPartition();
-				OneRotational instance = new OneRotational(Verbose, SolLimit, ExportModels, Path,
-						TimeLimit, Choco);
+				OneRotational instance = new OneRotational(Verbose, SolLimit, ExportModels, Path, TimeLimit, Choco);
 				for (int i = 0; i < tables.size(); i++) {
-					ArrayList<OneRotational_Solution> Solutions = instance.solve(tables.get(i));
-					if (Solutions.size() > 0) {
-						for (int j = 0; j < Solutions.size(); j++) {
-							System.out.println("Solution for " + Solutions.get(j).getOP_name());
-							System.out.println("\tMinimal Problem: " + Solutions.get(i).getOP_nameRed());
-							System.out.println("\tStatus: " + Solutions.get(j).getStatus());
-							System.out.println("\tLabellingTime: " + df.format(Solutions.get(j).getLabellingTime()));
-							System.out.println("\tLabels.Size: " + Solutions.get(j).getLabels().length);
-							if (Check)
-								System.out.println("\tVerify: " + Solutions.get(j).verify());
+					ArrayList<OneRotational_Solution> Solutions = new ArrayList<OneRotational_Solution>();
+					ArrayList<OneRotational_SolutionM2> Solutions_Mod2 = new ArrayList<OneRotational_SolutionM2>();
+					ArrayList<Integer> tcopy = null;
+					// 4t Solution
+					if (Mod2) {
+						Boolean flag = true;
 
-							CSV_Printer.printRecord(Solutions.get(j).getOP_name(), Solutions.get(j).getName(),
-									Solutions.get(j).getStatus(), df.format(Solutions.get(j).getLabellingTime()),
-									Solutions.get(j).getNotes(), df.format(Solutions.get(j).getTotalTime()),
-									Solutions.get(j).getSolution());
+						for (int u = 0; u < tables.get(i).size() && flag; u++) {
+							tcopy = new ArrayList<Integer>(tables.get(i));
+							tcopy.set(u, tcopy.get(u) - 1);
+							if (instance.validConfiguration(tcopy))
+								flag = false;
 
 						}
-						CSV_Printer.flush();
+						if (flag == false) {
+							Solutions = instance.solve(tcopy);
+							System.out.println("\tConverting 4t+1 to 4t+2...");
+							if (Solutions.size() > 0) {
+								for (int j = 0; j < Solutions.size(); j++) {
+									Solutions_Mod2.add(new OneRotational_SolutionM2(Solutions.get(j)));
+
+									System.out.println("Solution for " + Solutions_Mod2.get(j).getOP_name());
+									System.out.println("\tMinimal Problem: " + Solutions_Mod2.get(j).getOP_nameRed());
+									System.out.println("\tStatus: " + Solutions_Mod2.get(j).getStatus());
+									System.out.println(
+											"\tLabellingTime: " + df.format(Solutions_Mod2.get(j).getLabellingTime()));
+									System.out.println("\tLabels.Size: " + Solutions_Mod2.get(j).getLabels().length);
+									if (Check)
+										System.out.println("\tVerify: " + Solutions_Mod2.get(j).verify());
+
+									CSV_Printer.printRecord(Solutions_Mod2.get(j).getOP_name(),
+											Solutions_Mod2.get(j).getName(), Solutions_Mod2.get(j).getStatus(),
+											df.format(Solutions_Mod2.get(j).getLabellingTime()),
+											Solutions_Mod2.get(j).getNotes(),
+											df.format(Solutions_Mod2.get(j).getTotalTime()),
+											Solutions_Mod2.get(j).getSolution());
+
+								}
+								CSV_Printer.flush();
+							} else {
+								CSV_Printer.printRecord(getOP_name(tables.get(i)), "", "Infeasible", "",
+										"No solution found", "", "");
+							}
+						} else {
+							CSV_Printer.printRecord(getOP_name(tables.get(i)), "", "Infeasible", "",
+									"Table config is not valid", "", "");
+						}
+
+					} else {
+						if (instance.validConfiguration(tables.get(i))) {
+							Solutions = instance.solve(tables.get(i));
+							if (Solutions.size() > 0) {
+								for (int j = 0; j < Solutions.size(); j++) {
+									System.out.println("Solution for " + Solutions.get(j).getOP_name());
+									System.out.println("\tMinimal Problem: " + Solutions.get(j).getOP_nameRed());
+									System.out.println("\tStatus: " + Solutions.get(j).getStatus());
+									System.out.println(
+											"\tLabellingTime: " + df.format(Solutions.get(j).getLabellingTime()));
+									System.out.println("\tLabels.Size: " + Solutions.get(j).getLabels().length);
+									if (Check)
+										System.out.println("\tVerify: " + Solutions.get(j).verify());
+
+									CSV_Printer.printRecord(Solutions.get(j).getOP_name(), Solutions.get(j).getName(),
+											Solutions.get(j).getStatus(),
+											df.format(Solutions.get(j).getLabellingTime()), Solutions.get(j).getNotes(),
+											df.format(Solutions.get(j).getTotalTime()), Solutions.get(j).getSolution());
+
+								}
+								CSV_Printer.flush();
+							} else {
+								CSV_Printer.printRecord(getOP_name(tables.get(i)), "", "Infeasible", "",
+										"No solution found", "", "");
+							}
+						} else {
+							CSV_Printer.printRecord(getOP_name(tables.get(i)), "", "Infeasible", "",
+									"Table config is not valid", "", "");
+						}
+
 					}
 
 				}
 				CSV_Printer.close();
+
 			} else {
 				System.out.println("Insert the length of the next table. -1 to end input");
 				ArrayList<Integer> tables = new ArrayList<Integer>();
@@ -542,28 +622,93 @@ public class Main {
 				if (!(V_in > 2)) {
 					throw new ErrorThrower("V < 3");
 				}
+				Boolean Mod2 = false;
+				if (V_in % 4 == 2) {
+					Mod2 = true;
+				}
 				writeDemon(V_in);
 				writeDemonCSV(V_in, 1);
 				DecimalFormat df = new DecimalFormat("0.0000");
-				OneRotational instance = new OneRotational(Verbose, SolLimit, ExportModels, Path,
-						TimeLimit, Choco);
-				ArrayList<OneRotational_Solution> Solutions = instance.solve(tables);
-				if (Solutions.size() > 0) {
-					for (int i = 0; i < Solutions.size(); i++) {
-						System.out.println("Solution for " + Solutions.get(i).getOP_name());
-						System.out.println("\tMinimal Problem: " + Solutions.get(i).getOP_nameRed());
-						System.out.println("\tStatus: " + Solutions.get(i).getStatus());
-						System.out.println("\tLabellingTime: " + df.format(Solutions.get(i).getLabellingTime()));
-						System.out.println("\tLabels.Size: " + Solutions.get(i).getLabels().length);
-						CSV_Printer.printRecord(Solutions.get(i).getOP_name(), Solutions.get(i).getName(),
-								Solutions.get(i).getStatus(), df.format(Solutions.get(i).getLabellingTime()),
-								Solutions.get(i).getNotes(), df.format(Solutions.get(i).getTotalTime()),
-								Solutions.get(i).getSolution());
+				OneRotational instance = new OneRotational(Verbose, SolLimit, ExportModels, Path, TimeLimit, Choco);
+				ArrayList<OneRotational_Solution> Solutions = new ArrayList<OneRotational_Solution>();
+				ArrayList<OneRotational_SolutionM2> Solutions_Mod2 = new ArrayList<OneRotational_SolutionM2>();
+				ArrayList<Integer> tcopy = null;
+
+				if (Mod2) {
+					Boolean flag = true;
+
+					for (int u = 0; u < tables.size() && flag; u++) {
+						tcopy = new ArrayList<Integer>(tables);
+						tcopy.set(u, tcopy.get(u) - 1);
+						if (instance.validConfiguration(tcopy))
+							flag = false;
 					}
-					CSV_Printer.close();
+					if (flag == false) {
+						Solutions = instance.solve(tcopy);
+						System.out.println("\tConverting 4t+1 to 4t+2...");
+						if (Solutions.size() > 0) {
+							for (int j = 0; j < Solutions.size(); j++) {
+								Solutions_Mod2.add(new OneRotational_SolutionM2(Solutions.get(j)));
+
+								System.out.println("Solution for " + Solutions_Mod2.get(j).getOP_name());
+								System.out.println("\tMinimal Problem: " + Solutions_Mod2.get(j).getOP_nameRed());
+								System.out.println("\tStatus: " + Solutions_Mod2.get(j).getStatus());
+								System.out.println(
+										"\tLabellingTime: " + df.format(Solutions_Mod2.get(j).getLabellingTime()));
+								System.out.println("\tLabels.Size: " + Solutions_Mod2.get(j).getLabels().length);
+								if (Check)
+									System.out.println("\tVerify: " + Solutions_Mod2.get(j).verify());
+
+								CSV_Printer.printRecord(Solutions_Mod2.get(j).getOP_name(),
+										Solutions_Mod2.get(j).getName(), Solutions_Mod2.get(j).getStatus(),
+										df.format(Solutions_Mod2.get(j).getLabellingTime()),
+										Solutions_Mod2.get(j).getNotes(),
+										df.format(Solutions_Mod2.get(j).getTotalTime()),
+										Solutions_Mod2.get(j).getSolution());
+
+							}
+							CSV_Printer.flush();
+						} else {
+							CSV_Printer.printRecord(getOP_name(tcopy), "", "Infeasible", "", "No solution found", "",
+									"");
+						}
+					} else {
+						CSV_Printer.printRecord(getOP_name(tcopy), "", "Infeasible", "", "Table config is not valid",
+								"", "");
+					}
+
 				} else {
-					System.out.println("No Solution found.");
+					if (instance.validConfiguration(tables)) {
+						Solutions = instance.solve(tables);
+						if (Solutions.size() > 0) {
+							for (int j = 0; j < Solutions.size(); j++) {
+								System.out.println("Solution for " + Solutions.get(j).getOP_name());
+								System.out.println("\tMinimal Problem: " + Solutions.get(j).getOP_nameRed());
+								System.out.println("\tStatus: " + Solutions.get(j).getStatus());
+								System.out
+										.println("\tLabellingTime: " + df.format(Solutions.get(j).getLabellingTime()));
+								System.out.println("\tLabels.Size: " + Solutions.get(j).getLabels().length);
+								if (Check)
+									System.out.println("\tVerify: " + Solutions.get(j).verify());
+
+								CSV_Printer.printRecord(Solutions.get(j).getOP_name(), Solutions.get(j).getName(),
+										Solutions.get(j).getStatus(), df.format(Solutions.get(j).getLabellingTime()),
+										Solutions.get(j).getNotes(), df.format(Solutions.get(j).getTotalTime()),
+										Solutions.get(j).getSolution());
+
+							}
+							CSV_Printer.flush();
+						} else {
+							CSV_Printer.printRecord(getOP_name(tables), "", "Infeasible", "", "No solution found", "",
+									"");
+						}
+					} else {
+						CSV_Printer.printRecord(getOP_name(tcopy), "", "Infeasible", "", "Table config is not valid",
+								"", "");
+					}
+
 				}
+				CSV_Printer.close();
 			}
 
 		}
