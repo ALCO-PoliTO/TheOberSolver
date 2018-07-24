@@ -1875,7 +1875,7 @@ public class TwoRotational {
 				 * System.out.println("Solution found with MIP."); } else {
 				 * System.out.println("Proven infeasible with MIP."); }
 				 */
-				if (Solution.getStatus() == "Solved")
+				if (Solution.getStatus().equals("Solved"))
 					Solution.setStatus("Infeasible");
 				Solutions.add(Solution);
 			}
