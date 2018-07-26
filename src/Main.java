@@ -168,7 +168,7 @@ public class Main {
 		Boolean ExportModels = false;
 		Boolean Choco = false;
 		Boolean onlyPoly = false;
-		Boolean onlyCP = false;
+		Boolean onlyCP = true;
 		Boolean TimeLimit = false;
 		Boolean Symmetry = false;
 		int SolLimit = 0;
@@ -237,10 +237,10 @@ public class Main {
 			Choco = false;
 			Verbose = false;
 			onlyPoly = false;
-			onlyCP = false;
-			ExportModels = true;
+			onlyCP = true;
+			ExportModels = false;
 			SolLimit = 1;
-			Symmetry = true;
+			Symmetry = false;
 			SymmetryValue = 6;
 			System.out.println("\tChoco=" + Choco + ";Timelimit=" + TimeLimit + ";Verbose=" + Verbose + ";onlyPoly="
 					+ onlyPoly + ";onlyCP=" + onlyCP + ";ExportModels=" + ExportModels + ";SolLimit=" + SolLimit
@@ -285,13 +285,14 @@ public class Main {
 				for (int i = 0; i < tables.size(); i++) {
 					ArrayList<TwoRotational_Solution> Solutions = new ArrayList<TwoRotational_Solution>();
 
+					Boolean flag = false;
 					// 4t Solution
 					if (Mod0) {
-						Boolean flag = true;
-						for (int u = 0; u < tables.get(i).size() && flag; u++) {
-							if (tables.get(i).get(u) > 2 || (u == 0 && tables.get(i).get(u) > 3)) {
+
+						for (int u = 0; u < tables.get(i).size() && !flag; u++) {
+							if (tables.get(i).get(u) > 3 || (u == 0 && tables.get(i).get(u) > 3)) {
 								tables.get(i).set(u, (tables.get(i).get(u) - 1));
-								flag = false;
+								flag = true;
 							}
 						}
 					}
@@ -332,36 +333,40 @@ public class Main {
 											df.format(Solutions.get(j).getTotalTime()),
 											Solutions.get(j).getColorsString());
 							} else {
-								if (Solutions.get(j).getStatus().equals("Solved")) {
-									System.out.println("Converting 4t+3 to 4t...");
-									TwoRotational_Solution_M0 Solutions_Mod0 = new TwoRotational_Solution_M0(
-											Solutions.get(j));
+								if (flag) {
+									if (Solutions.get(j).getStatus().equals("Solved")) {
+										System.out.println("Converting 4t+3 to 4t...");
+										TwoRotational_Solution_M0 Solutions_Mod0 = new TwoRotational_Solution_M0(
+												Solutions.get(j));
 
-									System.out.println("Solution for " + Solutions_Mod0.getOP_name());
-									System.out.println("\tStatus: " + Solutions_Mod0.getStatus());
-									System.out.println("\tCritical Difference: " + Solutions_Mod0.getCriticDiff());
-									System.out.println("\tCritical Table: " + Solutions_Mod0.getCriticTable());
-									System.out.println("\tColorTime: " + df.format(Solutions_Mod0.getColorTime())
-											+ " - LabellingTime: " + df.format(Solutions_Mod0.getLabellingTime()));
-									System.out.println("\tColorintTries: " + Solutions_Mod0.getColorTries()
-											+ " - UsingMIP: " + Solutions_Mod0.getMIP());
-									System.out.println("\tColors.Size: " + Solutions_Mod0.getColors().size());
-									System.out.println("\tLabels.Size: " + Solutions_Mod0.getLabels().length);
-									if (Check)
-										System.out.println("\tVerify: " + Solutions_Mod0.verify());
-									if (Solutions.get(j).getStatus().equals("Solved"))
-										CSV_Printer.printRecord(Solutions_Mod0.getOP_name(), Solutions_Mod0.getName(),
-												Solutions_Mod0.getStatus(), df.format(Solutions_Mod0.getColorTime()),
-												df.format(Solutions_Mod0.getLabellingTime()), Solutions_Mod0.getMIP(),
-												Solutions_Mod0.getPolyColor(), Solutions_Mod0.getNotes(),
-												df.format(Solutions_Mod0.getTotalTime()), Solutions_Mod0.getSolution());
-									else
-										CSV_Printer.printRecord(Solutions_Mod0.getOP_name(), Solutions_Mod0.getName(),
-												Solutions_Mod0.getStatus(), df.format(Solutions_Mod0.getColorTime()),
-												df.format(Solutions_Mod0.getLabellingTime()), Solutions_Mod0.getMIP(),
-												Solutions_Mod0.getPolyColor(), Solutions_Mod0.getNotes(),
-												df.format(Solutions_Mod0.getTotalTime()),
-												Solutions_Mod0.getColorsString());
+										System.out.println("Solution for " + Solutions_Mod0.getOP_name());
+										System.out.println("\tStatus: " + Solutions_Mod0.getStatus());
+										System.out.println("\tCritical Difference: " + Solutions_Mod0.getCriticDiff());
+										System.out.println("\tCritical Table: " + Solutions_Mod0.getCriticTable());
+										System.out.println("\tColorTime: " + df.format(Solutions_Mod0.getColorTime())
+												+ " - LabellingTime: " + df.format(Solutions_Mod0.getLabellingTime()));
+										System.out.println("\tColorintTries: " + Solutions_Mod0.getColorTries()
+												+ " - UsingMIP: " + Solutions_Mod0.getMIP());
+										System.out.println("\tColors.Size: " + Solutions_Mod0.getColors().size());
+										System.out.println("\tLabels.Size: " + Solutions_Mod0.getLabels().length);
+
+										if (Solutions.get(j).getStatus().equals("Solved"))
+											CSV_Printer.printRecord(Solutions_Mod0.getOP_name(),
+													Solutions_Mod0.getName(), Solutions_Mod0.getStatus(),
+													df.format(Solutions_Mod0.getColorTime()),
+													df.format(Solutions_Mod0.getLabellingTime()),
+													Solutions_Mod0.getMIP(), Solutions_Mod0.getPolyColor(),
+													Solutions_Mod0.getNotes(), df.format(Solutions_Mod0.getTotalTime()),
+													Solutions_Mod0.getSolution());
+										else
+											CSV_Printer.printRecord(Solutions_Mod0.getOP_name(),
+													Solutions_Mod0.getName(), Solutions_Mod0.getStatus(),
+													df.format(Solutions_Mod0.getColorTime()),
+													df.format(Solutions_Mod0.getLabellingTime()),
+													Solutions_Mod0.getMIP(), Solutions_Mod0.getPolyColor(),
+													Solutions_Mod0.getNotes(), df.format(Solutions_Mod0.getTotalTime()),
+													Solutions_Mod0.getColorsString());
+									}
 								}
 							}
 						}
@@ -396,13 +401,13 @@ public class Main {
 					instance.param_setSymmetryValue(SymmetryValue);
 				ArrayList<TwoRotational_Solution> Solutions = new ArrayList<TwoRotational_Solution>();
 
+				Boolean flag = false;
 				// 4t Solution
 				if (Mod0) {
-					Boolean flag = true;
-					for (int u = 0; u < tables.size() && flag; u++) {
-						if (tables.get(u) > 2 || (u == 0 && tables.get(u) > 3)) {
+					for (int u = 0; u < tables.size() && !flag; u++) {
+						if (tables.get(u) > 3 || (u == 0 && tables.get(u) > 3)) {
 							tables.set(u, (tables.get(u) - 1));
-							flag = false;
+							flag = true;
 						}
 					}
 				}
@@ -442,34 +447,34 @@ public class Main {
 										Solutions.get(i).getPolyColor(), Solutions.get(i).getNotes(),
 										df.format(Solutions.get(i).getTotalTime()), Solutions.get(i).getColorsString());
 						} else {
-							if (Solutions.get(i).getStatus().equals("Solved")) {
-								TwoRotational_Solution_M0 Solutions_Mod0 = new TwoRotational_Solution_M0(
-										Solutions.get(i));
-
-								System.out.println("Solution for " + Solutions_Mod0.getOP_name());
-								System.out.println("\tStatus: " + Solutions_Mod0.getStatus());
-								System.out.println("\tCritical Difference: " + Solutions_Mod0.getCriticDiff());
-								System.out.println("\tCritical Table: " + Solutions_Mod0.getCriticTable());
-								System.out.println("\tColorTime: " + df.format(Solutions_Mod0.getColorTime())
-										+ " - LabellingTime: " + df.format(Solutions_Mod0.getLabellingTime()));
-								System.out.println("\tColorintTries: " + Solutions_Mod0.getColorTries()
-										+ " - UsingMIP: " + Solutions_Mod0.getMIP());
-								System.out.println("\tColors.Size: " + Solutions_Mod0.getColors().size());
-								System.out.println("\tLabels.Size: " + Solutions_Mod0.getLabels().length);
-								if (Check)
-									System.out.println("\tVerify: " + Solutions_Mod0.verify());
-								if (Solutions.get(i).getStatus().equals("Solved"))
-									CSV_Printer.printRecord(Solutions_Mod0.getOP_name(), Solutions_Mod0.getName(),
-											Solutions_Mod0.getStatus(), df.format(Solutions_Mod0.getColorTime()),
-											df.format(Solutions_Mod0.getLabellingTime()), Solutions_Mod0.getMIP(),
-											Solutions_Mod0.getPolyColor(), Solutions_Mod0.getNotes(),
-											df.format(Solutions_Mod0.getTotalTime()), Solutions_Mod0.getSolution());
-								else
-									CSV_Printer.printRecord(Solutions_Mod0.getOP_name(), Solutions_Mod0.getName(),
-											Solutions_Mod0.getStatus(), df.format(Solutions_Mod0.getColorTime()),
-											df.format(Solutions_Mod0.getLabellingTime()), Solutions_Mod0.getMIP(),
-											Solutions_Mod0.getPolyColor(), Solutions_Mod0.getNotes(),
-											df.format(Solutions_Mod0.getTotalTime()), Solutions_Mod0.getColorsString());
+							if (flag) {
+								if (Solutions.get(i).getStatus().equals("Solved")) {
+									TwoRotational_Solution_M0 Solutions_Mod0 = new TwoRotational_Solution_M0(
+											Solutions.get(i));
+									System.out.println("Solution for " + Solutions_Mod0.getOP_name());
+									System.out.println("\tStatus: " + Solutions_Mod0.getStatus());
+									System.out.println("\tCritical Difference: " + Solutions_Mod0.getCriticDiff());
+									System.out.println("\tCritical Table: " + Solutions_Mod0.getCriticTable());
+									System.out.println("\tColorTime: " + df.format(Solutions_Mod0.getColorTime())
+											+ " - LabellingTime: " + df.format(Solutions_Mod0.getLabellingTime()));
+									System.out.println("\tColorintTries: " + Solutions_Mod0.getColorTries()
+											+ " - UsingMIP: " + Solutions_Mod0.getMIP());
+									System.out.println("\tColors.Size: " + Solutions_Mod0.getColors().size());
+									System.out.println("\tLabels.Size: " + Solutions_Mod0.getLabels().length);
+									if (Solutions.get(i).getStatus().equals("Solved"))
+										CSV_Printer.printRecord(Solutions_Mod0.getOP_name(), Solutions_Mod0.getName(),
+												Solutions_Mod0.getStatus(), df.format(Solutions_Mod0.getColorTime()),
+												df.format(Solutions_Mod0.getLabellingTime()), Solutions_Mod0.getMIP(),
+												Solutions_Mod0.getPolyColor(), Solutions_Mod0.getNotes(),
+												df.format(Solutions_Mod0.getTotalTime()), Solutions_Mod0.getSolution());
+									else
+										CSV_Printer.printRecord(Solutions_Mod0.getOP_name(), Solutions_Mod0.getName(),
+												Solutions_Mod0.getStatus(), df.format(Solutions_Mod0.getColorTime()),
+												df.format(Solutions_Mod0.getLabellingTime()), Solutions_Mod0.getMIP(),
+												Solutions_Mod0.getPolyColor(), Solutions_Mod0.getNotes(),
+												df.format(Solutions_Mod0.getTotalTime()),
+												Solutions_Mod0.getColorsString());
+								}
 							}
 						}
 					}
@@ -507,7 +512,6 @@ public class Main {
 				OneRotational instance = new OneRotational(Verbose, SolLimit, ExportModels, Path, TimeLimit, Choco);
 				for (int i = 0; i < tables.size(); i++) {
 					ArrayList<OneRotational_Solution> Solutions = new ArrayList<OneRotational_Solution>();
-					ArrayList<OneRotational_SolutionM2> Solutions_Mod2 = new ArrayList<OneRotational_SolutionM2>();
 					ArrayList<Integer> tcopy = null;
 					// 4t Solution
 					if (Mod2) {
@@ -525,24 +529,35 @@ public class Main {
 							System.out.println("\tConverting 4t+1 to 4t+2...");
 							if (Solutions.size() > 0) {
 								for (int j = 0; j < Solutions.size(); j++) {
-									Solutions_Mod2.add(new OneRotational_SolutionM2(Solutions.get(j)));
+									if (Solutions.get(j).getStatus().equals("Solved")) {
+										OneRotational_SolutionM2 Solutions_Mod2 = new OneRotational_SolutionM2(
+												Solutions.get(j));
 
-									System.out.println("Solution for " + Solutions_Mod2.get(j).getOP_name());
-									System.out.println("\tMinimal Problem: " + Solutions_Mod2.get(j).getOP_nameRed());
-									System.out.println("\tStatus: " + Solutions_Mod2.get(j).getStatus());
-									System.out.println(
-											"\tLabellingTime: " + df.format(Solutions_Mod2.get(j).getLabellingTime()));
-									System.out.println("\tLabels.Size: " + Solutions_Mod2.get(j).getLabels().length);
-									if (Check)
-										System.out.println("\tVerify: " + Solutions_Mod2.get(j).verify());
+										System.out.println("Solution for " + Solutions_Mod2.getOP_name());
+										System.out.println("\tDerived from " + getOP_name(tcopy));
+										System.out.println("\tMinimal Problem: " + Solutions_Mod2.getOP_nameRed());
+										System.out.println("\tStatus: " + Solutions_Mod2.getStatus());
+										System.out.println(
+												"\tLabellingTime: " + df.format(Solutions_Mod2.getLabellingTime()));
+										System.out.println("\tLabels.Size: " + Solutions_Mod2.getLabels().length);
+										if (Check)
+											System.out.println("\tVerify: " + Solutions_Mod2.verify());
 
-									CSV_Printer.printRecord(Solutions_Mod2.get(j).getOP_name(),
-											Solutions_Mod2.get(j).getName(), Solutions_Mod2.get(j).getStatus(),
-											df.format(Solutions_Mod2.get(j).getLabellingTime()),
-											Solutions_Mod2.get(j).getNotes(),
-											df.format(Solutions_Mod2.get(j).getTotalTime()),
-											Solutions_Mod2.get(j).getSolution());
+										CSV_Printer.printRecord(Solutions_Mod2.getOP_name(), Solutions_Mod2.getName(),
+												Solutions_Mod2.getStatus(),
+												df.format(Solutions_Mod2.getLabellingTime()), Solutions_Mod2.getNotes(),
+												df.format(Solutions_Mod2.getTotalTime()), Solutions_Mod2.getSolution());
 
+									} else {
+										CSV_Printer.printRecord(getOP_name(tables.get(i)), Solutions.get(j).getName(),
+												Solutions.get(j).getStatus(),
+												df.format(Solutions.get(j).getLabellingTime()),
+												"No solution for 4t+1 " + getOP_name(tcopy) + " "
+														+ Solutions.get(j).getNotes(),
+												df.format(Solutions.get(j).getTotalTime()),
+												Solutions.get(j).getSolution());
+
+									}
 								}
 								CSV_Printer.flush();
 							} else {
@@ -610,7 +625,6 @@ public class Main {
 				DecimalFormat df = new DecimalFormat("0.0000");
 				OneRotational instance = new OneRotational(Verbose, SolLimit, ExportModels, Path, TimeLimit, Choco);
 				ArrayList<OneRotational_Solution> Solutions = new ArrayList<OneRotational_Solution>();
-				ArrayList<OneRotational_SolutionM2> Solutions_Mod2 = new ArrayList<OneRotational_SolutionM2>();
 				ArrayList<Integer> tcopy = null;
 
 				if (Mod2) {
@@ -627,24 +641,33 @@ public class Main {
 						System.out.println("\tConverting 4t+1 to 4t+2...");
 						if (Solutions.size() > 0) {
 							for (int j = 0; j < Solutions.size(); j++) {
-								Solutions_Mod2.add(new OneRotational_SolutionM2(Solutions.get(j)));
+								if (Solutions.get(j).getStatus().equals("Solved")) {
+									OneRotational_SolutionM2 Solutions_Mod2 = new OneRotational_SolutionM2(
+											Solutions.get(j));
 
-								System.out.println("Solution for " + Solutions_Mod2.get(j).getOP_name());
-								System.out.println("\tMinimal Problem: " + Solutions_Mod2.get(j).getOP_nameRed());
-								System.out.println("\tStatus: " + Solutions_Mod2.get(j).getStatus());
-								System.out.println(
-										"\tLabellingTime: " + df.format(Solutions_Mod2.get(j).getLabellingTime()));
-								System.out.println("\tLabels.Size: " + Solutions_Mod2.get(j).getLabels().length);
-								if (Check)
-									System.out.println("\tVerify: " + Solutions_Mod2.get(j).verify());
+									System.out.println("Solution for " + Solutions_Mod2.getOP_name());
+									System.out.println("\tDerived from " + getOP_name(tcopy));
+									System.out.println("\tMinimal Problem: " + Solutions_Mod2.getOP_nameRed());
+									System.out.println("\tStatus: " + Solutions_Mod2.getStatus());
+									System.out.println(
+											"\tLabellingTime: " + df.format(Solutions_Mod2.getLabellingTime()));
+									System.out.println("\tLabels.Size: " + Solutions_Mod2.getLabels().length);
+									if (Check)
+										System.out.println("\tVerify: " + Solutions_Mod2.verify());
 
-								CSV_Printer.printRecord(Solutions_Mod2.get(j).getOP_name(),
-										Solutions_Mod2.get(j).getName(), Solutions_Mod2.get(j).getStatus(),
-										df.format(Solutions_Mod2.get(j).getLabellingTime()),
-										Solutions_Mod2.get(j).getNotes(),
-										df.format(Solutions_Mod2.get(j).getTotalTime()),
-										Solutions_Mod2.get(j).getSolution());
+									CSV_Printer.printRecord(Solutions_Mod2.getOP_name(), Solutions_Mod2.getName(),
+											Solutions_Mod2.getStatus(), df.format(Solutions_Mod2.getLabellingTime()),
+											Solutions_Mod2.getNotes(), df.format(Solutions_Mod2.getTotalTime()),
+											Solutions_Mod2.getSolution());
 
+								} else {
+									CSV_Printer.printRecord(getOP_name(tables), Solutions.get(j).getName(),
+											Solutions.get(j).getStatus(),
+											df.format(Solutions.get(j).getLabellingTime()),
+											"No solution for 4t+1 " + getOP_name(tcopy) + " "
+													+ Solutions.get(j).getNotes(),
+											df.format(Solutions.get(j).getTotalTime()), Solutions.get(j).getSolution());
+								}
 							}
 							CSV_Printer.flush();
 						} else {

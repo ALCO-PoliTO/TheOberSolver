@@ -11,9 +11,10 @@ public class QuickTests {
 
 		System.out.println("Quick Tests");
 		ArrayList<Integer> tables = new ArrayList<Integer>();
-		tables.add(10);
-		tables.add(50);
-		tables.add(17);
+		tables.add(3);
+		tables.add(3);
+		tables.add(3);
+		tables.add(4);
 		Boolean Verbose = false;
 		Boolean ExportModels = false;
 		Boolean Choco = false;

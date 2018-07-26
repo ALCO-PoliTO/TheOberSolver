@@ -203,7 +203,7 @@ public class OneRotational {
 		}
 		if (!Verbose)
 			cpx.setParameter(IloCP.IntParam.LogVerbosity, IloCP.ParameterValues.Quiet);
-		int Tl = V;
+		int Tl = V / 20;
 		if (TimeLimit)
 			cpx.setParameter(IloCP.DoubleParam.TimeLimit, Tl);
 		IloSearchPhase phaseOne = cpx.searchPhase(N);
@@ -452,13 +452,16 @@ public class OneRotational {
 
 	public Boolean validConfiguration(ArrayList<Integer> tables) {
 		tableSizes = new HashMap<Integer, Integer>();
+
+		int checkFlag = 0;
 		for (int t = 0; t < tables.size(); t++) {
+			if (tables.get(t) < 3)
+				checkFlag = 3;
 			if (tableSizes.containsKey(tables.get(t)))
 				tableSizes.replace(tables.get(t), tableSizes.get(tables.get(t)) + 1);
 			else
 				tableSizes.put(tables.get(t), 1);
 		}
-		int checkFlag = 0;
 		for (Map.Entry<Integer, Integer> entry : tableSizes.entrySet()) {
 			if ((entry.getKey() % 2) == 1) {
 				if ((entry.getValue() % 2) == 1) {
@@ -473,20 +476,27 @@ public class OneRotational {
 	}
 
 	public Boolean checkExistence() {
-		int n = (V - 1) / 2;
-		Boolean ret = false;
-		if (n % 2 == 0)
-			if (n % 4 == 0)
-				ret = true;
-		if (n % 2 == 1) {
-			int sum = 0;
-			for (Map.Entry<Integer, Integer> entry : tableSizes.entrySet())
-				if ((entry.getKey() % 2) == 0)
-					sum += entry.getValue();
 
-			if (n % 4 == (1 + 2 * (sum)))
-				ret = true;
+		Boolean ret = true;
+		if (tableSizes.containsKey(3)) {
+			if ((tableSizes.get(3) % 2) == 1) {
+				ret = false;
+				int n = (V - 1) / 2;
+				if (n % 2 == 0)
+					if (n % 4 == 0)
+						ret = true;
+				if (n % 2 == 1) {
+					int sum = 0;
+					for (Map.Entry<Integer, Integer> entry : tableSizes.entrySet())
+						if ((entry.getKey() % 2) == 0)
+							sum += entry.getValue();
+
+					if ((n % 4) == (1 + 2 * (sum)))
+						ret = true;
+				}
+			}
 		}
+
 		return ret;
 
 	}
@@ -513,14 +523,14 @@ public class OneRotational {
 		int Solve_count = 0;
 		boolean Flag = true;
 		int iteration = 0;
-		
+
 		while (Flag) {
 			Clock = System.nanoTime();
 			Solution = new OneRotational_Solution(tables, V);
 
-			if (!checkExistence()) 
+			if (!checkExistence())
 				Solution.setNotes(Solution.getNotes() + " falseExistenceConditions");
-			
+
 			Solution.setName("" + iteration);
 			Solution.setOP_name(param_getOP_name());
 			Boolean res = false;
