@@ -1840,7 +1840,7 @@ public class TwoRotational {
 			Solution.setName("" + iteration);
 			Solution.setOP_name(param_getOP_name());
 			if (iteration == 0) {
-				System.out.println("Using Polynomial coloring.");
+				//System.out.println("Using Polynomial coloring.");
 				Solution.setColors(generateColors_Poly(Solution));
 				Solution.setPolyColor(true);
 			}
@@ -1894,7 +1894,7 @@ public class TwoRotational {
 
 		V = getOPsize(tables);
 		if (!((V % 4) == 3)) {
-			throw new ErrorThrower("V % 4 != 3 (V=" + V + ")");
+			throw new ErrorThrower("V % 4 != ( 3 || 0) (V=" + V + ")");
 		}
 		tables.set(0, tables.get(0) - 1);
 		TwoRotational_Solution Solution = new TwoRotational_Solution(tables, V);
@@ -1913,7 +1913,6 @@ public class TwoRotational {
 		Solution = new TwoRotational_Solution(tables, V);
 		Solution.setName("0");
 		Solution.setOP_name(param_getOP_name());
-		System.out.println("Using Polynomial coloring.");
 		Solution.setColors(generateColors_Poly(Solution));
 		Solution.setPolyColor(true);
 		TimeLimit = false;
