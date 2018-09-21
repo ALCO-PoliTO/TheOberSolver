@@ -36,7 +36,7 @@ public class Parser4t {
 	}
 	public static void main(String[] args) throws ErrorThrower, IloException, IOException, ContradictionException {
 
-		int V = 59;
+		int V = 55;
 		writeDemon(V);
 		Reader reader = Files.newBufferedReader(Paths.get("parser/Solutions_" +V + "Excel.csv"));
 		CSVFormat csvFormat = CSVFormat.EXCEL.withHeader().withDelimiter(';');
@@ -47,7 +47,7 @@ public class Parser4t {
 				CSVFormat.DEFAULT.withHeader("OP_Name", "Instance", "Status", "ColorTime", "LabellingTime", "UsingMIP",
 						"UsingPolyColors", "Notes", "TotalTime", "Solution"));
 
-		float total_time = 0;
+		double total_time = 0;
 		for (CSVRecord csvRecord : csvParser) {
 			if (csvRecord.get(2).equals("Solved")) {
 				long Clock = System.nanoTime();
@@ -74,7 +74,7 @@ public class Parser4t {
 				Mod3Solution.setMIP(Boolean.parseBoolean(csvRecord.get(5)));
 				Mod3Solution.setPolyColor(Boolean.parseBoolean(csvRecord.get(6)));
 				Mod3Solution.setNotes(csvRecord.get(7));
-				double tmp_time = Double.parseDouble(csvRecord.get(8).replace(",", "."));
+				Mod3Solution.setTotalTime(Double.parseDouble(csvRecord.get(8).replace(",", ".")));
 				String[] Solution_t = Solution.split("\\) \\(");
 				Solution_t[0] = Solution_t[0].replace("(\\infty", "(-1,-1)");
 				Solution_t[Solution_t.length - 1] = Solution_t[Solution_t.length - 1].replace("))", ")");
@@ -97,8 +97,8 @@ public class Parser4t {
 				Mod3Solution.setLabels(labels);
 				Mod3Solution.setColors(colors);
 				TwoRotational_Solution_M0 Solutions_Mod0 = new TwoRotational_Solution_M0(Mod3Solution);
-				Mod3Solution.setTotalTime(((System.nanoTime() - Clock) / 1000000000F) + tmp_time);
-				total_time+=Mod3Solution.getTotalTime();
+				Solutions_Mod0.setTotalTime(Solutions_Mod0.getTotalTime() + (System.nanoTime() - Clock) / 1000000000F);
+				total_time+=Solutions_Mod0.getTotalTime();
 				System.out.println("Solution for " + Solutions_Mod0.getOP_name());
 				System.out.println("\tStatus: " + Solutions_Mod0.getStatus());
 				System.out.println("\tCritical Difference: " + Solutions_Mod0.getCriticDiff());

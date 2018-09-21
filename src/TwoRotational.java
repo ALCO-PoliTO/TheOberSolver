@@ -1056,7 +1056,7 @@ public class TwoRotational {
 			}
 			cp.add(master);
 		}
-		
+
 		IloSearchPhase phaseOne = cp.searchPhase(N);
 		cp.setSearchPhases(phaseOne);
 		cp.propagate();
@@ -1285,6 +1285,9 @@ public class TwoRotational {
 		} else {
 			Solution.setColorTries(Solution.getColorTries() + 1);
 			Solution.setLabellingTime(solver.getTimeCount());
+			if (TimeLimit)
+				if (solver.getTimeCount() > Tl)
+					Solution.setStatus("TimeLimit");
 			// Solution.setStatus("TimeLimit");
 			if (exportModels) {
 				JSON.write(choco, new File(FilePath + "infeasibles/" + "Labelling_YR" + Solution.getName() + "_"
@@ -1444,7 +1447,7 @@ public class TwoRotational {
 
 		if (TimeLimit)
 			cpx.setParameter(IloCP.DoubleParam.TimeLimit, Tl);
-		
+
 		IloSearchPhase phaseOne = cpx.searchPhase(S);
 		cpx.setSearchPhases(phaseOne);
 		cpx.propagate();
@@ -1466,7 +1469,9 @@ public class TwoRotational {
 		} else {
 			Solution.setColorTries(Solution.getColorTries() + 1);
 			Solution.setLabellingTime(cpx.getInfo(IloCP.DoubleInfo.TotalTime));
-			// Solution.setStatus("TimeLimit");
+			if (TimeLimit)
+				if (cpx.getInfo(IloCP.DoubleInfo.TotalTime) > Tl)
+					Solution.setStatus("TimeLimit");
 			if (exportModels) {
 				cpx.exportModel(FilePath + "infeasibles/" + "Labelling_YR" + Solution.getName() + "_"
 						+ param_getOP_name() + ".cpo");
@@ -1840,7 +1845,7 @@ public class TwoRotational {
 			Solution.setName("" + iteration);
 			Solution.setOP_name(param_getOP_name());
 			if (iteration == 0) {
-				//System.out.println("Using Polynomial coloring.");
+				// System.out.println("Using Polynomial coloring.");
 				Solution.setColors(generateColors_Poly(Solution));
 				Solution.setPolyColor(true);
 			}

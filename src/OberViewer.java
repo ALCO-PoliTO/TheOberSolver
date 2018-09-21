@@ -112,7 +112,7 @@ public class OberViewer {
 	protected void createContents(Display display) {
 		shlTheOberviewer = new Shell(display, SWT.CLOSE | SWT.TITLE | SWT.MIN );
 		shlTheOberviewer.setMinimumSize(new Point(540, 450));
-		shlTheOberviewer.setSize(540, 450);
+		shlTheOberviewer.setSize(567, 450);
 		shlTheOberviewer.setText("The Oberviewer");
 		shlTheOberviewer.setLayout(new FillLayout(SWT.HORIZONTAL));
 		
@@ -450,7 +450,7 @@ public class OberViewer {
 																																																						composite.setLayout(rl_composite);
 																																																						
 																																																						Label lblNewLabel = new Label(composite, SWT.WRAP);
-																																																						lblNewLabel.setText("TheOberSolver\n\nThis project is developed and maintained by ALCO@Politecnico di Torino. TheObersolver is a pre-release software for solving the Oberwolfach Problem.\n\nThis software uses Choco Solver and can be run as well with IBM CPLEX. As for the former one, scholars are entitled to obtain a free license via the IBM Academic Initiative.\n\nSee section releases for current release.");
+																																																						lblNewLabel.setText("TheOberSolver\n\nThis project is developed and maintained by ALCO@Politecnico di Torino. TheObersolver is a pre-release software for solving the Oberwolfach Problem. Check out our page on gitHub @ ALCO-PoliTO.\n\nThis software uses Choco Solver and can be run as well with IBM CPLEX. As for the former one, scholars are entitled to obtain a free license via the IBM Academic Initiative.\n");
 																																																						
 																																																						Label lblNewLabel_1 = new Label(composite, SWT.NONE);
 
