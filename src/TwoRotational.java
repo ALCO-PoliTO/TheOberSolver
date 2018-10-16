@@ -1286,7 +1286,7 @@ public class TwoRotational {
 			Solution.setColorTries(Solution.getColorTries() + 1);
 			Solution.setLabellingTime(solver.getTimeCount());
 			if (TimeLimit)
-				if (solver.getTimeCount() > Tl)
+				if (solver.getTimeCount() >= Tl)
 					Solution.setStatus("TimeLimit");
 			// Solution.setStatus("TimeLimit");
 			if (exportModels) {
@@ -1470,7 +1470,7 @@ public class TwoRotational {
 			Solution.setColorTries(Solution.getColorTries() + 1);
 			Solution.setLabellingTime(cpx.getInfo(IloCP.DoubleInfo.TotalTime));
 			if (TimeLimit)
-				if (cpx.getInfo(IloCP.DoubleInfo.TotalTime) > Tl)
+				if (cpx.getInfo(IloCP.DoubleInfo.TotalTime) >= Tl)
 					Solution.setStatus("TimeLimit");
 			if (exportModels) {
 				cpx.exportModel(FilePath + "infeasibles/" + "Labelling_YR" + Solution.getName() + "_"

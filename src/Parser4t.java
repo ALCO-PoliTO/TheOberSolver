@@ -36,7 +36,7 @@ public class Parser4t {
 	}
 	public static void main(String[] args) throws ErrorThrower, IloException, IOException, ContradictionException {
 
-		int V = 55;
+		int V = 59;
 		writeDemon(V);
 		Reader reader = Files.newBufferedReader(Paths.get("parser/Solutions_" +V + "Excel.csv"));
 		CSVFormat csvFormat = CSVFormat.EXCEL.withHeader().withDelimiter(';');
