@@ -1,12 +1,13 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class TwoRotational_Solution {
+public class TwoRRotational_Solution {
 	private static ArrayList<Integer> tables = new ArrayList<Integer>();
 	private int V;
 	private String name;
 	private String OP_name;
 	private String Status = "Solved";
+	private static ArrayList<ArrayList<Integer>> criticalPaths = new ArrayList<ArrayList<Integer>>();
 	private double labellingTime = -1.0;
 	private Boolean MIP = false;
 	private Boolean PolyColor = false;
@@ -17,7 +18,7 @@ public class TwoRotational_Solution {
 	private ArrayList<Integer> colors = new ArrayList<Integer>();
 	private int[] labels = null;
 
-	public TwoRotational_Solution(ArrayList<Integer> tables, int v) {
+	public TwoRRotational_Solution(ArrayList<Integer> tables, int v) {
 		super();
 		this.setTables(tables);
 		setV(v);
@@ -323,5 +324,14 @@ public class TwoRotational_Solution {
 	public void setNotes(String notes) {
 		this.notes = notes;
 	}
+
+	public ArrayList<ArrayList<Integer>> getCriticalPaths() {
+		return criticalPaths;
+	}
+
+	public void setCriticalPaths(ArrayList<ArrayList<Integer>> criticalPaths) {
+		TwoRRotational_Solution.criticalPaths = criticalPaths;
+	}
+
 
 }

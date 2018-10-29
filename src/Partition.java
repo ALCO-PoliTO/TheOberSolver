@@ -16,6 +16,7 @@ public class Partition {
 	public Partition(int V, int Partitions) {
 		setV(V);
 		setPartitions(Partitions);
+		tables.clear();
 	}
 
 	public static boolean isNumeric(String str) {

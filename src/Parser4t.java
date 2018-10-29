@@ -65,7 +65,7 @@ public class Parser4t {
 					size += Integer.parseInt(tables_t[i]);
 				}
 				tables.set(0, tables.get(0) - 1);
-				TwoRotational_Solution Mod3Solution = new TwoRotational_Solution(tables, size);
+				TwoRRotational_Solution Mod3Solution = new TwoRRotational_Solution(tables, size);
 				int[] labels = new int[size - 1];
 				Mod3Solution.setStatus("Solved");
 				Mod3Solution.setName(csvRecord.get(1));
@@ -96,7 +96,7 @@ public class Parser4t {
 				}
 				Mod3Solution.setLabels(labels);
 				Mod3Solution.setColors(colors);
-				TwoRotational_Solution_M0 Solutions_Mod0 = new TwoRotational_Solution_M0(Mod3Solution);
+				TwoRRotational_Solution_M0 Solutions_Mod0 = new TwoRRotational_Solution_M0(Mod3Solution);
 				Solutions_Mod0.setTotalTime(Solutions_Mod0.getTotalTime() + (System.nanoTime() - Clock) / 1000000000F);
 				total_time+=Solutions_Mod0.getTotalTime();
 				System.out.println("Solution for " + Solutions_Mod0.getOP_name());

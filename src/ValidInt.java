@@ -12,9 +12,10 @@ public class ValidInt {
 		BufferedWriter CSV_Writer = new BufferedWriter(new FileWriter("out/Partitions.csv"));
 		CSVPrinter CSV_Printer = new CSVPrinter(CSV_Writer,
 				CSVFormat.DEFAULT.withHeader("Order", "Instances", "Valid Instances"));
-		for (int i = 40; i < 61; i++) {
+		for (int i = 41; i < 42; i++) {
 			Partition prt = new Partition(i, 3);
-			ArrayList<ArrayList<Integer>> tables = prt.loadPartition();
+			ArrayList<ArrayList<Integer>> tables = new ArrayList<ArrayList<Integer>>();
+			tables = prt.loadPartition();
 
 			int cnt = 0;
 			if (i % 4 == 1) {
@@ -35,8 +36,17 @@ public class ValidInt {
 					for (int u = 0; u < tables.get(j).size() && flag; u++) {
 						ArrayList<Integer> tcopy = new ArrayList<Integer>(tables.get(j));
 						tcopy.set(u, tcopy.get(u) - 1);
-						if (instance.validConfiguration(tcopy))
+						if (instance.validConfiguration(tcopy)) {
+							/*
+							System.out.print("\n Original\t");
+							for (int k=0;k<tables.get(j).size();k++)
+								System.out.print(tables.get(j).get(k)+" ");
+							System.out.print("\t vs \t");
+							for (int k=0;k<tcopy.size();k++)
+								System.out.print(tcopy.get(k)+" ");
+							*/
 							flag = false;
+						}
 
 					}
 					if (flag == false)

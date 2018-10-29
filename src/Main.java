@@ -174,7 +174,7 @@ public class Main {
 		int SolLimit = 0;
 		Boolean Check = false;
 		if (input.nextInt() == 0) {
-			System.out.println("1 OneRotational - 2 TwoRotational");
+			System.out.println("1 OneRotational - 2 TwoRRotational");
 			switch (input.nextInt()) {
 			case 1:
 				RotationalType = 1;
@@ -245,7 +245,7 @@ public class Main {
 			System.out.println("\tChoco=" + Choco + ";Timelimit=" + TimeLimit + ";Verbose=" + Verbose + ";onlyPoly="
 					+ onlyPoly + ";onlyCP=" + onlyCP + ";ExportModels=" + ExportModels + ";SolLimit=" + SolLimit
 					+ ";Symmetry=" + Symmetry + ";");
-			System.out.println("1 OneRotational - 2 TwoRotational");
+			System.out.println("1 OneRotational - 2 TwoRRotational");
 			switch (input.nextInt()) {
 			case 1:
 				RotationalType = 1;
@@ -277,13 +277,13 @@ public class Main {
 				DecimalFormat df = new DecimalFormat("0.0000");
 				Partition prt = new Partition(V_in, 3);
 				ArrayList<ArrayList<Integer>> tables = prt.loadPartition();
-				TwoRotational instance = new TwoRotational(Verbose, SolLimit, ExportModels, Path, TimeLimit, Choco);
+				TwoRRotational instance = new TwoRRotational(Verbose, SolLimit, ExportModels, Path, TimeLimit, Choco);
 				if (Symmetry)
 					instance.param_setSymmetry(true);
 				if (Symmetry && SymmetryValue != -1)
 					instance.param_setSymmetryValue(SymmetryValue);
 				for (int i = 0; i < tables.size(); i++) {
-					ArrayList<TwoRotational_Solution> Solutions = new ArrayList<TwoRotational_Solution>();
+					ArrayList<TwoRRotational_Solution> Solutions = new ArrayList<TwoRRotational_Solution>();
 
 					Boolean flag = false;
 					// 4t Solution
@@ -336,7 +336,7 @@ public class Main {
 								if (flag) {
 									if (Solutions.get(j).getStatus().equals("Solved")) {
 										System.out.println("Converting 4t+3 to 4t...");
-										TwoRotational_Solution_M0 Solutions_Mod0 = new TwoRotational_Solution_M0(
+										TwoRRotational_Solution_M0 Solutions_Mod0 = new TwoRRotational_Solution_M0(
 												Solutions.get(j));
 
 										System.out.println("Solution for " + Solutions_Mod0.getOP_name());
@@ -394,12 +394,12 @@ public class Main {
 				writeDemon(V_in);
 				writeDemonCSV(V_in, 2);
 				DecimalFormat df = new DecimalFormat("0.0000");
-				TwoRotational instance = new TwoRotational(Verbose, SolLimit, ExportModels, Path, TimeLimit, Choco);
+				TwoRRotational instance = new TwoRRotational(Verbose, SolLimit, ExportModels, Path, TimeLimit, Choco);
 				if (Symmetry)
 					instance.param_setSymmetry(true);
 				if (Symmetry && SymmetryValue != -1)
 					instance.param_setSymmetryValue(SymmetryValue);
-				ArrayList<TwoRotational_Solution> Solutions = new ArrayList<TwoRotational_Solution>();
+				ArrayList<TwoRRotational_Solution> Solutions = new ArrayList<TwoRRotational_Solution>();
 
 				Boolean flag = false;
 				// 4t Solution
@@ -449,7 +449,7 @@ public class Main {
 						} else {
 							if (flag) {
 								if (Solutions.get(i).getStatus().equals("Solved")) {
-									TwoRotational_Solution_M0 Solutions_Mod0 = new TwoRotational_Solution_M0(
+									TwoRRotational_Solution_M0 Solutions_Mod0 = new TwoRRotational_Solution_M0(
 											Solutions.get(i));
 									System.out.println("Solution for " + Solutions_Mod0.getOP_name());
 									System.out.println("\tStatus: " + Solutions_Mod0.getStatus());
@@ -571,22 +571,48 @@ public class Main {
 
 					} else {
 						if (instance.validConfiguration(tables.get(i))) {
-							Solutions = instance.solve(tables.get(i));
-							if (Solutions.size() > 0) {
-								for (int j = 0; j < Solutions.size(); j++) {
-									System.out.println("Solution for " + Solutions.get(j).getOP_name());
-									System.out.println("\tMinimal Problem: " + Solutions.get(j).getOP_nameRed());
-									System.out.println("\tStatus: " + Solutions.get(j).getStatus());
-									System.out.println(
-											"\tLabellingTime: " + df.format(Solutions.get(j).getLabellingTime()));
-									System.out.println("\tLabels.Size: " + Solutions.get(j).getLabels().length);
-									if (Check)
-										System.out.println("\tVerify: " + Solutions.get(j).verify());
+							//if (false) {
+								Solutions = instance.solve(tables.get(i));
+								if (Solutions.size() > 0) {
+									for (int j = 0; j < Solutions.size(); j++) {
+										System.out.println("Solution for " + Solutions.get(j).getOP_name());
+										System.out.println("\tMinimal Problem: " + Solutions.get(j).getOP_nameRed());
+										System.out.println("\tStatus: " + Solutions.get(j).getStatus());
+										System.out.println(
+												"\tLabellingTime: " + df.format(Solutions.get(j).getLabellingTime()));
+										System.out.println("\tLabels.Size: " + Solutions.get(j).getLabels().length);
+										if (Check)
+											System.out.println("\tVerify: " + Solutions.get(j).verify());
 
-									CSV_Printer.printRecord(Solutions.get(j).getOP_name(), Solutions.get(j).getName(),
-											Solutions.get(j).getStatus(),
-											df.format(Solutions.get(j).getLabellingTime()), Solutions.get(j).getNotes(),
-											df.format(Solutions.get(j).getTotalTime()), Solutions.get(j).getSolution());
+										CSV_Printer.printRecord(Solutions.get(j).getOP_name(),
+												Solutions.get(j).getName(), Solutions.get(j).getStatus(),
+												df.format(Solutions.get(j).getLabellingTime()),
+												Solutions.get(j).getNotes(), df.format(Solutions.get(j).getTotalTime()),
+												Solutions.get(j).getSolution());
+
+									}
+									CSV_Printer.flush();
+								} else {
+									CSV_Printer.printRecord(getOP_name(tables.get(i)), "", "Infeasible", "",
+											"No solution found", "", "");
+								}
+							//}
+						} else {
+							TwoRotational instance_b = new TwoRotational(Verbose, SolLimit, ExportModels, Path, TimeLimit, Choco);
+							ArrayList<TwoRRotational_Solution> Solutions_b = instance_b.solve(tables.get(i));
+							if (Solutions_b.size() > 0) {
+								for (int j = 0; j < Solutions_b.size(); j++) {
+									System.out.println("Solution for " + Solutions_b.get(j).getOP_name());
+									System.out.println("\tStatus: " + Solutions_b.get(j).getStatus());
+									System.out.println(
+											"\tLabellingTime: " + df.format(Solutions_b.get(j).getLabellingTime()));
+									System.out.println("\tLabels.Size: " + Solutions_b.get(j).getLabels().length);
+
+									CSV_Printer.printRecord(Solutions_b.get(j).getOP_name(),
+											Solutions_b.get(j).getName(), Solutions_b.get(j).getStatus(),
+											df.format(Solutions_b.get(j).getLabellingTime()),
+											Solutions_b.get(j).getNotes(), df.format(Solutions_b.get(j).getTotalTime()),
+											Solutions_b.get(j).getSolution());
 
 								}
 								CSV_Printer.flush();
@@ -594,9 +620,7 @@ public class Main {
 								CSV_Printer.printRecord(getOP_name(tables.get(i)), "", "Infeasible", "",
 										"No solution found", "", "");
 							}
-						} else {
-							CSV_Printer.printRecord(getOP_name(tables.get(i)), "", "Infeasible", "",
-									"Table config is not valid", "", "");
+							
 						}
 
 					}

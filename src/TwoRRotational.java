@@ -20,7 +20,7 @@ import org.chocosolver.solver.constraints.Constraint;
 import org.chocosolver.solver.exception.ContradictionException;
 import org.chocosolver.solver.variables.IntVar;
 
-public class TwoRotational {
+public class TwoRRotational {
 	private static long Clock;
 	private static Boolean Verbose = true;
 	private static String OP_name = "";
@@ -194,7 +194,7 @@ public class TwoRotational {
 		}
 	}
 
-	public static ArrayList<Integer> generateColors_Poly(TwoRotational_Solution Solution) throws ErrorThrower {
+	public static ArrayList<Integer> generateColors_Poly(TwoRRotational_Solution Solution) throws ErrorThrower {
 		long start = System.nanoTime();
 		ArrayList<Integer> tables = Solution.getTables();
 		tables.set(0, tables.get(0) + 1);
@@ -762,7 +762,7 @@ public class TwoRotational {
 		return YR;
 	}
 
-	public static ArrayList<ArrayList<Integer>> generateColors_CP_Choco(TwoRotational_Solution Solution, int num)
+	public static ArrayList<ArrayList<Integer>> generateColors_CP_Choco(TwoRRotational_Solution Solution, int num)
 			throws ErrorThrower, ContradictionException {
 		float start = System.nanoTime();
 		ArrayList<Integer> tables = Solution.getTables();
@@ -935,7 +935,7 @@ public class TwoRotational {
 		return YR;
 	}
 
-	public static ArrayList<ArrayList<Integer>> generateColors_CP(TwoRotational_Solution Solution, int num)
+	public static ArrayList<ArrayList<Integer>> generateColors_CP(TwoRRotational_Solution Solution, int num)
 			throws IloException, ErrorThrower {
 		float start = System.nanoTime();
 		ArrayList<Integer> tables = Solution.getTables();
@@ -1115,7 +1115,7 @@ public class TwoRotational {
 		return YR;
 	}
 
-	public static Boolean generateLabels_CP_Choco(TwoRotational_Solution Solution) throws ContradictionException {
+	public static Boolean generateLabels_CP_Choco(TwoRRotational_Solution Solution) throws ContradictionException {
 		Model choco = new Model("generateLabels_CP");
 		int Vx = Solution.getV() - 1;
 		int _D = Vx / 2;
@@ -1297,7 +1297,7 @@ public class TwoRotational {
 		}
 	}
 
-	public static Boolean generateLabels_CP(TwoRotational_Solution Solution) throws IloException {
+	public static Boolean generateLabels_CP(TwoRRotational_Solution Solution) throws IloException {
 		IloCP cpx = new IloCP();
 		int Vx = Solution.getV() - 1;
 		int _D = Vx / 2;
@@ -1482,7 +1482,7 @@ public class TwoRotational {
 	}
 
 	@SuppressWarnings("unused")
-	private static Boolean generateLabels_MIP(TwoRotational_Solution Solution) throws IloException {
+	private static Boolean generateLabels_MIP(TwoRRotational_Solution Solution) throws IloException {
 		IloCplex mip = new IloCplex();
 		IloIntVar[][] x = new IloIntVar[Solution.getColors().size()][];
 		for (int i = 0; i < Solution.getColors().size(); i++) {
@@ -1809,7 +1809,7 @@ public class TwoRotational {
 
 	}
 
-	public ArrayList<TwoRotational_Solution> solve(ArrayList<Integer> tables)
+	public ArrayList<TwoRRotational_Solution> solve(ArrayList<Integer> tables)
 			throws ErrorThrower, IloException, ContradictionException {
 
 		V = getOPsize(tables);
@@ -1817,7 +1817,7 @@ public class TwoRotational {
 			throw new ErrorThrower("V % 4 != ( 3 || 0) (V=" + V + ")");
 		}
 		tables.set(0, tables.get(0) - 1);
-		TwoRotational_Solution Solution = new TwoRotational_Solution(tables, V);
+		TwoRRotational_Solution Solution = new TwoRRotational_Solution(tables, V);
 		ArrayList<Integer> firstYR = generateColors_Poly(Solution);
 		Solution.setColors(firstYR);
 		YR_Pool = new ArrayList<ArrayList<Integer>>();
@@ -1837,11 +1837,11 @@ public class TwoRotational {
 		boolean Flag = true;
 		int iteration = 0;
 		ArrayList<ArrayList<Integer>> YR_cp = null;
-		ArrayList<TwoRotational_Solution> Solutions = new ArrayList<TwoRotational_Solution>();
+		ArrayList<TwoRRotational_Solution> Solutions = new ArrayList<TwoRRotational_Solution>();
 
 		while (Flag) {
 			Clock = System.nanoTime();
-			Solution = new TwoRotational_Solution(tables, V);
+			Solution = new TwoRRotational_Solution(tables, V);
 			Solution.setName("" + iteration);
 			Solution.setOP_name(param_getOP_name());
 			if (iteration == 0) {
@@ -1894,7 +1894,7 @@ public class TwoRotational {
 		return Solutions;
 	}
 
-	public ArrayList<TwoRotational_Solution> solve_onlyPoly(ArrayList<Integer> tables)
+	public ArrayList<TwoRRotational_Solution> solve_onlyPoly(ArrayList<Integer> tables)
 			throws ErrorThrower, IloException, ContradictionException {
 
 		V = getOPsize(tables);
@@ -1902,7 +1902,7 @@ public class TwoRotational {
 			throw new ErrorThrower("V % 4 != ( 3 || 0) (V=" + V + ")");
 		}
 		tables.set(0, tables.get(0) - 1);
-		TwoRotational_Solution Solution = new TwoRotational_Solution(tables, V);
+		TwoRRotational_Solution Solution = new TwoRRotational_Solution(tables, V);
 		ArrayList<Integer> firstYR = generateColors_Poly(Solution);
 		Solution.setColors(firstYR);
 
@@ -1912,10 +1912,10 @@ public class TwoRotational {
 		}
 		tables = Solution.getTables();
 		param_setOP_name(tables);
-		ArrayList<TwoRotational_Solution> Solutions = new ArrayList<TwoRotational_Solution>();
+		ArrayList<TwoRRotational_Solution> Solutions = new ArrayList<TwoRRotational_Solution>();
 
 		Clock = System.nanoTime();
-		Solution = new TwoRotational_Solution(tables, V);
+		Solution = new TwoRRotational_Solution(tables, V);
 		Solution.setName("0");
 		Solution.setOP_name(param_getOP_name());
 		Solution.setColors(generateColors_Poly(Solution));
@@ -1942,7 +1942,7 @@ public class TwoRotational {
 		return Solutions;
 	}
 
-	public ArrayList<TwoRotational_Solution> solve_onlyCP(ArrayList<Integer> tables)
+	public ArrayList<TwoRRotational_Solution> solve_onlyCP(ArrayList<Integer> tables)
 			throws ErrorThrower, IloException, ContradictionException {
 
 		V = getOPsize(tables);
@@ -1959,11 +1959,11 @@ public class TwoRotational {
 		boolean Flag = true;
 		int iteration = 0;
 		ArrayList<ArrayList<Integer>> YR_cp = null;
-		ArrayList<TwoRotational_Solution> Solutions = new ArrayList<TwoRotational_Solution>();
+		ArrayList<TwoRRotational_Solution> Solutions = new ArrayList<TwoRRotational_Solution>();
 
 		while (Flag) {
 			Clock = System.nanoTime();
-			TwoRotational_Solution Solution = new TwoRotational_Solution(tables, V);
+			TwoRRotational_Solution Solution = new TwoRRotational_Solution(tables, V);
 			Solution.setName("" + iteration);
 			Solution.setOP_name(param_getOP_name());
 			if (Verbose)
@@ -2009,7 +2009,7 @@ public class TwoRotational {
 		return Solutions;
 	}
 
-	public TwoRotational(boolean Verbose, int SolLimit, Boolean exportModels, String FilePath, Boolean TimeLimit,
+	public TwoRRotational(boolean Verbose, int SolLimit, Boolean exportModels, String FilePath, Boolean TimeLimit,
 			Boolean Choco) throws ErrorThrower {
 		param_setVerbose(Verbose);
 		param_setExportModels(exportModels);
@@ -2057,7 +2057,7 @@ public class TwoRotational {
 	}
 
 	public static void param_setExportModels(Boolean exportModels) {
-		TwoRotational.exportModels = exportModels;
+		TwoRRotational.exportModels = exportModels;
 	}
 
 	public static String param_getOP_name() {

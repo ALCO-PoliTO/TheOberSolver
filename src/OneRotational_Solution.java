@@ -178,7 +178,7 @@ public class OneRotational_Solution {
 	}
 
 	public void setNotes(String notes) {
-		this.notes = notes;
+		this.notes = this.notes+ " " +notes;
 	}
 
 	public ArrayList<Integer> getTablesRed() {

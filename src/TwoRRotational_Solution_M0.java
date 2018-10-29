@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class TwoRotational_Solution_M0 {
+public class TwoRRotational_Solution_M0 {
 	private static ArrayList<Integer> tables = new ArrayList<Integer>();
 	private int V;
 	private int criticTable = -1;
@@ -20,7 +20,7 @@ public class TwoRotational_Solution_M0 {
 	private ArrayList<Integer> colors = new ArrayList<Integer>();
 	private int[] labels = null;
 
-	public TwoRotational_Solution_M0(TwoRotational_Solution Solution) {
+	public TwoRRotational_Solution_M0(TwoRRotational_Solution Solution) {
 		setTables(Solution.getTables());
 		setV(Solution.getV() + 1);
 		setLabels(Solution.getLabels());

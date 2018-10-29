@@ -254,7 +254,7 @@ public class OberViewer {
 																																																			if ((V % 4 == 3) || (V % 4 == 0)) {
 																																																				// 4T+3 or 4T
 																																																				try {
-																																																					TwoRotational instance = new TwoRotational(false, SolNum, false, "", timeLim, Choco);
+																																																					TwoRRotational instance = new TwoRRotational(false, SolNum, false, "", timeLim, Choco);
 																																																					output.setText("");
 																																																					if (SymmetrySwitch.getSelection()) {
 																																																						instance.param_setSymmetry(true);
@@ -280,7 +280,7 @@ public class OberViewer {
 																																																							}
 																																																						}
 																																																					}
-																																																					ArrayList<TwoRotational_Solution> Solution = null;
+																																																					ArrayList<TwoRRotational_Solution> Solution = null;
 																																																					switch (Coloring.getText()) {
 																																																					case "Polynomial": {
 																																																						output.append("Using only Polynomial coloring.\n");
@@ -312,7 +312,7 @@ public class OberViewer {
 																																																							} else {
 																																																								if (flag) {
 																																																									output.append("Converting 4t+3 to 4t...\n");
-																																																									TwoRotational_Solution_M0 Solutions_Mod0 = new TwoRotational_Solution_M0(
+																																																									TwoRRotational_Solution_M0 Solutions_Mod0 = new TwoRRotational_Solution_M0(
 																																																											Solution.get(j));
 																																																									output.append("Solution for " + Solutions_Mod0.getOP_name() + "\n");
 																																																									output.append("Status: " + Solutions_Mod0.getStatus() + "\n");
@@ -415,7 +415,35 @@ public class OberViewer {
 																																																							output.setText("Infeasible. No solution found");
 																																																						}
 																																																					} else {
-																																																						output.setText("Table config is not valid.");
+																																																						TwoRotational instance_b = null;
+																																																						try {
+																																																							instance_b = new TwoRotational(false, SolNum, false, "", timeLim, Choco);
+																																																						} catch (ErrorThrower e1) {
+																																																							// TODO Auto-generated catch block
+																																																							e1.printStackTrace();
+																																																						}
+																																																						ArrayList<TwoRRotational_Solution> Solutions_b = null;
+																																																						try {
+																																																							Solutions_b = instance_b.solve(Tables);
+																																																						} catch (ErrorThrower e1) {
+																																																							// TODO Auto-generated catch block
+																																																							e1.printStackTrace();
+																																																						} catch (IloException e1) {
+																																																							// TODO Auto-generated catch block
+																																																							e1.printStackTrace();
+																																																						} catch (ContradictionException e1) {
+																																																							// TODO Auto-generated catch block
+																																																							e1.printStackTrace();
+																																																						}
+																																																						output.append("Using 4t+1 2Rotational rules.\n");
+																																																						if (Solutions_b.size() > 0) {
+																																																							for (int j = 0; j < Solutions_b.size(); j++) {
+																																																								output.append("Solution for " + Solutions_b.get(j).getOP_name());
+																																																								output.append("\tStatus: " + Solutions_b.get(j).getStatus());
+																																																								output.append(
+																																																										"\tLabellingTime: " + df.format(Solutions_b.get(j).getLabellingTime()));
+																																																								output.append("\tLabels.Size: " + Solutions_b.get(j).getLabels().length);
+																																																							}}
 																																																					}
 
 																																																				}
