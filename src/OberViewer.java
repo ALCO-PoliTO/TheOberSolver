@@ -8,34 +8,19 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.layout.GridLayout;
-import swing2swt.layout.BoxLayout;
-import org.eclipse.swt.widgets.List;
-import swing2swt.layout.FlowLayout;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Combo;
-import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Text;
 
 import ilog.concert.IloException;
-
-import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.layout.FillLayout;
-import org.eclipse.swt.layout.FormData;
-import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.widgets.Button;
-import org.eclipse.swt.custom.StackLayout;
 import org.eclipse.swt.layout.RowLayout;
-import swing2swt.layout.BorderLayout;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.custom.CCombo;
-import org.eclipse.swt.widgets.Menu;
-import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.TabFolder;
 import org.eclipse.swt.widgets.TabItem;
-import org.eclipse.swt.widgets.Canvas;
 
 public class OberViewer {
 
@@ -254,7 +239,7 @@ public class OberViewer {
 																																																			if ((V % 4 == 3) || (V % 4 == 0)) {
 																																																				// 4T+3 or 4T
 																																																				try {
-																																																					TwoRRotational instance = new TwoRRotational(false, SolNum, false, "", timeLim, Choco);
+																																																					TwoRotationalOdd instance = new TwoRotationalOdd(false, SolNum, false, "", timeLim, Choco);
 																																																					output.setText("");
 																																																					if (SymmetrySwitch.getSelection()) {
 																																																						instance.param_setSymmetry(true);
@@ -280,7 +265,7 @@ public class OberViewer {
 																																																							}
 																																																						}
 																																																					}
-																																																					ArrayList<TwoRRotational_Solution> Solution = null;
+																																																					ArrayList<TwoRotationalOdd_Solution> Solution = null;
 																																																					switch (Coloring.getText()) {
 																																																					case "Polynomial": {
 																																																						output.append("Using only Polynomial coloring.\n");
@@ -312,7 +297,7 @@ public class OberViewer {
 																																																							} else {
 																																																								if (flag) {
 																																																									output.append("Converting 4t+3 to 4t...\n");
-																																																									TwoRRotational_Solution_M0 Solutions_Mod0 = new TwoRRotational_Solution_M0(
+																																																									TwoRotationalOdd_Solution_M0 Solutions_Mod0 = new TwoRotationalOdd_Solution_M0(
 																																																											Solution.get(j));
 																																																									output.append("Solution for " + Solutions_Mod0.getOP_name() + "\n");
 																																																									output.append("Status: " + Solutions_Mod0.getStatus() + "\n");
@@ -415,14 +400,14 @@ public class OberViewer {
 																																																							output.setText("Infeasible. No solution found");
 																																																						}
 																																																					} else {
-																																																						TwoRotational instance_b = null;
+																																																						TwoRotationalEven instance_b = null;
 																																																						try {
-																																																							instance_b = new TwoRotational(false, SolNum, false, "", timeLim, Choco);
+																																																							instance_b = new TwoRotationalEven(false, SolNum, false, "", timeLim, Choco);
 																																																						} catch (ErrorThrower e1) {
 																																																							// TODO Auto-generated catch block
 																																																							e1.printStackTrace();
 																																																						}
-																																																						ArrayList<TwoRRotational_Solution> Solutions_b = null;
+																																																						ArrayList<TwoRotationalOdd_Solution> Solutions_b = null;
 																																																						try {
 																																																							Solutions_b = instance_b.solve(Tables);
 																																																						} catch (ErrorThrower e1) {
@@ -480,7 +465,7 @@ public class OberViewer {
 																																																						Label lblNewLabel = new Label(composite, SWT.WRAP);
 																																																						lblNewLabel.setText("TheOberSolver\n\nThis project is developed and maintained by ALCO@Politecnico di Torino. TheObersolver is a pre-release software for solving the Oberwolfach Problem. Check out our page on gitHub @ ALCO-PoliTO.\n\nThis software uses Choco Solver and can be run as well with IBM CPLEX. As for the former one, scholars are entitled to obtain a free license via the IBM Academic Initiative.\n");
 																																																						
-																																																						Label lblNewLabel_1 = new Label(composite, SWT.NONE);
+																																																					
 
 	}
 }

@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class TwoRRotational_Solution {
+public class TwoRotationalOdd_Solution {
 	private static ArrayList<Integer> tables = new ArrayList<Integer>();
 	private int V;
 	private String name;
@@ -18,7 +18,7 @@ public class TwoRRotational_Solution {
 	private ArrayList<Integer> colors = new ArrayList<Integer>();
 	private int[] labels = null;
 
-	public TwoRRotational_Solution(ArrayList<Integer> tables, int v) {
+	public TwoRotationalOdd_Solution(ArrayList<Integer> tables, int v) {
 		super();
 		this.setTables(tables);
 		setV(v);
@@ -330,7 +330,7 @@ public class TwoRRotational_Solution {
 	}
 
 	public void setCriticalPaths(ArrayList<ArrayList<Integer>> criticalPaths) {
-		TwoRRotational_Solution.criticalPaths = criticalPaths;
+		TwoRotationalOdd_Solution.criticalPaths = criticalPaths;
 	}
 
 
