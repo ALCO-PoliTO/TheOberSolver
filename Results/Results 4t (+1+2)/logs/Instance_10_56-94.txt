@@ -1,0 +1,7167 @@
+Partition file existing. Loading from file
+Solution for OP(35,3,3)
+	Minimal Problem: (17,3)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(3,4,34)
+	Minimal Problem: (1,2,17)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(33,4,4)
+	Minimal Problem: (16,4)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(3,6,32)
+	Minimal Problem: (1,3,16)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(5,32,4)
+	Minimal Problem: (2,16,2)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(3,32,3,3)
+	Minimal Problem: (1,16,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(31,6,4)
+	Minimal Problem: (15,3,2)
+	Status: Solved
+	LabellingTime: 0,0650
+	Labels.Size: 41
+Solution for OP(31,5,5)
+	Minimal Problem: (15,5)
+	Status: Solved
+	LabellingTime: 0,0280
+	Labels.Size: 41
+Solution for OP(31,4,3,3)
+	Minimal Problem: (15,2,3)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(3,8,30)
+	Minimal Problem: (1,4,15)
+	Status: Solved
+	LabellingTime: 0,0310
+	Labels.Size: 41
+Solution for OP(7,30,4)
+	Minimal Problem: (3,15,2)
+	Status: Solved
+	LabellingTime: 0,0780
+	Labels.Size: 41
+Solution for OP(5,6,30)
+	Minimal Problem: (2,3,15)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(5,30,3,3)
+	Minimal Problem: (2,15,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(3,4,4,30)
+	Minimal Problem: (1,4,15)
+	Status: Solved
+	LabellingTime: 0,0150
+	Labels.Size: 41
+Solution for OP(29,8,4)
+	Minimal Problem: (14,4,2)
+	Status: Solved
+	LabellingTime: 0,0600
+	Labels.Size: 41
+Solution for OP(29,6,6)
+	Minimal Problem: (14,6)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(29,6,3,3)
+	Minimal Problem: (14,3,3)
+	Status: Solved
+	LabellingTime: 0,0210
+	Labels.Size: 41
+Solution for OP(29,4,4,4)
+	Minimal Problem: (14,4,2)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(29,3,3,3,3)
+	Minimal Problem: (14,3,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(3,10,28)
+	Minimal Problem: (1,5,14)
+	Status: Solved
+	LabellingTime: 0,0220
+	Labels.Size: 41
+Solution for OP(9,28,4)
+	Minimal Problem: (4,14,2)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(5,8,28)
+	Minimal Problem: (2,4,14)
+	Status: Solved
+	LabellingTime: 0,0670
+	Labels.Size: 41
+Solution for OP(7,28,6)
+	Minimal Problem: (3,14,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(7,28,3,3)
+	Minimal Problem: (3,14,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(3,6,4,28)
+	Minimal Problem: (1,3,2,14)
+	Status: Solved
+	LabellingTime: 0,0580
+	Labels.Size: 41
+Solution for OP(3,5,5,28)
+	Minimal Problem: (1,5,14)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(5,28,4,4)
+	Minimal Problem: (2,14,4)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(3,4,28,3,3)
+	Minimal Problem: (1,2,14,3)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(27,10,4)
+	Minimal Problem: (13,5,2)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(27,8,6)
+	Minimal Problem: (13,4,3)
+	Status: Solved
+	LabellingTime: 0,0620
+	Labels.Size: 41
+Solution for OP(27,8,3,3)
+	Minimal Problem: (13,4,3)
+	Status: Solved
+	LabellingTime: 0,0640
+	Labels.Size: 41
+Solution for OP(27,7,7)
+	Minimal Problem: (13,7)
+	Status: Solved
+	LabellingTime: 0,0310
+	Labels.Size: 41
+Solution for OP(27,6,4,4)
+	Minimal Problem: (13,3,4)
+	Status: Solved
+	LabellingTime: 0,0870
+	Labels.Size: 41
+Solution for OP(27,5,5,4)
+	Minimal Problem: (13,5,2)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(27,4,4,3,3)
+	Minimal Problem: (13,4,3)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(3,12,26)
+	Minimal Problem: (1,6,13)
+	Status: Solved
+	LabellingTime: 0,0320
+	Labels.Size: 41
+Solution for OP(11,26,4)
+	Minimal Problem: (5,13,2)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(5,10,26)
+	Minimal Problem: (2,5,13)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(9,26,6)
+	Minimal Problem: (4,13,3)
+	Status: Solved
+	LabellingTime: 0,1260
+	Labels.Size: 41
+Solution for OP(9,26,3,3)
+	Minimal Problem: (4,13,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(7,8,26)
+	Minimal Problem: (3,4,13)
+	Status: Solved
+	LabellingTime: 0,0500
+	Labels.Size: 41
+Solution for OP(3,8,4,26)
+	Minimal Problem: (1,4,2,13)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(7,26,4,4)
+	Minimal Problem: (3,13,4)
+	Status: Solved
+	LabellingTime: 0,0580
+	Labels.Size: 41
+Solution for OP(3,6,6,26)
+	Minimal Problem: (1,6,13)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(5,6,26,4)
+	Minimal Problem: (2,3,13,2)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(3,6,26,3,3)
+	Minimal Problem: (1,3,13,3)
+	Status: Solved
+	LabellingTime: 0,0480
+	Labels.Size: 41
+Solution for OP(5,26,5,5)
+	Minimal Problem: (2,13,5)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(5,26,4,3,3)
+	Minimal Problem: (2,13,2,3)
+	Status: Solved
+	LabellingTime: 0,0760
+	Labels.Size: 41
+Solution for OP(3,4,4,4,26)
+	Minimal Problem: (1,4,2,13)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(3,26,3,3,3,3)
+	Minimal Problem: (1,13,3,3)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(25,12,4)
+	Minimal Problem: (12,6,2)
+	Status: Solved
+	LabellingTime: 0,0880
+	Labels.Size: 41
+Solution for OP(25,10,6)
+	Minimal Problem: (12,5,3)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(25,10,3,3)
+	Minimal Problem: (12,5,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(25,8,8)
+	Minimal Problem: (12,8)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(25,8,4,4)
+	Minimal Problem: (12,4,4)
+	Status: Solved
+	LabellingTime: 0,0480
+	Labels.Size: 41
+Solution for OP(25,6,6,4)
+	Minimal Problem: (12,6,2)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(25,6,5,5)
+	Minimal Problem: (12,3,5)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(25,6,4,3,3)
+	Minimal Problem: (12,3,2,3)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(25,5,5,3,3)
+	Minimal Problem: (12,5,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(25,4,4,4,4)
+	Minimal Problem: (12,4,4)
+	Status: Solved
+	LabellingTime: 0,0250
+	Labels.Size: 41
+Solution for OP(25,4,3,3,3,3)
+	Minimal Problem: (12,2,3,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(3,14,24)
+	Minimal Problem: (1,7,12)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(13,24,4)
+	Minimal Problem: (6,12,2)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(5,12,24)
+	Minimal Problem: (2,6,12)
+	Status: Solved
+	LabellingTime: 0,0800
+	Labels.Size: 41
+Solution for OP(11,24,6)
+	Minimal Problem: (5,12,3)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(11,24,3,3)
+	Minimal Problem: (5,12,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(7,10,24)
+	Minimal Problem: (3,5,12)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(3,10,4,24)
+	Minimal Problem: (1,5,2,12)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(9,24,8)
+	Minimal Problem: (4,12,4)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(9,24,4,4)
+	Minimal Problem: (4,12,4)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(3,8,6,24)
+	Minimal Problem: (1,4,3,12)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(5,8,24,4)
+	Minimal Problem: (2,4,12,2)
+	Status: Solved
+	LabellingTime: 0,0660
+	Labels.Size: 41
+Solution for OP(3,8,24,3,3)
+	Minimal Problem: (1,4,12,3)
+	Status: Solved
+	LabellingTime: 0,0310
+	Labels.Size: 41
+Solution for OP(3,7,7,24)
+	Minimal Problem: (1,7,12)
+	Status: Solved
+	LabellingTime: 0,0090
+	Labels.Size: 41
+Solution for OP(7,24,6,4)
+	Minimal Problem: (3,12,3,2)
+	Status: Solved
+	LabellingTime: 0,0810
+	Labels.Size: 41
+Solution for OP(7,24,5,5)
+	Minimal Problem: (3,12,5)
+	Status: Solved
+	LabellingTime: 0,0510
+	Labels.Size: 41
+Solution for OP(7,24,4,3,3)
+	Minimal Problem: (3,12,2,3)
+	Status: Solved
+	LabellingTime: 0,1670
+	Labels.Size: 41
+Solution for OP(5,6,6,24)
+	Minimal Problem: (2,6,12)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(5,6,24,3,3)
+	Minimal Problem: (2,3,12,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(3,6,4,4,24)
+	Minimal Problem: (1,3,4,12)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(3,5,5,4,24)
+	Minimal Problem: (1,5,2,12)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(5,24,4,4,4)
+	Minimal Problem: (2,12,4,2)
+	Status: Solved
+	LabellingTime: 0,0790
+	Labels.Size: 41
+Solution for OP(5,24,3,3,3,3)
+	Minimal Problem: (2,12,3,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(3,4,4,24,3,3)
+	Minimal Problem: (1,4,12,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(23,14,4)
+	Minimal Problem: (11,7,2)
+	Status: Solved
+	LabellingTime: 0,0660
+	Labels.Size: 41
+Solution for OP(23,12,6)
+	Minimal Problem: (11,6,3)
+	Status: Solved
+	LabellingTime: 0,0680
+	Labels.Size: 41
+Solution for OP(23,12,3,3)
+	Minimal Problem: (11,6,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(23,10,8)
+	Minimal Problem: (11,5,4)
+	Status: Solved
+	LabellingTime: 0,0740
+	Labels.Size: 41
+Solution for OP(23,10,4,4)
+	Minimal Problem: (11,5,4)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(23,9,9)
+	Minimal Problem: (11,9)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(23,8,6,4)
+	Minimal Problem: (11,4,3,2)
+	Status: Solved
+	LabellingTime: 0,0870
+	Labels.Size: 41
+Solution for OP(23,8,5,5)
+	Minimal Problem: (11,4,5)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(23,8,4,3,3)
+	Minimal Problem: (11,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0570
+	Labels.Size: 41
+Solution for OP(23,7,7,4)
+	Minimal Problem: (11,7,2)
+	Status: Solved
+	LabellingTime: 0,0940
+	Labels.Size: 41
+Solution for OP(23,6,6,6)
+	Minimal Problem: (11,6,3)
+	Status: Solved
+	LabellingTime: 0,0810
+	Labels.Size: 41
+Solution for OP(23,6,6,3,3)
+	Minimal Problem: (11,6,3)
+	Status: Solved
+	LabellingTime: 0,0550
+	Labels.Size: 41
+Solution for OP(23,6,4,4,4)
+	Minimal Problem: (11,3,4,2)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(23,6,3,3,3,3)
+	Minimal Problem: (11,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0510
+	Labels.Size: 41
+Solution for OP(23,5,5,4,4)
+	Minimal Problem: (11,5,4)
+	Status: Solved
+	LabellingTime: 0,0830
+	Labels.Size: 41
+Solution for OP(23,4,4,4,3,3)
+	Minimal Problem: (11,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0480
+	Labels.Size: 41
+Solution for OP(23,3,3,3,3,3,3)
+	Minimal Problem: (11,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(3,16,22)
+	Minimal Problem: (1,8,11)
+	Status: Solved
+	LabellingTime: 0,0170
+	Labels.Size: 41
+Solution for OP(15,22,4)
+	Minimal Problem: (7,11,2)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(5,14,22)
+	Minimal Problem: (2,7,11)
+	Status: Solved
+	LabellingTime: 0,0340
+	Labels.Size: 41
+Solution for OP(13,22,6)
+	Minimal Problem: (6,11,3)
+	Status: Solved
+	LabellingTime: 0,0150
+	Labels.Size: 41
+Solution for OP(13,22,3,3)
+	Minimal Problem: (6,11,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(7,12,22)
+	Minimal Problem: (3,6,11)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(3,12,4,22)
+	Minimal Problem: (1,6,2,11)
+	Status: Solved
+	LabellingTime: 0,0480
+	Labels.Size: 41
+Solution for OP(11,22,8)
+	Minimal Problem: (5,11,4)
+	Status: Solved
+	LabellingTime: 0,0540
+	Labels.Size: 41
+Solution for OP(11,22,4,4)
+	Minimal Problem: (5,11,4)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(9,10,22)
+	Minimal Problem: (4,5,11)
+	Status: Solved
+	LabellingTime: 0,0610
+	Labels.Size: 41
+Solution for OP(3,10,6,22)
+	Minimal Problem: (1,5,3,11)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(5,10,22,4)
+	Minimal Problem: (2,5,11,2)
+	Status: Solved
+	LabellingTime: 0,1260
+	Labels.Size: 41
+Solution for OP(3,10,22,3,3)
+	Minimal Problem: (1,5,11,3)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(9,22,6,4)
+	Minimal Problem: (4,11,3,2)
+	Status: Solved
+	LabellingTime: 0,0580
+	Labels.Size: 41
+Solution for OP(9,22,5,5)
+	Minimal Problem: (4,11,5)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(9,22,4,3,3)
+	Minimal Problem: (4,11,2,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(3,8,8,22)
+	Minimal Problem: (1,8,11)
+	Status: Solved
+	LabellingTime: 0,0130
+	Labels.Size: 41
+Solution for OP(7,8,22,4)
+	Minimal Problem: (3,4,11,2)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(5,8,6,22)
+	Minimal Problem: (2,4,3,11)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(5,8,22,3,3)
+	Minimal Problem: (2,4,11,3)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(3,8,4,4,22)
+	Minimal Problem: (1,4,4,11)
+	Status: Solved
+	LabellingTime: 0,0580
+	Labels.Size: 41
+Solution for OP(5,7,7,22)
+	Minimal Problem: (2,7,11)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(7,22,6,6)
+	Minimal Problem: (3,11,6)
+	Status: Solved
+	LabellingTime: 0,0730
+	Labels.Size: 41
+Solution for OP(7,22,6,3,3)
+	Minimal Problem: (3,11,3,3)
+	Status: Solved
+	LabellingTime: 0,0690
+	Labels.Size: 41
+Solution for OP(7,22,4,4,4)
+	Minimal Problem: (3,11,4,2)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(7,22,3,3,3,3)
+	Minimal Problem: (3,11,3,3)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(3,6,6,4,22)
+	Minimal Problem: (1,6,2,11)
+	Status: Solved
+	LabellingTime: 0,0320
+	Labels.Size: 41
+Solution for OP(3,6,5,5,22)
+	Minimal Problem: (1,3,5,11)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(5,6,22,4,4)
+	Minimal Problem: (2,3,11,4)
+	Status: Solved
+	LabellingTime: 0,0770
+	Labels.Size: 41
+Solution for OP(3,6,4,22,3,3)
+	Minimal Problem: (1,3,2,11,3)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(5,22,5,5,4)
+	Minimal Problem: (2,11,5,2)
+	Status: Solved
+	LabellingTime: 0,0730
+	Labels.Size: 41
+Solution for OP(3,5,5,22,3,3)
+	Minimal Problem: (1,5,11,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(5,22,4,4,3,3)
+	Minimal Problem: (2,11,4,3)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(3,4,4,4,4,22)
+	Minimal Problem: (1,4,4,11)
+	Status: Solved
+	LabellingTime: 0,0340
+	Labels.Size: 41
+Solution for OP(3,4,22,3,3,3,3)
+	Minimal Problem: (1,2,11,3,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(21,16,4)
+	Minimal Problem: (10,8,2)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(21,14,6)
+	Minimal Problem: (10,7,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(21,14,3,3)
+	Minimal Problem: (10,7,3)
+	Status: Solved
+	LabellingTime: 0,0480
+	Labels.Size: 41
+Solution for OP(21,12,8)
+	Minimal Problem: (10,6,4)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(21,12,4,4)
+	Minimal Problem: (10,6,4)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(21,10,10)
+	Minimal Problem: (10,10)
+	Status: Solved
+	LabellingTime: 0,0290
+	Labels.Size: 41
+Solution for OP(21,10,6,4)
+	Minimal Problem: (10,5,3,2)
+	Status: Solved
+	LabellingTime: 0,0580
+	Labels.Size: 41
+Solution for OP(21,10,5,5)
+	Minimal Problem: (10,5,5)
+	Status: Solved
+	LabellingTime: 0,0250
+	Labels.Size: 41
+Solution for OP(21,10,4,3,3)
+	Minimal Problem: (10,5,2,3)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(21,8,8,4)
+	Minimal Problem: (10,8,2)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(21,8,6,6)
+	Minimal Problem: (10,4,6)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(21,8,6,3,3)
+	Minimal Problem: (10,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(21,8,4,4,4)
+	Minimal Problem: (10,4,4,2)
+	Status: Solved
+	LabellingTime: 0,0640
+	Labels.Size: 41
+Solution for OP(21,8,3,3,3,3)
+	Minimal Problem: (10,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(21,7,7,6)
+	Minimal Problem: (10,7,3)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(21,7,7,3,3)
+	Minimal Problem: (10,7,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(21,6,6,4,4)
+	Minimal Problem: (10,6,4)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(21,6,5,5,4)
+	Minimal Problem: (10,3,5,2)
+	Status: Solved
+	LabellingTime: 0,0860
+	Labels.Size: 41
+Solution for OP(21,6,4,4,3,3)
+	Minimal Problem: (10,3,4,3)
+	Status: Solved
+	LabellingTime: 0,0950
+	Labels.Size: 41
+Solution for OP(21,5,5,5,5)
+	Minimal Problem: (10,5,5)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(21,5,5,4,3,3)
+	Minimal Problem: (10,5,2,3)
+	Status: Solved
+	LabellingTime: 0,1060
+	Labels.Size: 41
+Solution for OP(21,4,4,4,4,4)
+	Minimal Problem: (10,4,4,2)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(21,4,4,3,3,3,3)
+	Minimal Problem: (10,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0880
+	Labels.Size: 41
+Solution for OP(3,18,20)
+	Minimal Problem: (1,9,10)
+	Status: Solved
+	LabellingTime: 0,0120
+	Labels.Size: 41
+Solution for OP(17,20,4)
+	Minimal Problem: (8,10,2)
+	Status: Solved
+	LabellingTime: 0,1230
+	Labels.Size: 41
+Solution for OP(5,16,20)
+	Minimal Problem: (2,8,10)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(15,20,6)
+	Minimal Problem: (7,10,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(15,20,3,3)
+	Minimal Problem: (7,10,3)
+	Status: Solved
+	LabellingTime: 0,0260
+	Labels.Size: 41
+Solution for OP(7,14,20)
+	Minimal Problem: (3,7,10)
+	Status: Solved
+	LabellingTime: 0,0540
+	Labels.Size: 41
+Solution for OP(3,14,4,20)
+	Minimal Problem: (1,7,2,10)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(13,20,8)
+	Minimal Problem: (6,10,4)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(13,20,4,4)
+	Minimal Problem: (6,10,4)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(9,12,20)
+	Minimal Problem: (4,6,10)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(3,12,6,20)
+	Minimal Problem: (1,6,3,10)
+	Status: Solved
+	LabellingTime: 0,0320
+	Labels.Size: 41
+Solution for OP(5,12,20,4)
+	Minimal Problem: (2,6,10,2)
+	Status: Solved
+	LabellingTime: 0,0700
+	Labels.Size: 41
+Solution for OP(3,12,20,3,3)
+	Minimal Problem: (1,6,10,3)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(11,20,10)
+	Minimal Problem: (5,10,5)
+	Status: Solved
+	LabellingTime: 0,0510
+	Labels.Size: 41
+Solution for OP(11,20,6,4)
+	Minimal Problem: (5,10,3,2)
+	Status: Solved
+	LabellingTime: 0,0580
+	Labels.Size: 41
+Solution for OP(11,20,5,5)
+	Minimal Problem: (5,10,5)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(11,20,4,3,3)
+	Minimal Problem: (5,10,2,3)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(3,10,8,20)
+	Minimal Problem: (1,5,4,10)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(7,10,20,4)
+	Minimal Problem: (3,5,10,2)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(5,10,6,20)
+	Minimal Problem: (2,5,3,10)
+	Status: Solved
+	LabellingTime: 0,1520
+	Labels.Size: 41
+Solution for OP(5,10,20,3,3)
+	Minimal Problem: (2,5,10,3)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(3,10,4,4,20)
+	Minimal Problem: (1,5,4,10)
+	Status: Solved
+	LabellingTime: 0,0540
+	Labels.Size: 41
+Solution for OP(3,9,9,20)
+	Minimal Problem: (1,9,10)
+	Status: Solved
+	LabellingTime: 0,0540
+	Labels.Size: 41
+Solution for OP(9,20,8,4)
+	Minimal Problem: (4,10,4,2)
+	Status: Solved
+	LabellingTime: 0,0800
+	Labels.Size: 41
+Solution for OP(9,20,6,6)
+	Minimal Problem: (4,10,6)
+	Status: Solved
+	LabellingTime: 0,0570
+	Labels.Size: 41
+Solution for OP(9,20,6,3,3)
+	Minimal Problem: (4,10,3,3)
+	Status: Solved
+	LabellingTime: 0,0590
+	Labels.Size: 41
+Solution for OP(9,20,4,4,4)
+	Minimal Problem: (4,10,4,2)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(9,20,3,3,3,3)
+	Minimal Problem: (4,10,3,3)
+	Status: Solved
+	LabellingTime: 0,0480
+	Labels.Size: 41
+Solution for OP(5,8,8,20)
+	Minimal Problem: (2,8,10)
+	Status: Solved
+	LabellingTime: 0,1060
+	Labels.Size: 41
+Solution for OP(7,8,20,6)
+	Minimal Problem: (3,4,10,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(7,8,20,3,3)
+	Minimal Problem: (3,4,10,3)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(3,8,6,4,20)
+	Minimal Problem: (1,4,3,2,10)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(3,8,5,5,20)
+	Minimal Problem: (1,4,5,10)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(5,8,20,4,4)
+	Minimal Problem: (2,4,10,4)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(3,8,4,20,3,3)
+	Minimal Problem: (1,4,2,10,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(7,20,7,7)
+	Minimal Problem: (3,10,7)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(3,7,7,4,20)
+	Minimal Problem: (1,7,2,10)
+	Status: Solved
+	LabellingTime: 0,0330
+	Labels.Size: 41
+Solution for OP(7,20,6,4,4)
+	Minimal Problem: (3,10,3,4)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(7,20,5,5,4)
+	Minimal Problem: (3,10,5,2)
+	Status: Solved
+	LabellingTime: 0,0840
+	Labels.Size: 41
+Solution for OP(7,20,4,4,3,3)
+	Minimal Problem: (3,10,4,3)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(3,6,6,6,20)
+	Minimal Problem: (1,6,3,10)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(5,6,6,20,4)
+	Minimal Problem: (2,6,10,2)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(3,6,6,20,3,3)
+	Minimal Problem: (1,6,10,3)
+	Status: Solved
+	LabellingTime: 0,0340
+	Labels.Size: 41
+Solution for OP(5,6,20,5,5)
+	Minimal Problem: (2,3,10,5)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(5,6,20,4,3,3)
+	Minimal Problem: (2,3,10,2,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(3,6,4,4,4,20)
+	Minimal Problem: (1,3,4,2,10)
+	Status: Solved
+	LabellingTime: 0,0250
+	Labels.Size: 41
+Solution for OP(3,6,20,3,3,3,3)
+	Minimal Problem: (1,3,10,3,3)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(5,20,5,5,3,3)
+	Minimal Problem: (2,10,5,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(3,5,5,4,4,20)
+	Minimal Problem: (1,5,4,10)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(5,20,4,4,4,4)
+	Minimal Problem: (2,10,4,4)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(5,20,4,3,3,3,3)
+	Minimal Problem: (2,10,2,3,3)
+	Status: Solved
+	LabellingTime: 0,2230
+	Labels.Size: 41
+Solution for OP(3,4,4,4,20,3,3)
+	Minimal Problem: (1,4,2,10,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(3,20,3,3,3,3,3,3)
+	Minimal Problem: (1,10,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(3)
+	Minimal Problem: (1,19)
+	Status: Solved
+	LabellingTime: 0,0330
+	Labels.Size: 41
+Solution for OP(19,18,4)
+	Minimal Problem: (9,9,2)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(19,16,6)
+	Minimal Problem: (9,8,3)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(19,16,3,3)
+	Minimal Problem: (9,8,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(19,14,8)
+	Minimal Problem: (9,7,4)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(19,14,4,4)
+	Minimal Problem: (9,7,4)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(19,12,10)
+	Minimal Problem: (9,6,5)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(19,12,6,4)
+	Minimal Problem: (9,6,3,2)
+	Status: Solved
+	LabellingTime: 0,0930
+	Labels.Size: 41
+Solution for OP(19,12,5,5)
+	Minimal Problem: (9,6,5)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(19,12,4,3,3)
+	Minimal Problem: (9,6,2,3)
+	Status: Solved
+	LabellingTime: 0,0830
+	Labels.Size: 41
+Solution for OP(19,11,11)
+	Minimal Problem: (9,11)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(19,10,8,4)
+	Minimal Problem: (9,5,4,2)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(19,10,6,6)
+	Minimal Problem: (9,5,6)
+	Status: Solved
+	LabellingTime: 0,0480
+	Labels.Size: 41
+Solution for OP(19,10,6,3,3)
+	Minimal Problem: (9,5,3,3)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(19,10,4,4,4)
+	Minimal Problem: (9,5,4,2)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(19,10,3,3,3,3)
+	Minimal Problem: (9,5,3,3)
+	Status: Solved
+	LabellingTime: 0,0500
+	Labels.Size: 41
+Solution for OP(19,9,9,4)
+	Minimal Problem: (9,9,2)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(19,8,8,6)
+	Minimal Problem: (9,8,3)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(19,8,8,3,3)
+	Minimal Problem: (9,8,3)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(19,8,7,7)
+	Minimal Problem: (9,4,7)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(19,8,6,4,4)
+	Minimal Problem: (9,4,3,4)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(19,8,5,5,4)
+	Minimal Problem: (9,4,5,2)
+	Status: Solved
+	LabellingTime: 0,1320
+	Labels.Size: 41
+Solution for OP(19,8,4,4,3,3)
+	Minimal Problem: (9,4,4,3)
+	Status: Solved
+	LabellingTime: 0,0550
+	Labels.Size: 41
+Solution for OP(19,7,7,4,4)
+	Minimal Problem: (9,7,4)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(19,6,6,6,4)
+	Minimal Problem: (9,6,3,2)
+	Status: Solved
+	LabellingTime: 0,0600
+	Labels.Size: 41
+Solution for OP(19,6,6,5,5)
+	Minimal Problem: (9,6,5)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(19,6,6,4,3,3)
+	Minimal Problem: (9,6,2,3)
+	Status: Solved
+	LabellingTime: 0,0760
+	Labels.Size: 41
+Solution for OP(19,6,5,5,3,3)
+	Minimal Problem: (9,3,5,3)
+	Status: Solved
+	LabellingTime: 0,0890
+	Labels.Size: 41
+Solution for OP(19,6,4,4,4,4)
+	Minimal Problem: (9,3,4,4)
+	Status: Solved
+	LabellingTime: 0,0510
+	Labels.Size: 41
+Solution for OP(19,6,4,3,3,3,3)
+	Minimal Problem: (9,3,2,3,3)
+	Status: Solved
+	LabellingTime: 0,0550
+	Labels.Size: 41
+Solution for OP(19,5,5,4,4,4)
+	Minimal Problem: (9,5,4,2)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(19,5,5,3,3,3,3)
+	Minimal Problem: (9,5,3,3)
+	Status: Solved
+	LabellingTime: 0,0560
+	Labels.Size: 41
+Solution for OP(19,4,4,4,4,3,3)
+	Minimal Problem: (9,4,4,3)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(19,4,3,3,3,3,3,3)
+	Minimal Problem: (9,2,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(5)
+	Minimal Problem: (2,18)
+	Status: Solved
+	LabellingTime: 0,0510
+	Labels.Size: 41
+Solution for OP(17,18,6)
+	Minimal Problem: (8,9,3)
+	Status: Solved
+	LabellingTime: 0,0670
+	Labels.Size: 41
+Solution for OP(17,18,3,3)
+	Minimal Problem: (8,9,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(7,16,18)
+	Minimal Problem: (3,8,9)
+	Status: Solved
+	LabellingTime: 0,0550
+	Labels.Size: 41
+Solution for OP(3,16,4,18)
+	Minimal Problem: (1,8,2,9)
+	Status: Solved
+	LabellingTime: 0,0230
+	Labels.Size: 41
+Solution for OP(15,18,8)
+	Minimal Problem: (7,9,4)
+	Status: Solved
+	LabellingTime: 0,0570
+	Labels.Size: 41
+Solution for OP(15,18,4,4)
+	Minimal Problem: (7,9,4)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(9,14,18)
+	Minimal Problem: (4,7,9)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(3,14,6,18)
+	Minimal Problem: (1,7,3,9)
+	Status: Solved
+	LabellingTime: 0,0070
+	Labels.Size: 41
+Solution for OP(5,14,18,4)
+	Minimal Problem: (2,7,9,2)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(3,14,18,3,3)
+	Minimal Problem: (1,7,9,3)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(13,18,10)
+	Minimal Problem: (6,9,5)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(13,18,6,4)
+	Minimal Problem: (6,9,3,2)
+	Status: Solved
+	LabellingTime: 0,0670
+	Labels.Size: 41
+Solution for OP(13,18,5,5)
+	Minimal Problem: (6,9,5)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(13,18,4,3,3)
+	Minimal Problem: (6,9,2,3)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(11,12,18)
+	Minimal Problem: (5,6,9)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(3,12,8,18)
+	Minimal Problem: (1,6,4,9)
+	Status: Solved
+	LabellingTime: 0,0300
+	Labels.Size: 41
+Solution for OP(7,12,18,4)
+	Minimal Problem: (3,6,9,2)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(5,12,6,18)
+	Minimal Problem: (2,6,3,9)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(5,12,18,3,3)
+	Minimal Problem: (2,6,9,3)
+	Status: Solved
+	LabellingTime: 0,0220
+	Labels.Size: 41
+Solution for OP(3,12,4,4,18)
+	Minimal Problem: (1,6,4,9)
+	Status: Solved
+	LabellingTime: 0,0250
+	Labels.Size: 41
+Solution for OP(11,18,8,4)
+	Minimal Problem: (5,9,4,2)
+	Status: Solved
+	LabellingTime: 0,0660
+	Labels.Size: 41
+Solution for OP(11,18,6,6)
+	Minimal Problem: (5,9,6)
+	Status: Solved
+	LabellingTime: 0,0310
+	Labels.Size: 41
+Solution for OP(11,18,6,3,3)
+	Minimal Problem: (5,9,3,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(11,18,4,4,4)
+	Minimal Problem: (5,9,4,2)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(11,18,3,3,3,3)
+	Minimal Problem: (5,9,3,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(3,10,10,18)
+	Minimal Problem: (1,10,9)
+	Status: Solved
+	LabellingTime: 0,0110
+	Labels.Size: 41
+Solution for OP(9,10,18,4)
+	Minimal Problem: (4,5,9,2)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(5,10,8,18)
+	Minimal Problem: (2,5,4,9)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(7,10,18,6)
+	Minimal Problem: (3,5,9,3)
+	Status: Solved
+	LabellingTime: 0,0710
+	Labels.Size: 41
+Solution for OP(7,10,18,3,3)
+	Minimal Problem: (3,5,9,3)
+	Status: Solved
+	LabellingTime: 0,0480
+	Labels.Size: 41
+Solution for OP(3,10,6,4,18)
+	Minimal Problem: (1,5,3,2,9)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(3,10,5,5,18)
+	Minimal Problem: (1,5,5,9)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(5,10,18,4,4)
+	Minimal Problem: (2,5,9,4)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(3,10,4,18,3,3)
+	Minimal Problem: (1,5,2,9,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(5,9,9,18)
+	Minimal Problem: (2,9,9)
+	Status: Solved
+	LabellingTime: 0,0710
+	Labels.Size: 41
+Solution for OP(9,18,8,6)
+	Minimal Problem: (4,9,4,3)
+	Status: Solved
+	LabellingTime: 0,0760
+	Labels.Size: 41
+Solution for OP(9,18,8,3,3)
+	Minimal Problem: (4,9,4,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(9,18,7,7)
+	Minimal Problem: (4,9,7)
+	Status: Solved
+	LabellingTime: 0,0200
+	Labels.Size: 41
+Solution for OP(9,18,6,4,4)
+	Minimal Problem: (4,9,3,4)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(9,18,5,5,4)
+	Minimal Problem: (4,9,5,2)
+	Status: Solved
+	LabellingTime: 0,0990
+	Labels.Size: 41
+Solution for OP(9,18,4,4,3,3)
+	Minimal Problem: (4,9,4,3)
+	Status: Solved
+	LabellingTime: 0,0540
+	Labels.Size: 41
+Solution for OP(7,8,8,18)
+	Minimal Problem: (3,8,9)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(3,8,8,4,18)
+	Minimal Problem: (1,8,2,9)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(7,8,18,4,4)
+	Minimal Problem: (3,4,9,4)
+	Status: Solved
+	LabellingTime: 0,0680
+	Labels.Size: 41
+Solution for OP(3,8,6,6,18)
+	Minimal Problem: (1,4,6,9)
+	Status: Solved
+	LabellingTime: 0,0480
+	Labels.Size: 41
+Solution for OP(5,8,6,18,4)
+	Minimal Problem: (2,4,3,9,2)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(3,8,6,18,3,3)
+	Minimal Problem: (1,4,3,9,3)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(5,8,18,5,5)
+	Minimal Problem: (2,4,9,5)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(5,8,18,4,3,3)
+	Minimal Problem: (2,4,9,2,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(3,8,4,4,4,18)
+	Minimal Problem: (1,4,4,2,9)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(3,8,18,3,3,3,3)
+	Minimal Problem: (1,4,9,3,3)
+	Status: Solved
+	LabellingTime: 0,0740
+	Labels.Size: 41
+Solution for OP(3,7,7,6,18)
+	Minimal Problem: (1,7,3,9)
+	Status: Solved
+	LabellingTime: 0,0240
+	Labels.Size: 41
+Solution for OP(5,7,7,18,4)
+	Minimal Problem: (2,7,9,2)
+	Status: Solved
+	LabellingTime: 0,0800
+	Labels.Size: 41
+Solution for OP(3,7,7,18,3,3)
+	Minimal Problem: (1,7,9,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(7,18,6,6,4)
+	Minimal Problem: (3,9,6,2)
+	Status: Solved
+	LabellingTime: 0,0830
+	Labels.Size: 41
+Solution for OP(7,18,6,5,5)
+	Minimal Problem: (3,9,3,5)
+	Status: Solved
+	LabellingTime: 0,1200
+	Labels.Size: 41
+Solution for OP(7,18,6,4,3,3)
+	Minimal Problem: (3,9,3,2,3)
+	Status: Solved
+	LabellingTime: 0,0630
+	Labels.Size: 41
+Solution for OP(7,18,5,5,3,3)
+	Minimal Problem: (3,9,5,3)
+	Status: Solved
+	LabellingTime: 0,0630
+	Labels.Size: 41
+Solution for OP(7,18,4,4,4,4)
+	Minimal Problem: (3,9,4,4)
+	Status: Solved
+	LabellingTime: 0,0340
+	Labels.Size: 41
+Solution for OP(7,18,4,3,3,3,3)
+	Minimal Problem: (3,9,2,3,3)
+	Status: Solved
+	LabellingTime: 0,0320
+	Labels.Size: 41
+Solution for OP(5,6,6,6,18)
+	Minimal Problem: (2,6,3,9)
+	Status: Solved
+	LabellingTime: 0,0480
+	Labels.Size: 41
+Solution for OP(5,6,6,18,3,3)
+	Minimal Problem: (2,6,9,3)
+	Status: Solved
+	LabellingTime: 0,0480
+	Labels.Size: 41
+Solution for OP(3,6,6,4,4,18)
+	Minimal Problem: (1,6,4,9)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(3,6,5,5,4,18)
+	Minimal Problem: (1,3,5,2,9)
+	Status: Solved
+	LabellingTime: 0,0570
+	Labels.Size: 41
+Solution for OP(5,6,18,4,4,4)
+	Minimal Problem: (2,3,9,4,2)
+	Status: Solved
+	LabellingTime: 0,1240
+	Labels.Size: 41
+Solution for OP(5,6,18,3,3,3,3)
+	Minimal Problem: (2,3,9,3,3)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(3,6,4,4,18,3,3)
+	Minimal Problem: (1,3,4,9,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(3,5,5,5,5,18)
+	Minimal Problem: (1,5,5,9)
+	Status: Solved
+	LabellingTime: 0,0310
+	Labels.Size: 41
+Solution for OP(5,18,5,5,4,4)
+	Minimal Problem: (2,9,5,4)
+	Status: Solved
+	LabellingTime: 0,0590
+	Labels.Size: 41
+Solution for OP(3,5,5,4,18,3,3)
+	Minimal Problem: (1,5,2,9,3)
+	Status: Solved
+	LabellingTime: 0,0710
+	Labels.Size: 41
+Solution for OP(5,18,4,4,4,3,3)
+	Minimal Problem: (2,9,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(5,18,3,3,3,3,3,3)
+	Minimal Problem: (2,9,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0600
+	Labels.Size: 41
+Solution for OP(3,4,4,4,4,4,18)
+	Minimal Problem: (1,4,4,2,9)
+	Status: Solved
+	LabellingTime: 0,0140
+	Labels.Size: 41
+Solution for OP(3,4,4,18,3,3,3,3)
+	Minimal Problem: (1,4,9,3,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(7)
+	Minimal Problem: (3,17)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(3,4)
+	Minimal Problem: (1,2,17)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(17,16,8)
+	Minimal Problem: (8,8,4)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(17,16,4,4)
+	Minimal Problem: (8,8,4)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(17,14,10)
+	Minimal Problem: (8,7,5)
+	Status: Solved
+	LabellingTime: 0,0570
+	Labels.Size: 41
+Solution for OP(17,14,6,4)
+	Minimal Problem: (8,7,3,2)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(17,14,5,5)
+	Minimal Problem: (8,7,5)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(17,14,4,3,3)
+	Minimal Problem: (8,7,2,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(17,12,12)
+	Minimal Problem: (8,12)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(17,12,8,4)
+	Minimal Problem: (8,6,4,2)
+	Status: Solved
+	LabellingTime: 0,0590
+	Labels.Size: 41
+Solution for OP(17,12,6,6)
+	Minimal Problem: (8,6,6)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(17,12,6,3,3)
+	Minimal Problem: (8,6,3,3)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(17,12,4,4,4)
+	Minimal Problem: (8,6,4,2)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(17,12,3,3,3,3)
+	Minimal Problem: (8,6,3,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(17,10,10,4)
+	Minimal Problem: (8,10,2)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(17,10,8,6)
+	Minimal Problem: (8,5,4,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(17,10,8,3,3)
+	Minimal Problem: (8,5,4,3)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(17,10,7,7)
+	Minimal Problem: (8,5,7)
+	Status: Solved
+	LabellingTime: 0,0230
+	Labels.Size: 41
+Solution for OP(17,10,6,4,4)
+	Minimal Problem: (8,5,3,4)
+	Status: Solved
+	LabellingTime: 0,0590
+	Labels.Size: 41
+Solution for OP(17,10,5,5,4)
+	Minimal Problem: (8,5,5,2)
+	Status: Solved
+	LabellingTime: 0,0700
+	Labels.Size: 41
+Solution for OP(17,10,4,4,3,3)
+	Minimal Problem: (8,5,4,3)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(17,9,9,6)
+	Minimal Problem: (8,9,3)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(17,9,9,3,3)
+	Minimal Problem: (8,9,3)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(17,8,8,8)
+	Minimal Problem: (8,8,4)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(17,8,8,4,4)
+	Minimal Problem: (8,8,4)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(17,8,6,6,4)
+	Minimal Problem: (8,4,6,2)
+	Status: Solved
+	LabellingTime: 0,0590
+	Labels.Size: 41
+Solution for OP(17,8,6,5,5)
+	Minimal Problem: (8,4,3,5)
+	Status: Solved
+	LabellingTime: 0,0500
+	Labels.Size: 41
+Solution for OP(17,8,6,4,3,3)
+	Minimal Problem: (8,4,3,2,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(17,8,5,5,3,3)
+	Minimal Problem: (8,4,5,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(17,8,4,4,4,4)
+	Minimal Problem: (8,4,4,4)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(17,8,4,3,3,3,3)
+	Minimal Problem: (8,4,2,3,3)
+	Status: Solved
+	LabellingTime: 0,0780
+	Labels.Size: 41
+Solution for OP(17,7,7,6,4)
+	Minimal Problem: (8,7,3,2)
+	Status: Solved
+	LabellingTime: 0,0570
+	Labels.Size: 41
+Solution for OP(17,7,7,5,5)
+	Minimal Problem: (8,7,5)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(17,7,7,4,3,3)
+	Minimal Problem: (8,7,2,3)
+	Status: Solved
+	LabellingTime: 0,0820
+	Labels.Size: 41
+Solution for OP(17,6,6,6,6)
+	Minimal Problem: (8,6,6)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(17,6,6,6,3,3)
+	Minimal Problem: (8,6,3,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(17,6,6,4,4,4)
+	Minimal Problem: (8,6,4,2)
+	Status: Solved
+	LabellingTime: 0,0540
+	Labels.Size: 41
+Solution for OP(17,6,6,3,3,3,3)
+	Minimal Problem: (8,6,3,3)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(17,6,5,5,4,4)
+	Minimal Problem: (8,3,5,4)
+	Status: Solved
+	LabellingTime: 0,0600
+	Labels.Size: 41
+Solution for OP(17,6,4,4,4,3,3)
+	Minimal Problem: (8,3,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(17,6,3,3,3,3,3,3)
+	Minimal Problem: (8,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(17,5,5,5,5,4)
+	Minimal Problem: (8,5,5,2)
+	Status: Solved
+	LabellingTime: 0,0580
+	Labels.Size: 41
+Solution for OP(17,5,5,4,4,3,3)
+	Minimal Problem: (8,5,4,3)
+	Status: Solved
+	LabellingTime: 0,0620
+	Labels.Size: 41
+Solution for OP(17,4,4,4,4,4,4)
+	Minimal Problem: (8,4,4,4)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(17,4,4,4,3,3,3,3)
+	Minimal Problem: (8,4,2,3,3)
+	Status: Solved
+	LabellingTime: 0,1030
+	Labels.Size: 41
+Solution for OP(17,3,3,3,3,3,3,3,3)
+	Minimal Problem: (8,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(9)
+	Minimal Problem: (4,16)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(3,6)
+	Minimal Problem: (1,3,16)
+	Status: Solved
+	LabellingTime: 0,0270
+	Labels.Size: 41
+Solution for OP(5,4)
+	Minimal Problem: (2,16,2)
+	Status: Solved
+	LabellingTime: 0,0480
+	Labels.Size: 41
+Solution for OP(3,3,3)
+	Minimal Problem: (1,16,3)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(15,16,10)
+	Minimal Problem: (7,8,5)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(15,16,6,4)
+	Minimal Problem: (7,8,3,2)
+	Status: Solved
+	LabellingTime: 0,0660
+	Labels.Size: 41
+Solution for OP(15,16,5,5)
+	Minimal Problem: (7,8,5)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(15,16,4,3,3)
+	Minimal Problem: (7,8,2,3)
+	Status: Solved
+	LabellingTime: 0,0680
+	Labels.Size: 41
+Solution for OP(11,14,16)
+	Minimal Problem: (5,7,8)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(3,14,8,16)
+	Minimal Problem: (1,7,4,8)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(7,14,16,4)
+	Minimal Problem: (3,7,8,2)
+	Status: Solved
+	LabellingTime: 0,0600
+	Labels.Size: 41
+Solution for OP(5,14,6,16)
+	Minimal Problem: (2,7,3,8)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(5,14,16,3,3)
+	Minimal Problem: (2,7,8,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(3,14,4,4,16)
+	Minimal Problem: (1,7,4,8)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(13,16,12)
+	Minimal Problem: (6,8,6)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(13,16,8,4)
+	Minimal Problem: (6,8,4,2)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(13,16,6,6)
+	Minimal Problem: (6,8,6)
+	Status: Solved
+	LabellingTime: 0,0260
+	Labels.Size: 41
+Solution for OP(13,16,6,3,3)
+	Minimal Problem: (6,8,3,3)
+	Status: Solved
+	LabellingTime: 0,0560
+	Labels.Size: 41
+Solution for OP(13,16,4,4,4)
+	Minimal Problem: (6,8,4,2)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(13,16,3,3,3,3)
+	Minimal Problem: (6,8,3,3)
+	Status: Solved
+	LabellingTime: 0,0280
+	Labels.Size: 41
+Solution for OP(3,12,10,16)
+	Minimal Problem: (1,6,5,8)
+	Status: Solved
+	LabellingTime: 0,0230
+	Labels.Size: 41
+Solution for OP(9,12,16,4)
+	Minimal Problem: (4,6,8,2)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(5,12,8,16)
+	Minimal Problem: (2,6,4,8)
+	Status: Solved
+	LabellingTime: 0,0680
+	Labels.Size: 41
+Solution for OP(7,12,16,6)
+	Minimal Problem: (3,6,8,3)
+	Status: Solved
+	LabellingTime: 0,0930
+	Labels.Size: 41
+Solution for OP(7,12,16,3,3)
+	Minimal Problem: (3,6,8,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(3,12,6,4,16)
+	Minimal Problem: (1,6,3,2,8)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(3,12,5,5,16)
+	Minimal Problem: (1,6,5,8)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(5,12,16,4,4)
+	Minimal Problem: (2,6,8,4)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(3,12,4,16,3,3)
+	Minimal Problem: (1,6,2,8,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(3,11,11,16)
+	Minimal Problem: (1,11,8)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(11,16,10,4)
+	Minimal Problem: (5,8,5,2)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(11,16,8,6)
+	Minimal Problem: (5,8,4,3)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(11,16,8,3,3)
+	Minimal Problem: (5,8,4,3)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(11,16,7,7)
+	Minimal Problem: (5,8,7)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(11,16,6,4,4)
+	Minimal Problem: (5,8,3,4)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(11,16,5,5,4)
+	Minimal Problem: (5,8,5,2)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(11,16,4,4,3,3)
+	Minimal Problem: (5,8,4,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(5,10,10,16)
+	Minimal Problem: (2,10,8)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(9,10,16,6)
+	Minimal Problem: (4,5,8,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(9,10,16,3,3)
+	Minimal Problem: (4,5,8,3)
+	Status: Solved
+	LabellingTime: 0,0570
+	Labels.Size: 41
+Solution for OP(7,10,8,16)
+	Minimal Problem: (3,5,4,8)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(3,10,8,4,16)
+	Minimal Problem: (1,5,4,2,8)
+	Status: Solved
+	LabellingTime: 0,0540
+	Labels.Size: 41
+Solution for OP(7,10,16,4,4)
+	Minimal Problem: (3,5,8,4)
+	Status: Solved
+	LabellingTime: 0,0790
+	Labels.Size: 41
+Solution for OP(3,10,6,6,16)
+	Minimal Problem: (1,5,6,8)
+	Status: Solved
+	LabellingTime: 0,0240
+	Labels.Size: 41
+Solution for OP(5,10,6,16,4)
+	Minimal Problem: (2,5,3,8,2)
+	Status: Solved
+	LabellingTime: 0,1870
+	Labels.Size: 41
+Solution for OP(3,10,6,16,3,3)
+	Minimal Problem: (1,5,3,8,3)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(5,10,16,5,5)
+	Minimal Problem: (2,5,8,5)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(5,10,16,4,3,3)
+	Minimal Problem: (2,5,8,2,3)
+	Status: Solved
+	LabellingTime: 0,0480
+	Labels.Size: 41
+Solution for OP(3,10,4,4,4,16)
+	Minimal Problem: (1,5,4,2,8)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(3,10,16,3,3,3,3)
+	Minimal Problem: (1,5,8,3,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(7,9,9,16)
+	Minimal Problem: (3,9,8)
+	Status: Solved
+	LabellingTime: 0,0550
+	Labels.Size: 41
+Solution for OP(3,9,9,4,16)
+	Minimal Problem: (1,9,2,8)
+	Status: Solved
+	LabellingTime: 0,0340
+	Labels.Size: 41
+Solution for OP(9,16,8,8)
+	Minimal Problem: (4,8,8)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(9,16,8,4,4)
+	Minimal Problem: (4,8,4,4)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(9,16,6,6,4)
+	Minimal Problem: (4,8,6,2)
+	Status: Solved
+	LabellingTime: 0,0580
+	Labels.Size: 41
+Solution for OP(9,16,6,5,5)
+	Minimal Problem: (4,8,3,5)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(9,16,6,4,3,3)
+	Minimal Problem: (4,8,3,2,3)
+	Status: Solved
+	LabellingTime: 0,0510
+	Labels.Size: 41
+Solution for OP(9,16,5,5,3,3)
+	Minimal Problem: (4,8,5,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(9,16,4,4,4,4)
+	Minimal Problem: (4,8,4,4)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(9,16,4,3,3,3,3)
+	Minimal Problem: (4,8,2,3,3)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(3,8,8,6,16)
+	Minimal Problem: (1,8,3,8)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(5,8,8,16,4)
+	Minimal Problem: (2,8,8,2)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(3,8,8,16,3,3)
+	Minimal Problem: (1,8,8,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(3,8,7,7,16)
+	Minimal Problem: (1,4,7,8)
+	Status: Solved
+	LabellingTime: 0,0280
+	Labels.Size: 41
+Solution for OP(7,8,16,6,4)
+	Minimal Problem: (3,4,8,3,2)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(7,8,16,5,5)
+	Minimal Problem: (3,4,8,5)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(7,8,16,4,3,3)
+	Minimal Problem: (3,4,8,2,3)
+	Status: Solved
+	LabellingTime: 0,0840
+	Labels.Size: 41
+Solution for OP(5,8,6,6,16)
+	Minimal Problem: (2,4,6,8)
+	Status: Solved
+	LabellingTime: 0,1370
+	Labels.Size: 41
+Solution for OP(5,8,6,16,3,3)
+	Minimal Problem: (2,4,3,8,3)
+	Status: Solved
+	LabellingTime: 0,0850
+	Labels.Size: 41
+Solution for OP(3,8,6,4,4,16)
+	Minimal Problem: (1,4,3,4,8)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(3,8,5,5,4,16)
+	Minimal Problem: (1,4,5,2,8)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(5,8,16,4,4,4)
+	Minimal Problem: (2,4,8,4,2)
+	Status: Solved
+	LabellingTime: 0,0970
+	Labels.Size: 41
+Solution for OP(5,8,16,3,3,3,3)
+	Minimal Problem: (2,4,8,3,3)
+	Status: Solved
+	LabellingTime: 0,0930
+	Labels.Size: 41
+Solution for OP(3,8,4,4,16,3,3)
+	Minimal Problem: (1,4,4,8,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(7,16,7,7,4)
+	Minimal Problem: (3,8,7,2)
+	Status: Solved
+	LabellingTime: 0,0500
+	Labels.Size: 41
+Solution for OP(5,7,7,6,16)
+	Minimal Problem: (2,7,3,8)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(5,7,7,16,3,3)
+	Minimal Problem: (2,7,8,3)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(3,7,7,4,4,16)
+	Minimal Problem: (1,7,4,8)
+	Status: Solved
+	LabellingTime: 0,0130
+	Labels.Size: 41
+Solution for OP(7,16,6,6,6)
+	Minimal Problem: (3,8,6,3)
+	Status: Solved
+	LabellingTime: 0,0690
+	Labels.Size: 41
+Solution for OP(7,16,6,6,3,3)
+	Minimal Problem: (3,8,6,3)
+	Status: Solved
+	LabellingTime: 0,0770
+	Labels.Size: 41
+Solution for OP(7,16,6,4,4,4)
+	Minimal Problem: (3,8,3,4,2)
+	Status: Solved
+	LabellingTime: 0,1100
+	Labels.Size: 41
+Solution for OP(7,16,6,3,3,3,3)
+	Minimal Problem: (3,8,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0650
+	Labels.Size: 41
+Solution for OP(7,16,5,5,4,4)
+	Minimal Problem: (3,8,5,4)
+	Status: Solved
+	LabellingTime: 0,0580
+	Labels.Size: 41
+Solution for OP(7,16,4,4,4,3,3)
+	Minimal Problem: (3,8,4,2,3)
+	Status: Solved
+	LabellingTime: 0,1620
+	Labels.Size: 41
+Solution for OP(7,16,3,3,3,3,3,3)
+	Minimal Problem: (3,8,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(3,6,6,6,4,16)
+	Minimal Problem: (1,6,3,2,8)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(3,6,6,5,5,16)
+	Minimal Problem: (1,6,5,8)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(5,6,6,16,4,4)
+	Minimal Problem: (2,6,8,4)
+	Status: Solved
+	LabellingTime: 0,0670
+	Labels.Size: 41
+Solution for OP(3,6,6,4,16,3,3)
+	Minimal Problem: (1,6,2,8,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(5,6,16,5,5,4)
+	Minimal Problem: (2,3,8,5,2)
+	Status: Solved
+	LabellingTime: 0,0850
+	Labels.Size: 41
+Solution for OP(3,6,5,5,16,3,3)
+	Minimal Problem: (1,3,5,8,3)
+	Status: Solved
+	LabellingTime: 0,0320
+	Labels.Size: 41
+Solution for OP(5,6,16,4,4,3,3)
+	Minimal Problem: (2,3,8,4,3)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(3,6,4,4,4,4,16)
+	Minimal Problem: (1,3,4,4,8)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(3,6,4,16,3,3,3,3)
+	Minimal Problem: (1,3,2,8,3,3)
+	Status: Solved
+	LabellingTime: 0,0620
+	Labels.Size: 41
+Solution for OP(5,16,5,5,5,5)
+	Minimal Problem: (2,8,5,5)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(5,16,5,5,4,3,3)
+	Minimal Problem: (2,8,5,2,3)
+	Status: Solved
+	LabellingTime: 0,0650
+	Labels.Size: 41
+Solution for OP(3,5,5,4,4,4,16)
+	Minimal Problem: (1,5,4,2,8)
+	Status: Solved
+	LabellingTime: 0,0300
+	Labels.Size: 41
+Solution for OP(3,5,5,16,3,3,3,3)
+	Minimal Problem: (1,5,8,3,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(5,16,4,4,4,4,4)
+	Minimal Problem: (2,8,4,4,2)
+	Status: Solved
+	LabellingTime: 0,0790
+	Labels.Size: 41
+Solution for OP(5,16,4,4,3,3,3,3)
+	Minimal Problem: (2,8,4,3,3)
+	Status: Solved
+	LabellingTime: 0,1540
+	Labels.Size: 41
+Solution for OP(3,4,4,4,4,16,3,3)
+	Minimal Problem: (1,4,4,8,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(3,4,16,3,3,3,3,3,3)
+	Minimal Problem: (1,2,8,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(11)
+	Minimal Problem: (5,15)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(3,8)
+	Minimal Problem: (1,4,15)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(7,4)
+	Minimal Problem: (3,15,2)
+	Status: Solved
+	LabellingTime: 0,0590
+	Labels.Size: 41
+Solution for OP(5,6)
+	Minimal Problem: (2,3,15)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(5,3,3)
+	Minimal Problem: (2,15,3)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(3,4,4)
+	Minimal Problem: (1,4,15)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(15,14,12)
+	Minimal Problem: (7,7,6)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(15,14,8,4)
+	Minimal Problem: (7,7,4,2)
+	Status: Solved
+	LabellingTime: 0,0500
+	Labels.Size: 41
+Solution for OP(15,14,6,6)
+	Minimal Problem: (7,7,6)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(15,14,6,3,3)
+	Minimal Problem: (7,7,3,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(15,14,4,4,4)
+	Minimal Problem: (7,7,4,2)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(15,14,3,3,3,3)
+	Minimal Problem: (7,7,3,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(15,13,13)
+	Minimal Problem: (7,13)
+	Status: Solved
+	LabellingTime: 0,0180
+	Labels.Size: 41
+Solution for OP(15,12,10,4)
+	Minimal Problem: (7,6,5,2)
+	Status: Solved
+	LabellingTime: 0,1650
+	Labels.Size: 41
+Solution for OP(15,12,8,6)
+	Minimal Problem: (7,6,4,3)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(15,12,8,3,3)
+	Minimal Problem: (7,6,4,3)
+	Status: Solved
+	LabellingTime: 0,0200
+	Labels.Size: 41
+Solution for OP(15,12,7,7)
+	Minimal Problem: (7,6,7)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(15,12,6,4,4)
+	Minimal Problem: (7,6,3,4)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(15,12,5,5,4)
+	Minimal Problem: (7,6,5,2)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(15,12,4,4,3,3)
+	Minimal Problem: (7,6,4,3)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(15,11,11,4)
+	Minimal Problem: (7,11,2)
+	Status: Solved
+	LabellingTime: 0,0730
+	Labels.Size: 41
+Solution for OP(15,10,10,6)
+	Minimal Problem: (7,10,3)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(15,10,10,3,3)
+	Minimal Problem: (7,10,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(15,10,8,8)
+	Minimal Problem: (7,5,8)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(15,10,8,4,4)
+	Minimal Problem: (7,5,4,4)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(15,10,6,6,4)
+	Minimal Problem: (7,5,6,2)
+	Status: Solved
+	LabellingTime: 0,0590
+	Labels.Size: 41
+Solution for OP(15,10,6,5,5)
+	Minimal Problem: (7,5,3,5)
+	Status: Solved
+	LabellingTime: 0,0950
+	Labels.Size: 41
+Solution for OP(15,10,6,4,3,3)
+	Minimal Problem: (7,5,3,2,3)
+	Status: Solved
+	LabellingTime: 0,0960
+	Labels.Size: 41
+Solution for OP(15,10,5,5,3,3)
+	Minimal Problem: (7,5,5,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(15,10,4,4,4,4)
+	Minimal Problem: (7,5,4,4)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(15,10,4,3,3,3,3)
+	Minimal Problem: (7,5,2,3,3)
+	Status: Solved
+	LabellingTime: 0,0710
+	Labels.Size: 41
+Solution for OP(15,9,9,8)
+	Minimal Problem: (7,9,4)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(15,9,9,4,4)
+	Minimal Problem: (7,9,4)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(15,8,8,6,4)
+	Minimal Problem: (7,8,3,2)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(15,8,8,5,5)
+	Minimal Problem: (7,8,5)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(15,8,8,4,3,3)
+	Minimal Problem: (7,8,2,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(15,8,7,7,4)
+	Minimal Problem: (7,4,7,2)
+	Status: Solved
+	LabellingTime: 0,0680
+	Labels.Size: 41
+Solution for OP(15,8,6,6,6)
+	Minimal Problem: (7,4,6,3)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(15,8,6,6,3,3)
+	Minimal Problem: (7,4,6,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(15,8,6,4,4,4)
+	Minimal Problem: (7,4,3,4,2)
+	Status: Solved
+	LabellingTime: 0,0540
+	Labels.Size: 41
+Solution for OP(15,8,6,3,3,3,3)
+	Minimal Problem: (7,4,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0800
+	Labels.Size: 41
+Solution for OP(15,8,5,5,4,4)
+	Minimal Problem: (7,4,5,4)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(15,8,4,4,4,3,3)
+	Minimal Problem: (7,4,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0730
+	Labels.Size: 41
+Solution for OP(15,8,3,3,3,3,3,3)
+	Minimal Problem: (7,4,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0870
+	Labels.Size: 41
+Solution for OP(15,7,7,6,6)
+	Minimal Problem: (7,7,6)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(15,7,7,6,3,3)
+	Minimal Problem: (7,7,3,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(15,7,7,4,4,4)
+	Minimal Problem: (7,7,4,2)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(15,7,7,3,3,3,3)
+	Minimal Problem: (7,7,3,3)
+	Status: Solved
+	LabellingTime: 0,0590
+	Labels.Size: 41
+Solution for OP(15,6,6,6,4,4)
+	Minimal Problem: (7,6,3,4)
+	Status: Solved
+	LabellingTime: 0,0500
+	Labels.Size: 41
+Solution for OP(15,6,6,5,5,4)
+	Minimal Problem: (7,6,5,2)
+	Status: Solved
+	LabellingTime: 0,0680
+	Labels.Size: 41
+Solution for OP(15,6,6,4,4,3,3)
+	Minimal Problem: (7,6,4,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(15,6,5,5,5,5)
+	Minimal Problem: (7,3,5,5)
+	Status: Solved
+	LabellingTime: 0,0640
+	Labels.Size: 41
+Solution for OP(15,6,5,5,4,3,3)
+	Minimal Problem: (7,3,5,2,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(15,6,4,4,4,4,4)
+	Minimal Problem: (7,3,4,4,2)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(15,6,4,4,3,3,3,3)
+	Minimal Problem: (7,3,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(15,5,5,5,5,3,3)
+	Minimal Problem: (7,5,5,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(15,5,5,4,4,4,4)
+	Minimal Problem: (7,5,4,4)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(15,5,5,4,3,3,3,3)
+	Minimal Problem: (7,5,2,3,3)
+	Status: Solved
+	LabellingTime: 0,0910
+	Labels.Size: 41
+Solution for OP(15,4,4,4,4,4,3,3)
+	Minimal Problem: (7,4,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0600
+	Labels.Size: 41
+Solution for OP(15,4,4,3,3,3,3,3,3)
+	Minimal Problem: (7,4,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(13)
+	Minimal Problem: (6,14)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(3,10)
+	Minimal Problem: (1,5,14)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(9,4)
+	Minimal Problem: (4,14,2)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(5,8)
+	Minimal Problem: (2,4,14)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(7,6)
+	Minimal Problem: (3,14,3)
+	Status: Solved
+	LabellingTime: 0,0480
+	Labels.Size: 41
+Solution for OP(7,3,3)
+	Minimal Problem: (3,14,3)
+	Status: Solved
+	LabellingTime: 0,0340
+	Labels.Size: 41
+Solution for OP(3,6,4)
+	Minimal Problem: (1,3,2,14)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(3,5,5)
+	Minimal Problem: (1,5,14)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(5,4,4)
+	Minimal Problem: (2,14,4)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(3,4,3,3)
+	Minimal Problem: (1,2,14,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(13,14,10,4)
+	Minimal Problem: (6,7,5,2)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(13,14,8,6)
+	Minimal Problem: (6,7,4,3)
+	Status: Solved
+	LabellingTime: 0,0480
+	Labels.Size: 41
+Solution for OP(13,14,8,3,3)
+	Minimal Problem: (6,7,4,3)
+	Status: Solved
+	LabellingTime: 0,0590
+	Labels.Size: 41
+Solution for OP(13,14,7,7)
+	Minimal Problem: (6,7,7)
+	Status: Solved
+	LabellingTime: 0,0710
+	Labels.Size: 41
+Solution for OP(13,14,6,4,4)
+	Minimal Problem: (6,7,3,4)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(13,14,5,5,4)
+	Minimal Problem: (6,7,5,2)
+	Status: Solved
+	LabellingTime: 0,0910
+	Labels.Size: 41
+Solution for OP(13,14,4,4,3,3)
+	Minimal Problem: (6,7,4,3)
+	Status: Solved
+	LabellingTime: 0,0750
+	Labels.Size: 41
+Solution for OP(3,12,12,14)
+	Minimal Problem: (1,12,7)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(11,12,14,4)
+	Minimal Problem: (5,6,7,2)
+	Status: Solved
+	LabellingTime: 0,0550
+	Labels.Size: 41
+Solution for OP(5,12,10,14)
+	Minimal Problem: (2,6,5,7)
+	Status: Solved
+	LabellingTime: 0,0620
+	Labels.Size: 41
+Solution for OP(9,12,14,6)
+	Minimal Problem: (4,6,7,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(9,12,14,3,3)
+	Minimal Problem: (4,6,7,3)
+	Status: Solved
+	LabellingTime: 0,0630
+	Labels.Size: 41
+Solution for OP(7,12,8,14)
+	Minimal Problem: (3,6,4,7)
+	Status: Solved
+	LabellingTime: 0,0570
+	Labels.Size: 41
+Solution for OP(3,12,8,4,14)
+	Minimal Problem: (1,6,4,2,7)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(7,12,14,4,4)
+	Minimal Problem: (3,6,7,4)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(3,12,6,6,14)
+	Minimal Problem: (1,6,6,7)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(5,12,6,14,4)
+	Minimal Problem: (2,6,3,7,2)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(3,12,6,14,3,3)
+	Minimal Problem: (1,6,3,7,3)
+	Status: Solved
+	LabellingTime: 0,0260
+	Labels.Size: 41
+Solution for OP(5,12,14,5,5)
+	Minimal Problem: (2,6,7,5)
+	Status: Solved
+	LabellingTime: 0,0480
+	Labels.Size: 41
+Solution for OP(5,12,14,4,3,3)
+	Minimal Problem: (2,6,7,2,3)
+	Status: Solved
+	LabellingTime: 0,1320
+	Labels.Size: 41
+Solution for OP(3,12,4,4,4,14)
+	Minimal Problem: (1,6,4,2,7)
+	Status: Solved
+	LabellingTime: 0,0320
+	Labels.Size: 41
+Solution for OP(3,12,14,3,3,3,3)
+	Minimal Problem: (1,6,7,3,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(5,11,11,14)
+	Minimal Problem: (2,11,7)
+	Status: Solved
+	LabellingTime: 0,0610
+	Labels.Size: 41
+Solution for OP(11,14,10,6)
+	Minimal Problem: (5,7,5,3)
+	Status: Solved
+	LabellingTime: 0,0950
+	Labels.Size: 41
+Solution for OP(11,14,10,3,3)
+	Minimal Problem: (5,7,5,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(11,14,8,8)
+	Minimal Problem: (5,7,8)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(11,14,8,4,4)
+	Minimal Problem: (5,7,4,4)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(11,14,6,6,4)
+	Minimal Problem: (5,7,6,2)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(11,14,6,5,5)
+	Minimal Problem: (5,7,3,5)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(11,14,6,4,3,3)
+	Minimal Problem: (5,7,3,2,3)
+	Status: Solved
+	LabellingTime: 0,0510
+	Labels.Size: 41
+Solution for OP(11,14,5,5,3,3)
+	Minimal Problem: (5,7,5,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(11,14,4,4,4,4)
+	Minimal Problem: (5,7,4,4)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(11,14,4,3,3,3,3)
+	Minimal Problem: (5,7,2,3,3)
+	Status: Solved
+	LabellingTime: 0,0540
+	Labels.Size: 41
+Solution for OP(7,10,10,14)
+	Minimal Problem: (3,10,7)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(3,10,10,4,14)
+	Minimal Problem: (1,10,2,7)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(9,10,14,8)
+	Minimal Problem: (4,5,7,4)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(9,10,14,4,4)
+	Minimal Problem: (4,5,7,4)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(3,10,8,6,14)
+	Minimal Problem: (1,5,4,3,7)
+	Status: Solved
+	LabellingTime: 0,0540
+	Labels.Size: 41
+Solution for OP(5,10,8,14,4)
+	Minimal Problem: (2,5,4,7,2)
+	Status: Solved
+	LabellingTime: 0,0730
+	Labels.Size: 41
+Solution for OP(3,10,8,14,3,3)
+	Minimal Problem: (1,5,4,7,3)
+	Status: Solved
+	LabellingTime: 0,0620
+	Labels.Size: 41
+Solution for OP(3,10,7,7,14)
+	Minimal Problem: (1,5,7,7)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(7,10,14,6,4)
+	Minimal Problem: (3,5,7,3,2)
+	Status: Solved
+	LabellingTime: 0,0650
+	Labels.Size: 41
+Solution for OP(7,10,14,5,5)
+	Minimal Problem: (3,5,7,5)
+	Status: Solved
+	LabellingTime: 0,0500
+	Labels.Size: 41
+Solution for OP(7,10,14,4,3,3)
+	Minimal Problem: (3,5,7,2,3)
+	Status: Solved
+	LabellingTime: 0,2480
+	Labels.Size: 41
+Solution for OP(5,10,6,6,14)
+	Minimal Problem: (2,5,6,7)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(5,10,6,14,3,3)
+	Minimal Problem: (2,5,3,7,3)
+	Status: Solved
+	LabellingTime: 0,0570
+	Labels.Size: 41
+Solution for OP(3,10,6,4,4,14)
+	Minimal Problem: (1,5,3,4,7)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(3,10,5,5,4,14)
+	Minimal Problem: (1,5,5,2,7)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(5,10,14,4,4,4)
+	Minimal Problem: (2,5,7,4,2)
+	Status: Solved
+	LabellingTime: 0,0620
+	Labels.Size: 41
+Solution for OP(5,10,14,3,3,3,3)
+	Minimal Problem: (2,5,7,3,3)
+	Status: Solved
+	LabellingTime: 0,1450
+	Labels.Size: 41
+Solution for OP(3,10,4,4,14,3,3)
+	Minimal Problem: (1,5,4,7,3)
+	Status: Solved
+	LabellingTime: 0,0620
+	Labels.Size: 41
+Solution for OP(9,14,9,9)
+	Minimal Problem: (4,7,9)
+	Status: Solved
+	LabellingTime: 0,0550
+	Labels.Size: 41
+Solution for OP(3,9,9,6,14)
+	Minimal Problem: (1,9,3,7)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(5,9,9,14,4)
+	Minimal Problem: (2,9,7,2)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(3,9,9,14,3,3)
+	Minimal Problem: (1,9,7,3)
+	Status: Solved
+	LabellingTime: 0,0250
+	Labels.Size: 41
+Solution for OP(9,14,8,6,4)
+	Minimal Problem: (4,7,4,3,2)
+	Status: Solved
+	LabellingTime: 0,0660
+	Labels.Size: 41
+Solution for OP(9,14,8,5,5)
+	Minimal Problem: (4,7,4,5)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(9,14,8,4,3,3)
+	Minimal Problem: (4,7,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(9,14,7,7,4)
+	Minimal Problem: (4,7,7,2)
+	Status: Solved
+	LabellingTime: 0,0500
+	Labels.Size: 41
+Solution for OP(9,14,6,6,6)
+	Minimal Problem: (4,7,6,3)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(9,14,6,6,3,3)
+	Minimal Problem: (4,7,6,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(9,14,6,4,4,4)
+	Minimal Problem: (4,7,3,4,2)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(9,14,6,3,3,3,3)
+	Minimal Problem: (4,7,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(9,14,5,5,4,4)
+	Minimal Problem: (4,7,5,4)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(9,14,4,4,4,3,3)
+	Minimal Problem: (4,7,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(9,14,3,3,3,3,3,3)
+	Minimal Problem: (4,7,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(3,8,8,8,14)
+	Minimal Problem: (1,8,4,7)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(7,8,8,14,4)
+	Minimal Problem: (3,8,7,2)
+	Status: Solved
+	LabellingTime: 0,0660
+	Labels.Size: 41
+Solution for OP(5,8,8,6,14)
+	Minimal Problem: (2,8,3,7)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(5,8,8,14,3,3)
+	Minimal Problem: (2,8,7,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(3,8,8,4,4,14)
+	Minimal Problem: (1,8,4,7)
+	Status: Solved
+	LabellingTime: 0,0190
+	Labels.Size: 41
+Solution for OP(5,8,7,7,14)
+	Minimal Problem: (2,4,7,7)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(7,8,14,6,6)
+	Minimal Problem: (3,4,7,6)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(7,8,14,6,3,3)
+	Minimal Problem: (3,4,7,3,3)
+	Status: Solved
+	LabellingTime: 0,1000
+	Labels.Size: 41
+Solution for OP(7,8,14,4,4,4)
+	Minimal Problem: (3,4,7,4,2)
+	Status: Solved
+	LabellingTime: 0,0650
+	Labels.Size: 41
+Solution for OP(7,8,14,3,3,3,3)
+	Minimal Problem: (3,4,7,3,3)
+	Status: Solved
+	LabellingTime: 0,0580
+	Labels.Size: 41
+Solution for OP(3,8,6,6,4,14)
+	Minimal Problem: (1,4,6,2,7)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(3,8,6,5,5,14)
+	Minimal Problem: (1,4,3,5,7)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(5,8,6,14,4,4)
+	Minimal Problem: (2,4,3,7,4)
+	Status: Solved
+	LabellingTime: 0,0600
+	Labels.Size: 41
+Solution for OP(3,8,6,4,14,3,3)
+	Minimal Problem: (1,4,3,2,7,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(5,8,14,5,5,4)
+	Minimal Problem: (2,4,7,5,2)
+	Status: Solved
+	LabellingTime: 0,1320
+	Labels.Size: 41
+Solution for OP(3,8,5,5,14,3,3)
+	Minimal Problem: (1,4,5,7,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(5,8,14,4,4,3,3)
+	Minimal Problem: (2,4,7,4,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(3,8,4,4,4,4,14)
+	Minimal Problem: (1,4,4,4,7)
+	Status: Solved
+	LabellingTime: 0,0310
+	Labels.Size: 41
+Solution for OP(3,8,4,14,3,3,3,3)
+	Minimal Problem: (1,4,2,7,3,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(7,14,7,7,6)
+	Minimal Problem: (3,7,7,3)
+	Status: Solved
+	LabellingTime: 0,0610
+	Labels.Size: 41
+Solution for OP(7,14,7,7,3,3)
+	Minimal Problem: (3,7,7,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(3,7,7,6,4,14)
+	Minimal Problem: (1,7,3,2,7)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(3,7,7,5,5,14)
+	Minimal Problem: (1,7,5,7)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(5,7,7,14,4,4)
+	Minimal Problem: (2,7,7,4)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(3,7,7,4,14,3,3)
+	Minimal Problem: (1,7,2,7,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(7,14,6,6,4,4)
+	Minimal Problem: (3,7,6,4)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(7,14,6,5,5,4)
+	Minimal Problem: (3,7,3,5,2)
+	Status: Solved
+	LabellingTime: 0,0670
+	Labels.Size: 41
+Solution for OP(7,14,6,4,4,3,3)
+	Minimal Problem: (3,7,3,4,3)
+	Status: Solved
+	LabellingTime: 0,1300
+	Labels.Size: 41
+Solution for OP(7,14,5,5,5,5)
+	Minimal Problem: (3,7,5,5)
+	Status: Solved
+	LabellingTime: 0,0880
+	Labels.Size: 41
+Solution for OP(7,14,5,5,4,3,3)
+	Minimal Problem: (3,7,5,2,3)
+	Status: Solved
+	LabellingTime: 0,0710
+	Labels.Size: 41
+Solution for OP(7,14,4,4,4,4,4)
+	Minimal Problem: (3,7,4,4,2)
+	Status: Solved
+	LabellingTime: 0,0640
+	Labels.Size: 41
+Solution for OP(7,14,4,4,3,3,3,3)
+	Minimal Problem: (3,7,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0500
+	Labels.Size: 41
+Solution for OP(3,6,6,6,6,14)
+	Minimal Problem: (1,6,6,7)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(5,6,6,6,14,4)
+	Minimal Problem: (2,6,3,7,2)
+	Status: Solved
+	LabellingTime: 0,0560
+	Labels.Size: 41
+Solution for OP(3,6,6,6,14,3,3)
+	Minimal Problem: (1,6,3,7,3)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(5,6,6,14,5,5)
+	Minimal Problem: (2,6,7,5)
+	Status: Solved
+	LabellingTime: 0,0510
+	Labels.Size: 41
+Solution for OP(5,6,6,14,4,3,3)
+	Minimal Problem: (2,6,7,2,3)
+	Status: Solved
+	LabellingTime: 0,1680
+	Labels.Size: 41
+Solution for OP(3,6,6,4,4,4,14)
+	Minimal Problem: (1,6,4,2,7)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(3,6,6,14,3,3,3,3)
+	Minimal Problem: (1,6,7,3,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(5,6,14,5,5,3,3)
+	Minimal Problem: (2,3,7,5,3)
+	Status: Solved
+	LabellingTime: 0,0780
+	Labels.Size: 41
+Solution for OP(3,6,5,5,4,4,14)
+	Minimal Problem: (1,3,5,4,7)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(5,6,14,4,4,4,4)
+	Minimal Problem: (2,3,7,4,4)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(5,6,14,4,3,3,3,3)
+	Minimal Problem: (2,3,7,2,3,3)
+	Status: Solved
+	LabellingTime: 0,0830
+	Labels.Size: 41
+Solution for OP(3,6,4,4,4,14,3,3)
+	Minimal Problem: (1,3,4,2,7,3)
+	Status: Solved
+	LabellingTime: 0,0300
+	Labels.Size: 41
+Solution for OP(3,6,14,3,3,3,3,3,3)
+	Minimal Problem: (1,3,7,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(3,5,5,5,5,4,14)
+	Minimal Problem: (1,5,5,2,7)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(5,14,5,5,4,4,4)
+	Minimal Problem: (2,7,5,4,2)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(5,14,5,5,3,3,3,3)
+	Minimal Problem: (2,7,5,3,3)
+	Status: Solved
+	LabellingTime: 0,0840
+	Labels.Size: 41
+Solution for OP(3,5,5,4,4,14,3,3)
+	Minimal Problem: (1,5,4,7,3)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(5,14,4,4,4,4,3,3)
+	Minimal Problem: (2,7,4,4,3)
+	Status: Solved
+	LabellingTime: 0,0500
+	Labels.Size: 41
+Solution for OP(5,14,4,3,3,3,3,3,3)
+	Minimal Problem: (2,7,2,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(3,4,4,4,4,4,4,14)
+	Minimal Problem: (1,4,4,4,7)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(3,4,4,4,14,3,3,3,3)
+	Minimal Problem: (1,4,2,7,3,3)
+	Status: Solved
+	LabellingTime: 0,0540
+	Labels.Size: 41
+Solution for OP(3,14,3,3,3,3,3,3,3,3)
+	Minimal Problem: (1,7,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(3,12)
+	Minimal Problem: (1,6,13)
+	Status: Solved
+	LabellingTime: 0,0330
+	Labels.Size: 41
+Solution for OP(11,4)
+	Minimal Problem: (5,13,2)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(5,10)
+	Minimal Problem: (2,5,13)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(9,6)
+	Minimal Problem: (4,13,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(9,3,3)
+	Minimal Problem: (4,13,3)
+	Status: Solved
+	LabellingTime: 0,0560
+	Labels.Size: 41
+Solution for OP(7,8)
+	Minimal Problem: (3,4,13)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(3,8,4)
+	Minimal Problem: (1,4,2,13)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(7,4,4)
+	Minimal Problem: (3,13,4)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(3,6,6)
+	Minimal Problem: (1,6,13)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(5,6,4)
+	Minimal Problem: (2,3,13,2)
+	Status: Solved
+	LabellingTime: 0,0500
+	Labels.Size: 41
+Solution for OP(3,6,3,3)
+	Minimal Problem: (1,3,13,3)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(5,5,5)
+	Minimal Problem: (2,13,5)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(5,4,3,3)
+	Minimal Problem: (2,13,2,3)
+	Status: Solved
+	LabellingTime: 0,0710
+	Labels.Size: 41
+Solution for OP(3,4,4,4)
+	Minimal Problem: (1,4,2,13)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(3,3,3,3,3)
+	Minimal Problem: (1,13,3,3)
+	Status: Solved
+	LabellingTime: 0,0330
+	Labels.Size: 41
+Solution for OP(13,12,12,4)
+	Minimal Problem: (6,12,2)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(13,12,10,6)
+	Minimal Problem: (6,6,5,3)
+	Status: Solved
+	LabellingTime: 0,0870
+	Labels.Size: 41
+Solution for OP(13,12,10,3,3)
+	Minimal Problem: (6,6,5,3)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(13,12,8,8)
+	Minimal Problem: (6,6,8)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(13,12,8,4,4)
+	Minimal Problem: (6,6,4,4)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(13,12,6,6,4)
+	Minimal Problem: (6,6,6,2)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(13,12,6,5,5)
+	Minimal Problem: (6,6,3,5)
+	Status: Solved
+	LabellingTime: 0,0660
+	Labels.Size: 41
+Solution for OP(13,12,6,4,3,3)
+	Minimal Problem: (6,6,3,2,3)
+	Status: Solved
+	LabellingTime: 0,1050
+	Labels.Size: 41
+Solution for OP(13,12,5,5,3,3)
+	Minimal Problem: (6,6,5,3)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(13,12,4,4,4,4)
+	Minimal Problem: (6,6,4,4)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(13,12,4,3,3,3,3)
+	Minimal Problem: (6,6,2,3,3)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(13,11,11,6)
+	Minimal Problem: (6,11,3)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(13,11,11,3,3)
+	Minimal Problem: (6,11,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(13,10,10,8)
+	Minimal Problem: (6,10,4)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(13,10,10,4,4)
+	Minimal Problem: (6,10,4)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(13,10,9,9)
+	Minimal Problem: (6,5,9)
+	Status: Solved
+	LabellingTime: 0,0230
+	Labels.Size: 41
+Solution for OP(13,10,8,6,4)
+	Minimal Problem: (6,5,4,3,2)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(13,10,8,5,5)
+	Minimal Problem: (6,5,4,5)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(13,10,8,4,3,3)
+	Minimal Problem: (6,5,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0500
+	Labels.Size: 41
+Solution for OP(13,10,7,7,4)
+	Minimal Problem: (6,5,7,2)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(13,10,6,6,6)
+	Minimal Problem: (6,5,6,3)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(13,10,6,6,3,3)
+	Minimal Problem: (6,5,6,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(13,10,6,4,4,4)
+	Minimal Problem: (6,5,3,4,2)
+	Status: Solved
+	LabellingTime: 0,0500
+	Labels.Size: 41
+Solution for OP(13,10,6,3,3,3,3)
+	Minimal Problem: (6,5,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0610
+	Labels.Size: 41
+Solution for OP(13,10,5,5,4,4)
+	Minimal Problem: (6,5,5,4)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(13,10,4,4,4,3,3)
+	Minimal Problem: (6,5,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(13,10,3,3,3,3,3,3)
+	Minimal Problem: (6,5,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(13,9,9,6,4)
+	Minimal Problem: (6,9,3,2)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(13,9,9,5,5)
+	Minimal Problem: (6,9,5)
+	Status: Solved
+	LabellingTime: 0,0610
+	Labels.Size: 41
+Solution for OP(13,9,9,4,3,3)
+	Minimal Problem: (6,9,2,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(13,8,8,8,4)
+	Minimal Problem: (6,8,4,2)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(13,8,8,6,6)
+	Minimal Problem: (6,8,6)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(13,8,8,6,3,3)
+	Minimal Problem: (6,8,3,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(13,8,8,4,4,4)
+	Minimal Problem: (6,8,4,2)
+	Status: Solved
+	LabellingTime: 0,0510
+	Labels.Size: 41
+Solution for OP(13,8,8,3,3,3,3)
+	Minimal Problem: (6,8,3,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(13,8,7,7,6)
+	Minimal Problem: (6,4,7,3)
+	Status: Solved
+	LabellingTime: 0,1260
+	Labels.Size: 41
+Solution for OP(13,8,7,7,3,3)
+	Minimal Problem: (6,4,7,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(13,8,6,6,4,4)
+	Minimal Problem: (6,4,6,4)
+	Status: Solved
+	LabellingTime: 0,0710
+	Labels.Size: 41
+Solution for OP(13,8,6,5,5,4)
+	Minimal Problem: (6,4,3,5,2)
+	Status: Solved
+	LabellingTime: 0,0850
+	Labels.Size: 41
+Solution for OP(13,8,6,4,4,3,3)
+	Minimal Problem: (6,4,3,4,3)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(13,8,5,5,5,5)
+	Minimal Problem: (6,4,5,5)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(13,8,5,5,4,3,3)
+	Minimal Problem: (6,4,5,2,3)
+	Status: Solved
+	LabellingTime: 0,0910
+	Labels.Size: 41
+Solution for OP(13,8,4,4,4,4,4)
+	Minimal Problem: (6,4,4,4,2)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(13,8,4,4,3,3,3,3)
+	Minimal Problem: (6,4,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0560
+	Labels.Size: 41
+Solution for OP(13,7,7,7,7)
+	Minimal Problem: (6,7,7)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(13,7,7,6,4,4)
+	Minimal Problem: (6,7,3,4)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(13,7,7,5,5,4)
+	Minimal Problem: (6,7,5,2)
+	Status: Solved
+	LabellingTime: 0,0540
+	Labels.Size: 41
+Solution for OP(13,7,7,4,4,3,3)
+	Minimal Problem: (6,7,4,3)
+	Status: Solved
+	LabellingTime: 0,0310
+	Labels.Size: 41
+Solution for OP(13,6,6,6,6,4)
+	Minimal Problem: (6,6,6,2)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(13,6,6,6,5,5)
+	Minimal Problem: (6,6,3,5)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(13,6,6,6,4,3,3)
+	Minimal Problem: (6,6,3,2,3)
+	Status: Solved
+	LabellingTime: 0,1280
+	Labels.Size: 41
+Solution for OP(13,6,6,5,5,3,3)
+	Minimal Problem: (6,6,5,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(13,6,6,4,4,4,4)
+	Minimal Problem: (6,6,4,4)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(13,6,6,4,3,3,3,3)
+	Minimal Problem: (6,6,2,3,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(13,6,5,5,4,4,4)
+	Minimal Problem: (6,3,5,4,2)
+	Status: Solved
+	LabellingTime: 0,0770
+	Labels.Size: 41
+Solution for OP(13,6,5,5,3,3,3,3)
+	Minimal Problem: (6,3,5,3,3)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(13,6,4,4,4,4,3,3)
+	Minimal Problem: (6,3,4,4,3)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(13,6,4,3,3,3,3,3,3)
+	Minimal Problem: (6,3,2,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0940
+	Labels.Size: 41
+Solution for OP(13,5,5,5,5,4,4)
+	Minimal Problem: (6,5,5,4)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(13,5,5,4,4,4,3,3)
+	Minimal Problem: (6,5,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0610
+	Labels.Size: 41
+Solution for OP(13,5,5,3,3,3,3,3,3)
+	Minimal Problem: (6,5,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(13,4,4,4,4,4,4,4)
+	Minimal Problem: (6,4,4,4,2)
+	Status: Solved
+	LabellingTime: 0,0700
+	Labels.Size: 41
+Solution for OP(13,4,4,4,4,3,3,3,3)
+	Minimal Problem: (6,4,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(13,4,3,3,3,3,3,3,3,3)
+	Minimal Problem: (6,2,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,1440
+	Labels.Size: 41
+Solution for OP(5,12)
+	Minimal Problem: (2,6,12)
+	Status: Solved
+	LabellingTime: 0,0340
+	Labels.Size: 41
+Solution for OP(11,6)
+	Minimal Problem: (5,12,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(11,3,3)
+	Minimal Problem: (5,12,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(7,10)
+	Minimal Problem: (3,5,12)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(3,10,4)
+	Minimal Problem: (1,5,2,12)
+	Status: Solved
+	LabellingTime: 0,0340
+	Labels.Size: 41
+Solution for OP(9,8)
+	Minimal Problem: (4,12,4)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(9,4,4)
+	Minimal Problem: (4,12,4)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(3,8,6)
+	Minimal Problem: (1,4,3,12)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(5,8,4)
+	Minimal Problem: (2,4,12,2)
+	Status: Solved
+	LabellingTime: 0,0580
+	Labels.Size: 41
+Solution for OP(3,8,3,3)
+	Minimal Problem: (1,4,12,3)
+	Status: Solved
+	LabellingTime: 0,0510
+	Labels.Size: 41
+Solution for OP(3,7,7)
+	Minimal Problem: (1,7,12)
+	Status: Solved
+	LabellingTime: 0,0310
+	Labels.Size: 41
+Solution for OP(7,6,4)
+	Minimal Problem: (3,12,3,2)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(7,5,5)
+	Minimal Problem: (3,12,5)
+	Status: Solved
+	LabellingTime: 0,0590
+	Labels.Size: 41
+Solution for OP(7,4,3,3)
+	Minimal Problem: (3,12,2,3)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(5,6,6)
+	Minimal Problem: (2,6,12)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(5,6,3,3)
+	Minimal Problem: (2,3,12,3)
+	Status: Solved
+	LabellingTime: 0,1050
+	Labels.Size: 41
+Solution for OP(3,6,4,4)
+	Minimal Problem: (1,3,4,12)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(3,5,5,4)
+	Minimal Problem: (1,5,2,12)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(5,4,4,4)
+	Minimal Problem: (2,12,4,2)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(5,3,3,3,3)
+	Minimal Problem: (2,12,3,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(3,4,4,3,3)
+	Minimal Problem: (1,4,12,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(7,11,11,12)
+	Minimal Problem: (3,11,6)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(3,11,11,4,12)
+	Minimal Problem: (1,11,2,6)
+	Status: Solved
+	LabellingTime: 0,0560
+	Labels.Size: 41
+Solution for OP(11,12,10,8)
+	Minimal Problem: (5,6,5,4)
+	Status: Solved
+	LabellingTime: 0,0640
+	Labels.Size: 41
+Solution for OP(11,12,10,4,4)
+	Minimal Problem: (5,6,5,4)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(11,12,9,9)
+	Minimal Problem: (5,6,9)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(11,12,8,6,4)
+	Minimal Problem: (5,6,4,3,2)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(11,12,8,5,5)
+	Minimal Problem: (5,6,4,5)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(11,12,8,4,3,3)
+	Minimal Problem: (5,6,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(11,12,7,7,4)
+	Minimal Problem: (5,6,7,2)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(11,12,6,6,6)
+	Minimal Problem: (5,6,6,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(11,12,6,6,3,3)
+	Minimal Problem: (5,6,6,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(11,12,6,4,4,4)
+	Minimal Problem: (5,6,3,4,2)
+	Status: Solved
+	LabellingTime: 0,0650
+	Labels.Size: 41
+Solution for OP(11,12,6,3,3,3,3)
+	Minimal Problem: (5,6,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(11,12,5,5,4,4)
+	Minimal Problem: (5,6,5,4)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(11,12,4,4,4,3,3)
+	Minimal Problem: (5,6,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0860
+	Labels.Size: 41
+Solution for OP(11,12,3,3,3,3,3,3)
+	Minimal Problem: (5,6,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(9,10,10,12)
+	Minimal Problem: (4,10,6)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(3,10,10,6,12)
+	Minimal Problem: (1,10,3,6)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(5,10,10,12,4)
+	Minimal Problem: (2,10,6,2)
+	Status: Solved
+	LabellingTime: 0,0580
+	Labels.Size: 41
+Solution for OP(3,10,10,12,3,3)
+	Minimal Problem: (1,10,6,3)
+	Status: Solved
+	LabellingTime: 0,0330
+	Labels.Size: 41
+Solution for OP(9,10,12,6,4)
+	Minimal Problem: (4,5,6,3,2)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(9,10,12,5,5)
+	Minimal Problem: (4,5,6,5)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(9,10,12,4,3,3)
+	Minimal Problem: (4,5,6,2,3)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(3,10,8,8,12)
+	Minimal Problem: (1,5,8,6)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(7,10,8,12,4)
+	Minimal Problem: (3,5,4,6,2)
+	Status: Solved
+	LabellingTime: 0,0990
+	Labels.Size: 41
+Solution for OP(5,10,8,6,12)
+	Minimal Problem: (2,5,4,3,6)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(5,10,8,12,3,3)
+	Minimal Problem: (2,5,4,6,3)
+	Status: Solved
+	LabellingTime: 0,1040
+	Labels.Size: 41
+Solution for OP(3,10,8,4,4,12)
+	Minimal Problem: (1,5,4,4,6)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(5,10,7,7,12)
+	Minimal Problem: (2,5,7,6)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(7,10,12,6,6)
+	Minimal Problem: (3,5,6,6)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(7,10,12,6,3,3)
+	Minimal Problem: (3,5,6,3,3)
+	Status: Solved
+	LabellingTime: 0,0780
+	Labels.Size: 41
+Solution for OP(7,10,12,4,4,4)
+	Minimal Problem: (3,5,6,4,2)
+	Status: Solved
+	LabellingTime: 0,0850
+	Labels.Size: 41
+Solution for OP(7,10,12,3,3,3,3)
+	Minimal Problem: (3,5,6,3,3)
+	Status: Solved
+	LabellingTime: 0,0660
+	Labels.Size: 41
+Solution for OP(3,10,6,6,4,12)
+	Minimal Problem: (1,5,6,2,6)
+	Status: Solved
+	LabellingTime: 0,0640
+	Labels.Size: 41
+Solution for OP(3,10,6,5,5,12)
+	Minimal Problem: (1,5,3,5,6)
+	Status: Solved
+	LabellingTime: 0,0480
+	Labels.Size: 41
+Solution for OP(5,10,6,12,4,4)
+	Minimal Problem: (2,5,3,6,4)
+	Status: Solved
+	LabellingTime: 0,0980
+	Labels.Size: 41
+Solution for OP(3,10,6,4,12,3,3)
+	Minimal Problem: (1,5,3,2,6,3)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(5,10,12,5,5,4)
+	Minimal Problem: (2,5,6,5,2)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(3,10,5,5,12,3,3)
+	Minimal Problem: (1,5,5,6,3)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(5,10,12,4,4,3,3)
+	Minimal Problem: (2,5,6,4,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(3,10,4,4,4,4,12)
+	Minimal Problem: (1,5,4,4,6)
+	Status: Solved
+	LabellingTime: 0,0480
+	Labels.Size: 41
+Solution for OP(3,10,4,12,3,3,3,3)
+	Minimal Problem: (1,5,2,6,3,3)
+	Status: Solved
+	LabellingTime: 0,0670
+	Labels.Size: 41
+Solution for OP(3,9,9,8,12)
+	Minimal Problem: (1,9,4,6)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(7,9,9,12,4)
+	Minimal Problem: (3,9,6,2)
+	Status: Solved
+	LabellingTime: 0,0600
+	Labels.Size: 41
+Solution for OP(5,9,9,6,12)
+	Minimal Problem: (2,9,3,6)
+	Status: Solved
+	LabellingTime: 0,0480
+	Labels.Size: 41
+Solution for OP(5,9,9,12,3,3)
+	Minimal Problem: (2,9,6,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(3,9,9,4,4,12)
+	Minimal Problem: (1,9,4,6)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(9,12,8,8,4)
+	Minimal Problem: (4,6,8,2)
+	Status: Solved
+	LabellingTime: 0,0480
+	Labels.Size: 41
+Solution for OP(9,12,8,6,6)
+	Minimal Problem: (4,6,4,6)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(9,12,8,6,3,3)
+	Minimal Problem: (4,6,4,3,3)
+	Status: Solved
+	LabellingTime: 0,1040
+	Labels.Size: 41
+Solution for OP(9,12,8,4,4,4)
+	Minimal Problem: (4,6,4,4,2)
+	Status: Solved
+	LabellingTime: 0,0540
+	Labels.Size: 41
+Solution for OP(9,12,8,3,3,3,3)
+	Minimal Problem: (4,6,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(9,12,7,7,6)
+	Minimal Problem: (4,6,7,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(9,12,7,7,3,3)
+	Minimal Problem: (4,6,7,3)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(9,12,6,6,4,4)
+	Minimal Problem: (4,6,6,4)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(9,12,6,5,5,4)
+	Minimal Problem: (4,6,3,5,2)
+	Status: Solved
+	LabellingTime: 0,0790
+	Labels.Size: 41
+Solution for OP(9,12,6,4,4,3,3)
+	Minimal Problem: (4,6,3,4,3)
+	Status: Solved
+	LabellingTime: 0,0730
+	Labels.Size: 41
+Solution for OP(9,12,5,5,5,5)
+	Minimal Problem: (4,6,5,5)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(9,12,5,5,4,3,3)
+	Minimal Problem: (4,6,5,2,3)
+	Status: Solved
+	LabellingTime: 0,0650
+	Labels.Size: 41
+Solution for OP(9,12,4,4,4,4,4)
+	Minimal Problem: (4,6,4,4,2)
+	Status: Solved
+	LabellingTime: 0,1340
+	Labels.Size: 41
+Solution for OP(9,12,4,4,3,3,3,3)
+	Minimal Problem: (4,6,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0780
+	Labels.Size: 41
+Solution for OP(5,8,8,8,12)
+	Minimal Problem: (2,8,4,6)
+	Status: Solved
+	LabellingTime: 0,0630
+	Labels.Size: 41
+Solution for OP(7,8,8,12,6)
+	Minimal Problem: (3,8,6,3)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(7,8,8,12,3,3)
+	Minimal Problem: (3,8,6,3)
+	Status: Solved
+	LabellingTime: 0,0590
+	Labels.Size: 41
+Solution for OP(3,8,8,6,4,12)
+	Minimal Problem: (1,8,3,2,6)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(3,8,8,5,5,12)
+	Minimal Problem: (1,8,5,6)
+	Status: Solved
+	LabellingTime: 0,0320
+	Labels.Size: 41
+Solution for OP(5,8,8,12,4,4)
+	Minimal Problem: (2,8,6,4)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(3,8,8,4,12,3,3)
+	Minimal Problem: (1,8,2,6,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(7,8,12,7,7)
+	Minimal Problem: (3,4,6,7)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(3,8,7,7,4,12)
+	Minimal Problem: (1,4,7,2,6)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(7,8,12,6,4,4)
+	Minimal Problem: (3,4,6,3,4)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(7,8,12,5,5,4)
+	Minimal Problem: (3,4,6,5,2)
+	Status: Solved
+	LabellingTime: 0,0550
+	Labels.Size: 41
+Solution for OP(7,8,12,4,4,3,3)
+	Minimal Problem: (3,4,6,4,3)
+	Status: Solved
+	LabellingTime: 0,0510
+	Labels.Size: 41
+Solution for OP(3,8,6,6,6,12)
+	Minimal Problem: (1,4,6,3,6)
+	Status: Solved
+	LabellingTime: 0,0250
+	Labels.Size: 41
+Solution for OP(5,8,6,6,12,4)
+	Minimal Problem: (2,4,6,6,2)
+	Status: Solved
+	LabellingTime: 0,1540
+	Labels.Size: 41
+Solution for OP(3,8,6,6,12,3,3)
+	Minimal Problem: (1,4,6,6,3)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(5,8,6,12,5,5)
+	Minimal Problem: (2,4,3,6,5)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(5,8,6,12,4,3,3)
+	Minimal Problem: (2,4,3,6,2,3)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(3,8,6,4,4,4,12)
+	Minimal Problem: (1,4,3,4,2,6)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(3,8,6,12,3,3,3,3)
+	Minimal Problem: (1,4,3,6,3,3)
+	Status: Solved
+	LabellingTime: 0,0750
+	Labels.Size: 41
+Solution for OP(5,8,12,5,5,3,3)
+	Minimal Problem: (2,4,6,5,3)
+	Status: Solved
+	LabellingTime: 0,0480
+	Labels.Size: 41
+Solution for OP(3,8,5,5,4,4,12)
+	Minimal Problem: (1,4,5,4,6)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(5,8,12,4,4,4,4)
+	Minimal Problem: (2,4,6,4,4)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(5,8,12,4,3,3,3,3)
+	Minimal Problem: (2,4,6,2,3,3)
+	Status: Solved
+	LabellingTime: 0,0840
+	Labels.Size: 41
+Solution for OP(3,8,4,4,4,12,3,3)
+	Minimal Problem: (1,4,4,2,6,3)
+	Status: Solved
+	LabellingTime: 0,0270
+	Labels.Size: 41
+Solution for OP(3,8,12,3,3,3,3,3,3)
+	Minimal Problem: (1,4,6,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(7,12,7,7,4,4)
+	Minimal Problem: (3,6,7,4)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(3,7,7,6,6,12)
+	Minimal Problem: (1,7,6,6)
+	Status: Solved
+	LabellingTime: 0,0290
+	Labels.Size: 41
+Solution for OP(5,7,7,6,12,4)
+	Minimal Problem: (2,7,3,6,2)
+	Status: Solved
+	LabellingTime: 0,1010
+	Labels.Size: 41
+Solution for OP(3,7,7,6,12,3,3)
+	Minimal Problem: (1,7,3,6,3)
+	Status: Solved
+	LabellingTime: 0,0560
+	Labels.Size: 41
+Solution for OP(5,7,7,12,5,5)
+	Minimal Problem: (2,7,6,5)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(5,7,7,12,4,3,3)
+	Minimal Problem: (2,7,6,2,3)
+	Status: Solved
+	LabellingTime: 0,1910
+	Labels.Size: 41
+Solution for OP(3,7,7,4,4,4,12)
+	Minimal Problem: (1,7,4,2,6)
+	Status: Solved
+	LabellingTime: 0,0620
+	Labels.Size: 41
+Solution for OP(3,7,7,12,3,3,3,3)
+	Minimal Problem: (1,7,6,3,3)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(7,12,6,6,6,4)
+	Minimal Problem: (3,6,6,3,2)
+	Status: Solved
+	LabellingTime: 0,0650
+	Labels.Size: 41
+Solution for OP(7,12,6,6,5,5)
+	Minimal Problem: (3,6,6,5)
+	Status: Solved
+	LabellingTime: 0,0510
+	Labels.Size: 41
+Solution for OP(7,12,6,6,4,3,3)
+	Minimal Problem: (3,6,6,2,3)
+	Status: Solved
+	LabellingTime: 0,0820
+	Labels.Size: 41
+Solution for OP(7,12,6,5,5,3,3)
+	Minimal Problem: (3,6,3,5,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(7,12,6,4,4,4,4)
+	Minimal Problem: (3,6,3,4,4)
+	Status: Solved
+	LabellingTime: 0,1110
+	Labels.Size: 41
+Solution for OP(7,12,6,4,3,3,3,3)
+	Minimal Problem: (3,6,3,2,3,3)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(7,12,5,5,4,4,4)
+	Minimal Problem: (3,6,5,4,2)
+	Status: Solved
+	LabellingTime: 0,0880
+	Labels.Size: 41
+Solution for OP(7,12,5,5,3,3,3,3)
+	Minimal Problem: (3,6,5,3,3)
+	Status: Solved
+	LabellingTime: 0,0840
+	Labels.Size: 41
+Solution for OP(7,12,4,4,4,4,3,3)
+	Minimal Problem: (3,6,4,4,3)
+	Status: Solved
+	LabellingTime: 0,0860
+	Labels.Size: 41
+Solution for OP(7,12,4,3,3,3,3,3,3)
+	Minimal Problem: (3,6,2,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(5,6,6,6,6,12)
+	Minimal Problem: (2,6,6,6)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(5,6,6,6,12,3,3)
+	Minimal Problem: (2,6,3,6,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(3,6,6,6,4,4,12)
+	Minimal Problem: (1,6,3,4,6)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(3,6,6,5,5,4,12)
+	Minimal Problem: (1,6,5,2,6)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(5,6,6,12,4,4,4)
+	Minimal Problem: (2,6,6,4,2)
+	Status: Solved
+	LabellingTime: 0,1570
+	Labels.Size: 41
+Solution for OP(5,6,6,12,3,3,3,3)
+	Minimal Problem: (2,6,6,3,3)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(3,6,6,4,4,12,3,3)
+	Minimal Problem: (1,6,4,6,3)
+	Status: Solved
+	LabellingTime: 0,0330
+	Labels.Size: 41
+Solution for OP(3,6,5,5,5,5,12)
+	Minimal Problem: (1,3,5,5,6)
+	Status: Solved
+	LabellingTime: 0,0230
+	Labels.Size: 41
+Solution for OP(5,6,12,5,5,4,4)
+	Minimal Problem: (2,3,6,5,4)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(3,6,5,5,4,12,3,3)
+	Minimal Problem: (1,3,5,2,6,3)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(5,6,12,4,4,4,3,3)
+	Minimal Problem: (2,3,6,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0560
+	Labels.Size: 41
+Solution for OP(5,6,12,3,3,3,3,3,3)
+	Minimal Problem: (2,3,6,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0610
+	Labels.Size: 41
+Solution for OP(3,6,4,4,4,4,4,12)
+	Minimal Problem: (1,3,4,4,2,6)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(3,6,4,4,12,3,3,3,3)
+	Minimal Problem: (1,3,4,6,3,3)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(5,12,5,5,5,5,4)
+	Minimal Problem: (2,6,5,5,2)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(3,5,5,5,5,12,3,3)
+	Minimal Problem: (1,5,5,6,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(5,12,5,5,4,4,3,3)
+	Minimal Problem: (2,6,5,4,3)
+	Status: Solved
+	LabellingTime: 0,1110
+	Labels.Size: 41
+Solution for OP(3,5,5,4,4,4,4,12)
+	Minimal Problem: (1,5,4,4,6)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(3,5,5,4,12,3,3,3,3)
+	Minimal Problem: (1,5,2,6,3,3)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(5,12,4,4,4,4,4,4)
+	Minimal Problem: (2,6,4,4,4)
+	Status: Solved
+	LabellingTime: 0,0690
+	Labels.Size: 41
+Solution for OP(5,12,4,4,4,3,3,3,3)
+	Minimal Problem: (2,6,4,2,3,3)
+	Status: Solved
+	LabellingTime: 0,1350
+	Labels.Size: 41
+Solution for OP(5,12,3,3,3,3,3,3,3,3)
+	Minimal Problem: (2,6,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0800
+	Labels.Size: 41
+Solution for OP(3,4,4,4,4,4,12,3,3)
+	Minimal Problem: (1,4,4,2,6,3)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(3,4,4,12,3,3,3,3,3,3)
+	Minimal Problem: (1,4,6,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0680
+	Labels.Size: 41
+Solution for OP(11,11,11,8)
+	Minimal Problem: (5,11,4)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(11,11,11,4,4)
+	Minimal Problem: (5,11,4)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(9,10)
+	Minimal Problem: (4,5,11)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(3,10,6)
+	Minimal Problem: (1,5,3,11)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(5,10,4)
+	Minimal Problem: (2,5,11,2)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(3,10,3,3)
+	Minimal Problem: (1,5,11,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(9,6,4)
+	Minimal Problem: (4,11,3,2)
+	Status: Solved
+	LabellingTime: 0,0540
+	Labels.Size: 41
+Solution for OP(9,5,5)
+	Minimal Problem: (4,11,5)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(9,4,3,3)
+	Minimal Problem: (4,11,2,3)
+	Status: Solved
+	LabellingTime: 0,1770
+	Labels.Size: 41
+Solution for OP(3,8,8)
+	Minimal Problem: (1,8,11)
+	Status: Solved
+	LabellingTime: 0,0260
+	Labels.Size: 41
+Solution for OP(7,8,4)
+	Minimal Problem: (3,4,11,2)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(5,8,6)
+	Minimal Problem: (2,4,3,11)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(5,8,3,3)
+	Minimal Problem: (2,4,11,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(3,8,4,4)
+	Minimal Problem: (1,4,4,11)
+	Status: Solved
+	LabellingTime: 0,0280
+	Labels.Size: 41
+Solution for OP(5,7,7)
+	Minimal Problem: (2,7,11)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(7,6,6)
+	Minimal Problem: (3,11,6)
+	Status: Solved
+	LabellingTime: 0,0330
+	Labels.Size: 41
+Solution for OP(7,6,3,3)
+	Minimal Problem: (3,11,3,3)
+	Status: Solved
+	LabellingTime: 0,0560
+	Labels.Size: 41
+Solution for OP(7,4,4,4)
+	Minimal Problem: (3,11,4,2)
+	Status: Solved
+	LabellingTime: 0,0540
+	Labels.Size: 41
+Solution for OP(7,3,3,3,3)
+	Minimal Problem: (3,11,3,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(3,6,6,4)
+	Minimal Problem: (1,6,2,11)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(3,6,5,5)
+	Minimal Problem: (1,3,5,11)
+	Status: Solved
+	LabellingTime: 0,0330
+	Labels.Size: 41
+Solution for OP(5,6,4,4)
+	Minimal Problem: (2,3,11,4)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(3,6,4,3,3)
+	Minimal Problem: (1,3,2,11,3)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(5,5,5,4)
+	Minimal Problem: (2,11,5,2)
+	Status: Solved
+	LabellingTime: 0,0580
+	Labels.Size: 41
+Solution for OP(3,5,5,3,3)
+	Minimal Problem: (1,5,11,3)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(5,4,4,3,3)
+	Minimal Problem: (2,11,4,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(3,4,4,4,4)
+	Minimal Problem: (1,4,4,11)
+	Status: Solved
+	LabellingTime: 0,0480
+	Labels.Size: 41
+Solution for OP(3,4,3,3,3,3)
+	Minimal Problem: (1,2,11,3,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(11,10,10,10)
+	Minimal Problem: (5,10,5)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(11,10,10,6,4)
+	Minimal Problem: (5,10,3,2)
+	Status: Solved
+	LabellingTime: 0,0580
+	Labels.Size: 41
+Solution for OP(11,10,10,5,5)
+	Minimal Problem: (5,10,5)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(11,10,10,4,3,3)
+	Minimal Problem: (5,10,2,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(11,10,8,8,4)
+	Minimal Problem: (5,5,8,2)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(11,10,8,6,6)
+	Minimal Problem: (5,5,4,6)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(11,10,8,6,3,3)
+	Minimal Problem: (5,5,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0860
+	Labels.Size: 41
+Solution for OP(11,10,8,4,4,4)
+	Minimal Problem: (5,5,4,4,2)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(11,10,8,3,3,3,3)
+	Minimal Problem: (5,5,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0610
+	Labels.Size: 41
+Solution for OP(11,10,7,7,6)
+	Minimal Problem: (5,5,7,3)
+	Status: Solved
+	LabellingTime: 0,0560
+	Labels.Size: 41
+Solution for OP(11,10,7,7,3,3)
+	Minimal Problem: (5,5,7,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(11,10,6,6,4,4)
+	Minimal Problem: (5,5,6,4)
+	Status: Solved
+	LabellingTime: 0,0580
+	Labels.Size: 41
+Solution for OP(11,10,6,5,5,4)
+	Minimal Problem: (5,5,3,5,2)
+	Status: Solved
+	LabellingTime: 0,0710
+	Labels.Size: 41
+Solution for OP(11,10,6,4,4,3,3)
+	Minimal Problem: (5,5,3,4,3)
+	Status: Solved
+	LabellingTime: 0,0840
+	Labels.Size: 41
+Solution for OP(11,10,5,5,5,5)
+	Minimal Problem: (5,5,5,5)
+	Status: Solved
+	LabellingTime: 0,0570
+	Labels.Size: 41
+Solution for OP(11,10,5,5,4,3,3)
+	Minimal Problem: (5,5,5,2,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(11,10,4,4,4,4,4)
+	Minimal Problem: (5,5,4,4,2)
+	Status: Solved
+	LabellingTime: 0,1110
+	Labels.Size: 41
+Solution for OP(11,10,4,4,3,3,3,3)
+	Minimal Problem: (5,5,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(11,9,9,8,4)
+	Minimal Problem: (5,9,4,2)
+	Status: Solved
+	LabellingTime: 0,0570
+	Labels.Size: 41
+Solution for OP(11,9,9,6,6)
+	Minimal Problem: (5,9,6)
+	Status: Solved
+	LabellingTime: 0,0310
+	Labels.Size: 41
+Solution for OP(11,9,9,6,3,3)
+	Minimal Problem: (5,9,3,3)
+	Status: Solved
+	LabellingTime: 0,0760
+	Labels.Size: 41
+Solution for OP(11,9,9,4,4,4)
+	Minimal Problem: (5,9,4,2)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(11,9,9,3,3,3,3)
+	Minimal Problem: (5,9,3,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(11,8,8,8,6)
+	Minimal Problem: (5,8,4,3)
+	Status: Solved
+	LabellingTime: 0,0580
+	Labels.Size: 41
+Solution for OP(11,8,8,8,3,3)
+	Minimal Problem: (5,8,4,3)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(11,8,8,7,7)
+	Minimal Problem: (5,8,7)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(11,8,8,6,4,4)
+	Minimal Problem: (5,8,3,4)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(11,8,8,5,5,4)
+	Minimal Problem: (5,8,5,2)
+	Status: Solved
+	LabellingTime: 0,0540
+	Labels.Size: 41
+Solution for OP(11,8,8,4,4,3,3)
+	Minimal Problem: (5,8,4,3)
+	Status: Solved
+	LabellingTime: 0,0320
+	Labels.Size: 41
+Solution for OP(11,8,7,7,4,4)
+	Minimal Problem: (5,4,7,4)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(11,8,6,6,6,4)
+	Minimal Problem: (5,4,6,3,2)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(11,8,6,6,5,5)
+	Minimal Problem: (5,4,6,5)
+	Status: Solved
+	LabellingTime: 0,0320
+	Labels.Size: 41
+Solution for OP(11,8,6,6,4,3,3)
+	Minimal Problem: (5,4,6,2,3)
+	Status: Solved
+	LabellingTime: 0,0810
+	Labels.Size: 41
+Solution for OP(11,8,6,5,5,3,3)
+	Minimal Problem: (5,4,3,5,3)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(11,8,6,4,4,4,4)
+	Minimal Problem: (5,4,3,4,4)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(11,8,6,4,3,3,3,3)
+	Minimal Problem: (5,4,3,2,3,3)
+	Status: Solved
+	LabellingTime: 0,1370
+	Labels.Size: 41
+Solution for OP(11,8,5,5,4,4,4)
+	Minimal Problem: (5,4,5,4,2)
+	Status: Solved
+	LabellingTime: 0,0510
+	Labels.Size: 41
+Solution for OP(11,8,5,5,3,3,3,3)
+	Minimal Problem: (5,4,5,3,3)
+	Status: Solved
+	LabellingTime: 0,0690
+	Labels.Size: 41
+Solution for OP(11,8,4,4,4,4,3,3)
+	Minimal Problem: (5,4,4,4,3)
+	Status: Solved
+	LabellingTime: 0,0940
+	Labels.Size: 41
+Solution for OP(11,8,4,3,3,3,3,3,3)
+	Minimal Problem: (5,4,2,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0780
+	Labels.Size: 41
+Solution for OP(11,7,7,6,6,4)
+	Minimal Problem: (5,7,6,2)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(11,7,7,6,5,5)
+	Minimal Problem: (5,7,3,5)
+	Status: Solved
+	LabellingTime: 0,0560
+	Labels.Size: 41
+Solution for OP(11,7,7,6,4,3,3)
+	Minimal Problem: (5,7,3,2,3)
+	Status: Solved
+	LabellingTime: 0,0600
+	Labels.Size: 41
+Solution for OP(11,7,7,5,5,3,3)
+	Minimal Problem: (5,7,5,3)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(11,7,7,4,4,4,4)
+	Minimal Problem: (5,7,4,4)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(11,7,7,4,3,3,3,3)
+	Minimal Problem: (5,7,2,3,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(11,6,6,6,6,6)
+	Minimal Problem: (5,6,6,3)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(11,6,6,6,6,3,3)
+	Minimal Problem: (5,6,6,3)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(11,6,6,6,4,4,4)
+	Minimal Problem: (5,6,3,4,2)
+	Status: Solved
+	LabellingTime: 0,1190
+	Labels.Size: 41
+Solution for OP(11,6,6,6,3,3,3,3)
+	Minimal Problem: (5,6,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(11,6,6,5,5,4,4)
+	Minimal Problem: (5,6,5,4)
+	Status: Solved
+	LabellingTime: 0,0250
+	Labels.Size: 41
+Solution for OP(11,6,6,4,4,4,3,3)
+	Minimal Problem: (5,6,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(11,6,6,3,3,3,3,3,3)
+	Minimal Problem: (5,6,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(11,6,5,5,5,5,4)
+	Minimal Problem: (5,3,5,5,2)
+	Status: Solved
+	LabellingTime: 0,1090
+	Labels.Size: 41
+Solution for OP(11,6,5,5,4,4,3,3)
+	Minimal Problem: (5,3,5,4,3)
+	Status: Solved
+	LabellingTime: 0,0670
+	Labels.Size: 41
+Solution for OP(11,6,4,4,4,4,4,4)
+	Minimal Problem: (5,3,4,4,4)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(11,6,4,4,4,3,3,3,3)
+	Minimal Problem: (5,3,4,2,3,3)
+	Status: Solved
+	LabellingTime: 0,1420
+	Labels.Size: 41
+Solution for OP(11,6,3,3,3,3,3,3,3,3)
+	Minimal Problem: (5,3,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(11,5,5,5,5,5,5)
+	Minimal Problem: (5,5,5,5)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(11,5,5,5,5,4,3,3)
+	Minimal Problem: (5,5,5,2,3)
+	Status: Solved
+	LabellingTime: 0,1540
+	Labels.Size: 41
+Solution for OP(11,5,5,4,4,4,4,4)
+	Minimal Problem: (5,5,4,4,2)
+	Status: Solved
+	LabellingTime: 0,0700
+	Labels.Size: 41
+Solution for OP(11,5,5,4,4,3,3,3,3)
+	Minimal Problem: (5,5,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(11,4,4,4,4,4,4,3,3)
+	Minimal Problem: (5,4,4,4,3)
+	Status: Solved
+	LabellingTime: 0,0870
+	Labels.Size: 41
+Solution for OP(11,4,4,4,3,3,3,3,3,3)
+	Minimal Problem: (5,4,2,3,3,3)
+	Status: Solved
+	LabellingTime: 0,1150
+	Labels.Size: 41
+Solution for OP(11,3,3,3,3,3,3,3,3,3,3)
+	Minimal Problem: (5,3,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(3,10,8)
+	Minimal Problem: (1,5,4,10)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(7,10,4)
+	Minimal Problem: (3,5,10,2)
+	Status: Solved
+	LabellingTime: 0,1470
+	Labels.Size: 41
+Solution for OP(5,10,6)
+	Minimal Problem: (2,5,3,10)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(5,10,3,3)
+	Minimal Problem: (2,5,10,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(3,10,4,4)
+	Minimal Problem: (1,5,4,10)
+	Status: Solved
+	LabellingTime: 0,0330
+	Labels.Size: 41
+Solution for OP(3,9,9)
+	Minimal Problem: (1,9,10)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(9,8,4)
+	Minimal Problem: (4,10,4,2)
+	Status: Solved
+	LabellingTime: 0,0560
+	Labels.Size: 41
+Solution for OP(9,6,6)
+	Minimal Problem: (4,10,6)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(9,6,3,3)
+	Minimal Problem: (4,10,3,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(9,4,4,4)
+	Minimal Problem: (4,10,4,2)
+	Status: Solved
+	LabellingTime: 0,0580
+	Labels.Size: 41
+Solution for OP(9,3,3,3,3)
+	Minimal Problem: (4,10,3,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(5,8,8)
+	Minimal Problem: (2,8,10)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(7,8,6)
+	Minimal Problem: (3,4,10,3)
+	Status: Solved
+	LabellingTime: 0,0710
+	Labels.Size: 41
+Solution for OP(7,8,3,3)
+	Minimal Problem: (3,4,10,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(3,8,6,4)
+	Minimal Problem: (1,4,3,2,10)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(3,8,5,5)
+	Minimal Problem: (1,4,5,10)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(5,8,4,4)
+	Minimal Problem: (2,4,10,4)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(3,8,4,3,3)
+	Minimal Problem: (1,4,2,10,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(7,7,7)
+	Minimal Problem: (3,10,7)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(3,7,7,4)
+	Minimal Problem: (1,7,2,10)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(7,6,4,4)
+	Minimal Problem: (3,10,3,4)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(7,5,5,4)
+	Minimal Problem: (3,10,5,2)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(7,4,4,3,3)
+	Minimal Problem: (3,10,4,3)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(3,6,6,6)
+	Minimal Problem: (1,6,3,10)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(5,6,6,4)
+	Minimal Problem: (2,6,10,2)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(3,6,6,3,3)
+	Minimal Problem: (1,6,10,3)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(5,6,5,5)
+	Minimal Problem: (2,3,10,5)
+	Status: Solved
+	LabellingTime: 0,0560
+	Labels.Size: 41
+Solution for OP(5,6,4,3,3)
+	Minimal Problem: (2,3,10,2,3)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(3,6,4,4,4)
+	Minimal Problem: (1,3,4,2,10)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(3,6,3,3,3,3)
+	Minimal Problem: (1,3,10,3,3)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(5,5,5,3,3)
+	Minimal Problem: (2,10,5,3)
+	Status: Solved
+	LabellingTime: 0,0300
+	Labels.Size: 41
+Solution for OP(3,5,5,4,4)
+	Minimal Problem: (1,5,4,10)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(5,4,4,4,4)
+	Minimal Problem: (2,10,4,4)
+	Status: Solved
+	LabellingTime: 0,0590
+	Labels.Size: 41
+Solution for OP(5,4,3,3,3,3)
+	Minimal Problem: (2,10,2,3,3)
+	Status: Solved
+	LabellingTime: 0,1360
+	Labels.Size: 41
+Solution for OP(3,4,4,4,3,3)
+	Minimal Problem: (1,4,2,10,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(3,3,3,3,3,3,3)
+	Minimal Problem: (1,10,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0730
+	Labels.Size: 41
+Solution for OP(9,10,9,9,4)
+	Minimal Problem: (4,5,9,2)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(5,9,9,8,10)
+	Minimal Problem: (2,9,4,5)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(7,9,9,10,6)
+	Minimal Problem: (3,9,5,3)
+	Status: Solved
+	LabellingTime: 0,0540
+	Labels.Size: 41
+Solution for OP(7,9,9,10,3,3)
+	Minimal Problem: (3,9,5,3)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(3,9,9,6,4,10)
+	Minimal Problem: (1,9,3,2,5)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(3,9,9,5,5,10)
+	Minimal Problem: (1,9,5,5)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(5,9,9,10,4,4)
+	Minimal Problem: (2,9,5,4)
+	Status: Solved
+	LabellingTime: 0,0550
+	Labels.Size: 41
+Solution for OP(3,9,9,4,10,3,3)
+	Minimal Problem: (1,9,2,5,3)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(9,10,8,8,6)
+	Minimal Problem: (4,5,8,3)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(9,10,8,8,3,3)
+	Minimal Problem: (4,5,8,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(9,10,8,7,7)
+	Minimal Problem: (4,5,4,7)
+	Status: Solved
+	LabellingTime: 0,0570
+	Labels.Size: 41
+Solution for OP(9,10,8,6,4,4)
+	Minimal Problem: (4,5,4,3,4)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(9,10,8,5,5,4)
+	Minimal Problem: (4,5,4,5,2)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(9,10,8,4,4,3,3)
+	Minimal Problem: (4,5,4,4,3)
+	Status: Solved
+	LabellingTime: 0,0580
+	Labels.Size: 41
+Solution for OP(9,10,7,7,4,4)
+	Minimal Problem: (4,5,7,4)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(9,10,6,6,6,4)
+	Minimal Problem: (4,5,6,3,2)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(9,10,6,6,5,5)
+	Minimal Problem: (4,5,6,5)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(9,10,6,6,4,3,3)
+	Minimal Problem: (4,5,6,2,3)
+	Status: Solved
+	LabellingTime: 0,0800
+	Labels.Size: 41
+Solution for OP(9,10,6,5,5,3,3)
+	Minimal Problem: (4,5,3,5,3)
+	Status: Solved
+	LabellingTime: 0,1020
+	Labels.Size: 41
+Solution for OP(9,10,6,4,4,4,4)
+	Minimal Problem: (4,5,3,4,4)
+	Status: Solved
+	LabellingTime: 0,1000
+	Labels.Size: 41
+Solution for OP(9,10,6,4,3,3,3,3)
+	Minimal Problem: (4,5,3,2,3,3)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(9,10,5,5,4,4,4)
+	Minimal Problem: (4,5,5,4,2)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(9,10,5,5,3,3,3,3)
+	Minimal Problem: (4,5,5,3,3)
+	Status: Solved
+	LabellingTime: 0,1590
+	Labels.Size: 41
+Solution for OP(9,10,4,4,4,4,3,3)
+	Minimal Problem: (4,5,4,4,3)
+	Status: Solved
+	LabellingTime: 0,0540
+	Labels.Size: 41
+Solution for OP(9,10,4,3,3,3,3,3,3)
+	Minimal Problem: (4,5,2,3,3,3)
+	Status: Solved
+	LabellingTime: 0,3490
+	Labels.Size: 41
+Solution for OP(7,8,8,8,10)
+	Minimal Problem: (3,8,4,5)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(3,8,8,8,4,10)
+	Minimal Problem: (1,8,4,2,5)
+	Status: Solved
+	LabellingTime: 0,0670
+	Labels.Size: 41
+Solution for OP(7,8,8,10,4,4)
+	Minimal Problem: (3,8,5,4)
+	Status: Solved
+	LabellingTime: 0,0790
+	Labels.Size: 41
+Solution for OP(3,8,8,6,6,10)
+	Minimal Problem: (1,8,6,5)
+	Status: Solved
+	LabellingTime: 0,0330
+	Labels.Size: 41
+Solution for OP(5,8,8,6,10,4)
+	Minimal Problem: (2,8,3,5,2)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(3,8,8,6,10,3,3)
+	Minimal Problem: (1,8,3,5,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(5,8,8,10,5,5)
+	Minimal Problem: (2,8,5,5)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(5,8,8,10,4,3,3)
+	Minimal Problem: (2,8,5,2,3)
+	Status: Solved
+	LabellingTime: 0,0660
+	Labels.Size: 41
+Solution for OP(3,8,8,4,4,4,10)
+	Minimal Problem: (1,8,4,2,5)
+	Status: Solved
+	LabellingTime: 0,1140
+	Labels.Size: 41
+Solution for OP(3,8,8,10,3,3,3,3)
+	Minimal Problem: (1,8,5,3,3)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(3,8,7,7,6,10)
+	Minimal Problem: (1,4,7,3,5)
+	Status: Solved
+	LabellingTime: 0,0320
+	Labels.Size: 41
+Solution for OP(5,8,7,7,10,4)
+	Minimal Problem: (2,4,7,5,2)
+	Status: Solved
+	LabellingTime: 0,0660
+	Labels.Size: 41
+Solution for OP(3,8,7,7,10,3,3)
+	Minimal Problem: (1,4,7,5,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(7,8,10,6,6,4)
+	Minimal Problem: (3,4,5,6,2)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(7,8,10,6,5,5)
+	Minimal Problem: (3,4,5,3,5)
+	Status: Solved
+	LabellingTime: 0,0640
+	Labels.Size: 41
+Solution for OP(7,8,10,6,4,3,3)
+	Minimal Problem: (3,4,5,3,2,3)
+	Status: Solved
+	LabellingTime: 0,1770
+	Labels.Size: 41
+Solution for OP(7,8,10,5,5,3,3)
+	Minimal Problem: (3,4,5,5,3)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(7,8,10,4,4,4,4)
+	Minimal Problem: (3,4,5,4,4)
+	Status: Solved
+	LabellingTime: 0,0890
+	Labels.Size: 41
+Solution for OP(7,8,10,4,3,3,3,3)
+	Minimal Problem: (3,4,5,2,3,3)
+	Status: Solved
+	LabellingTime: 0,1910
+	Labels.Size: 41
+Solution for OP(5,8,6,6,6,10)
+	Minimal Problem: (2,4,6,3,5)
+	Status: Solved
+	LabellingTime: 0,1180
+	Labels.Size: 41
+Solution for OP(5,8,6,6,10,3,3)
+	Minimal Problem: (2,4,6,5,3)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(3,8,6,6,4,4,10)
+	Minimal Problem: (1,4,6,4,5)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(3,8,6,5,5,4,10)
+	Minimal Problem: (1,4,3,5,2,5)
+	Status: Solved
+	LabellingTime: 0,0690
+	Labels.Size: 41
+Solution for OP(5,8,6,10,4,4,4)
+	Minimal Problem: (2,4,3,5,4,2)
+	Status: Solved
+	LabellingTime: 0,0750
+	Labels.Size: 41
+Solution for OP(5,8,6,10,3,3,3,3)
+	Minimal Problem: (2,4,3,5,3,3)
+	Status: Solved
+	LabellingTime: 0,0860
+	Labels.Size: 41
+Solution for OP(3,8,6,4,4,10,3,3)
+	Minimal Problem: (1,4,3,4,5,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(3,8,5,5,5,5,10)
+	Minimal Problem: (1,4,5,5,5)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(5,8,10,5,5,4,4)
+	Minimal Problem: (2,4,5,5,4)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(3,8,5,5,4,10,3,3)
+	Minimal Problem: (1,4,5,2,5,3)
+	Status: Solved
+	LabellingTime: 0,0710
+	Labels.Size: 41
+Solution for OP(5,8,10,4,4,4,3,3)
+	Minimal Problem: (2,4,5,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0880
+	Labels.Size: 41
+Solution for OP(5,8,10,3,3,3,3,3,3)
+	Minimal Problem: (2,4,5,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0600
+	Labels.Size: 41
+Solution for OP(3,8,4,4,4,4,4,10)
+	Minimal Problem: (1,4,4,4,2,5)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(3,8,4,4,10,3,3,3,3)
+	Minimal Problem: (1,4,4,5,3,3)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(3,7,7,7,7,10)
+	Minimal Problem: (1,7,7,5)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(7,10,7,7,6,4)
+	Minimal Problem: (3,5,7,3,2)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(7,10,7,7,5,5)
+	Minimal Problem: (3,5,7,5)
+	Status: Solved
+	LabellingTime: 0,0560
+	Labels.Size: 41
+Solution for OP(7,10,7,7,4,3,3)
+	Minimal Problem: (3,5,7,2,3)
+	Status: Solved
+	LabellingTime: 0,0600
+	Labels.Size: 41
+Solution for OP(5,7,7,6,6,10)
+	Minimal Problem: (2,7,6,5)
+	Status: Solved
+	LabellingTime: 0,0620
+	Labels.Size: 41
+Solution for OP(5,7,7,6,10,3,3)
+	Minimal Problem: (2,7,3,5,3)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(3,7,7,6,4,4,10)
+	Minimal Problem: (1,7,3,4,5)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(3,7,7,5,5,4,10)
+	Minimal Problem: (1,7,5,2,5)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(5,7,7,10,4,4,4)
+	Minimal Problem: (2,7,5,4,2)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(5,7,7,10,3,3,3,3)
+	Minimal Problem: (2,7,5,3,3)
+	Status: Solved
+	LabellingTime: 0,0500
+	Labels.Size: 41
+Solution for OP(3,7,7,4,4,10,3,3)
+	Minimal Problem: (1,7,4,5,3)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(7,10,6,6,6,6)
+	Minimal Problem: (3,5,6,6)
+	Status: Solved
+	LabellingTime: 0,0500
+	Labels.Size: 41
+Solution for OP(7,10,6,6,6,3,3)
+	Minimal Problem: (3,5,6,3,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(7,10,6,6,4,4,4)
+	Minimal Problem: (3,5,6,4,2)
+	Status: Solved
+	LabellingTime: 0,0550
+	Labels.Size: 41
+Solution for OP(7,10,6,6,3,3,3,3)
+	Minimal Problem: (3,5,6,3,3)
+	Status: Solved
+	LabellingTime: 0,1000
+	Labels.Size: 41
+Solution for OP(7,10,6,5,5,4,4)
+	Minimal Problem: (3,5,3,5,4)
+	Status: Solved
+	LabellingTime: 0,0910
+	Labels.Size: 41
+Solution for OP(7,10,6,4,4,4,3,3)
+	Minimal Problem: (3,5,3,4,2,3)
+	Status: Solved
+	LabellingTime: 0,1580
+	Labels.Size: 41
+Solution for OP(7,10,6,3,3,3,3,3,3)
+	Minimal Problem: (3,5,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0900
+	Labels.Size: 41
+Solution for OP(7,10,5,5,5,5,4)
+	Minimal Problem: (3,5,5,5,2)
+	Status: Solved
+	LabellingTime: 0,1090
+	Labels.Size: 41
+Solution for OP(7,10,5,5,4,4,3,3)
+	Minimal Problem: (3,5,5,4,3)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(7,10,4,4,4,4,4,4)
+	Minimal Problem: (3,5,4,4,4)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(7,10,4,4,4,3,3,3,3)
+	Minimal Problem: (3,5,4,2,3,3)
+	Status: Solved
+	LabellingTime: 0,0990
+	Labels.Size: 41
+Solution for OP(7,10,3,3,3,3,3,3,3,3)
+	Minimal Problem: (3,5,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0790
+	Labels.Size: 41
+Solution for OP(3,6,6,6,6,4,10)
+	Minimal Problem: (1,6,6,2,5)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(3,6,6,6,5,5,10)
+	Minimal Problem: (1,6,3,5,5)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(5,6,6,6,10,4,4)
+	Minimal Problem: (2,6,3,5,4)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(3,6,6,6,4,10,3,3)
+	Minimal Problem: (1,6,3,2,5,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(5,6,6,10,5,5,4)
+	Minimal Problem: (2,6,5,5,2)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(3,6,6,5,5,10,3,3)
+	Minimal Problem: (1,6,5,5,3)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(5,6,6,10,4,4,3,3)
+	Minimal Problem: (2,6,5,4,3)
+	Status: Solved
+	LabellingTime: 0,0500
+	Labels.Size: 41
+Solution for OP(3,6,6,4,4,4,4,10)
+	Minimal Problem: (1,6,4,4,5)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(3,6,6,4,10,3,3,3,3)
+	Minimal Problem: (1,6,2,5,3,3)
+	Status: Solved
+	LabellingTime: 0,1050
+	Labels.Size: 41
+Solution for OP(5,6,10,5,5,5,5)
+	Minimal Problem: (2,3,5,5,5)
+	Status: Solved
+	LabellingTime: 0,0550
+	Labels.Size: 41
+Solution for OP(5,6,10,5,5,4,3,3)
+	Minimal Problem: (2,3,5,5,2,3)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(3,6,5,5,4,4,4,10)
+	Minimal Problem: (1,3,5,4,2,5)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(3,6,5,5,10,3,3,3,3)
+	Minimal Problem: (1,3,5,5,3,3)
+	Status: Solved
+	LabellingTime: 0,0500
+	Labels.Size: 41
+Solution for OP(5,6,10,4,4,4,4,4)
+	Minimal Problem: (2,3,5,4,4,2)
+	Status: Solved
+	LabellingTime: 0,0750
+	Labels.Size: 41
+Solution for OP(5,6,10,4,4,3,3,3,3)
+	Minimal Problem: (2,3,5,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0730
+	Labels.Size: 41
+Solution for OP(3,6,4,4,4,4,10,3,3)
+	Minimal Problem: (1,3,4,4,5,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(3,6,4,10,3,3,3,3,3,3)
+	Minimal Problem: (1,3,2,5,3,3,3)
+	Status: Solved
+	LabellingTime: 0,1230
+	Labels.Size: 41
+Solution for OP(5,10,5,5,5,5,3,3)
+	Minimal Problem: (2,5,5,5,3)
+	Status: Solved
+	LabellingTime: 0,0680
+	Labels.Size: 41
+Solution for OP(3,5,5,5,5,4,4,10)
+	Minimal Problem: (1,5,5,4,5)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(5,10,5,5,4,4,4,4)
+	Minimal Problem: (2,5,5,4,4)
+	Status: Solved
+	LabellingTime: 0,0550
+	Labels.Size: 41
+Solution for OP(5,10,5,5,4,3,3,3,3)
+	Minimal Problem: (2,5,5,2,3,3)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(3,5,5,4,4,4,10,3,3)
+	Minimal Problem: (1,5,4,2,5,3)
+	Status: Solved
+	LabellingTime: 0,0620
+	Labels.Size: 41
+Solution for OP(3,5,5,10,3,3,3,3,3,3)
+	Minimal Problem: (1,5,5,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(5,10,4,4,4,4,4,3,3)
+	Minimal Problem: (2,5,4,4,2,3)
+	Status: Solved
+	LabellingTime: 0,1530
+	Labels.Size: 41
+Solution for OP(5,10,4,4,3,3,3,3,3,3)
+	Minimal Problem: (2,5,4,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0800
+	Labels.Size: 41
+Solution for OP(3,4,4,4,4,4,4,4,10)
+	Minimal Problem: (1,4,4,4,2,5)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(3,4,4,4,4,10,3,3,3,3)
+	Minimal Problem: (1,4,4,5,3,3)
+	Status: Solved
+	LabellingTime: 0,0550
+	Labels.Size: 41
+Solution for OP(3,4,10,3,3,3,3,3,3,3,3)
+	Minimal Problem: (1,2,5,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(5,9,9)
+	Minimal Problem: (2,9,9)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(9,9,9,8,6)
+	Minimal Problem: (4,9,4,3)
+	Status: Solved
+	LabellingTime: 0,0780
+	Labels.Size: 41
+Solution for OP(9,9,9,8,3,3)
+	Minimal Problem: (4,9,4,3)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(9,9,9,7,7)
+	Minimal Problem: (4,9,7)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(9,9,9,6,4,4)
+	Minimal Problem: (4,9,3,4)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(9,9,9,5,5,4)
+	Minimal Problem: (4,9,5,2)
+	Status: Solved
+	LabellingTime: 0,0720
+	Labels.Size: 41
+Solution for OP(9,9,9,4,4,3,3)
+	Minimal Problem: (4,9,4,3)
+	Status: Solved
+	LabellingTime: 0,0580
+	Labels.Size: 41
+Solution for OP(7,8,8)
+	Minimal Problem: (3,8,9)
+	Status: Solved
+	LabellingTime: 0,0610
+	Labels.Size: 41
+Solution for OP(3,8,8,4)
+	Minimal Problem: (1,8,2,9)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(7,8,4,4)
+	Minimal Problem: (3,4,9,4)
+	Status: Solved
+	LabellingTime: 0,0600
+	Labels.Size: 41
+Solution for OP(3,8,6,6)
+	Minimal Problem: (1,4,6,9)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(5,8,6,4)
+	Minimal Problem: (2,4,3,9,2)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(3,8,6,3,3)
+	Minimal Problem: (1,4,3,9,3)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(5,8,5,5)
+	Minimal Problem: (2,4,9,5)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(5,8,4,3,3)
+	Minimal Problem: (2,4,9,2,3)
+	Status: Solved
+	LabellingTime: 0,0840
+	Labels.Size: 41
+Solution for OP(3,8,4,4,4)
+	Minimal Problem: (1,4,4,2,9)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(3,8,3,3,3,3)
+	Minimal Problem: (1,4,9,3,3)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(3,7,7,6)
+	Minimal Problem: (1,7,3,9)
+	Status: Solved
+	LabellingTime: 0,0190
+	Labels.Size: 41
+Solution for OP(5,7,7,4)
+	Minimal Problem: (2,7,9,2)
+	Status: Solved
+	LabellingTime: 0,0500
+	Labels.Size: 41
+Solution for OP(3,7,7,3,3)
+	Minimal Problem: (1,7,9,3)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(7,6,6,4)
+	Minimal Problem: (3,9,6,2)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(7,6,5,5)
+	Minimal Problem: (3,9,3,5)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(7,6,4,3,3)
+	Minimal Problem: (3,9,3,2,3)
+	Status: Solved
+	LabellingTime: 0,1440
+	Labels.Size: 41
+Solution for OP(7,5,5,3,3)
+	Minimal Problem: (3,9,5,3)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(7,4,4,4,4)
+	Minimal Problem: (3,9,4,4)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(7,4,3,3,3,3)
+	Minimal Problem: (3,9,2,3,3)
+	Status: Solved
+	LabellingTime: 0,1290
+	Labels.Size: 41
+Solution for OP(5,6,6,6)
+	Minimal Problem: (2,6,3,9)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(5,6,6,3,3)
+	Minimal Problem: (2,6,9,3)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(3,6,6,4,4)
+	Minimal Problem: (1,6,4,9)
+	Status: Solved
+	LabellingTime: 0,0240
+	Labels.Size: 41
+Solution for OP(3,6,5,5,4)
+	Minimal Problem: (1,3,5,2,9)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(5,6,4,4,4)
+	Minimal Problem: (2,3,9,4,2)
+	Status: Solved
+	LabellingTime: 0,0540
+	Labels.Size: 41
+Solution for OP(5,6,3,3,3,3)
+	Minimal Problem: (2,3,9,3,3)
+	Status: Solved
+	LabellingTime: 0,0660
+	Labels.Size: 41
+Solution for OP(3,6,4,4,3,3)
+	Minimal Problem: (1,3,4,9,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(3,5,5,5,5)
+	Minimal Problem: (1,5,5,9)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(5,5,5,4,4)
+	Minimal Problem: (2,9,5,4)
+	Status: Solved
+	LabellingTime: 0,0610
+	Labels.Size: 41
+Solution for OP(3,5,5,4,3,3)
+	Minimal Problem: (1,5,2,9,3)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(5,4,4,4,3,3)
+	Minimal Problem: (2,9,4,2,3)
+	Status: Solved
+	LabellingTime: 0,1180
+	Labels.Size: 41
+Solution for OP(5,3,3,3,3,3,3)
+	Minimal Problem: (2,9,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(3,4,4,4,4,4)
+	Minimal Problem: (1,4,4,2,9)
+	Status: Solved
+	LabellingTime: 0,0330
+	Labels.Size: 41
+Solution for OP(3,4,4,3,3,3,3)
+	Minimal Problem: (1,4,9,3,3)
+	Status: Solved
+	LabellingTime: 0,0480
+	Labels.Size: 41
+Solution for OP(9,8,8,8,8)
+	Minimal Problem: (4,8,8)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(9,8,8,8,4,4)
+	Minimal Problem: (4,8,4,4)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(9,8,8,6,6,4)
+	Minimal Problem: (4,8,6,2)
+	Status: Solved
+	LabellingTime: 0,0990
+	Labels.Size: 41
+Solution for OP(9,8,8,6,5,5)
+	Minimal Problem: (4,8,3,5)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(9,8,8,6,4,3,3)
+	Minimal Problem: (4,8,3,2,3)
+	Status: Solved
+	LabellingTime: 0,0510
+	Labels.Size: 41
+Solution for OP(9,8,8,5,5,3,3)
+	Minimal Problem: (4,8,5,3)
+	Status: Solved
+	LabellingTime: 0,0540
+	Labels.Size: 41
+Solution for OP(9,8,8,4,4,4,4)
+	Minimal Problem: (4,8,4,4)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(9,8,8,4,3,3,3,3)
+	Minimal Problem: (4,8,2,3,3)
+	Status: Solved
+	LabellingTime: 0,1460
+	Labels.Size: 41
+Solution for OP(9,8,7,7,6,4)
+	Minimal Problem: (4,4,7,3,2)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(9,8,7,7,5,5)
+	Minimal Problem: (4,4,7,5)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(9,8,7,7,4,3,3)
+	Minimal Problem: (4,4,7,2,3)
+	Status: Solved
+	LabellingTime: 0,0770
+	Labels.Size: 41
+Solution for OP(9,8,6,6,6,6)
+	Minimal Problem: (4,4,6,6)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(9,8,6,6,6,3,3)
+	Minimal Problem: (4,4,6,3,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(9,8,6,6,4,4,4)
+	Minimal Problem: (4,4,6,4,2)
+	Status: Solved
+	LabellingTime: 0,1030
+	Labels.Size: 41
+Solution for OP(9,8,6,6,3,3,3,3)
+	Minimal Problem: (4,4,6,3,3)
+	Status: Solved
+	LabellingTime: 0,0710
+	Labels.Size: 41
+Solution for OP(9,8,6,5,5,4,4)
+	Minimal Problem: (4,4,3,5,4)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(9,8,6,4,4,4,3,3)
+	Minimal Problem: (4,4,3,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0720
+	Labels.Size: 41
+Solution for OP(9,8,6,3,3,3,3,3,3)
+	Minimal Problem: (4,4,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(9,8,5,5,5,5,4)
+	Minimal Problem: (4,4,5,5,2)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(9,8,5,5,4,4,3,3)
+	Minimal Problem: (4,4,5,4,3)
+	Status: Solved
+	LabellingTime: 0,0900
+	Labels.Size: 41
+Solution for OP(9,8,4,4,4,4,4,4)
+	Minimal Problem: (4,4,4,4,4)
+	Status: Solved
+	LabellingTime: 0,0890
+	Labels.Size: 41
+Solution for OP(9,8,4,4,4,3,3,3,3)
+	Minimal Problem: (4,4,4,2,3,3)
+	Status: Solved
+	LabellingTime: 0,0720
+	Labels.Size: 41
+Solution for OP(9,8,3,3,3,3,3,3,3,3)
+	Minimal Problem: (4,4,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0950
+	Labels.Size: 41
+Solution for OP(9,7,7,7,7,4)
+	Minimal Problem: (4,7,7,2)
+	Status: Solved
+	LabellingTime: 0,0690
+	Labels.Size: 41
+Solution for OP(9,7,7,6,6,6)
+	Minimal Problem: (4,7,6,3)
+	Status: Solved
+	LabellingTime: 0,0480
+	Labels.Size: 41
+Solution for OP(9,7,7,6,6,3,3)
+	Minimal Problem: (4,7,6,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(9,7,7,6,4,4,4)
+	Minimal Problem: (4,7,3,4,2)
+	Status: Solved
+	LabellingTime: 0,0680
+	Labels.Size: 41
+Solution for OP(9,7,7,6,3,3,3,3)
+	Minimal Problem: (4,7,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(9,7,7,5,5,4,4)
+	Minimal Problem: (4,7,5,4)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(9,7,7,4,4,4,3,3)
+	Minimal Problem: (4,7,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(9,7,7,3,3,3,3,3,3)
+	Minimal Problem: (4,7,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(9,6,6,6,6,4,4)
+	Minimal Problem: (4,6,6,4)
+	Status: Solved
+	LabellingTime: 0,0510
+	Labels.Size: 41
+Solution for OP(9,6,6,6,5,5,4)
+	Minimal Problem: (4,6,3,5,2)
+	Status: Solved
+	LabellingTime: 0,1530
+	Labels.Size: 41
+Solution for OP(9,6,6,6,4,4,3,3)
+	Minimal Problem: (4,6,3,4,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(9,6,6,5,5,5,5)
+	Minimal Problem: (4,6,5,5)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(9,6,6,5,5,4,3,3)
+	Minimal Problem: (4,6,5,2,3)
+	Status: Solved
+	LabellingTime: 0,0740
+	Labels.Size: 41
+Solution for OP(9,6,6,4,4,4,4,4)
+	Minimal Problem: (4,6,4,4,2)
+	Status: Solved
+	LabellingTime: 0,0560
+	Labels.Size: 41
+Solution for OP(9,6,6,4,4,3,3,3,3)
+	Minimal Problem: (4,6,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0690
+	Labels.Size: 41
+Solution for OP(9,6,5,5,5,5,3,3)
+	Minimal Problem: (4,3,5,5,3)
+	Status: Solved
+	LabellingTime: 0,1080
+	Labels.Size: 41
+Solution for OP(9,6,5,5,4,4,4,4)
+	Minimal Problem: (4,3,5,4,4)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(9,6,5,5,4,3,3,3,3)
+	Minimal Problem: (4,3,5,2,3,3)
+	Status: Solved
+	LabellingTime: 0,0580
+	Labels.Size: 41
+Solution for OP(9,6,4,4,4,4,4,3,3)
+	Minimal Problem: (4,3,4,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(9,6,4,4,3,3,3,3,3,3)
+	Minimal Problem: (4,3,4,3,3,3)
+	Status: Solved
+	LabellingTime: 0,1370
+	Labels.Size: 41
+Solution for OP(9,5,5,5,5,4,4,4)
+	Minimal Problem: (4,5,5,4,2)
+	Status: Solved
+	LabellingTime: 0,0960
+	Labels.Size: 41
+Solution for OP(9,5,5,5,5,3,3,3,3)
+	Minimal Problem: (4,5,5,3,3)
+	Status: Solved
+	LabellingTime: 0,0860
+	Labels.Size: 41
+Solution for OP(9,5,5,4,4,4,4,3,3)
+	Minimal Problem: (4,5,4,4,3)
+	Status: Solved
+	LabellingTime: 0,0570
+	Labels.Size: 41
+Solution for OP(9,5,5,4,3,3,3,3,3,3)
+	Minimal Problem: (4,5,2,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0830
+	Labels.Size: 41
+Solution for OP(9,4,4,4,4,4,4,4,4)
+	Minimal Problem: (4,4,4,4,4)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(9,4,4,4,4,4,3,3,3,3)
+	Minimal Problem: (4,4,4,2,3,3)
+	Status: Solved
+	LabellingTime: 0,0710
+	Labels.Size: 41
+Solution for OP(9,4,4,3,3,3,3,3,3,3,3)
+	Minimal Problem: (4,4,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0730
+	Labels.Size: 41
+Solution for OP(3,8,8,6)
+	Minimal Problem: (1,8,3,8)
+	Status: Solved
+	LabellingTime: 0,0200
+	Labels.Size: 41
+Solution for OP(5,8,8,4)
+	Minimal Problem: (2,8,8,2)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(3,8,8,3,3)
+	Minimal Problem: (1,8,8,3)
+	Status: Solved
+	LabellingTime: 0,0330
+	Labels.Size: 41
+Solution for OP(3,8,7,7)
+	Minimal Problem: (1,4,7,8)
+	Status: Solved
+	LabellingTime: 0,0340
+	Labels.Size: 41
+Solution for OP(7,8,6,4)
+	Minimal Problem: (3,4,8,3,2)
+	Status: Solved
+	LabellingTime: 0,1120
+	Labels.Size: 41
+Solution for OP(7,8,5,5)
+	Minimal Problem: (3,4,8,5)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(7,8,4,3,3)
+	Minimal Problem: (3,4,8,2,3)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(5,8,6,6)
+	Minimal Problem: (2,4,6,8)
+	Status: Solved
+	LabellingTime: 0,0510
+	Labels.Size: 41
+Solution for OP(5,8,6,3,3)
+	Minimal Problem: (2,4,3,8,3)
+	Status: Solved
+	LabellingTime: 0,0790
+	Labels.Size: 41
+Solution for OP(3,8,6,4,4)
+	Minimal Problem: (1,4,3,4,8)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(3,8,5,5,4)
+	Minimal Problem: (1,4,5,2,8)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(5,8,4,4,4)
+	Minimal Problem: (2,4,8,4,2)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(5,8,3,3,3,3)
+	Minimal Problem: (2,4,8,3,3)
+	Status: Solved
+	LabellingTime: 0,1070
+	Labels.Size: 41
+Solution for OP(3,8,4,4,3,3)
+	Minimal Problem: (1,4,4,8,3)
+	Status: Solved
+	LabellingTime: 0,0900
+	Labels.Size: 41
+Solution for OP(7,7,7,4)
+	Minimal Problem: (3,8,7,2)
+	Status: Solved
+	LabellingTime: 0,0620
+	Labels.Size: 41
+Solution for OP(5,7,7,6)
+	Minimal Problem: (2,7,3,8)
+	Status: Solved
+	LabellingTime: 0,0560
+	Labels.Size: 41
+Solution for OP(5,7,7,3,3)
+	Minimal Problem: (2,7,8,3)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(3,7,7,4,4)
+	Minimal Problem: (1,7,4,8)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(7,6,6,6)
+	Minimal Problem: (3,8,6,3)
+	Status: Solved
+	LabellingTime: 0,0800
+	Labels.Size: 41
+Solution for OP(7,6,6,3,3)
+	Minimal Problem: (3,8,6,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(7,6,4,4,4)
+	Minimal Problem: (3,8,3,4,2)
+	Status: Solved
+	LabellingTime: 0,0830
+	Labels.Size: 41
+Solution for OP(7,6,3,3,3,3)
+	Minimal Problem: (3,8,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(7,5,5,4,4)
+	Minimal Problem: (3,8,5,4)
+	Status: Solved
+	LabellingTime: 0,0620
+	Labels.Size: 41
+Solution for OP(7,4,4,4,3,3)
+	Minimal Problem: (3,8,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0510
+	Labels.Size: 41
+Solution for OP(7,3,3,3,3,3,3)
+	Minimal Problem: (3,8,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0810
+	Labels.Size: 41
+Solution for OP(3,6,6,6,4)
+	Minimal Problem: (1,6,3,2,8)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(3,6,6,5,5)
+	Minimal Problem: (1,6,5,8)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(5,6,6,4,4)
+	Minimal Problem: (2,6,8,4)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(3,6,6,4,3,3)
+	Minimal Problem: (1,6,2,8,3)
+	Status: Solved
+	LabellingTime: 0,0540
+	Labels.Size: 41
+Solution for OP(5,6,5,5,4)
+	Minimal Problem: (2,3,8,5,2)
+	Status: Solved
+	LabellingTime: 0,0920
+	Labels.Size: 41
+Solution for OP(3,6,5,5,3,3)
+	Minimal Problem: (1,3,5,8,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(5,6,4,4,3,3)
+	Minimal Problem: (2,3,8,4,3)
+	Status: Solved
+	LabellingTime: 0,0710
+	Labels.Size: 41
+Solution for OP(3,6,4,4,4,4)
+	Minimal Problem: (1,3,4,4,8)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(3,6,4,3,3,3,3)
+	Minimal Problem: (1,3,2,8,3,3)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(5,5,5,5,5)
+	Minimal Problem: (2,8,5,5)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(5,5,5,4,3,3)
+	Minimal Problem: (2,8,5,2,3)
+	Status: Solved
+	LabellingTime: 0,1250
+	Labels.Size: 41
+Solution for OP(3,5,5,4,4,4)
+	Minimal Problem: (1,5,4,2,8)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(3,5,5,3,3,3,3)
+	Minimal Problem: (1,5,8,3,3)
+	Status: Solved
+	LabellingTime: 0,0500
+	Labels.Size: 41
+Solution for OP(5,4,4,4,4,4)
+	Minimal Problem: (2,8,4,4,2)
+	Status: Solved
+	LabellingTime: 0,0780
+	Labels.Size: 41
+Solution for OP(5,4,4,3,3,3,3)
+	Minimal Problem: (2,8,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0770
+	Labels.Size: 41
+Solution for OP(3,4,4,4,4,3,3)
+	Minimal Problem: (1,4,4,8,3)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(3,4,3,3,3,3,3,3)
+	Minimal Problem: (1,2,8,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0600
+	Labels.Size: 41
+Solution for OP(5,7,7,7,7,8)
+	Minimal Problem: (2,7,7,4)
+	Status: Solved
+	LabellingTime: 0,0330
+	Labels.Size: 41
+Solution for OP(7,8,7,7,6,6)
+	Minimal Problem: (3,4,7,6)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(7,8,7,7,6,3,3)
+	Minimal Problem: (3,4,7,3,3)
+	Status: Solved
+	LabellingTime: 0,1130
+	Labels.Size: 41
+Solution for OP(7,8,7,7,4,4,4)
+	Minimal Problem: (3,4,7,4,2)
+	Status: Solved
+	LabellingTime: 0,0560
+	Labels.Size: 41
+Solution for OP(7,8,7,7,3,3,3,3)
+	Minimal Problem: (3,4,7,3,3)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(3,7,7,6,6,4,8)
+	Minimal Problem: (1,7,6,2,4)
+	Status: Solved
+	LabellingTime: 0,0610
+	Labels.Size: 41
+Solution for OP(3,7,7,6,5,5,8)
+	Minimal Problem: (1,7,3,5,4)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(5,7,7,6,8,4,4)
+	Minimal Problem: (2,7,3,4,4)
+	Status: Solved
+	LabellingTime: 0,1170
+	Labels.Size: 41
+Solution for OP(3,7,7,6,4,8,3,3)
+	Minimal Problem: (1,7,3,2,4,3)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(5,7,7,8,5,5,4)
+	Minimal Problem: (2,7,4,5,2)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(3,7,7,5,5,8,3,3)
+	Minimal Problem: (1,7,5,4,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(5,7,7,8,4,4,3,3)
+	Minimal Problem: (2,7,4,4,3)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(3,7,7,4,4,4,4,8)
+	Minimal Problem: (1,7,4,4,4)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(3,7,7,4,8,3,3,3,3)
+	Minimal Problem: (1,7,2,4,3,3)
+	Status: Solved
+	LabellingTime: 0,1030
+	Labels.Size: 41
+Solution for OP(7,8,6,6,6,4,4)
+	Minimal Problem: (3,4,6,3,4)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(7,8,6,6,5,5,4)
+	Minimal Problem: (3,4,6,5,2)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(7,8,6,6,4,4,3,3)
+	Minimal Problem: (3,4,6,4,3)
+	Status: Solved
+	LabellingTime: 0,1020
+	Labels.Size: 41
+Solution for OP(7,8,6,5,5,5,5)
+	Minimal Problem: (3,4,3,5,5)
+	Status: Solved
+	LabellingTime: 0,0560
+	Labels.Size: 41
+Solution for OP(7,8,6,5,5,4,3,3)
+	Minimal Problem: (3,4,3,5,2,3)
+	Status: Solved
+	LabellingTime: 0,1990
+	Labels.Size: 41
+Solution for OP(7,8,6,4,4,4,4,4)
+	Minimal Problem: (3,4,3,4,4,2)
+	Status: Solved
+	LabellingTime: 0,0590
+	Labels.Size: 41
+Solution for OP(7,8,6,4,4,3,3,3,3)
+	Minimal Problem: (3,4,3,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(7,8,5,5,5,5,3,3)
+	Minimal Problem: (3,4,5,5,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(7,8,5,5,4,4,4,4)
+	Minimal Problem: (3,4,5,4,4)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(7,8,5,5,4,3,3,3,3)
+	Minimal Problem: (3,4,5,2,3,3)
+	Status: Solved
+	LabellingTime: 0,1060
+	Labels.Size: 41
+Solution for OP(7,8,4,4,4,4,4,3,3)
+	Minimal Problem: (3,4,4,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(7,8,4,4,3,3,3,3,3,3)
+	Minimal Problem: (3,4,4,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(3,6,6,6,6,6,8)
+	Minimal Problem: (1,6,6,3,4)
+	Status: Solved
+	LabellingTime: 0,0290
+	Labels.Size: 41
+Solution for OP(5,6,6,6,6,8,4)
+	Minimal Problem: (2,6,6,4,2)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(3,6,6,6,6,8,3,3)
+	Minimal Problem: (1,6,6,4,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(5,6,6,6,8,5,5)
+	Minimal Problem: (2,6,3,4,5)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(5,6,6,6,8,4,3,3)
+	Minimal Problem: (2,6,3,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0760
+	Labels.Size: 41
+Solution for OP(3,6,6,6,4,4,4,8)
+	Minimal Problem: (1,6,3,4,2,4)
+	Status: Solved
+	LabellingTime: 0,0710
+	Labels.Size: 41
+Solution for OP(3,6,6,6,8,3,3,3,3)
+	Minimal Problem: (1,6,3,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(5,6,6,8,5,5,3,3)
+	Minimal Problem: (2,6,4,5,3)
+	Status: Solved
+	LabellingTime: 0,0600
+	Labels.Size: 41
+Solution for OP(3,6,6,5,5,4,4,8)
+	Minimal Problem: (1,6,5,4,4)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(5,6,6,8,4,4,4,4)
+	Minimal Problem: (2,6,4,4,4)
+	Status: Solved
+	LabellingTime: 0,0700
+	Labels.Size: 41
+Solution for OP(5,6,6,8,4,3,3,3,3)
+	Minimal Problem: (2,6,4,2,3,3)
+	Status: Solved
+	LabellingTime: 0,0630
+	Labels.Size: 41
+Solution for OP(3,6,6,4,4,4,8,3,3)
+	Minimal Problem: (1,6,4,2,4,3)
+	Status: Solved
+	LabellingTime: 0,0640
+	Labels.Size: 41
+Solution for OP(3,6,6,8,3,3,3,3,3,3)
+	Minimal Problem: (1,6,4,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(3,6,5,5,5,5,4,8)
+	Minimal Problem: (1,3,5,5,2,4)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(5,6,8,5,5,4,4,4)
+	Minimal Problem: (2,3,4,5,4,2)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(5,6,8,5,5,3,3,3,3)
+	Minimal Problem: (2,3,4,5,3,3)
+	Status: Solved
+	LabellingTime: 0,0700
+	Labels.Size: 41
+Solution for OP(3,6,5,5,4,4,8,3,3)
+	Minimal Problem: (1,3,5,4,4,3)
+	Status: Solved
+	LabellingTime: 0,0850
+	Labels.Size: 41
+Solution for OP(5,6,8,4,4,4,4,3,3)
+	Minimal Problem: (2,3,4,4,4,3)
+	Status: Solved
+	LabellingTime: 0,0590
+	Labels.Size: 41
+Solution for OP(5,6,8,4,3,3,3,3,3,3)
+	Minimal Problem: (2,3,4,2,3,3,3)
+	Status: Solved
+	LabellingTime: 0,1910
+	Labels.Size: 41
+Solution for OP(3,6,4,4,4,4,4,4,8)
+	Minimal Problem: (1,3,4,4,4,4)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(3,6,4,4,4,8,3,3,3,3)
+	Minimal Problem: (1,3,4,2,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(3,6,8,3,3,3,3,3,3,3,3)
+	Minimal Problem: (1,3,4,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0610
+	Labels.Size: 41
+Solution for OP(3,5,5,5,5,5,5,8)
+	Minimal Problem: (1,5,5,5,4)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(5,8,5,5,5,5,4,4)
+	Minimal Problem: (2,4,5,5,4)
+	Status: Solved
+	LabellingTime: 0,0570
+	Labels.Size: 41
+Solution for OP(3,5,5,5,5,4,8,3,3)
+	Minimal Problem: (1,5,5,2,4,3)
+	Status: Solved
+	LabellingTime: 0,0540
+	Labels.Size: 41
+Solution for OP(5,8,5,5,4,4,4,3,3)
+	Minimal Problem: (2,4,5,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0510
+	Labels.Size: 41
+Solution for OP(5,8,5,5,3,3,3,3,3,3)
+	Minimal Problem: (2,4,5,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0870
+	Labels.Size: 41
+Solution for OP(3,5,5,4,4,4,4,4,8)
+	Minimal Problem: (1,5,4,4,2,4)
+	Status: Solved
+	LabellingTime: 0,0580
+	Labels.Size: 41
+Solution for OP(3,5,5,4,4,8,3,3,3,3)
+	Minimal Problem: (1,5,4,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0670
+	Labels.Size: 41
+Solution for OP(5,8,4,4,4,4,4,4,4)
+	Minimal Problem: (2,4,4,4,4,2)
+	Status: Solved
+	LabellingTime: 0,1440
+	Labels.Size: 41
+Solution for OP(5,8,4,4,4,4,3,3,3,3)
+	Minimal Problem: (2,4,4,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(5,8,4,3,3,3,3,3,3,3,3)
+	Minimal Problem: (2,4,2,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,3020
+	Labels.Size: 41
+Solution for OP(3,4,4,4,4,4,4,8,3,3)
+	Minimal Problem: (1,4,4,4,4,3)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(3,4,4,4,8,3,3,3,3,3,3)
+	Minimal Problem: (1,4,2,4,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0870
+	Labels.Size: 41
+Solution for OP(3,8,3,3,3,3,3,3,3,3,3,3)
+	Minimal Problem: (1,4,3,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(7,7,7,7,7,6)
+	Minimal Problem: (3,7,7,3)
+	Status: Solved
+	LabellingTime: 0,0470
+	Labels.Size: 41
+Solution for OP(7,7,7,7,7,3,3)
+	Minimal Problem: (3,7,7,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(3,7,7,6,4)
+	Minimal Problem: (1,7,3,2,7)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(3,7,7,5,5)
+	Minimal Problem: (1,7,5,7)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(5,7,7,4,4)
+	Minimal Problem: (2,7,7,4)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(3,7,7,4,3,3)
+	Minimal Problem: (1,7,2,7,3)
+	Status: Solved
+	LabellingTime: 0,0450
+	Labels.Size: 41
+Solution for OP(7,7,7,6,6,4,4)
+	Minimal Problem: (3,7,6,4)
+	Status: Solved
+	LabellingTime: 0,0580
+	Labels.Size: 41
+Solution for OP(7,7,7,6,5,5,4)
+	Minimal Problem: (3,7,3,5,2)
+	Status: Solved
+	LabellingTime: 0,0590
+	Labels.Size: 41
+Solution for OP(7,7,7,6,4,4,3,3)
+	Minimal Problem: (3,7,3,4,3)
+	Status: Solved
+	LabellingTime: 0,0600
+	Labels.Size: 41
+Solution for OP(7,7,7,5,5,5,5)
+	Minimal Problem: (3,7,5,5)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(7,7,7,5,5,4,3,3)
+	Minimal Problem: (3,7,5,2,3)
+	Status: Solved
+	LabellingTime: 0,0610
+	Labels.Size: 41
+Solution for OP(7,7,7,4,4,4,4,4)
+	Minimal Problem: (3,7,4,4,2)
+	Status: Solved
+	LabellingTime: 0,0630
+	Labels.Size: 41
+Solution for OP(7,7,7,4,4,3,3,3,3)
+	Minimal Problem: (3,7,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(3,6,6,6,6)
+	Minimal Problem: (1,6,6,7)
+	Status: Solved
+	LabellingTime: 0,0320
+	Labels.Size: 41
+Solution for OP(5,6,6,6,4)
+	Minimal Problem: (2,6,3,7,2)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(3,6,6,6,3,3)
+	Minimal Problem: (1,6,3,7,3)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(5,6,6,5,5)
+	Minimal Problem: (2,6,7,5)
+	Status: Solved
+	LabellingTime: 0,0540
+	Labels.Size: 41
+Solution for OP(5,6,6,4,3,3)
+	Minimal Problem: (2,6,7,2,3)
+	Status: Solved
+	LabellingTime: 0,0610
+	Labels.Size: 41
+Solution for OP(3,6,6,4,4,4)
+	Minimal Problem: (1,6,4,2,7)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(3,6,6,3,3,3,3)
+	Minimal Problem: (1,6,7,3,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(5,6,5,5,3,3)
+	Minimal Problem: (2,3,7,5,3)
+	Status: Solved
+	LabellingTime: 0,0580
+	Labels.Size: 41
+Solution for OP(3,6,5,5,4,4)
+	Minimal Problem: (1,3,5,4,7)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(5,6,4,4,4,4)
+	Minimal Problem: (2,3,7,4,4)
+	Status: Solved
+	LabellingTime: 0,1160
+	Labels.Size: 41
+Solution for OP(5,6,4,3,3,3,3)
+	Minimal Problem: (2,3,7,2,3,3)
+	Status: Solved
+	LabellingTime: 0,1820
+	Labels.Size: 41
+Solution for OP(3,6,4,4,4,3,3)
+	Minimal Problem: (1,3,4,2,7,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(3,6,3,3,3,3,3,3)
+	Minimal Problem: (1,3,7,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0370
+	Labels.Size: 41
+Solution for OP(3,5,5,5,5,4)
+	Minimal Problem: (1,5,5,2,7)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(5,5,5,4,4,4)
+	Minimal Problem: (2,7,5,4,2)
+	Status: Solved
+	LabellingTime: 0,1290
+	Labels.Size: 41
+Solution for OP(5,5,5,3,3,3,3)
+	Minimal Problem: (2,7,5,3,3)
+	Status: Solved
+	LabellingTime: 0,0650
+	Labels.Size: 41
+Solution for OP(3,5,5,4,4,3,3)
+	Minimal Problem: (1,5,4,7,3)
+	Status: Solved
+	LabellingTime: 0,0330
+	Labels.Size: 41
+Solution for OP(5,4,4,4,4,3,3)
+	Minimal Problem: (2,7,4,4,3)
+	Status: Solved
+	LabellingTime: 0,0760
+	Labels.Size: 41
+Solution for OP(5,4,3,3,3,3,3,3)
+	Minimal Problem: (2,7,2,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0570
+	Labels.Size: 41
+Solution for OP(3,4,4,4,4,4,4)
+	Minimal Problem: (1,4,4,4,7)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(3,4,4,4,3,3,3,3)
+	Minimal Problem: (1,4,2,7,3,3)
+	Status: Solved
+	LabellingTime: 0,0510
+	Labels.Size: 41
+Solution for OP(3,3,3,3,3,3,3,3,3)
+	Minimal Problem: (1,7,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(7,6,6,6,6,6,4)
+	Minimal Problem: (3,6,6,3,2)
+	Status: Solved
+	LabellingTime: 0,0770
+	Labels.Size: 41
+Solution for OP(7,6,6,6,6,5,5)
+	Minimal Problem: (3,6,6,5)
+	Status: Solved
+	LabellingTime: 0,0510
+	Labels.Size: 41
+Solution for OP(7,6,6,6,6,4,3,3)
+	Minimal Problem: (3,6,6,2,3)
+	Status: Solved
+	LabellingTime: 0,0800
+	Labels.Size: 41
+Solution for OP(7,6,6,6,5,5,3,3)
+	Minimal Problem: (3,6,3,5,3)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(7,6,6,6,4,4,4,4)
+	Minimal Problem: (3,6,3,4,4)
+	Status: Solved
+	LabellingTime: 0,0510
+	Labels.Size: 41
+Solution for OP(7,6,6,6,4,3,3,3,3)
+	Minimal Problem: (3,6,3,2,3,3)
+	Status: Solved
+	LabellingTime: 0,0770
+	Labels.Size: 41
+Solution for OP(7,6,6,5,5,4,4,4)
+	Minimal Problem: (3,6,5,4,2)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(7,6,6,5,5,3,3,3,3)
+	Minimal Problem: (3,6,5,3,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(7,6,6,4,4,4,4,3,3)
+	Minimal Problem: (3,6,4,4,3)
+	Status: Solved
+	LabellingTime: 0,0650
+	Labels.Size: 41
+Solution for OP(7,6,6,4,3,3,3,3,3,3)
+	Minimal Problem: (3,6,2,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(7,6,5,5,5,5,4,4)
+	Minimal Problem: (3,3,5,5,4)
+	Status: Solved
+	LabellingTime: 0,0500
+	Labels.Size: 41
+Solution for OP(7,6,5,5,4,4,4,3,3)
+	Minimal Problem: (3,3,5,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0510
+	Labels.Size: 41
+Solution for OP(7,6,5,5,3,3,3,3,3,3)
+	Minimal Problem: (3,3,5,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(7,6,4,4,4,4,4,4,4)
+	Minimal Problem: (3,3,4,4,4,2)
+	Status: Solved
+	LabellingTime: 0,1040
+	Labels.Size: 41
+Solution for OP(7,6,4,4,4,4,3,3,3,3)
+	Minimal Problem: (3,3,4,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0580
+	Labels.Size: 41
+Solution for OP(7,6,4,3,3,3,3,3,3,3,3)
+	Minimal Problem: (3,3,2,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0850
+	Labels.Size: 41
+Solution for OP(7,5,5,5,5,5,5,4)
+	Minimal Problem: (3,5,5,5,2)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(7,5,5,5,5,4,4,3,3)
+	Minimal Problem: (3,5,5,4,3)
+	Status: Solved
+	LabellingTime: 0,0750
+	Labels.Size: 41
+Solution for OP(7,5,5,4,4,4,4,4,4)
+	Minimal Problem: (3,5,4,4,4)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(7,5,5,4,4,4,3,3,3,3)
+	Minimal Problem: (3,5,4,2,3,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(7,5,5,3,3,3,3,3,3,3,3)
+	Minimal Problem: (3,5,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(7,4,4,4,4,4,4,4,3,3)
+	Minimal Problem: (3,4,4,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0760
+	Labels.Size: 41
+Solution for OP(7,4,4,4,4,3,3,3,3,3,3)
+	Minimal Problem: (3,4,4,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0900
+	Labels.Size: 41
+Solution for OP(7,4,3,3,3,3,3,3,3,3,3,3)
+	Minimal Problem: (3,2,3,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0970
+	Labels.Size: 41
+Solution for OP(5,6,6,6,6)
+	Minimal Problem: (2,6,6,6)
+	Status: Solved
+	LabellingTime: 0,0600
+	Labels.Size: 41
+Solution for OP(5,6,6,6,3,3)
+	Minimal Problem: (2,6,3,6,3)
+	Status: Solved
+	LabellingTime: 0,0490
+	Labels.Size: 41
+Solution for OP(3,6,6,6,4,4)
+	Minimal Problem: (1,6,3,4,6)
+	Status: Solved
+	LabellingTime: 0,0500
+	Labels.Size: 41
+Solution for OP(3,6,6,5,5,4)
+	Minimal Problem: (1,6,5,2,6)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(5,6,6,4,4,4)
+	Minimal Problem: (2,6,6,4,2)
+	Status: Solved
+	LabellingTime: 0,0680
+	Labels.Size: 41
+Solution for OP(5,6,6,3,3,3,3)
+	Minimal Problem: (2,6,6,3,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(3,6,6,4,4,3,3)
+	Minimal Problem: (1,6,4,6,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(3,6,5,5,5,5)
+	Minimal Problem: (1,3,5,5,6)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(5,6,5,5,4,4)
+	Minimal Problem: (2,3,6,5,4)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(3,6,5,5,4,3,3)
+	Minimal Problem: (1,3,5,2,6,3)
+	Status: Solved
+	LabellingTime: 0,0790
+	Labels.Size: 41
+Solution for OP(5,6,4,4,4,3,3)
+	Minimal Problem: (2,3,6,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(5,6,3,3,3,3,3,3)
+	Minimal Problem: (2,3,6,3,3,3)
+	Status: Solved
+	LabellingTime: 0,1170
+	Labels.Size: 41
+Solution for OP(3,6,4,4,4,4,4)
+	Minimal Problem: (1,3,4,4,2,6)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(3,6,4,4,3,3,3,3)
+	Minimal Problem: (1,3,4,6,3,3)
+	Status: Solved
+	LabellingTime: 0,0360
+	Labels.Size: 41
+Solution for OP(5,5,5,5,5,4)
+	Minimal Problem: (2,6,5,5,2)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(3,5,5,5,5,3,3)
+	Minimal Problem: (1,5,5,6,3)
+	Status: Solved
+	LabellingTime: 0,0540
+	Labels.Size: 41
+Solution for OP(5,5,5,4,4,3,3)
+	Minimal Problem: (2,6,5,4,3)
+	Status: Solved
+	LabellingTime: 0,0860
+	Labels.Size: 41
+Solution for OP(3,5,5,4,4,4,4)
+	Minimal Problem: (1,5,4,4,6)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(3,5,5,4,3,3,3,3)
+	Minimal Problem: (1,5,2,6,3,3)
+	Status: Solved
+	LabellingTime: 0,0510
+	Labels.Size: 41
+Solution for OP(5,4,4,4,4,4,4)
+	Minimal Problem: (2,6,4,4,4)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(5,4,4,4,3,3,3,3)
+	Minimal Problem: (2,6,4,2,3,3)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(5,3,3,3,3,3,3,3,3)
+	Minimal Problem: (2,6,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(3,4,4,4,4,4,3,3)
+	Minimal Problem: (1,4,4,2,6,3)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(3,4,4,3,3,3,3,3,3)
+	Minimal Problem: (1,4,6,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0540
+	Labels.Size: 41
+Solution for OP(5,6,5,5,5,5,5,5)
+	Minimal Problem: (2,3,5,5,5)
+	Status: Solved
+	LabellingTime: 0,0620
+	Labels.Size: 41
+Solution for OP(5,6,5,5,5,5,4,3,3)
+	Minimal Problem: (2,3,5,5,2,3)
+	Status: Solved
+	LabellingTime: 0,1500
+	Labels.Size: 41
+Solution for OP(3,5,5,5,5,4,4,4,6)
+	Minimal Problem: (1,5,5,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(3,5,5,5,5,6,3,3,3,3)
+	Minimal Problem: (1,5,5,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0420
+	Labels.Size: 41
+Solution for OP(5,6,5,5,4,4,4,4,4)
+	Minimal Problem: (2,3,5,4,4,2)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(5,6,5,5,4,4,3,3,3,3)
+	Minimal Problem: (2,3,5,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0560
+	Labels.Size: 41
+Solution for OP(3,5,5,4,4,4,4,6,3,3)
+	Minimal Problem: (1,5,4,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(3,5,5,4,6,3,3,3,3,3,3)
+	Minimal Problem: (1,5,2,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0670
+	Labels.Size: 41
+Solution for OP(5,6,4,4,4,4,4,4,3,3)
+	Minimal Problem: (2,3,4,4,4,3)
+	Status: Solved
+	LabellingTime: 0,0430
+	Labels.Size: 41
+Solution for OP(5,6,4,4,4,3,3,3,3,3,3)
+	Minimal Problem: (2,3,4,2,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0530
+	Labels.Size: 41
+Solution for OP(5,6,3,3,3,3,3,3,3,3,3,3)
+	Minimal Problem: (2,3,3,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0400
+	Labels.Size: 41
+Solution for OP(3,4,4,4,4,4,4,4,4,6)
+	Minimal Problem: (1,4,4,4,4,3)
+	Status: Solved
+	LabellingTime: 0,0390
+	Labels.Size: 41
+Solution for OP(3,4,4,4,4,4,6,3,3,3,3)
+	Minimal Problem: (1,4,4,2,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0410
+	Labels.Size: 41
+Solution for OP(3,4,4,6,3,3,3,3,3,3,3,3)
+	Minimal Problem: (1,4,3,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0520
+	Labels.Size: 41
+Solution for OP(5,5,5,5,5,5,5,3,3)
+	Minimal Problem: (2,5,5,5,3)
+	Status: Solved
+	LabellingTime: 0,0550
+	Labels.Size: 41
+Solution for OP(3,5,5,5,5,4,4)
+	Minimal Problem: (1,5,5,4,5)
+	Status: Solved
+	LabellingTime: 0,0440
+	Labels.Size: 41
+Solution for OP(5,5,5,5,5,4,4,4,4)
+	Minimal Problem: (2,5,5,4,4)
+	Status: Solved
+	LabellingTime: 0,0600
+	Labels.Size: 41
+Solution for OP(5,5,5,5,5,4,3,3,3,3)
+	Minimal Problem: (2,5,5,2,3,3)
+	Status: Solved
+	LabellingTime: 0,0350
+	Labels.Size: 41
+Solution for OP(3,5,5,4,4,4,3,3)
+	Minimal Problem: (1,5,4,2,5,3)
+	Status: Solved
+	LabellingTime: 0,0810
+	Labels.Size: 41
+Solution for OP(3,5,5,3,3,3,3,3,3)
+	Minimal Problem: (1,5,5,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0590
+	Labels.Size: 41
+Solution for OP(5,5,5,4,4,4,4,4,3,3)
+	Minimal Problem: (2,5,4,4,2,3)
+	Status: Solved
+	LabellingTime: 0,0480
+	Labels.Size: 41
+Solution for OP(5,5,5,4,4,3,3,3,3,3,3)
+	Minimal Problem: (2,5,4,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0380
+	Labels.Size: 41
+Solution for OP(3,4,4,4,4,4,4,4)
+	Minimal Problem: (1,4,4,4,2,5)
+	Status: Solved
+	LabellingTime: 0,0500
+	Labels.Size: 41
+Solution for OP(3,4,4,4,4,3,3,3,3)
+	Minimal Problem: (1,4,4,5,3,3)
+	Status: Solved
+	LabellingTime: 0,0580
+	Labels.Size: 41
+Solution for OP(3,4,3,3,3,3,3,3,3,3)
+	Minimal Problem: (1,2,5,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,1070
+	Labels.Size: 41
+Solution for OP(5,4,4,4,4,4,4,4,4,4)
+	Minimal Problem: (2,4,4,4,4,2)
+	Status: Solved
+	LabellingTime: 0,0730
+	Labels.Size: 41
+Solution for OP(5,4,4,4,4,4,4,3,3,3,3)
+	Minimal Problem: (2,4,4,4,3,3)
+	Status: Solved
+	LabellingTime: 0,0660
+	Labels.Size: 41
+Solution for OP(5,4,4,4,3,3,3,3,3,3,3,3)
+	Minimal Problem: (2,4,2,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0550
+	Labels.Size: 41
+Solution for OP(5,3,3,3,3,3,3,3,3,3,3,3,3)
+	Minimal Problem: (2,3,3,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,1110
+	Labels.Size: 41
+Solution for OP(3,4,4,4,4,4,4,3,3)
+	Minimal Problem: (1,4,4,4,4,3)
+	Status: Solved
+	LabellingTime: 0,0340
+	Labels.Size: 41
+Solution for OP(3,4,4,4,3,3,3,3,3,3)
+	Minimal Problem: (1,4,2,4,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0460
+	Labels.Size: 41
+Solution for OP(3,3,3,3,3,3,3,3,3,3,3)
+	Minimal Problem: (1,4,3,3,3,3,3)
+	Status: Solved
+	LabellingTime: 0,0340
+	Labels.Size: 41
+Time elapsed:89.89444s
