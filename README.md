@@ -1,6 +1,11 @@
 # TheOberSolver
+
+
+[![DOI](https://zenodo.org/badge/134690351.svg)](https://zenodo.org/badge/latestdoi/134690351)
+
+
 This repository is maintained by ALCO@Politecnico di Torino.
-TheObersolver is a pre-release software for solving the [Oberwolfach Problem](https://en.m.wikipedia.org/wiki/Oberwolfach_problem).
+TheObersolver is a pre-release software for solving the [Oberwolfach Problem](https://arxiv.org/abs/1903.12112).
 
 This software uses [Choco Solver](http://www.choco-solver.org) and can be run as well with [IBM CPLEX](https://developer.ibm.com/academic/). As for the former one, scholars are entitled to obtain a free license via the IBM Academic Initiative.
 
